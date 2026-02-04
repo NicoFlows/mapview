@@ -1,0 +1,8 @@
+# Claude Code internal
+.claude/
+
+# User customized exports (can be regenerated)
+*_custom.json
+
+# Large reference images (optional - remove these lines if you want to track them)
+# *.png

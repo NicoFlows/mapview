@@ -1,0 +1,1922 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Map Viewer</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin:0; font-family: "Times New Roman", Georgia, serif; background:#9a9a8a; color:#3a3a2a; }
+    header { display:flex; gap:12px; align-items:center; padding:10px 12px; border-bottom:1px solid #7a7a6a; position:sticky; top:0; background:#e8e4d8; z-index:2; flex-wrap: wrap; }
+    .btn { background:#d8d4c8; border:1px solid #8a8a7a; color:#3a3a2a; padding:8px 10px; border-radius:6px; cursor:pointer; font-family: inherit; }
+    .btn:hover { background:#c8c4b8; }
+    .chip { padding:6px 10px; border:1px solid #8a8a7a; border-radius:999px; background:#e8e4d8; font-size:12px; opacity:.9; color:#3a3a2a; }
+    .chip.clickable { cursor:pointer; transition: all 0.15s; }
+    .chip.clickable:hover { background:#d8d4c8; border-color:#6a6a5a; transform: translateY(-1px); }
+    #wrap { position:relative; height: calc(100vh - 54px); }
+    canvas { display:block; width:100%; height:100%; }
+    #tip {
+      position:absolute; pointer-events:none; padding:10px 12px; max-width:360px;
+      background:rgba(245,242,235,.96); border:1px solid #8a8a7a; border-radius:8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2); display:none; font-size:13px; line-height:1.35;
+      color: #3a3a2a; font-family: "Times New Roman", Georgia, serif;
+    }
+    #tip .t { font-weight:700; margin-bottom:6px; color: #2a2a1a; }
+    #tip .k { opacity:.65; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    #legend { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
+    /* Building info panel */
+    #buildingPanel {
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      width: 320px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      background: rgba(245,242,235,.98);
+      border: 1px solid #8a8a7a;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      padding: 16px;
+      display: none;
+      z-index: 10;
+    }
+    #buildingPanel.visible { display: block; }
+    #buildingPanel h3 { margin: 0 0 12px 0; font-size: 16px; color: #2a2a1a; }
+    #buildingPanel .info-row { margin-bottom: 8px; font-size: 13px; }
+    #buildingPanel .info-row label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; margin-bottom: 2px; }
+    #buildingPanel input[type="text"], #buildingPanel textarea {
+      width: 100%; padding: 8px; border: 1px solid #a0a090; border-radius: 4px;
+      font-family: inherit; font-size: 13px; box-sizing: border-box;
+    }
+    #buildingPanel textarea { min-height: 60px; resize: vertical; }
+    #buildingPanel .btn-row { display: flex; gap: 8px; margin-top: 12px; }
+    #buildingPanel .btn-sm {
+      padding: 6px 12px; font-size: 12px; flex: 1;
+      background: #d8d4c8; border: 1px solid #8a8a7a; border-radius: 4px; cursor: pointer;
+    }
+    #buildingPanel .btn-sm:hover { background: #c8c4b8; }
+    #buildingPanel .btn-sm.primary { background: #7a9a6a; color: white; border-color: #5a7a4a; }
+    #buildingPanel .btn-sm.primary:hover { background: #6a8a5a; }
+    #buildingPanel .floor-tabs { display: flex; gap: 4px; margin: 12px 0 8px 0; flex-wrap: wrap; }
+    #buildingPanel .floor-tab {
+      padding: 4px 10px; font-size: 11px; background: #e8e4d8; border: 1px solid #a0a090;
+      border-radius: 4px; cursor: pointer;
+    }
+    #buildingPanel .floor-tab.active { background: #7a9a6a; color: white; border-color: #5a7a4a; }
+    #buildingPanel .floor-preview {
+      background: #f8f6f0; border: 1px solid #c0c0b0; border-radius: 4px;
+      min-height: 150px; position: relative;
+    }
+    #buildingPanel .close-btn {
+      position: absolute; top: 8px; right: 8px; width: 24px; height: 24px;
+      background: none; border: none; font-size: 18px; cursor: pointer; opacity: 0.6;
+    }
+    #buildingPanel .close-btn:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <input id="file" type="file" accept=".json,application/json" class="btn" />
+    <button id="fit" class="btn">Fit</button>
+    <button id="grid" class="btn">Toggle grid</button>
+    <button id="labels" class="btn">Toggle labels</button>
+    <button id="export" class="btn" style="display:none">Export</button>
+    <span id="meta" class="chip">No file loaded</span>
+    <div id="legend"></div>
+    <input type="color" id="colorPicker" style="position:absolute;opacity:0;pointer-events:none" />
+  </header>
+
+  <div id="wrap">
+    <canvas id="c"></canvas>
+    <div id="tip"></div>
+
+    <!-- Building info panel -->
+    <div id="buildingPanel">
+      <button class="close-btn" id="closeBuildingPanel">&times;</button>
+      <h3 id="buildingTitle">Building #0</h3>
+      <div class="info-row">
+        <label>Area</label>
+        <span id="buildingArea">0 sq units</span>
+      </div>
+      <div class="info-row">
+        <label>Name</label>
+        <input type="text" id="buildingName" placeholder="Give this building a name..." />
+      </div>
+      <div class="info-row">
+        <label>Notes</label>
+        <textarea id="buildingNotes" placeholder="Add notes about this building..."></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn-sm" id="generateDwelling">Generate Dwelling</button>
+        <button class="btn-sm primary" id="saveBuildingInfo">Save</button>
+      </div>
+      <div id="dwellingSection" style="display:none; margin-top: 16px; border-top: 1px solid #c0c0b0; padding-top: 12px;">
+        <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7;">Dwelling Preview</label>
+        <div class="floor-tabs" id="floorTabs"></div>
+        <div class="floor-preview">
+          <canvas id="floorCanvas" width="288" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(() => {
+  const canvas = document.getElementById("c");
+  const ctx = canvas.getContext("2d");
+  const tip = document.getElementById("tip");
+  const meta = document.getElementById("meta");
+  const legend = document.getElementById("legend");
+
+  let showGrid = true;
+  let showLabels = true;
+
+  // Camera
+  let panX = 0, panY = 0, zoom = 1;
+  let isPanning = false, lastX = 0, lastY = 0;
+
+  // Data
+  let map = null;
+  let mapType = null; // 'hex' or 'city'
+  let hexSize = 22;
+  let bounds = null;
+  let hitIndex = [];
+
+  // City map parsed data
+  let cityData = null;
+  let currentFileName = "map.json";
+
+  // Custom colors (overrides defaults, saved with map)
+  let customColors = {};
+
+  // Default terrain palette for hex maps - cartography style matching city maps
+  const DEFAULT_TERRAIN = {
+    "water":       { fill:"#9a9a8a" },      // Gray water like city maps
+    "rocks":       { fill:"#b8b4a4" },      // Light gray-brown rocks
+    "swamp":       { fill:"#a8b098" },      // Muted green-gray
+    "forest-light":{ fill:"#b8c4a8" },      // Light sage green
+    "forest-dark": { fill:"#98a888" },      // Darker sage green
+    "mountain":    { fill:"#c8c4b8" },      // Light gray with warmth
+    "plain":       { fill:"#e8e4d4" },      // Cream/beige like city earth
+    "hill":        { fill:"#d8d4c4" },      // Slightly darker cream
+    "desert":      { fill:"#e0d8c0" },      // Sandy beige
+    "unknown":     { fill:"#d0ccc0" }       // Neutral gray-beige
+  };
+
+  // Get terrain color (custom overrides default)
+  function getTerrainColor(terrain) {
+    if (customColors[terrain]) {
+      return customColors[terrain];
+    }
+    return (DEFAULT_TERRAIN[terrain] || DEFAULT_TERRAIN.unknown).fill;
+  }
+
+  // Hex map specific colors
+  const HEX_COLORS = {
+    background: "#9a9a8a",           // Gray background (water)
+    grid: "rgba(60, 55, 45, 0.15)",  // Subtle dark grid lines
+    townFill: "#c8c4b4",             // Building gray
+    townStroke: "#5a5a4a",           // Dark outline
+    dangerFill: "#a08070",           // Muted red-brown for dangers
+    dangerStroke: "#5a4a3a",
+    label: "rgba(40, 35, 25, 0.85)", // Dark brown text
+  };
+
+  // City map colors (matching the PNG style)
+  const CITY_COLORS = {
+    background: "#8a8a7a",      // Gray background/water
+    water: "#8a8a7a",           // Water areas
+    earth: "#e8e4d4",           // Land/earth - cream/beige
+    building: "#c8c4b4",        // Building fill - light gray
+    buildingStroke: "#7a7a6a",  // Building outline
+    buildingSelected: "#e8a060", // Selected building highlight
+    wall: "#1a1a1a",            // Walls - dark/black
+    road: "#d8d4c4",            // Roads - lighter than land
+    roadStroke: "#9a9a8a",      // Road edges
+    district: "#4a4a3a",        // District label color
+    river: "#7a8a9a",           // River color
+    green: "#a8b898",           // Parks/greens
+    field: "#c8d4b8",           // Fields
+    tree: "#6a7a5a",            // Trees
+    grid: "rgba(0,0,0,0.08)",   // Grid lines
+  };
+
+  // Building selection state
+  let selectedBuildingIndex = null;
+  let buildingData = {};  // Stores name, notes, dwelling for each building by index
+
+  // --- Hex math (odd-q offset) ---
+  const SQRT3 = Math.sqrt(3);
+
+  function hexToPixel(q, r) {
+    const x = hexSize * 1.5 * q;
+    const y = hexSize * SQRT3 * (r + 0.5 * (q & 1));
+    return { x, y };
+  }
+
+  function hexPolygon(cx, cy) {
+    const pts = [];
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 180) * (60 * i);
+      pts.push({ x: cx + hexSize * Math.cos(a), y: cy + hexSize * Math.sin(a) });
+    }
+    return pts;
+  }
+
+  function drawPoly(pts) {
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+    ctx.closePath();
+  }
+
+  function pointInPoly(px, py, pts) {
+    let inside = false;
+    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+      const xi = pts[i].x, yi = pts[i].y;
+      const xj = pts[j].x, yj = pts[j].y;
+      const intersect = ((yi > py) !== (yj > py)) &&
+        (px < (xj - xi) * (py - yi) / (yj - yi + 1e-12) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(canvas.clientWidth * dpr);
+    canvas.height = Math.floor(canvas.clientHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    render();
+  }
+
+  // --- Hex map functions ---
+  function computeHexBounds() {
+    let minQ = Infinity, maxQ = -Infinity, minR = Infinity, maxR = -Infinity;
+    for (const k in map.hexes) {
+      const h = map.hexes[k];
+      if (typeof h.q !== "number" || typeof h.r !== "number") continue;
+      minQ = Math.min(minQ, h.q); maxQ = Math.max(maxQ, h.q);
+      minR = Math.min(minR, h.r); maxR = Math.max(maxR, h.r);
+    }
+    return { minQ, maxQ, minR, maxR };
+  }
+
+  function rebuildHitIndex() {
+    hitIndex = [];
+    for (const k in map.hexes) {
+      const h = map.hexes[k];
+      if (typeof h.q !== "number" || typeof h.r !== "number") continue;
+      const {x, y} = hexToPixel(h.q, h.r);
+      const poly = hexPolygon(x, y);
+      hitIndex.push({ q:h.q, r:h.r, cx:x, cy:y, poly, hexObj:h });
+    }
+  }
+
+  function fitHexToScreen() {
+    if (!map || !map.hexes) return;
+    bounds = computeHexBounds();
+    const corners = [];
+    for (let q of [bounds.minQ, bounds.maxQ]) {
+      for (let r of [bounds.minR, bounds.maxR]) {
+        corners.push(hexToPixel(q, r));
+      }
+    }
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (const p of corners) {
+      minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x);
+      minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+    }
+    minX -= hexSize; maxX += hexSize;
+    minY -= hexSize; maxY += hexSize;
+
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    const scaleX = w / (maxX - minX);
+    const scaleY = h / (maxY - minY);
+    zoom = Math.min(scaleX, scaleY) * 0.95;
+    panX = (w / 2) - zoom * ((minX + maxX) / 2);
+    panY = (h / 2) - zoom * ((minY + maxY) / 2);
+  }
+
+  // --- City map functions ---
+  function parseCityMap(data) {
+    const result = {
+      values: null,
+      earth: null,
+      water: [],
+      roads: [],
+      walls: [],
+      rivers: [],
+      planks: [],
+      buildings: [],
+      prisms: [],
+      squares: [],
+      greens: [],
+      fields: [],
+      trees: [],
+      districts: [],
+      bounds: { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity },
+      name: null
+    };
+
+    for (const feature of data.features) {
+      const id = feature.id;
+
+      if (id === "values") {
+        result.values = feature;
+        if (feature.name) result.name = feature.name;
+        continue;
+      }
+
+      // Update bounds from coordinates
+      const updateBounds = (coords) => {
+        if (!coords) return;
+        if (typeof coords[0] === "number") {
+          result.bounds.minX = Math.min(result.bounds.minX, coords[0]);
+          result.bounds.maxX = Math.max(result.bounds.maxX, coords[0]);
+          result.bounds.minY = Math.min(result.bounds.minY, coords[1]);
+          result.bounds.maxY = Math.max(result.bounds.maxY, coords[1]);
+        } else {
+          for (const c of coords) updateBounds(c);
+        }
+      };
+
+      if (feature.coordinates) {
+        updateBounds(feature.coordinates);
+      }
+      if (feature.geometries) {
+        for (const geom of feature.geometries) {
+          if (geom.coordinates) updateBounds(geom.coordinates);
+        }
+      }
+
+      switch (id) {
+        case "earth":
+          result.earth = feature.coordinates;
+          break;
+        case "water":
+          result.water = feature.coordinates || [];
+          break;
+        case "roads":
+          result.roads = feature.geometries || [];
+          break;
+        case "walls":
+          result.walls = feature.geometries || [];
+          break;
+        case "rivers":
+          result.rivers = feature.geometries || [];
+          break;
+        case "planks":
+          result.planks = feature.geometries || [];
+          break;
+        case "buildings":
+          result.buildings = feature.coordinates || [];
+          break;
+        case "prisms":
+          result.prisms = feature.coordinates || [];
+          break;
+        case "squares":
+          result.squares = feature.coordinates || [];
+          break;
+        case "greens":
+          result.greens = feature.coordinates || [];
+          break;
+        case "fields":
+          result.fields = feature.coordinates || [];
+          break;
+        case "trees":
+          result.trees = feature.geometries || feature.coordinates || [];
+          break;
+        case "districts":
+          result.districts = feature.geometries || [];
+          break;
+      }
+    }
+
+    return result;
+  }
+
+  // Calculate polygon area using shoelace formula
+  function polygonArea(coords) {
+    if (!coords || coords.length < 2) return 0;
+    const ring = coords[0]; // outer ring
+    if (!ring || ring.length < 3) return 0;
+    let area = 0;
+    for (let i = 0; i < ring.length - 1; i++) {
+      area += ring[i][0] * ring[i + 1][1];
+      area -= ring[i + 1][0] * ring[i][1];
+    }
+    return Math.abs(area / 2);
+  }
+
+  // Point in polygon test for city buildings
+  function pointInBuildingPoly(x, y, coords) {
+    if (!coords || coords.length === 0) return false;
+    const ring = coords[0]; // outer ring
+    if (!ring || ring.length < 3) return false;
+
+    let inside = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const xi = ring[i][0], yi = ring[i][1];
+      const xj = ring[j][0], yj = ring[j][1];
+      const intersect = ((yi > y) !== (yj > y)) &&
+        (x < (xj - xi) * (y - yi) / (yj - yi + 1e-12) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  // Find building at world coordinates
+  function findBuildingAtWorld(x, y) {
+    if (!cityData || !cityData.buildings) return null;
+    // Search in reverse order (top buildings drawn last)
+    for (let i = cityData.buildings.length - 1; i >= 0; i--) {
+      if (pointInBuildingPoly(x, y, cityData.buildings[i])) {
+        return i;
+      }
+    }
+    return null;
+  }
+
+  // Generate a dwelling for a building based on its area
+  function generateDwelling(buildingIndex) {
+    if (!cityData || !cityData.buildings[buildingIndex]) return null;
+
+    const building = cityData.buildings[buildingIndex];
+    const area = polygonArea(building);
+
+    // Determine number of floors based on area
+    // Small buildings: 1-2 floors, Medium: 2-3, Large: 3-4
+    let numFloors;
+    if (area < 200) {
+      numFloors = Math.random() < 0.7 ? 1 : 2;
+    } else if (area < 500) {
+      numFloors = Math.random() < 0.5 ? 2 : 3;
+    } else if (area < 1000) {
+      numFloors = 2 + Math.floor(Math.random() * 2);
+    } else {
+      numFloors = 3 + Math.floor(Math.random() * 2);
+    }
+
+    // Determine if basement based on size
+    const hasBasement = area > 300 && Math.random() < 0.4;
+
+    // Calculate grid size based on area
+    const gridSize = Math.max(3, Math.min(7, Math.ceil(Math.sqrt(area / 50))));
+
+    const floors = [];
+    const startLevel = hasBasement ? -1 : 0;
+
+    for (let level = startLevel; level < numFloors; level++) {
+      const floor = generateFloor(level, gridSize, level === startLevel);
+      floors.push(floor);
+    }
+
+    // Add stair connections between floors
+    connectFloors(floors);
+
+    // Determine exit location (ground floor)
+    const groundFloor = floors.find(f => f.level === 0);
+    const exitCell = groundFloor ? groundFloor.rooms[0]?.cells[0] : { i: 0, j: 0 };
+
+    return {
+      floors,
+      exit: {
+        cell: exitCell || { i: 0, j: 0 },
+        dir: "n"
+      }
+    };
+  }
+
+  // Generate a single floor
+  function generateFloor(level, gridSize, isBottom) {
+    const floor = {
+      level,
+      rooms: [],
+      doors: [],
+      windows: [],
+      stairs: []
+    };
+
+    // Create cells grid to track which cells are used
+    const cells = [];
+    for (let i = 0; i < gridSize; i++) {
+      cells[i] = [];
+      for (let j = 0; j < gridSize; j++) {
+        cells[i][j] = null; // null = unused
+      }
+    }
+
+    // Generate rooms
+    const roomTypes = level === -1
+      ? ["Cellar", "Storage", "Vault"]
+      : level === 0
+        ? ["Hall", "Kitchen", "Living room", "Study", "Workshop"]
+        : ["Bedroom", "Room", "Bathroom", "Library"];
+
+    let roomIndex = 0;
+    const numRooms = Math.max(1, Math.min(5, Math.floor(gridSize * gridSize / 4)));
+
+    // Start with a main room
+    const mainRoom = {
+      name: roomTypes[Math.floor(Math.random() * roomTypes.length)],
+      cells: []
+    };
+
+    // Random starting position
+    const startI = Math.floor(Math.random() * (gridSize - 1));
+    const startJ = Math.floor(Math.random() * (gridSize - 1));
+
+    // Grow the room
+    const roomSize = 2 + Math.floor(Math.random() * 3);
+    const queue = [{ i: startI, j: startJ }];
+    const visited = new Set();
+
+    while (queue.length > 0 && mainRoom.cells.length < roomSize) {
+      const { i, j } = queue.shift();
+      const key = `${i},${j}`;
+      if (visited.has(key) || i < 0 || i >= gridSize || j < 0 || j >= gridSize) continue;
+      if (cells[i][j] !== null) continue;
+
+      visited.add(key);
+      mainRoom.cells.push({ i, j });
+      cells[i][j] = roomIndex;
+
+      // Add neighbors in random order
+      const neighbors = [
+        { i: i - 1, j }, { i: i + 1, j },
+        { i, j: j - 1 }, { i, j: j + 1 }
+      ].sort(() => Math.random() - 0.5);
+
+      for (const n of neighbors) {
+        queue.push(n);
+      }
+    }
+
+    floor.rooms.push(mainRoom);
+    roomIndex++;
+
+    // Add more rooms
+    for (let r = 1; r < numRooms; r++) {
+      const room = {
+        name: roomTypes[Math.floor(Math.random() * roomTypes.length)],
+        cells: []
+      };
+
+      // Find an empty cell adjacent to an existing room
+      let foundStart = null;
+      for (let i = 0; i < gridSize && !foundStart; i++) {
+        for (let j = 0; j < gridSize && !foundStart; j++) {
+          if (cells[i][j] === null) {
+            // Check if adjacent to an existing room
+            const hasNeighbor = [
+              [i - 1, j], [i + 1, j], [i, j - 1], [i, j + 1]
+            ].some(([ni, nj]) =>
+              ni >= 0 && ni < gridSize && nj >= 0 && nj < gridSize && cells[ni][nj] !== null
+            );
+            if (hasNeighbor && Math.random() < 0.5) {
+              foundStart = { i, j };
+            }
+          }
+        }
+      }
+
+      if (!foundStart) continue;
+
+      // Grow this room
+      const size = 1 + Math.floor(Math.random() * 3);
+      const q = [foundStart];
+      const v = new Set();
+
+      while (q.length > 0 && room.cells.length < size) {
+        const { i, j } = q.shift();
+        const key = `${i},${j}`;
+        if (v.has(key) || i < 0 || i >= gridSize || j < 0 || j >= gridSize) continue;
+        if (cells[i][j] !== null) continue;
+
+        v.add(key);
+        room.cells.push({ i, j });
+        cells[i][j] = roomIndex;
+
+        const neighbors = [
+          { i: i - 1, j }, { i: i + 1, j },
+          { i, j: j - 1 }, { i, j: j + 1 }
+        ].sort(() => Math.random() - 0.5);
+
+        for (const n of neighbors) {
+          q.push(n);
+        }
+      }
+
+      if (room.cells.length > 0) {
+        floor.rooms.push(room);
+        roomIndex++;
+      }
+    }
+
+    // Add doors between rooms
+    for (let i = 0; i < gridSize; i++) {
+      for (let j = 0; j < gridSize; j++) {
+        if (cells[i][j] === null) continue;
+
+        // Check east neighbor
+        if (i + 1 < gridSize && cells[i + 1][j] !== null && cells[i + 1][j] !== cells[i][j]) {
+          if (Math.random() < 0.6) {
+            floor.doors.push({
+              edge: { cell: { i, j }, dir: "s" },
+              type: "REGULAR"
+            });
+          }
+        }
+
+        // Check south neighbor
+        if (j + 1 < gridSize && cells[i][j + 1] !== null && cells[i][j + 1] !== cells[i][j]) {
+          if (Math.random() < 0.6) {
+            floor.doors.push({
+              edge: { cell: { i, j }, dir: "e" },
+              type: "REGULAR"
+            });
+          }
+        }
+      }
+    }
+
+    // Add windows on exterior walls (not basement)
+    if (level >= 0) {
+      for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+          if (cells[i][j] === null) continue;
+
+          // Check each direction for exterior
+          if (i === 0 || cells[i - 1][j] === null) {
+            if (Math.random() < 0.5) floor.windows.push({ cell: { i, j }, dir: "n" });
+          }
+          if (i === gridSize - 1 || cells[i + 1][j] === null) {
+            if (Math.random() < 0.5) floor.windows.push({ cell: { i, j }, dir: "s" });
+          }
+          if (j === 0 || cells[i][j - 1] === null) {
+            if (Math.random() < 0.5) floor.windows.push({ cell: { i, j }, dir: "w" });
+          }
+          if (j === gridSize - 1 || cells[i][j + 1] === null) {
+            if (Math.random() < 0.5) floor.windows.push({ cell: { i, j }, dir: "e" });
+          }
+        }
+      }
+    }
+
+    return floor;
+  }
+
+  // Connect floors with stairs
+  function connectFloors(floors) {
+    for (let f = 0; f < floors.length - 1; f++) {
+      const lower = floors[f];
+      const upper = floors[f + 1];
+
+      // Find a cell that exists on both floors
+      const lowerCells = new Set();
+      for (const room of lower.rooms) {
+        for (const cell of room.cells) {
+          lowerCells.add(`${cell.i},${cell.j}`);
+        }
+      }
+
+      let stairCell = null;
+      for (const room of upper.rooms) {
+        for (const cell of room.cells) {
+          if (lowerCells.has(`${cell.i},${cell.j}`)) {
+            stairCell = { ...cell };
+            break;
+          }
+        }
+        if (stairCell) break;
+      }
+
+      // If no common cell, pick random cells from each
+      if (!stairCell && lower.rooms.length > 0 && upper.rooms.length > 0) {
+        stairCell = { ...lower.rooms[0].cells[0] };
+      }
+
+      if (stairCell) {
+        const dirs = ["n", "s", "e", "w"];
+        const dir = dirs[Math.floor(Math.random() * dirs.length)];
+
+        lower.stairs.push({ cell: stairCell, dir, up: true });
+        upper.stairs.push({ cell: stairCell, dir, up: false });
+      }
+    }
+  }
+
+  // Render dwelling floor preview
+  function renderFloorPreview(dwelling, floorIndex) {
+    const floorCanvas = document.getElementById("floorCanvas");
+    if (!floorCanvas || !dwelling || !dwelling.floors[floorIndex]) return;
+
+    const fctx = floorCanvas.getContext("2d");
+    const floor = dwelling.floors[floorIndex];
+    const w = floorCanvas.width;
+    const h = floorCanvas.height;
+
+    // Clear
+    fctx.fillStyle = "#f8f6f0";
+    fctx.fillRect(0, 0, w, h);
+
+    // Find bounds
+    let minI = Infinity, maxI = -Infinity, minJ = Infinity, maxJ = -Infinity;
+    for (const room of floor.rooms) {
+      for (const cell of room.cells) {
+        minI = Math.min(minI, cell.i);
+        maxI = Math.max(maxI, cell.i);
+        minJ = Math.min(minJ, cell.j);
+        maxJ = Math.max(maxJ, cell.j);
+      }
+    }
+
+    if (minI === Infinity) return; // No cells
+
+    const gridW = maxI - minI + 1;
+    const gridH = maxJ - minJ + 1;
+    const cellSize = Math.min((w - 40) / gridW, (h - 40) / gridH, 30);
+    const offsetX = (w - gridW * cellSize) / 2;
+    const offsetY = (h - gridH * cellSize) / 2;
+
+    // Draw room colors
+    const roomColors = ["#e8e4d4", "#d8d4c4", "#c8c4b4", "#ddd8c8", "#e0dcd0"];
+    for (let ri = 0; ri < floor.rooms.length; ri++) {
+      const room = floor.rooms[ri];
+      fctx.fillStyle = roomColors[ri % roomColors.length];
+      for (const cell of room.cells) {
+        const x = offsetX + (cell.i - minI) * cellSize;
+        const y = offsetY + (cell.j - minJ) * cellSize;
+        fctx.fillRect(x, y, cellSize, cellSize);
+      }
+    }
+
+    // Draw walls (cell borders)
+    fctx.strokeStyle = "#3a3a2a";
+    fctx.lineWidth = 2;
+    for (const room of floor.rooms) {
+      for (const cell of room.cells) {
+        const x = offsetX + (cell.i - minI) * cellSize;
+        const y = offsetY + (cell.j - minJ) * cellSize;
+
+        // Check each edge
+        const neighbors = {
+          n: room.cells.some(c => c.i === cell.i - 1 && c.j === cell.j),
+          s: room.cells.some(c => c.i === cell.i + 1 && c.j === cell.j),
+          w: room.cells.some(c => c.i === cell.i && c.j === cell.j - 1),
+          e: room.cells.some(c => c.i === cell.i && c.j === cell.j + 1)
+        };
+
+        // Also check other rooms
+        for (const otherRoom of floor.rooms) {
+          if (otherRoom === room) continue;
+          if (otherRoom.cells.some(c => c.i === cell.i - 1 && c.j === cell.j)) neighbors.n = true;
+          if (otherRoom.cells.some(c => c.i === cell.i + 1 && c.j === cell.j)) neighbors.s = true;
+          if (otherRoom.cells.some(c => c.i === cell.i && c.j === cell.j - 1)) neighbors.w = true;
+          if (otherRoom.cells.some(c => c.i === cell.i && c.j === cell.j + 1)) neighbors.e = true;
+        }
+
+        fctx.beginPath();
+        if (!neighbors.n) { fctx.moveTo(x, y); fctx.lineTo(x + cellSize, y); }
+        if (!neighbors.s) { fctx.moveTo(x, y + cellSize); fctx.lineTo(x + cellSize, y + cellSize); }
+        if (!neighbors.w) { fctx.moveTo(x, y); fctx.lineTo(x, y + cellSize); }
+        if (!neighbors.e) { fctx.moveTo(x + cellSize, y); fctx.lineTo(x + cellSize, y + cellSize); }
+        fctx.stroke();
+      }
+    }
+
+    // Draw doors as gaps
+    fctx.strokeStyle = "#f8f6f0";
+    fctx.lineWidth = 4;
+    for (const door of floor.doors) {
+      const x = offsetX + (door.edge.cell.i - minI) * cellSize;
+      const y = offsetY + (door.edge.cell.j - minJ) * cellSize;
+      const doorSize = cellSize * 0.4;
+      const center = cellSize / 2;
+
+      fctx.beginPath();
+      switch (door.edge.dir) {
+        case "n": fctx.moveTo(x + center - doorSize/2, y); fctx.lineTo(x + center + doorSize/2, y); break;
+        case "s": fctx.moveTo(x + center - doorSize/2, y + cellSize); fctx.lineTo(x + center + doorSize/2, y + cellSize); break;
+        case "w": fctx.moveTo(x, y + center - doorSize/2); fctx.lineTo(x, y + center + doorSize/2); break;
+        case "e": fctx.moveTo(x + cellSize, y + center - doorSize/2); fctx.lineTo(x + cellSize, y + center + doorSize/2); break;
+      }
+      fctx.stroke();
+    }
+
+    // Draw windows as small rectangles
+    fctx.fillStyle = "#8a9aaa";
+    for (const win of floor.windows) {
+      const x = offsetX + (win.cell.i - minI) * cellSize;
+      const y = offsetY + (win.cell.j - minJ) * cellSize;
+      const winSize = cellSize * 0.25;
+
+      switch (win.dir) {
+        case "n": fctx.fillRect(x + cellSize/2 - winSize/2, y - 2, winSize, 4); break;
+        case "s": fctx.fillRect(x + cellSize/2 - winSize/2, y + cellSize - 2, winSize, 4); break;
+        case "w": fctx.fillRect(x - 2, y + cellSize/2 - winSize/2, 4, winSize); break;
+        case "e": fctx.fillRect(x + cellSize - 2, y + cellSize/2 - winSize/2, 4, winSize); break;
+      }
+    }
+
+    // Draw stairs as arrows
+    fctx.fillStyle = "#5a7a4a";
+    for (const stair of floor.stairs) {
+      const x = offsetX + (stair.cell.i - minI) * cellSize + cellSize / 2;
+      const y = offsetY + (stair.cell.j - minJ) * cellSize + cellSize / 2;
+      const arrowSize = cellSize * 0.3;
+
+      fctx.beginPath();
+      if (stair.up) {
+        // Up arrow
+        fctx.moveTo(x, y - arrowSize);
+        fctx.lineTo(x - arrowSize * 0.6, y + arrowSize * 0.3);
+        fctx.lineTo(x + arrowSize * 0.6, y + arrowSize * 0.3);
+      } else {
+        // Down arrow
+        fctx.moveTo(x, y + arrowSize);
+        fctx.lineTo(x - arrowSize * 0.6, y - arrowSize * 0.3);
+        fctx.lineTo(x + arrowSize * 0.6, y - arrowSize * 0.3);
+      }
+      fctx.closePath();
+      fctx.fill();
+    }
+
+    // Draw floor level label
+    fctx.fillStyle = "#3a3a2a";
+    fctx.font = "bold 12px 'Times New Roman', Georgia, serif";
+    fctx.textAlign = "left";
+    const levelLabel = floor.level === -1 ? "B" : floor.level === 0 ? "GF" : `${floor.level}F`;
+    fctx.fillText(levelLabel, 5, 15);
+  }
+
+  // Show building panel for selected building
+  function showBuildingPanel(buildingIndex) {
+    const panel = document.getElementById("buildingPanel");
+    const building = cityData.buildings[buildingIndex];
+    const area = polygonArea(building);
+    const data = buildingData[buildingIndex] || {};
+
+    document.getElementById("buildingTitle").textContent = `Building #${buildingIndex + 1}`;
+    document.getElementById("buildingArea").textContent = `${Math.round(area)} sq units`;
+    document.getElementById("buildingName").value = data.name || "";
+    document.getElementById("buildingNotes").value = data.notes || "";
+
+    // Show dwelling section if exists
+    const dwellingSection = document.getElementById("dwellingSection");
+    if (data.dwelling) {
+      dwellingSection.style.display = "block";
+      updateFloorTabs(data.dwelling);
+    } else {
+      dwellingSection.style.display = "none";
+    }
+
+    panel.classList.add("visible");
+  }
+
+  // Update floor tabs for dwelling
+  function updateFloorTabs(dwelling) {
+    const tabsContainer = document.getElementById("floorTabs");
+    tabsContainer.innerHTML = "";
+
+    dwelling.floors.forEach((floor, idx) => {
+      const tab = document.createElement("button");
+      tab.className = "floor-tab" + (idx === 0 ? " active" : "");
+      const label = floor.level === -1 ? "B" : floor.level === 0 ? "GF" : `${floor.level}F`;
+      tab.textContent = label;
+      tab.addEventListener("click", () => {
+        tabsContainer.querySelectorAll(".floor-tab").forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        renderFloorPreview(dwelling, idx);
+      });
+      tabsContainer.appendChild(tab);
+    });
+
+    // Render first floor
+    renderFloorPreview(dwelling, 0);
+  }
+
+  // Hide building panel
+  function hideBuildingPanel() {
+    document.getElementById("buildingPanel").classList.remove("visible");
+    selectedBuildingIndex = null;
+    render();
+  }
+
+  function fitCityToScreen() {
+    if (!cityData) return;
+    const { minX, maxX, minY, maxY } = cityData.bounds;
+    const padding = Math.max(maxX - minX, maxY - minY) * 0.05;
+
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    const scaleX = w / (maxX - minX + padding * 2);
+    const scaleY = h / (maxY - minY + padding * 2);
+    zoom = Math.min(scaleX, scaleY) * 0.95;
+    panX = (w / 2) - zoom * ((minX + maxX) / 2);
+    panY = (h / 2) - zoom * ((minY + maxY) / 2);
+  }
+
+  function drawCoordPath(coords) {
+    if (!coords || coords.length === 0) return;
+    ctx.beginPath();
+    ctx.moveTo(coords[0][0], coords[0][1]);
+    for (let i = 1; i < coords.length; i++) {
+      ctx.lineTo(coords[i][0], coords[i][1]);
+    }
+  }
+
+  function drawPolygonCoords(coords) {
+    if (!coords || coords.length === 0) return;
+    // coords is an array of rings, first is outer, rest are holes
+    ctx.beginPath();
+    for (const ring of coords) {
+      if (ring.length === 0) continue;
+      ctx.moveTo(ring[0][0], ring[0][1]);
+      for (let i = 1; i < ring.length; i++) {
+        ctx.lineTo(ring[i][0], ring[i][1]);
+      }
+      ctx.closePath();
+    }
+  }
+
+  function drawMultiPolygon(multiCoords) {
+    for (const polyCoords of multiCoords) {
+      drawPolygonCoords(polyCoords);
+    }
+  }
+
+  function renderCity() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+
+    // Background (water/outside area)
+    ctx.fillStyle = CITY_COLORS.background;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.save();
+    ctx.translate(panX, panY);
+    ctx.scale(zoom, zoom);
+
+    // Draw water areas first
+    if (cityData.water && cityData.water.length > 0) {
+      ctx.fillStyle = CITY_COLORS.water;
+      drawMultiPolygon(cityData.water);
+      ctx.fill();
+    }
+
+    // Draw earth (land)
+    if (cityData.earth) {
+      ctx.fillStyle = CITY_COLORS.earth;
+      drawPolygonCoords(cityData.earth);
+      ctx.fill();
+    }
+
+    // Draw fields
+    if (cityData.fields && cityData.fields.length > 0) {
+      ctx.fillStyle = CITY_COLORS.field;
+      drawMultiPolygon(cityData.fields);
+      ctx.fill();
+    }
+
+    // Draw greens (parks)
+    if (cityData.greens && cityData.greens.length > 0) {
+      ctx.fillStyle = CITY_COLORS.green;
+      drawMultiPolygon(cityData.greens);
+      ctx.fill();
+    }
+
+    // Draw squares/plazas
+    if (cityData.squares && cityData.squares.length > 0) {
+      ctx.fillStyle = CITY_COLORS.road;
+      drawMultiPolygon(cityData.squares);
+      ctx.fill();
+    }
+
+    // Draw rivers
+    for (const river of cityData.rivers) {
+      if (river.coordinates) {
+        const width = river.width || cityData.values?.riverWidth || 10;
+        ctx.strokeStyle = CITY_COLORS.water;
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        drawCoordPath(river.coordinates);
+        ctx.stroke();
+      }
+    }
+
+    // Draw roads
+    for (const road of cityData.roads) {
+      if (road.coordinates) {
+        const width = road.width || cityData.values?.roadWidth || 8;
+        // Road fill
+        ctx.strokeStyle = CITY_COLORS.road;
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        drawCoordPath(road.coordinates);
+        ctx.stroke();
+      }
+    }
+
+    // Draw planks (docks/piers)
+    for (const plank of cityData.planks) {
+      if (plank.coordinates) {
+        ctx.strokeStyle = CITY_COLORS.building;
+        ctx.lineWidth = plank.width || 4;
+        ctx.lineCap = "butt";
+        drawCoordPath(plank.coordinates);
+        ctx.stroke();
+      }
+    }
+
+    // Draw buildings
+    if (cityData.buildings && cityData.buildings.length > 0) {
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < cityData.buildings.length; i++) {
+        const building = cityData.buildings[i];
+        const isSelected = i === selectedBuildingIndex;
+        const hasData = buildingData[i] && (buildingData[i].name || buildingData[i].dwelling);
+
+        ctx.fillStyle = isSelected ? CITY_COLORS.buildingSelected :
+                        hasData ? "#b8c8a8" : CITY_COLORS.building;
+        ctx.strokeStyle = isSelected ? "#8a4020" : CITY_COLORS.buildingStroke;
+        ctx.lineWidth = isSelected ? 2 : 0.5;
+
+        drawPolygonCoords(building);
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+
+    // Draw prisms (special buildings like towers)
+    if (cityData.prisms && cityData.prisms.length > 0) {
+      ctx.fillStyle = "#a8a498";
+      ctx.strokeStyle = CITY_COLORS.buildingStroke;
+      ctx.lineWidth = 0.5;
+      for (const prism of cityData.prisms) {
+        drawPolygonCoords(prism);
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+
+    // Draw trees
+    if (cityData.trees && cityData.trees.length > 0) {
+      ctx.fillStyle = CITY_COLORS.tree;
+      if (Array.isArray(cityData.trees[0]) && typeof cityData.trees[0][0] === "number") {
+        // Array of points
+        for (const pt of cityData.trees) {
+          ctx.beginPath();
+          ctx.arc(pt[0], pt[1], 3, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else {
+        // Geometries
+        for (const tree of cityData.trees) {
+          if (tree.coordinates) {
+            ctx.beginPath();
+            ctx.arc(tree.coordinates[0], tree.coordinates[1], 3, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      }
+    }
+
+    // Draw walls
+    for (const wall of cityData.walls) {
+      if (wall.coordinates) {
+        const width = wall.width || cityData.values?.wallThickness || 7;
+        ctx.strokeStyle = CITY_COLORS.wall;
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+
+        // Walls are polygons, draw as closed path
+        const coords = wall.coordinates[0]; // outer ring
+        if (coords && coords.length > 0) {
+          ctx.beginPath();
+          ctx.moveTo(coords[0][0], coords[0][1]);
+          for (let i = 1; i < coords.length; i++) {
+            ctx.lineTo(coords[i][0], coords[i][1]);
+          }
+          ctx.closePath();
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw grid if enabled
+    if (showGrid) {
+      const { minX, maxX, minY, maxY } = cityData.bounds;
+      const gridSize = Math.pow(10, Math.floor(Math.log10(Math.max(maxX - minX, maxY - minY) / 5)));
+      const adjustedGridSize = gridSize * (gridSize < 100 ? 2 : 1);
+
+      ctx.strokeStyle = CITY_COLORS.grid;
+      ctx.lineWidth = 1 / zoom;
+
+      const startX = Math.floor(minX / adjustedGridSize) * adjustedGridSize;
+      const startY = Math.floor(minY / adjustedGridSize) * adjustedGridSize;
+
+      for (let x = startX; x <= maxX; x += adjustedGridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, minY);
+        ctx.lineTo(x, maxY);
+        ctx.stroke();
+      }
+      for (let y = startY; y <= maxY; y += adjustedGridSize) {
+        ctx.beginPath();
+        ctx.moveTo(minX, y);
+        ctx.lineTo(maxX, y);
+        ctx.stroke();
+      }
+    }
+
+    // Draw district labels
+    if (showLabels && cityData.districts) {
+      ctx.fillStyle = CITY_COLORS.district;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      for (const district of cityData.districts) {
+        if (district.name && district.coordinates) {
+          // Calculate centroid
+          const ring = district.coordinates[0];
+          let cx = 0, cy = 0;
+          for (const pt of ring) {
+            cx += pt[0];
+            cy += pt[1];
+          }
+          cx /= ring.length;
+          cy /= ring.length;
+
+          // Calculate district size for font scaling
+          let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+          for (const pt of ring) {
+            minX = Math.min(minX, pt[0]);
+            maxX = Math.max(maxX, pt[0]);
+            minY = Math.min(minY, pt[1]);
+            maxY = Math.max(maxY, pt[1]);
+          }
+          const size = Math.min(maxX - minX, maxY - minY);
+          const fontSize = Math.max(12, Math.min(size / 6, 80));
+
+          ctx.font = `bold ${fontSize}px "Times New Roman", Georgia, serif`;
+          ctx.fillStyle = "rgba(40, 40, 30, 0.7)";
+
+          // Draw text with slight letter spacing effect
+          const name = district.name.toUpperCase();
+          ctx.fillText(name, cx, cy);
+        }
+      }
+    }
+
+    ctx.restore();
+
+    // Draw compass rose
+    drawCompassRose(w - 70, h - 70, 50);
+
+    // Draw scale bar
+    drawScaleBar(30, h - 40);
+
+    // Draw title
+    if (cityData.name || cityData.values?.name) {
+      const title = cityData.name || cityData.values?.name || "City Map";
+      ctx.fillStyle = "#1a1a1a";
+      ctx.font = "bold 24px 'Times New Roman', Georgia, serif";
+      ctx.textAlign = "center";
+      ctx.fillText(title, w / 2, 35);
+    }
+  }
+
+  function drawCompassRose(cx, cy, size) {
+    ctx.save();
+    ctx.translate(cx, cy);
+
+    // Outer circle
+    ctx.strokeStyle = "rgba(40, 40, 30, 0.5)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(0, 0, size, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Cardinal directions
+    const r = size * 0.85;
+    ctx.fillStyle = "rgba(40, 40, 30, 0.8)";
+    ctx.font = "bold 14px 'Times New Roman', Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("N", 0, -r);
+
+    // Draw star points
+    ctx.beginPath();
+    for (let i = 0; i < 8; i++) {
+      const angle = (i * Math.PI / 4) - Math.PI / 2;
+      const len = i % 2 === 0 ? size * 0.6 : size * 0.35;
+      ctx.moveTo(0, 0);
+      ctx.lineTo(Math.cos(angle) * len, Math.sin(angle) * len);
+    }
+    ctx.strokeStyle = "rgba(40, 40, 30, 0.6)";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Filled north arrow
+    ctx.fillStyle = "rgba(40, 40, 30, 0.7)";
+    ctx.beginPath();
+    ctx.moveTo(0, -size * 0.5);
+    ctx.lineTo(-6, 0);
+    ctx.lineTo(0, -size * 0.15);
+    ctx.lineTo(6, 0);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function drawScaleBar(x, y) {
+    if (!cityData) return;
+
+    const { minX, maxX } = cityData.bounds;
+    const mapWidth = maxX - minX;
+
+    // Calculate a nice round number for the scale
+    const screenWidth = 150; // pixels for scale bar
+    const mapDistance = screenWidth / zoom;
+
+    // Round to a nice number
+    const magnitude = Math.pow(10, Math.floor(Math.log10(mapDistance)));
+    let niceDistance = magnitude;
+    if (mapDistance / magnitude >= 5) niceDistance = magnitude * 5;
+    else if (mapDistance / magnitude >= 2) niceDistance = magnitude * 2;
+
+    const barWidth = niceDistance * zoom;
+
+    ctx.fillStyle = "rgba(40, 40, 30, 0.8)";
+    ctx.strokeStyle = "rgba(40, 40, 30, 0.8)";
+    ctx.lineWidth = 2;
+
+    // Draw bar
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + barWidth, y);
+    ctx.stroke();
+
+    // End caps
+    ctx.beginPath();
+    ctx.moveTo(x, y - 5);
+    ctx.lineTo(x, y + 5);
+    ctx.moveTo(x + barWidth, y - 5);
+    ctx.lineTo(x + barWidth, y + 5);
+    ctx.stroke();
+
+    // Label
+    ctx.font = "12px 'Times New Roman', Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText("0", x, y - 10);
+    ctx.textAlign = "right";
+    const label = niceDistance >= 1000 ? `${niceDistance/1000}km` : `${niceDistance}m`;
+    ctx.fillText(label, x + barWidth, y - 10);
+  }
+
+  // --- Hex map rendering ---
+
+  // Draw a mini city icon at the given position
+  function drawMiniCity(cx, cy, size, type) {
+    // Size varies by settlement type
+    const scale = type === 'city' ? 1.3 : type === 'town' ? 1.0 : 0.7;
+    const s = size * scale;
+
+    ctx.fillStyle = HEX_COLORS.townFill;
+    ctx.strokeStyle = HEX_COLORS.townStroke;
+    ctx.lineWidth = 0.8;
+
+    // Draw a cluster of buildings
+    const buildings = type === 'city' ? [
+      // Central keep/citadel
+      { x: 0, y: 0, w: s * 0.5, h: s * 0.6 },
+      // Surrounding buildings
+      { x: -s * 0.5, y: -s * 0.2, w: s * 0.35, h: s * 0.4 },
+      { x: s * 0.35, y: -s * 0.15, w: s * 0.3, h: s * 0.35 },
+      { x: -s * 0.35, y: s * 0.35, w: s * 0.4, h: s * 0.3 },
+      { x: s * 0.25, y: s * 0.3, w: s * 0.35, h: s * 0.35 },
+      { x: -s * 0.6, y: s * 0.15, w: s * 0.25, h: s * 0.25 },
+      { x: s * 0.55, y: s * 0.05, w: s * 0.25, h: s * 0.3 },
+    ] : type === 'town' ? [
+      // Central building
+      { x: 0, y: 0, w: s * 0.45, h: s * 0.5 },
+      // Side buildings
+      { x: -s * 0.4, y: 0, w: s * 0.3, h: s * 0.35 },
+      { x: s * 0.35, y: -s * 0.1, w: s * 0.28, h: s * 0.32 },
+      { x: 0, y: s * 0.35, w: s * 0.35, h: s * 0.25 },
+    ] : [
+      // Village - just a few small buildings
+      { x: 0, y: 0, w: s * 0.4, h: s * 0.35 },
+      { x: -s * 0.3, y: s * 0.15, w: s * 0.25, h: s * 0.22 },
+      { x: s * 0.25, y: s * 0.1, w: s * 0.22, h: s * 0.25 },
+    ];
+
+    // Draw wall circle for cities
+    if (type === 'city') {
+      ctx.strokeStyle = HEX_COLORS.townStroke;
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, s * 0.85, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Draw buildings
+    ctx.fillStyle = HEX_COLORS.townFill;
+    ctx.strokeStyle = HEX_COLORS.townStroke;
+    ctx.lineWidth = 0.6;
+    for (const b of buildings) {
+      ctx.fillRect(cx + b.x - b.w/2, cy + b.y - b.h/2, b.w, b.h);
+      ctx.strokeRect(cx + b.x - b.w/2, cy + b.y - b.h/2, b.w, b.h);
+    }
+  }
+
+  // Draw a danger icon (ruined tower/dungeon entrance)
+  function drawDangerIcon(cx, cy, size) {
+    const s = size;
+
+    ctx.fillStyle = HEX_COLORS.dangerFill;
+    ctx.strokeStyle = HEX_COLORS.dangerStroke;
+    ctx.lineWidth = 0.8;
+
+    // Draw a ruined tower shape
+    ctx.beginPath();
+    // Base
+    ctx.moveTo(cx - s * 0.4, cy + s * 0.4);
+    ctx.lineTo(cx - s * 0.35, cy - s * 0.2);
+    // Crenellations (ruined)
+    ctx.lineTo(cx - s * 0.3, cy - s * 0.25);
+    ctx.lineTo(cx - s * 0.25, cy - s * 0.4);
+    ctx.lineTo(cx - s * 0.1, cy - s * 0.35);
+    ctx.lineTo(cx, cy - s * 0.5);
+    ctx.lineTo(cx + s * 0.15, cy - s * 0.3);
+    ctx.lineTo(cx + s * 0.25, cy - s * 0.45);
+    ctx.lineTo(cx + s * 0.35, cy - s * 0.25);
+    // Right side
+    ctx.lineTo(cx + s * 0.35, cy - s * 0.15);
+    ctx.lineTo(cx + s * 0.4, cy + s * 0.4);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    // Door/entrance
+    ctx.fillStyle = HEX_COLORS.dangerStroke;
+    ctx.fillRect(cx - s * 0.1, cy + s * 0.1, s * 0.2, s * 0.3);
+  }
+
+  function renderHex() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+
+    // Fill background with water color
+    ctx.fillStyle = HEX_COLORS.background;
+    ctx.fillRect(0, 0, w, h);
+
+    if (!map) return;
+
+    ctx.save();
+    ctx.translate(panX, panY);
+    ctx.scale(zoom, zoom);
+
+    // First pass: draw all hex terrain
+    for (const rec of hitIndex) {
+      const hexObj = rec.hexObj;
+      const terrain = hexObj.terrain || "unknown";
+      const fill = getTerrainColor(terrain);
+
+      drawPoly(rec.poly);
+      ctx.fillStyle = fill;
+      ctx.fill();
+    }
+
+    // Second pass: draw grid
+    if (showGrid) {
+      ctx.strokeStyle = HEX_COLORS.grid;
+      ctx.lineWidth = 1 / zoom;
+      for (const rec of hitIndex) {
+        drawPoly(rec.poly);
+        ctx.stroke();
+      }
+    }
+
+    // Third pass: draw settlements and dangers
+    const iconSize = hexSize * 0.6;
+    for (const rec of hitIndex) {
+      const hexObj = rec.hexObj;
+
+      if (hexObj.town) {
+        drawMiniCity(rec.cx, rec.cy, iconSize, hexObj.town.type || 'town');
+      }
+
+      if (hexObj.danger) {
+        drawDangerIcon(rec.cx, rec.cy, iconSize);
+      }
+    }
+
+    // Fourth pass: draw labels
+    if (showLabels) {
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+
+      for (const rec of hitIndex) {
+        const hexObj = rec.hexObj;
+        const label = hexObj.town?.name || hexObj.danger?.name;
+
+        if (label) {
+          const fontSize = Math.max(8, 10);
+          ctx.font = `bold ${fontSize}px "Times New Roman", Georgia, serif`;
+          ctx.fillStyle = HEX_COLORS.label;
+
+          // Draw text with slight shadow for readability
+          ctx.shadowColor = "rgba(255,255,255,0.8)";
+          ctx.shadowBlur = 2;
+          ctx.fillText(label, rec.cx, rec.cy + hexSize * 0.5);
+          ctx.shadowBlur = 0;
+        }
+      }
+    }
+
+    ctx.restore();
+
+    // Draw compass rose and scale bar (in screen space)
+    drawHexCompassRose(w - 70, h - 70, 50);
+    drawHexScaleBar(30, h - 40);
+
+    // Draw title
+    if (map.name) {
+      ctx.fillStyle = "rgba(40, 35, 25, 0.9)";
+      ctx.font = "bold 24px 'Times New Roman', Georgia, serif";
+      ctx.textAlign = "center";
+      ctx.fillText(map.name, w / 2, 35);
+    }
+  }
+
+  function drawHexCompassRose(cx, cy, size) {
+    ctx.save();
+    ctx.translate(cx, cy);
+
+    // Outer circle
+    ctx.strokeStyle = "rgba(60, 55, 45, 0.5)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(0, 0, size, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Cardinal directions
+    const r = size * 0.85;
+    ctx.fillStyle = "rgba(60, 55, 45, 0.8)";
+    ctx.font = "bold 14px 'Times New Roman', Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("N", 0, -r);
+
+    // Draw star points
+    ctx.beginPath();
+    for (let i = 0; i < 8; i++) {
+      const angle = (i * Math.PI / 4) - Math.PI / 2;
+      const len = i % 2 === 0 ? size * 0.6 : size * 0.35;
+      ctx.moveTo(0, 0);
+      ctx.lineTo(Math.cos(angle) * len, Math.sin(angle) * len);
+    }
+    ctx.strokeStyle = "rgba(60, 55, 45, 0.6)";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Filled north arrow
+    ctx.fillStyle = "rgba(60, 55, 45, 0.7)";
+    ctx.beginPath();
+    ctx.moveTo(0, -size * 0.5);
+    ctx.lineTo(-6, 0);
+    ctx.lineTo(0, -size * 0.15);
+    ctx.lineTo(6, 0);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function drawHexScaleBar(x, y) {
+    if (!map || !bounds) return;
+
+    // Estimate scale: each hex is roughly 6 miles/10km across in typical fantasy maps
+    const hexWidthMiles = 6;
+    const hexWidthKm = 10;
+
+    // Calculate how many hexes fit in 150 screen pixels
+    const screenWidth = 150;
+    const worldWidth = screenWidth / zoom;
+    const hexesInBar = worldWidth / (hexSize * 1.5);
+    const distanceMiles = hexesInBar * hexWidthMiles;
+
+    // Round to nice number
+    const magnitude = Math.pow(10, Math.floor(Math.log10(distanceMiles)));
+    let niceDistance = magnitude;
+    if (distanceMiles / magnitude >= 5) niceDistance = magnitude * 5;
+    else if (distanceMiles / magnitude >= 2) niceDistance = magnitude * 2;
+
+    const barWidth = (niceDistance / hexWidthMiles) * (hexSize * 1.5) * zoom;
+
+    ctx.fillStyle = "rgba(60, 55, 45, 0.8)";
+    ctx.strokeStyle = "rgba(60, 55, 45, 0.8)";
+    ctx.lineWidth = 2;
+
+    // Draw bar
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + barWidth, y);
+    ctx.stroke();
+
+    // End caps
+    ctx.beginPath();
+    ctx.moveTo(x, y - 5);
+    ctx.lineTo(x, y + 5);
+    ctx.moveTo(x + barWidth, y - 5);
+    ctx.lineTo(x + barWidth, y + 5);
+    ctx.stroke();
+
+    // Label
+    ctx.font = "12px 'Times New Roman', Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText("0", x, y - 10);
+    ctx.textAlign = "right";
+    ctx.fillText(`${niceDistance} mi`, x + barWidth, y - 10);
+  }
+
+  // --- Main render function ---
+  function render() {
+    if (mapType === 'city') {
+      renderCity();
+    } else if (mapType === 'hex') {
+      renderHex();
+    } else {
+      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    }
+  }
+
+  function fitToScreen() {
+    if (mapType === 'city') {
+      fitCityToScreen();
+    } else if (mapType === 'hex') {
+      fitHexToScreen();
+    }
+    render();
+  }
+
+  function setMeta() {
+    if (mapType === 'city') {
+      const name = cityData?.name || cityData?.values?.name || "City Map";
+      const gen = cityData?.values?.generator || "unknown";
+      const ver = cityData?.values?.version || "";
+      meta.textContent = `${name} • generator=${gen} ${ver}`;
+    } else {
+      const tags = (map.bp && map.bp.tags) ? map.bp.tags.join(", ") : "";
+      meta.textContent = `${map.name || "Untitled"} • layout=${map.layout} • tags=${tags}`;
+    }
+  }
+
+  function setLegend() {
+    legend.innerHTML = "";
+    if (mapType === 'city') {
+      // No legend for city maps
+      return;
+    }
+
+    const used = new Set();
+    for (const k in map.hexes) {
+      const t = map.hexes[k].terrain || "unknown";
+      used.add(t);
+    }
+    [...used].sort().slice(0, 24).forEach(t => {
+      const chip = document.createElement("span");
+      chip.className = "chip clickable";
+      chip.dataset.terrain = t;
+      const c = getTerrainColor(t);
+      chip.style.borderColor = "#5a5a4a";
+      chip.style.background = "#e8e4d8";
+      chip.style.color = "#3a3a2a";
+      chip.innerHTML = `<span class="color-swatch" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${c};margin-right:8px;vertical-align:-1px;border:1px solid #8a8a7a"></span>${t}`;
+      chip.title = "Click to change color";
+
+      chip.addEventListener("click", () => {
+        openColorPicker(t, chip);
+      });
+
+      legend.appendChild(chip);
+    });
+  }
+
+  function openColorPicker(terrain, chip) {
+    const picker = document.getElementById("colorPicker");
+    const currentColor = getTerrainColor(terrain);
+    picker.value = currentColor;
+
+    // Position near the chip
+    const rect = chip.getBoundingClientRect();
+    picker.style.left = rect.left + "px";
+    picker.style.top = rect.bottom + "px";
+
+    // Handle color change
+    const onChange = (e) => {
+      const newColor = e.target.value;
+      customColors[terrain] = newColor;
+
+      // Update the swatch in the chip
+      const swatch = chip.querySelector(".color-swatch");
+      if (swatch) swatch.style.background = newColor;
+
+      // Update HEX_COLORS.background if water changed
+      if (terrain === "water") {
+        HEX_COLORS.background = newColor;
+      }
+
+      // Show export button since we have changes
+      document.getElementById("export").style.display = "inline-block";
+
+      render();
+    };
+
+    picker.addEventListener("input", onChange);
+    picker.addEventListener("change", () => {
+      picker.removeEventListener("input", onChange);
+    }, { once: true });
+
+    picker.click();
+  }
+
+  function exportMap() {
+    if (!map) return;
+
+    // Add custom colors and building data to the map data
+    const exportData = JSON.parse(JSON.stringify(map));
+    if (Object.keys(customColors).length > 0) {
+      exportData.customColors = { ...customColors };
+    }
+    if (Object.keys(buildingData).length > 0) {
+      exportData.buildingData = { ...buildingData };
+    }
+
+    // Create download
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = currentFileName.replace(/\.json$/i, "_custom.json");
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function screenToWorld(sx, sy) {
+    return { x: (sx - panX) / zoom, y: (sy - panY) / zoom };
+  }
+
+  function findHexAtWorld(x, y) {
+    for (let i = 0; i < hitIndex.length; i++) {
+      const rec = hitIndex[i];
+      if (pointInPoly(x, y, rec.poly)) return rec;
+    }
+    return null;
+  }
+
+  function showTip(rec, clientX, clientY) {
+    const h = rec.hexObj;
+    const terrain = h.terrain || "unknown";
+
+    let title = `Hex q${rec.q} r${rec.r}`;
+    let lines = [`<div class="k">terrain</div><div>${terrain}</div>`];
+
+    if (h.town) {
+      lines.push(`<div class="k" style="margin-top:8px">town</div><div><b>${h.town.name}</b> (${h.town.type})</div>`);
+      if (h.town.info) lines.push(`<div style="opacity:.9;margin-top:4px">${escapeHtml(h.town.info)}</div>`);
+      if (h.town.link) lines.push(`<div style="margin-top:6px;opacity:.9">Click to open generator link</div>`);
+    }
+    if (h.danger) {
+      lines.push(`<div class="k" style="margin-top:8px">danger</div><div><b>${h.danger.name}</b></div>`);
+      if (h.danger.link) lines.push(`<div style="margin-top:6px;opacity:.9">Click to open dungeon link</div>`);
+    }
+
+    tip.innerHTML = `<div class="t">${title}</div>${lines.join("")}`;
+    tip.style.display = "block";
+    tip.style.left = `${clientX + 14}px`;
+    tip.style.top  = `${clientY + 14}px`;
+  }
+
+  function showCityTip(district, clientX, clientY) {
+    tip.innerHTML = `<div class="t">${district.name}</div>`;
+    tip.style.display = "block";
+    tip.style.left = `${clientX + 14}px`;
+    tip.style.top  = `${clientY + 14}px`;
+  }
+
+  function hideTip() { tip.style.display = "none"; }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replaceAll("&","&amp;").replaceAll("<","&lt;")
+      .replaceAll(">","&gt;").replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  function detectMapType(data) {
+    if (data.type === "FeatureCollection" && data.features) {
+      return 'city';
+    }
+    if (data.hexes && data.layout) {
+      return 'hex';
+    }
+    return null;
+  }
+
+  // UI wiring
+  document.getElementById("grid").addEventListener("click", () => { showGrid = !showGrid; render(); });
+  document.getElementById("labels").addEventListener("click", () => { showLabels = !showLabels; render(); });
+  document.getElementById("fit").addEventListener("click", fitToScreen);
+  document.getElementById("export").addEventListener("click", exportMap);
+
+  document.getElementById("file").addEventListener("change", async (e) => {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    const txt = await f.text();
+    const data = JSON.parse(txt);
+
+    currentFileName = f.name;
+    mapType = detectMapType(data);
+
+    // Reset custom colors and load any saved in the file
+    customColors = {};
+    if (data.customColors) {
+      customColors = { ...data.customColors };
+      // Update HEX_COLORS.background if water color was customized
+      if (customColors.water) {
+        HEX_COLORS.background = customColors.water;
+      }
+      // Show export button if there are custom colors
+      document.getElementById("export").style.display = "inline-block";
+    } else {
+      // Reset to default water background
+      HEX_COLORS.background = "#9a9a8a";
+      document.getElementById("export").style.display = "none";
+    }
+
+    // Reset building data and load any saved
+    buildingData = {};
+    selectedBuildingIndex = null;
+    document.getElementById("buildingPanel").classList.remove("visible");
+    if (data.buildingData) {
+      buildingData = { ...data.buildingData };
+    }
+
+    if (mapType === 'city') {
+      map = data;
+      cityData = parseCityMap(data);
+      // Try to get name from filename if not in data
+      if (!cityData.name && !cityData.values?.name) {
+        cityData.name = f.name.replace(/\.json$/i, '').replace(/_/g, ' ');
+        // Capitalize first letter of each word
+        cityData.name = cityData.name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      }
+      setMeta();
+      setLegend();
+      fitCityToScreen();
+      render();
+    } else if (mapType === 'hex') {
+      map = data;
+      cityData = null;
+      setMeta();
+      setLegend();
+      rebuildHitIndex();
+      fitHexToScreen();
+      render();
+    } else {
+      alert("Unknown map format. Expected either a Perilous Shores export (with hexes/layout) or a city map GeoJSON.");
+    }
+  });
+
+  // Mouse interactions
+  canvas.addEventListener("mousedown", (e) => {
+    isPanning = true; lastX = e.clientX; lastY = e.clientY;
+  });
+  window.addEventListener("mouseup", () => { isPanning = false; });
+  window.addEventListener("mousemove", (e) => {
+    if (isPanning) {
+      panX += (e.clientX - lastX);
+      panY += (e.clientY - lastY);
+      lastX = e.clientX; lastY = e.clientY;
+      render();
+      return;
+    }
+    if (!map) return;
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+    const w = screenToWorld(sx, sy);
+
+    if (mapType === 'hex') {
+      const rec = findHexAtWorld(w.x, w.y);
+      if (rec) showTip(rec, e.clientX - rect.left, e.clientY - rect.top);
+      else hideTip();
+    } else if (mapType === 'city') {
+      // For city maps, check if hovering over a district
+      // For now, just hide tip (could implement district hover later)
+      hideTip();
+    }
+  });
+
+  canvas.addEventListener("click", (e) => {
+    if (!map) return;
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+    const w = screenToWorld(sx, sy);
+
+    if (mapType === 'hex') {
+      const rec = findHexAtWorld(w.x, w.y);
+      if (!rec) return;
+      const h = rec.hexObj;
+      const url = h.town?.link || h.danger?.link;
+      if (url) window.open(url, "_blank", "noopener,noreferrer");
+    } else if (mapType === 'city') {
+      const buildingIdx = findBuildingAtWorld(w.x, w.y);
+      if (buildingIdx !== null) {
+        selectedBuildingIndex = buildingIdx;
+        showBuildingPanel(buildingIdx);
+        render();
+      }
+    }
+  });
+
+  canvas.addEventListener("wheel", (e) => {
+    if (!map) return;
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+    const before = screenToWorld(sx, sy);
+
+    const delta = Math.sign(e.deltaY);
+    const factor = delta > 0 ? 0.9 : 1.1;
+    zoom = Math.max(0.01, Math.min(50, zoom * factor));
+
+    const after = screenToWorld(sx, sy);
+    panX += (after.x - before.x) * zoom;
+    panY += (after.y - before.y) * zoom;
+
+    render();
+  }, { passive:false });
+
+  // Building panel event handlers
+  document.getElementById("closeBuildingPanel").addEventListener("click", hideBuildingPanel);
+
+  document.getElementById("generateDwelling").addEventListener("click", () => {
+    if (selectedBuildingIndex === null) return;
+
+    const dwelling = generateDwelling(selectedBuildingIndex);
+    if (!buildingData[selectedBuildingIndex]) {
+      buildingData[selectedBuildingIndex] = {};
+    }
+    buildingData[selectedBuildingIndex].dwelling = dwelling;
+
+    // Show dwelling section
+    document.getElementById("dwellingSection").style.display = "block";
+    updateFloorTabs(dwelling);
+    render();
+
+    // Mark that we have unsaved changes
+    document.getElementById("export").style.display = "inline-block";
+  });
+
+  document.getElementById("saveBuildingInfo").addEventListener("click", () => {
+    if (selectedBuildingIndex === null) return;
+
+    const name = document.getElementById("buildingName").value.trim();
+    const notes = document.getElementById("buildingNotes").value.trim();
+
+    if (!buildingData[selectedBuildingIndex]) {
+      buildingData[selectedBuildingIndex] = {};
+    }
+
+    if (name) buildingData[selectedBuildingIndex].name = name;
+    else delete buildingData[selectedBuildingIndex].name;
+
+    if (notes) buildingData[selectedBuildingIndex].notes = notes;
+    else delete buildingData[selectedBuildingIndex].notes;
+
+    // Clean up empty entries
+    if (Object.keys(buildingData[selectedBuildingIndex]).length === 0) {
+      delete buildingData[selectedBuildingIndex];
+    }
+
+    render();
+    document.getElementById("export").style.display = "inline-block";
+  });
+
+  window.addEventListener("resize", resize);
+  resize();
+})();
+</script>
+</body>
+</html>
