@@ -1,0 +1,1339 @@
+{
+  "simulation_id": "sim_5cycle_v3",
+  "current_cycle": 5,
+  "current_turn": 3,
+  "current_player": 1,
+  "phase": "action",
+  "districts": {
+    "Palace": {
+      "id": "DIST_001",
+      "total_vp": 15,
+      "squares": {
+        "PAL_01": {
+          "name": "Throne Room",
+          "vp": 4,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_02",
+            "PAL_04"
+          ]
+        },
+        "PAL_02": {
+          "name": "Royal Chamber",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_01",
+            "PAL_03",
+            "PAL_05"
+          ]
+        },
+        "PAL_03": {
+          "name": "Grand Hall",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_02",
+            "PAL_06"
+          ]
+        },
+        "PAL_04": {
+          "name": "Council Room",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_01",
+            "PAL_05",
+            "PAL_07"
+          ]
+        },
+        "PAL_05": {
+          "name": "Royal Garden",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_02",
+            "PAL_04",
+            "PAL_06",
+            "PAL_08"
+          ]
+        },
+        "PAL_06": {
+          "name": "Courtyard",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_03",
+            "PAL_05",
+            "PAL_09"
+          ]
+        },
+        "PAL_07": {
+          "name": "Guard Post",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_04",
+            "PAL_08"
+          ]
+        },
+        "PAL_08": {
+          "name": "Servant Quarters",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_05",
+            "PAL_07",
+            "PAL_09"
+          ]
+        },
+        "PAL_09": {
+          "name": "Dungeon Access",
+          "vp": -1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "PAL_06",
+            "PAL_08"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Noble",
+      "linked_coterie": "Noble",
+      "special_ability": "Controller may adjust any player's exposure by \u00b11"
+    },
+    "Market": {
+      "id": "DIST_002",
+      "total_vp": 16,
+      "squares": {
+        "MKT_01": {
+          "name": "Grand Exchange",
+          "vp": 4,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_02",
+            "MKT_05"
+          ]
+        },
+        "MKT_02": {
+          "name": "Merchant Guild",
+          "vp": 3,
+          "influence": 2,
+          "controller": 3,
+          "adjacent": [
+            "MKT_01",
+            "MKT_03",
+            "MKT_06"
+          ]
+        },
+        "MKT_03": {
+          "name": "Banking House",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_02",
+            "MKT_04",
+            "MKT_07"
+          ]
+        },
+        "MKT_04": {
+          "name": "Silk Bazaar",
+          "vp": 2,
+          "influence": 3,
+          "controller": 2,
+          "adjacent": [
+            "MKT_03",
+            "MKT_08"
+          ]
+        },
+        "MKT_05": {
+          "name": "Spice Stalls",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_01",
+            "MKT_06"
+          ]
+        },
+        "MKT_06": {
+          "name": "Fishmonger Row",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_02",
+            "MKT_05",
+            "MKT_07"
+          ]
+        },
+        "MKT_07": {
+          "name": "Tinker's Corner",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_03",
+            "MKT_06",
+            "MKT_08"
+          ]
+        },
+        "MKT_08": {
+          "name": "Beggar's Alley",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "MKT_04",
+            "MKT_07"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Commercial",
+      "linked_coterie": "Commerce",
+      "special_ability": "Controller gains 1 gold at start of turn"
+    },
+    "Temple": {
+      "id": "DIST_003",
+      "total_vp": 10,
+      "squares": {
+        "TMP_01": {
+          "name": "High Altar",
+          "vp": 4,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_02",
+            "TMP_04"
+          ]
+        },
+        "TMP_02": {
+          "name": "Inner Sanctum",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_01",
+            "TMP_03",
+            "TMP_05"
+          ]
+        },
+        "TMP_03": {
+          "name": "Chapel",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_02",
+            "TMP_06"
+          ]
+        },
+        "TMP_04": {
+          "name": "Cloister",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_01",
+            "TMP_05"
+          ]
+        },
+        "TMP_05": {
+          "name": "Graveyard",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_02",
+            "TMP_04",
+            "TMP_06"
+          ]
+        },
+        "TMP_06": {
+          "name": "Ossuary",
+          "vp": -1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "TMP_03",
+            "TMP_05"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Religious",
+      "linked_coterie": "Religious",
+      "special_ability": "Controller gains 1 VP at end of each cycle"
+    },
+    "Barracks": {
+      "id": "DIST_004",
+      "total_vp": 11,
+      "squares": {
+        "BAR_01": {
+          "name": "Commander's Tower",
+          "vp": 4,
+          "influence": 3,
+          "controller": 1,
+          "adjacent": [
+            "BAR_02",
+            "BAR_04"
+          ]
+        },
+        "BAR_02": {
+          "name": "Armory",
+          "vp": 3,
+          "influence": 5,
+          "controller": 3,
+          "adjacent": [
+            "BAR_01",
+            "BAR_03",
+            "BAR_05"
+          ]
+        },
+        "BAR_03": {
+          "name": "Training Yard",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "BAR_02"
+          ]
+        },
+        "BAR_04": {
+          "name": "Stables",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "BAR_01",
+            "BAR_05"
+          ]
+        },
+        "BAR_05": {
+          "name": "Mess Hall",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "BAR_02",
+            "BAR_04",
+            "BAR_06"
+          ]
+        },
+        "BAR_06": {
+          "name": "Barricades",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "BAR_05",
+            "BAR_07"
+          ]
+        },
+        "BAR_07": {
+          "name": "Latrine",
+          "vp": -1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "BAR_06"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Military",
+      "linked_coterie": "Military",
+      "special_ability": "Controller may remove 1 influence from any square per turn"
+    },
+    "Docks": {
+      "id": "DIST_005",
+      "total_vp": 16,
+      "squares": {
+        "DOC_01": {
+          "name": "Harbormaster Office",
+          "vp": 4,
+          "influence": 4,
+          "controller": 1,
+          "adjacent": [
+            "DOC_02",
+            "DOC_05"
+          ]
+        },
+        "DOC_02": {
+          "name": "Customs House",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_01",
+            "DOC_03"
+          ]
+        },
+        "DOC_03": {
+          "name": "Shipwright",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_02",
+            "DOC_04"
+          ]
+        },
+        "DOC_04": {
+          "name": "Warehouse Row",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_03",
+            "DOC_08"
+          ]
+        },
+        "DOC_05": {
+          "name": "Dry Dock",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_01",
+            "DOC_06"
+          ]
+        },
+        "DOC_06": {
+          "name": "Sailor's Tavern",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_05",
+            "DOC_07"
+          ]
+        },
+        "DOC_07": {
+          "name": "Fish Market",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_06",
+            "DOC_08"
+          ]
+        },
+        "DOC_08": {
+          "name": "Smuggler's Cove",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "DOC_04",
+            "DOC_07"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Maritime",
+      "linked_coterie": "Maritime",
+      "special_ability": "Controller may move 1 influence between adjacent districts"
+    },
+    "Academy": {
+      "id": "DIST_006",
+      "total_vp": 11,
+      "squares": {
+        "ACA_01": {
+          "name": "Grand Library",
+          "vp": 4,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_02",
+            "ACA_04"
+          ]
+        },
+        "ACA_02": {
+          "name": "Dean's Hall",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_01",
+            "ACA_03",
+            "ACA_05"
+          ]
+        },
+        "ACA_03": {
+          "name": "Alchemy Lab",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_02",
+            "ACA_06"
+          ]
+        },
+        "ACA_04": {
+          "name": "Lecture Hall",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_01",
+            "ACA_05"
+          ]
+        },
+        "ACA_05": {
+          "name": "Student Commons",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_02",
+            "ACA_04",
+            "ACA_06"
+          ]
+        },
+        "ACA_06": {
+          "name": "Basement Archives",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "ACA_03",
+            "ACA_05"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Academic",
+      "linked_coterie": "Academic",
+      "special_ability": "Controller draws 1 extra card when recruiting"
+    },
+    "Gardens": {
+      "id": "DIST_007",
+      "total_vp": 11,
+      "squares": {
+        "GAR_01": {
+          "name": "Thieves' Guild",
+          "vp": 4,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_02"
+          ]
+        },
+        "GAR_02": {
+          "name": "Gambling Den",
+          "vp": 3,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_01",
+            "GAR_03",
+            "GAR_04"
+          ]
+        },
+        "GAR_03": {
+          "name": "Pleasure House",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_02",
+            "GAR_05"
+          ]
+        },
+        "GAR_04": {
+          "name": "Hedged Maze",
+          "vp": 2,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_02",
+            "GAR_05",
+            "GAR_06"
+          ]
+        },
+        "GAR_05": {
+          "name": "Fountain Plaza",
+          "vp": 1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_03",
+            "GAR_04",
+            "GAR_07"
+          ]
+        },
+        "GAR_06": {
+          "name": "Opium Den",
+          "vp": 0,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_04",
+            "GAR_07"
+          ]
+        },
+        "GAR_07": {
+          "name": "Sewer Entrance",
+          "vp": -1,
+          "influence": 0,
+          "controller": null,
+          "adjacent": [
+            "GAR_05",
+            "GAR_06"
+          ]
+        }
+      },
+      "district_controller": null,
+      "linked_faction": "Criminal",
+      "linked_coterie": "Criminal",
+      "special_ability": "Controller may look at top card of event deck"
+    }
+  },
+  "players": {
+    "1": {
+      "player_id": 1,
+      "agent_type": "strategic",
+      "gold": 4,
+      "influence_pool": 9,
+      "exposure": 0,
+      "vp": 110,
+      "conspiracy": [
+        {
+          "id": "AGENT_013",
+          "name": "Captain Varro",
+          "subtitle": "City Watch Commander",
+          "faction": "Military",
+          "level": 3,
+          "influence": 5,
+          "gold": 3,
+          "exposure": 2,
+          "abilities": [
+            "2 Remove one influence from any district.",
+            "4 Place three influence in Barracks."
+          ],
+          "position": 1,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "gold",
+              "old_value": 1,
+              "new_value": 2,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            },
+            {
+              "stat": "influence",
+              "old_value": 4,
+              "new_value": 5,
+              "cost": 4,
+              "stat_upgrade_number": 2,
+              "total_upgrade_number": 3
+            },
+            {
+              "stat": "gold",
+              "old_value": 2,
+              "new_value": 3,
+              "cost": 4,
+              "stat_upgrade_number": 2,
+              "total_upgrade_number": 4
+            }
+          ]
+        },
+        {
+          "id": "AGENT_031",
+          "name": "Banker Rothwell",
+          "subtitle": "Money Lender",
+          "faction": "Commercial",
+          "level": 1,
+          "influence": 1,
+          "gold": 8,
+          "exposure": 2,
+          "abilities": [
+            "2 Gain 3 crowns.",
+            "4 Gain 5 crowns but increase exposure by 1."
+          ],
+          "position": 2,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_037",
+          "name": "Captain Blackbeard",
+          "subtitle": "Privateer",
+          "faction": "Maritime",
+          "level": 2,
+          "influence": 3,
+          "gold": 5,
+          "exposure": 2,
+          "abilities": [
+            "3 Gain 4 crowns.",
+            "5 Place four influence in Docks."
+          ],
+          "position": 3,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_021",
+          "name": "The Shadow",
+          "subtitle": "Guild Assassin",
+          "faction": "Criminal",
+          "level": 2,
+          "influence": 1,
+          "gold": 0,
+          "exposure": 0,
+          "abilities": [
+            "3 Remove three influence from any square.",
+            "5 Flip one opponents agent face down."
+          ],
+          "position": 5,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_012",
+          "name": "Brother Marcus",
+          "faction": "Religious",
+          "level": 1,
+          "influence": 4,
+          "gold": 0,
+          "exposure": 1,
+          "abilities": [
+            "2 Place two influence in Temple.",
+            "4 Reduce your exposure by 2."
+          ],
+          "position": 6,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_011",
+          "name": "Lady Fiora",
+          "faction": "Noble",
+          "level": 1,
+          "influence": 3,
+          "gold": 1,
+          "exposure": 4,
+          "abilities": [
+            "2 Look at opponents hand.",
+            "4 Force opponent to discard one card."
+          ],
+          "position": 7,
+          "active": false
+        },
+        {
+          "id": "AGENT_033",
+          "name": "Inquisitor Vane",
+          "subtitle": "Seeker of Heresy",
+          "faction": "Religious",
+          "level": 2,
+          "influence": 4,
+          "gold": 1,
+          "exposure": 3,
+          "abilities": [
+            "3 Increase target player's exposure by 2.",
+            "5 Remove two influence from any courtier."
+          ],
+          "position": 4,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            },
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        }
+      ],
+      "starting_hand": [
+        "AGENT_013",
+        "AGENT_031",
+        "AGENT_021",
+        "POWER_017",
+        "POWER_007"
+      ],
+      "exposure_modifier": 0
+    },
+    "2": {
+      "player_id": 2,
+      "agent_type": "economic",
+      "gold": 9,
+      "influence_pool": 9,
+      "exposure": 0,
+      "vp": 110,
+      "conspiracy": [
+        {
+          "id": "AGENT_024",
+          "name": "Guildmaster Harrow",
+          "subtitle": "Master of Trades",
+          "faction": "Commercial",
+          "level": 3,
+          "influence": 4,
+          "gold": 4,
+          "exposure": 2,
+          "abilities": [
+            "3 Place two influence in Market.",
+            "5 Gain 6 crowns and place one influence in Market."
+          ],
+          "position": 1,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "gold",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "influence",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            }
+          ]
+        },
+        {
+          "id": "AGENT_043",
+          "name": "Alchemist Brynn",
+          "subtitle": "Seeker of Gold",
+          "faction": "Academic",
+          "level": 1,
+          "influence": 3,
+          "gold": 3,
+          "exposure": 1,
+          "abilities": [
+            "3 Gain 4 crowns.",
+            "5 Place three influence in Academy."
+          ],
+          "position": 2,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_030",
+          "name": "Harbor Wench Sybil",
+          "subtitle": "Information Broker",
+          "faction": "Maritime",
+          "level": 2,
+          "influence": 3,
+          "gold": 3,
+          "exposure": 1,
+          "abilities": [
+            "2 Look at another players hand.",
+            "3 Place two influence in Docks."
+          ],
+          "position": 4,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "gold",
+              "old_value": 2,
+              "new_value": 3,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "influence",
+              "old_value": 2,
+              "new_value": 3,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            }
+          ]
+        },
+        {
+          "id": "AGENT_044",
+          "name": "Shipwright Tormund",
+          "subtitle": "Master Builder",
+          "faction": "Maritime",
+          "level": 2,
+          "influence": 4,
+          "gold": 2,
+          "exposure": 1,
+          "abilities": [
+            "2 Gain 2 crowns.",
+            "4 Place three influence in Docks."
+          ],
+          "position": 5,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "gold",
+              "old_value": 1,
+              "new_value": 2,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "influence",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            }
+          ]
+        },
+        {
+          "id": "AGENT_022",
+          "name": "Dean Aristotle",
+          "faction": "Academic",
+          "level": 1,
+          "influence": 2,
+          "gold": 0,
+          "exposure": 1,
+          "abilities": [
+            "1 Draw one card.",
+            "3 Look at top five of any deck."
+          ],
+          "position": 6,
+          "active": false
+        },
+        {
+          "id": "AGENT_032",
+          "name": "Lord Pemberton",
+          "subtitle": "Royal Advisor",
+          "faction": "Noble",
+          "level": 2,
+          "influence": 5,
+          "gold": 3,
+          "exposure": 4,
+          "abilities": [
+            "3 Place two influence in Palace.",
+            "5 Take an extra action this turn."
+          ],
+          "position": 7,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            },
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_049",
+          "name": "Ratcatcher Tom",
+          "subtitle": "Sewer Scout",
+          "faction": "Criminal",
+          "level": 1,
+          "influence": 2,
+          "gold": 2,
+          "exposure": 0,
+          "abilities": [
+            "1 Gain 1 crown.",
+            "2 Move one influence cube."
+          ],
+          "position": 3,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        }
+      ],
+      "starting_hand": [
+        "AGENT_049",
+        "AGENT_022",
+        "AGENT_024",
+        "POWER_014",
+        "POWER_031"
+      ],
+      "exposure_modifier": 0
+    },
+    "3": {
+      "player_id": 3,
+      "agent_type": "aggressive",
+      "gold": 2,
+      "influence_pool": 18,
+      "exposure": 0,
+      "vp": 88,
+      "conspiracy": [
+        {
+          "id": "AGENT_010",
+          "name": "Marcus Venditti",
+          "subtitle": "Merchant Prince",
+          "faction": "Commercial",
+          "level": 2,
+          "influence": 5,
+          "gold": 4,
+          "exposure": 3,
+          "abilities": [
+            "3 Gain 5 crowns.",
+            "5 Place three influence in Market and gain 3 crowns."
+          ],
+          "position": 1,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_034",
+          "name": "Knight Commander Steele",
+          "subtitle": "Sword of the Realm",
+          "faction": "Military",
+          "level": 3,
+          "influence": 7,
+          "gold": 2,
+          "exposure": 3,
+          "abilities": [
+            "4 Place two influence in Barracks.",
+            "6 Remove three influence from any district."
+          ],
+          "position": 2,
+          "active": true,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "old_value": 5,
+              "new_value": 6,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "gold",
+              "old_value": 1,
+              "new_value": 2,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            },
+            {
+              "stat": "influence",
+              "old_value": 6,
+              "new_value": 7,
+              "cost": 4,
+              "stat_upgrade_number": 2,
+              "total_upgrade_number": 3
+            }
+          ]
+        },
+        {
+          "id": "AGENT_040",
+          "name": "Monsignor Pietro",
+          "subtitle": "Vatican Envoy",
+          "faction": "Religious",
+          "level": 4,
+          "influence": 6,
+          "gold": 3,
+          "exposure": 2,
+          "abilities": [
+            "3 Place two influence on any Religious courtier.",
+            "5 Place four influence in Temple."
+          ],
+          "position": 3,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "old_value": 4,
+              "new_value": 5,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "gold",
+              "old_value": 1,
+              "new_value": 2,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 2
+            },
+            {
+              "stat": "influence",
+              "old_value": 5,
+              "new_value": 6,
+              "cost": 4,
+              "stat_upgrade_number": 2,
+              "total_upgrade_number": 3
+            },
+            {
+              "stat": "gold",
+              "old_value": 2,
+              "new_value": 3,
+              "cost": 4,
+              "stat_upgrade_number": 2,
+              "total_upgrade_number": 4
+            }
+          ]
+        },
+        {
+          "id": "AGENT_026",
+          "name": "Father Dominic",
+          "subtitle": "Temple Elder",
+          "faction": "Religious",
+          "level": 1,
+          "influence": 4,
+          "gold": 0,
+          "exposure": 0,
+          "abilities": [
+            "2 Reduce exposure by 1.",
+            "4 Place three influence in Temple."
+          ],
+          "position": 4,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_017",
+          "name": "Elena Rosetti",
+          "subtitle": "Wealthy Widow",
+          "faction": "Commercial",
+          "level": 1,
+          "influence": 1,
+          "gold": 7,
+          "exposure": 2,
+          "abilities": [
+            "2 Gain 4 crowns.",
+            "4 Place two influence in Market or Docks."
+          ],
+          "position": 5,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_041",
+          "name": "Siege Master Kragg",
+          "subtitle": "Destroyer of Walls",
+          "faction": "Military",
+          "level": 1,
+          "influence": 5,
+          "gold": 3,
+          "exposure": 3,
+          "abilities": [
+            "2 Remove one influence from target square.",
+            "4 Place three influence in Barracks."
+          ],
+          "position": 6,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "cost": 1
+            },
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        },
+        {
+          "id": "AGENT_046",
+          "name": "Baron von Stahl",
+          "faction": "Noble",
+          "level": 1,
+          "influence": 4,
+          "gold": 4,
+          "exposure": 3,
+          "abilities": [
+            "2 Place two in Palace.",
+            "4 Place one in Gardens."
+          ],
+          "position": 7,
+          "active": false,
+          "vp_upgrades": [
+            {
+              "stat": "influence",
+              "old_value": 3,
+              "new_value": 4,
+              "cost": 1,
+              "stat_upgrade_number": 1,
+              "total_upgrade_number": 1
+            },
+            {
+              "stat": "gold",
+              "cost": 1
+            }
+          ]
+        }
+      ],
+      "starting_hand": [
+        "AGENT_026",
+        "AGENT_009",
+        "AGENT_010",
+        "POWER_035",
+        "POWER_016"
+      ],
+      "exposure_modifier": -1
+    }
+  },
+  "agent_levels": {
+    "1": {
+      "AGENT_013": {
+        "upgrades": 4,
+        "level": 3
+      },
+      "AGENT_031": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_037": {
+        "upgrades": 0,
+        "level": 2
+      },
+      "AGENT_018": {
+        "upgrades": 2,
+        "level": 3
+      },
+      "AGENT_021": {
+        "upgrades": 0,
+        "level": 2
+      },
+      "AGENT_012": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_011": {
+        "upgrades": 0,
+        "level": 1
+      }
+    },
+    "2": {
+      "AGENT_024": {
+        "upgrades": 2,
+        "level": 3
+      },
+      "AGENT_043": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_023": {
+        "upgrades": 4,
+        "level": 3
+      },
+      "AGENT_030": {
+        "upgrades": 2,
+        "level": 2
+      },
+      "AGENT_044": {
+        "upgrades": 2,
+        "level": 2
+      },
+      "AGENT_022": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_032": {
+        "upgrades": 0,
+        "level": 2
+      }
+    },
+    "3": {
+      "AGENT_010": {
+        "upgrades": 0,
+        "level": 2
+      },
+      "AGENT_034": {
+        "upgrades": 3,
+        "level": 3
+      },
+      "AGENT_040": {
+        "upgrades": 4,
+        "level": 4
+      },
+      "AGENT_026": {
+        "upgrades": 1,
+        "level": 1
+      },
+      "AGENT_017": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_041": {
+        "upgrades": 0,
+        "level": 1
+      },
+      "AGENT_046": {
+        "upgrades": 1,
+        "level": 1
+      }
+    }
+  },
+  "promotion_counts": {
+    "1": 2,
+    "2": 1
+  }
+}

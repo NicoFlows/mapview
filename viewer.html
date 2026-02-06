@@ -188,6 +188,9 @@
     background: "#8a8a7a",      // Gray background/water
     water: "#8a8a7a",           // Water areas
     earth: "#e8e4d4",           // Land/earth - cream/beige
+    terrainMountain: "#7f7a70",
+    terrainHill: "#9a9383",
+    terrainPlain: "#aaa38f",
     building: "#c8c4b4",        // Building fill - light gray
     buildingStroke: "#7a7a6a",  // Building outline
     buildingSelected: "#e8a060", // Selected building highlight
@@ -195,11 +198,14 @@
     road: "#d8d4c4",            // Roads - lighter than land
     roadStroke: "#9a9a8a",      // Road edges
     district: "#4a4a3a",        // District label color
-    river: "#7a8a9a",           // River color
+    river: "#6f8fa8",           // River color
     green: "#a8b898",           // Parks/greens
     field: "#c8d4b8",           // Fields
     tree: "#6a7a5a",            // Trees
     grid: "rgba(0,0,0,0.08)",   // Grid lines
+  };
+  const CITY_RENDER = {
+    showWalls: false,
   };
 
   // Building selection state
@@ -304,10 +310,12 @@
     const result = {
       values: null,
       earth: null,
+      terrain: [],
       water: [],
       roads: [],
       walls: [],
       rivers: [],
+      river_islands: [],
       planks: [],
       buildings: [],
       prisms: [],
@@ -358,6 +366,9 @@
         case "water":
           result.water = feature.coordinates || [];
           break;
+        case "terrain":
+          result.terrain = feature.geometries || [];
+          break;
         case "roads":
           result.roads = feature.geometries || [];
           break;
@@ -366,6 +377,9 @@
           break;
         case "rivers":
           result.rivers = feature.geometries || [];
+          break;
+        case "river_islands":
+          result.river_islands = feature.coordinates || [];
           break;
         case "planks":
           result.planks = feature.geometries || [];
@@ -958,6 +972,25 @@
     ctx.translate(panX, panY);
     ctx.scale(zoom, zoom);
 
+    // Draw surrounding terrain before water/earth.
+    for (const terr of cityData.terrain || []) {
+      if (terr.type !== "Polygon" || !terr.coordinates) continue;
+      const kind = String(terr.terrain || "plain").toLowerCase();
+      if (kind === "mountain") {
+        ctx.fillStyle = CITY_COLORS.terrainMountain;
+        ctx.globalAlpha = 0.42;
+      } else if (kind === "hill") {
+        ctx.fillStyle = CITY_COLORS.terrainHill;
+        ctx.globalAlpha = 0.34;
+      } else {
+        ctx.fillStyle = CITY_COLORS.terrainPlain;
+        ctx.globalAlpha = 0.28;
+      }
+      drawPolygonCoords(terr.coordinates);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1.0;
+
     // Draw water areas first
     if (cityData.water && cityData.water.length > 0) {
       ctx.fillStyle = CITY_COLORS.water;
@@ -996,14 +1029,37 @@
     // Draw rivers
     for (const river of cityData.rivers) {
       if (river.coordinates) {
-        const width = river.width || cityData.values?.riverWidth || 10;
-        ctx.strokeStyle = CITY_COLORS.water;
-        ctx.lineWidth = width;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        drawCoordPath(river.coordinates);
-        ctx.stroke();
+        const wp = river.width_profile;
+        if (Array.isArray(wp) && wp.length === river.coordinates.length && river.coordinates.length >= 2) {
+          ctx.strokeStyle = CITY_COLORS.river;
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
+          for (let i = 0; i < river.coordinates.length - 1; i++) {
+            const w = (wp[i] + wp[i + 1]) * 0.5;
+            ctx.lineWidth = w;
+            drawCoordPath([river.coordinates[i], river.coordinates[i + 1]]);
+            ctx.stroke();
+          }
+        } else {
+          const width = river.width || cityData.values?.riverWidth || 10;
+          ctx.strokeStyle = CITY_COLORS.river;
+          ctx.lineWidth = width;
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
+          drawCoordPath(river.coordinates);
+          ctx.stroke();
+        }
       }
+    }
+
+    // Draw river islands (small land patches in wider channels)
+    if (cityData.river_islands && cityData.river_islands.length > 0) {
+      ctx.fillStyle = CITY_COLORS.earth;
+      ctx.strokeStyle = "rgba(120, 110, 90, 0.32)";
+      ctx.lineWidth = 0.8;
+      drawMultiPolygon(cityData.river_islands);
+      ctx.fill();
+      ctx.stroke();
     }
 
     // Draw roads
@@ -1023,8 +1079,17 @@
     // Draw planks (docks/piers)
     for (const plank of cityData.planks) {
       if (plank.coordinates) {
-        ctx.strokeStyle = CITY_COLORS.building;
-        ctx.lineWidth = plank.width || 4;
+        const pw = plank.width || 4;
+        // Bridge/plank outline for contrast over water.
+        ctx.strokeStyle = "rgba(70, 50, 30, 0.35)";
+        ctx.lineWidth = pw + 1.6;
+        ctx.lineCap = "butt";
+        drawCoordPath(plank.coordinates);
+        ctx.stroke();
+
+        // Wood tone stroke.
+        ctx.strokeStyle = "#9a7a56";
+        ctx.lineWidth = pw;
         ctx.lineCap = "butt";
         drawCoordPath(plank.coordinates);
         ctx.stroke();
@@ -1084,25 +1149,27 @@
       }
     }
 
-    // Draw walls
-    for (const wall of cityData.walls) {
-      if (wall.coordinates) {
-        const width = wall.width || cityData.values?.wallThickness || 7;
-        ctx.strokeStyle = CITY_COLORS.wall;
-        ctx.lineWidth = width;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
+    // Draw walls (optional; disabled by default to reduce heavy perimeter outline)
+    if (CITY_RENDER.showWalls) {
+      for (const wall of cityData.walls) {
+        if (wall.coordinates) {
+          const width = wall.width || cityData.values?.wallThickness || 7;
+          ctx.strokeStyle = CITY_COLORS.wall;
+          ctx.lineWidth = width;
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
 
-        // Walls are polygons, draw as closed path
-        const coords = wall.coordinates[0]; // outer ring
-        if (coords && coords.length > 0) {
-          ctx.beginPath();
-          ctx.moveTo(coords[0][0], coords[0][1]);
-          for (let i = 1; i < coords.length; i++) {
-            ctx.lineTo(coords[i][0], coords[i][1]);
+          // Walls are polygons, draw as closed path
+          const coords = wall.coordinates[0]; // outer ring
+          if (coords && coords.length > 0) {
+            ctx.beginPath();
+            ctx.moveTo(coords[0][0], coords[0][1]);
+            for (let i = 1; i < coords.length; i++) {
+              ctx.lineTo(coords[i][0], coords[i][1]);
+            }
+            ctx.closePath();
+            ctx.stroke();
           }
-          ctx.closePath();
-          ctx.stroke();
         }
       }
     }

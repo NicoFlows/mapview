@@ -6,3 +6,6 @@
 
 # Large reference images (optional - remove these lines if you want to track them)
 # *.png
+
+# macOS metadata
+.DS_Store
