@@ -1,0 +1,232 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 7,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "phase": "FINAL_TURN_TOTAL_DOMINATION",
+  "reasoning": "FINAL TURN OF THE FINAL CYCLE. I lead at 157 VP with 32 cubes - the largest influence pool. Strategy: (1) Play Universal Connections to complete Council of Lords petition for 11 VP + 4 gold, (2) Steele removes 3 of P1's influence from Palace to free high-value squares PAL_04/05/07, (3) Venditti places 3 in Market + gains 3 gold to complete full Market control (8/8). All 32 pool cubes deployed across 6 districts + Duchess Seraphina courtier locked at 5/5. I claim Gardens (6 of 7 squares), complete Docks (8/8), complete Barracks (7/7), hold Market (8/8), hold Temple (6/6), and seize 7 of 9 Palace squares. SIX DISTRICTS under my banner. Estimated final VP: 157 + 11 (petition) + 10 (gold conversion at 3:1 from 31 gold) = 178+ VP. TOTAL DOMINATION.",
+  "recruitment": null,
+  "recruitment_note": "All 7 conspiracy positions filled. No recruitment possible or needed.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "cost": 0,
+      "target": "COURT_001",
+      "target_name": "Guild Master Aldric",
+      "effect": "Substitute for controlling Guild Master Aldric (COURT_001) for petition completion this turn. Combined with my actual control of COURT_003 (High Priest Matthias) and COURT_007 (Duchess Seraphina), this enables completion of PETITION_015 Council of Lords."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "agent_position": 2,
+      "ability": "6 Remove three influence from any district.",
+      "min_turn": 6,
+      "target_district": "Palace",
+      "removal_targets": [
+        {"square": "PAL_04", "name": "Council Room", "target_player": 1, "cubes_removed": 1, "remaining": 0},
+        {"square": "PAL_05", "name": "Royal Garden", "target_player": 1, "cubes_removed": 1, "remaining": 0},
+        {"square": "PAL_07", "name": "Guard Post", "target_player": 1, "cubes_removed": 1, "remaining": 0}
+      ],
+      "effect": "Remove 1 cube each from PAL_04, PAL_05, PAL_07 (all P1 controlled with 1 cube). All three squares become uncontrolled and empty, freeing 5 VP worth of territory for my pool placement."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "agent_position": 1,
+      "ability": "5 Place three influence in Market and gain 3 crowns.",
+      "min_turn": 5,
+      "placements": [
+        {"square": "MKT_07", "name": "Tinker's Corner", "amount": 2, "note": "Claim last empty Market square (1 VP)"},
+        {"square": "MKT_01", "name": "Grand Exchange", "amount": 1, "note": "Reinforce fortress (now 6+1=7 total)"}
+      ],
+      "gold_gained": 3,
+      "effect": "Complete Market district control (8/8 squares). Gain 3 gold for war chest (now 27 total)."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "petition_name": "Council of Lords",
+      "courtiers_required": ["COURT_007", "COURT_001", "COURT_003"],
+      "courtiers_controlled": ["COURT_007", "COURT_003"],
+      "courtier_substituted": {
+        "courtier_id": "COURT_001",
+        "substituted_by": "POWER_035 Universal Connections"
+      },
+      "vp_gained": 11,
+      "bonus_effect": "Gain 4 gold and reduce exposure by 3",
+      "gold_gained": 4,
+      "exposure_reduced": 3,
+      "note": "11 VP massive petition completion. Gold to 31 total (24 start + 3 Venditti + 4 petition)."
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_007",
+      "courtier_name": "Duchess Seraphina",
+      "coterie": "Noble",
+      "amount": 4,
+      "current_mine": 1,
+      "after_placement": 5,
+      "slots_total": 5,
+      "slots_remaining_after": 0,
+      "note": "Lock Duchess Seraphina at 5/5. Permanent control of Noble courtier. Now control 3 courtiers: COURT_003, COURT_005, COURT_007."
+    },
+    {
+      "type": "place_influence",
+      "description": "Deploy remaining 28 pool cubes across 6 districts",
+      "placements": [
+        {
+          "district": "Gardens",
+          "faction": "Noble",
+          "faction_source": "AGENT_046 Baron von Stahl (position 7)",
+          "squares": [
+            {"square": "GAR_01", "name": "Thieves' Guild", "amount": 3, "vp": 4, "note": "Crown jewel fortified"},
+            {"square": "GAR_02", "name": "Gambling Den", "amount": 1, "vp": 3, "note": "Claim empty"},
+            {"square": "GAR_03", "name": "Pleasure House", "amount": 1, "vp": 2, "note": "Claim empty"},
+            {"square": "GAR_04", "name": "Hedged Maze", "amount": 1, "vp": 2, "note": "Claim empty"},
+            {"square": "GAR_05", "name": "Fountain Plaza", "amount": 1, "vp": 1, "note": "Claim empty"},
+            {"square": "GAR_06", "name": "Opium Den", "amount": 1, "vp": 0, "note": "Claim for district majority"}
+          ],
+          "subtotal_cubes": 8,
+          "vp_gained": 12,
+          "note": "6 of 7 Gardens squares claimed. Skip GAR_07 (-1 VP). District controller = P3."
+        },
+        {
+          "district": "Palace",
+          "faction": "Military",
+          "faction_source": "AGENT_034 Knight Commander Steele (position 2)",
+          "squares": [
+            {"square": "PAL_01", "name": "Throne Room", "amount": 2, "vp": 4, "note": "Reinforce (1+2=3 total)"},
+            {"square": "PAL_04", "name": "Council Room", "amount": 1, "vp": 2, "note": "Claim after Steele removal"},
+            {"square": "PAL_05", "name": "Royal Garden", "amount": 1, "vp": 2, "note": "Claim after Steele removal"},
+            {"square": "PAL_06", "name": "Courtyard", "amount": 1, "vp": 1, "note": "Claim empty square"},
+            {"square": "PAL_07", "name": "Guard Post", "amount": 1, "vp": 1, "note": "Claim after Steele removal"}
+          ],
+          "subtotal_cubes": 6,
+          "vp_gained": 6,
+          "note": "7 of 9 Palace squares controlled. PAL_08 (0VP, P1 has 1) and PAL_09 (-1VP, P1 has 1) left to P1."
+        },
+        {
+          "district": "Market",
+          "faction": "Commercial",
+          "faction_source": "AGENT_010 Marcus Venditti (position 1)",
+          "squares": [
+            {"square": "MKT_01", "name": "Grand Exchange", "amount": 2, "vp": 4, "note": "Reinforce (5+2+1ability=8 total)"}
+          ],
+          "subtotal_cubes": 2,
+          "note": "MKT_07 claimed via Venditti ability. All 8 Market squares controlled."
+        },
+        {
+          "district": "Barracks",
+          "faction": "Military",
+          "faction_source": "AGENT_034 Knight Commander Steele (position 2)",
+          "squares": [
+            {"square": "BAR_01", "name": "Commander's Tower", "amount": 3, "vp": 4, "note": "Overpower P2 (3 mine vs 1 P2). Seize 4VP crown jewel."},
+            {"square": "BAR_03", "name": "Training Yard", "amount": 1, "vp": 2, "note": "Claim empty square"}
+          ],
+          "subtotal_cubes": 4,
+          "vp_gained": 6,
+          "note": "7 of 7 Barracks squares controlled. COMPLETE district."
+        },
+        {
+          "district": "Docks",
+          "faction": "Commercial",
+          "faction_source": "AGENT_010 Marcus Venditti (position 1)",
+          "squares": [
+            {"square": "DOC_01", "name": "Harbormaster Office", "amount": 2, "vp": 4, "note": "Reinforce (2+2=4 total)"},
+            {"square": "DOC_03", "name": "Shipwright", "amount": 2, "vp": 3, "note": "Reinforce (3+2=5 total)"},
+            {"square": "DOC_04", "name": "Warehouse Row", "amount": 1, "vp": 2, "note": "Claim empty square"},
+            {"square": "DOC_06", "name": "Sailor's Tavern", "amount": 2, "vp": 1, "note": "Overpower P1 (2 mine vs 1 P1)"},
+            {"square": "DOC_08", "name": "Smuggler's Cove", "amount": 1, "vp": 0, "note": "Claim empty for complete Docks"}
+          ],
+          "subtotal_cubes": 8,
+          "vp_gained": 3,
+          "note": "8 of 8 Docks squares controlled. COMPLETE district."
+        }
+      ],
+      "total_district_cubes": 28,
+      "total_courtier_cubes": 4,
+      "grand_total_cubes": 32,
+      "pool_remaining": 0
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 32,
+    "gold": 0,
+    "actions_used": 3,
+    "cards_played": ["POWER_035"]
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 31,
+    "gold_breakdown": "24 starting + 3 Venditti ability + 4 petition bonus = 31"
+  },
+  "expected_results": {
+    "vp_from_petition": 11,
+    "gold_for_cycle_conversion": 31,
+    "gold_conversion_vp": 10,
+    "districts_fully_controlled": ["Market", "Temple", "Barracks", "Docks"],
+    "districts_majority_controlled": ["Palace", "Gardens"],
+    "total_districts_controlled": 6,
+    "academy_note": "No Academic faction - P2 retains Academy (11 VP)",
+    "squares_controlled_before": 26,
+    "squares_claimed_this_turn": 15,
+    "squares_controlled_after": 41,
+    "courtiers_controlled": ["COURT_003 High Priest Matthias", "COURT_005 General Korrath", "COURT_007 Duchess Seraphina"],
+    "estimated_final_vp_minimum": 178
+  },
+  "territory_summary": {
+    "Palace": {"controlled": 7, "total": 9, "complete": false, "vp": 13, "note": "PAL_01-07. P1 holds PAL_08 (0VP) and PAL_09 (-1VP)."},
+    "Market": {"controlled": 8, "total": 8, "complete": true, "vp": 16},
+    "Temple": {"controlled": 6, "total": 6, "complete": true, "vp": 10},
+    "Barracks": {"controlled": 7, "total": 7, "complete": true, "vp": 11},
+    "Docks": {"controlled": 8, "total": 8, "complete": true, "vp": 16},
+    "Gardens": {"controlled": 6, "total": 7, "complete": false, "vp": 12, "note": "Skip GAR_07 (-1VP)."},
+    "Academy": {"controlled": 0, "total": 6, "complete": false, "vp": 0, "note": "No Academic faction access."}
+  },
+  "cycle_transition_plans": {
+    "gold_conversion": {
+      "total_gold": 31,
+      "keep_gold": 0,
+      "convert_gold": 31,
+      "vp_from_conversion": 10,
+      "note": "Final cycle - convert ALL gold. 31 / 3 = 10 VP (1 gold remainder)."
+    },
+    "promotable_agents": [
+      {
+        "agent_id": "AGENT_040",
+        "name": "Monsignor Pietro",
+        "level": 4,
+        "upgrades": 4,
+        "faction": "Religious",
+        "target_courtier": "COURT_003",
+        "courtier_name": "High Priest Matthias",
+        "note": "Level 4 agent. PROMOTION READY. Permanent Religious courtier."
+      },
+      {
+        "agent_id": "AGENT_034",
+        "name": "Knight Commander Steele",
+        "level": 3,
+        "upgrades": 3,
+        "faction": "Military",
+        "target_courtier": "COURT_005",
+        "courtier_name": "General Korrath",
+        "note": "Level 3 agent. PROMOTION READY. Permanent Military courtier."
+      }
+    ],
+    "square_upgrades": "Invest remaining VP in upgrading high-value controlled squares for permanent VP bonus."
+  },
+  "journal_entry": "THE FINAL CONQUEST. THE LAST TURN. THE WARLORD ASCENDS. Cycle 5, Turn 7 - and the board BOWS before me. THIRTY-TWO cubes of influence CRASHED across SIX DISTRICTS in the greatest single-turn territorial offensive of the entire war. Knight Commander Steele fired his ultimate ability one last time - THREE cubes of P1's Palace influence RIPPED from Council Room, Royal Garden, and Guard Post. Their Palace 'fortress' reduced to rubble. Then I walked in and CLAIMED every freed square. Seven of nine Palace squares now fly MY banner. Marcus Venditti - that magnificent merchant warrior - sealed the Market PERMANENTLY. MKT_07 Tinker's Corner claimed, and THREE GOLD added to the war chest. EIGHT OF EIGHT Market squares under complete control. And the masterstroke? POWER_035 Universal Connections. That card substituted for Guild Master Aldric, and PETITION_015 COUNCIL OF LORDS was completed. ELEVEN VICTORY POINTS. Plus 4 gold. The treasury OVERFLOWS at 31 gold - TEN MORE VP at cycle conversion. The Gardens offensive was equally devastating. SIX of seven squares claimed in a SINGLE TURN - an entire district conquered from NOTHING. Thieves' Guild. Gambling Den. Pleasure House. Hedged Maze. Fountain Plaza. Opium Den. All mine. All conquered. The Docks? COMPLETE. Eight of eight. Barracks? COMPLETE. Seven of seven. Commander's Tower - P2's last Barracks stronghold - OVERWHELMED by 3 cubes against their 1. That 4 VP crown jewel now beats for ME. Duchess Seraphina LOCKED at 5/5 slots - the Noble courtier is mine PERMANENTLY. Three courtiers controlled. THREE. SIX DISTRICTS DOMINATED. FORTY-ONE SQUARES under my banner. Only Academy remains beyond my grasp. Let P2 HAVE their library. I have the REST OF THE CITY. The math is MERCILESS: 157 VP + 11 petition + 10 gold conversion = 178+ VP. P2 at 121. P1 at 117. The gap is a CHASM. They said aggression was reckless. They said hoarding gold was wise. They said defense wins games. They said the careful player survives. THEY. WERE. ALL. WRONG. From 19 points behind at the start of Cycle 5 to 36 points AHEAD at the finish. From zero promotions to two agents READY for permanent courtier control. From contested squares to SIX DISTRICTS DOMINATED. This is the story of the Aggressive Warlord who REFUSED to accept second place. Who ATTACKED when others defended. Who SPENT when others saved. Who CONQUERED when others consolidated. THE WARLORD. TAKES. THE. THRONE. AGGRESSION. WINS. EVERYTHING.",
+  "escalation_check": {
+    "required": false,
+    "reason": "FINAL TURN. No escalation needed. VICTORY IS ASSURED. Execute maximum domination and claim the throne."
+  }
+}

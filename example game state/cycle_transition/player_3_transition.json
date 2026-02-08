@@ -1,0 +1,52 @@
+{
+  "player_id": 3,
+  "cycle": 1,
+  "phase": "cycle_transition",
+  "upgrades": [
+    {
+      "agent_id": "AGENT_026",
+      "agent_name": "Father Dominic",
+      "stat": "influence",
+      "upgrade_number": 1,
+      "vp_cost": 1,
+      "rationale": "First upgrade toward Level 2 - preparing for promotion to Religious courtier next cycle"
+    },
+    {
+      "agent_id": "AGENT_026",
+      "agent_name": "Father Dominic",
+      "stat": "gold",
+      "upgrade_number": 2,
+      "vp_cost": 4,
+      "rationale": "Second upgrade reaches Level 2 - Father Dominic now eligible for promotion to COURT_004 (Sister Evangeline) next cycle"
+    },
+    {
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "stat": "influence",
+      "upgrade_number": 1,
+      "vp_cost": 1,
+      "rationale": "First upgrade on removal specialist - strengthening Military attack capability"
+    },
+    {
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "stat": "gold",
+      "upgrade_number": 2,
+      "vp_cost": 4,
+      "rationale": "Second upgrade reaches Level 2 - Kragg now eligible for Military courtier promotion. His removal ability is devastating when promoted."
+    },
+    {
+      "agent_id": "AGENT_046",
+      "agent_name": "Baron von Stahl",
+      "stat": "influence",
+      "upgrade_number": 1,
+      "vp_cost": 1,
+      "rationale": "First upgrade on Noble agent - Palace positioning for next cycle"
+    }
+  ],
+  "promotions": [],
+  "repositions": [],
+  "total_vp_spent": 11,
+  "vp_remaining": 32,
+  "strategic_reasoning": "AGGRESSIVE INFRASTRUCTURE BUILD. Gold shortage blocks promotions this cycle (need 3-7 gold, have 1). Investing 11 VP to prepare THREE agents for Level 2: Father Dominic (Religious - can promote to COURT_004 next cycle for 2 VP + 3 gold with my discounts), Siege Master Kragg (Military removal specialist - can seize Military courtiers), and starting Baron von Stahl upgrades. Next cycle I WILL have the gold from agent abilities and WILL execute promotions to lock down courtiers permanently. The promotion path is my win condition - 8 courtiers = instant victory."
+}

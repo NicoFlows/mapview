@@ -1,0 +1,200 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 7,
+  "turn_label": "FINAL TURN - CYCLE 2",
+  "recruitment": {
+    "agent_id": "AGENT_038",
+    "name": "Auctioneer Pryce",
+    "faction": "Commercial",
+    "position": 7,
+    "rationale": "All 7 positions filled from previous turns - no recruitment this turn, conspiracy already complete. Skip recruitment."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "position": 5,
+      "ability": "2 Remove one influence from target square",
+      "min_turn": 2,
+      "target_district": "Market",
+      "target_square": "MKT_05",
+      "target_player": 2,
+      "effect": "Remove 1 P2 influence from Spice Stalls (5->4 remaining after removal)",
+      "note": "FREE REMOVAL - softening P2 fortress for takeover"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "position": 2,
+      "ability": "6 Remove three influence from any district",
+      "min_turn": 6,
+      "target_district": "Market",
+      "target_square": "MKT_02",
+      "target_player": 2,
+      "effect": "Remove 3 P2 influence from Merchant Guild (5->2 remaining)",
+      "note": "DEVASTATING REMOVAL - breaking P2's strongest fortress!"
+    },
+    {
+      "action_num": 3,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "cost": 0,
+      "effect": "Use in place of controlling COURT_007 (Duchess Seraphina) for petition completion",
+      "petition_enabled": "PETITION_015",
+      "note": "Enables Council of Lords petition - substitutes for Noble courtier I don't control"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "petition_name": "Council of Lords",
+      "requirements_met": {
+        "COURT_007": "Substituted via POWER_035 Universal Connections",
+        "COURT_001": "Controlled by P3 (2 influence)",
+        "COURT_003": "Controlled by P3 (4 influence)"
+      },
+      "vp_gained": 11,
+      "bonus_effect": "Gain 4 gold and reduce exposure by 3",
+      "note": "MASSIVE VP SWING! 11 VP instantly!"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "square_name": "Spice Stalls",
+      "amount": 2,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "P2 has 1 after removal",
+      "result": "P3 takes control with 2 vs P2's 1",
+      "note": "TAKEOVER - grabbing weakened position"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_02",
+      "square_name": "Merchant Guild",
+      "amount": 3,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "P2 has 2 after removal",
+      "result": "P3 takes control with 3 vs P2's 2",
+      "note": "TAKEOVER - seizing P2's former stronghold!"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "square_name": "Banking House",
+      "amount": 5,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "P2 has 4 influence",
+      "result": "P3 takes control with 5 vs P2's 4",
+      "note": "TAKEOVER - completing Market domination!"
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_01",
+      "square_name": "Harbormaster Office",
+      "amount": 5,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "Uncontested (0 influence)",
+      "result": "P3 claims 4 VP territory",
+      "note": "EXPANSION - claiming high-value empty territory"
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_02",
+      "square_name": "Customs House",
+      "amount": 4,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "Uncontested (0 influence)",
+      "result": "P3 claims 3 VP territory",
+      "note": "EXPANSION - stacking Docks control"
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_03",
+      "square_name": "Shipwright",
+      "amount": 4,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "Uncontested (0 influence)",
+      "result": "P3 claims 3 VP territory",
+      "note": "EXPANSION - building Docks presence"
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_04",
+      "square_name": "Warehouse Row",
+      "amount": 3,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "Uncontested (0 influence)",
+      "result": "P3 claims 2 VP territory",
+      "note": "EXPANSION - rapid Docks takeover"
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_05",
+      "square_name": "Dry Dock",
+      "amount": 3,
+      "faction_required": "Commercial",
+      "faction_agent": "Marcus Venditti",
+      "current_state": "Uncontested (0 influence)",
+      "result": "P3 claims 2 VP territory",
+      "note": "TOTAL DOCKS BLITZ - 5 squares in one turn!"
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 29,
+    "gold": 0,
+    "actions_used": 3,
+    "power_cards_played": 1
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 17,
+    "notes": "Gained 4 gold from petition (13 + 4 = 17)"
+  },
+  "expected_gains": {
+    "vp_from_petition": 11,
+    "vp_from_market_takeover": 8,
+    "vp_from_docks_expansion": 14,
+    "total_new_vp": "33 VP THIS TURN!",
+    "exposure_reduction": 3
+  },
+  "market_final_state": {
+    "MKT_01": {"controller": 3, "influence": 2},
+    "MKT_02": {"controller": 3, "influence": 3, "note": "TAKEN from P2"},
+    "MKT_03": {"controller": 3, "influence": 5, "note": "TAKEN from P2"},
+    "MKT_04": {"controller": 3, "influence": 10},
+    "MKT_05": {"controller": 3, "influence": 2, "note": "TAKEN from P2"},
+    "MKT_06": {"controller": 3, "influence": 3},
+    "MKT_07": {"controller": 3, "influence": 1},
+    "MKT_08": {"controller": 3, "influence": 4},
+    "district_control": "P3 TOTAL CONTROL - ALL 8 SQUARES!"
+  },
+  "reasoning": "FINAL TURN TOTAL DOMINATION! Used removal abilities to weaken P2 fortresses, then flooded with 29 influence. Completed Council of Lords petition using Universal Connections power card to substitute for missing Noble courtier. Market completely seized - all 8 squares controlled. Expanded into empty Docks for massive VP haul. This turn should swing approximately 33 VP, putting me at ~78 VP total. P2's economy is BROKEN. TOTAL VICTORY SETUP!",
+  "escalation_check": {
+    "needed": false,
+    "reason": "Complete dominance achieved. No strategic pivot required - execution perfect."
+  }
+}

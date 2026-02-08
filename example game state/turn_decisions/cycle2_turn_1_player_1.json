@@ -1,0 +1,85 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 1,
+  "decision_timestamp": "2026-01-29T00:00:00Z",
+  "recruitment": {
+    "action": "skip",
+    "rationale": "Captain Varro is Level 2 (promotion-eligible) with Military faction. Keeping him in Position 1 maintains courtier access and positions for Cycle 3 promotion. No replacement needed."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_006",
+      "courtier_name": "Captain Thorne",
+      "coterie": "Military",
+      "slots_total": 1,
+      "slots_available": 1,
+      "amount": 1,
+      "faction_used": "Military",
+      "agent_providing_faction": "AGENT_013 (Captain Varro)",
+      "rationale": "1-slot courtier = instant majority control. Establishes Military courtier for Imperial Mandate (12 VP) and Shadow Network (10 VP) petition paths."
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "square_name": "Commander's Tower",
+      "vp_value": 4,
+      "amount": 3,
+      "faction_used": "Military",
+      "agent_providing_faction": "AGENT_013 (Captain Varro)",
+      "rationale": "Highest VP square (4 VP) accessible via Military faction. Establishes Barracks presence for district control bonus. Board is empty - uncontested placement."
+    },
+    {
+      "action_num": 3,
+      "type": "basic_action",
+      "action_name": "gain_gold",
+      "gold_gained": 1,
+      "rationale": "No agent abilities available Turn 1 (Varro's abilities require Turn 2+). Building gold reserves (2 -> 3) for future ability costs and whitewash potential."
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 4,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 3
+  },
+  "strategic_reasoning": {
+    "turn_objectives": [
+      "Secure Captain Thorne (1-slot Military courtier) for petition paths",
+      "Establish Barracks district presence for Military synergy",
+      "Build gold reserves for Turn 2+ ability activations"
+    ],
+    "petition_progress": {
+      "PETITION_011_Imperial_Mandate": {
+        "requirements": "COURT_005, COURT_006, COURT_007, COURT_008",
+        "this_turn": "COURT_006 (Thorne) secured",
+        "remaining": "Need Korrath, Duchess, Duke Valorian",
+        "vp_reward": 12
+      },
+      "PETITION_013_Shadow_Network": {
+        "requirements": "COURT_006, COURT_010, COURT_014 (all 1-slot courtiers)",
+        "this_turn": "COURT_006 (Thorne) secured",
+        "remaining": "Need Master Scholar Lyra (Academic), The Fence (Criminal)",
+        "vp_reward": 10
+      }
+    },
+    "multi_cycle_strategy": "Captain Varro at Level 2 is promotion-eligible. Build toward Military courtier control (Korrath + Thorne) for cycle-end promotion into courtier position. Target 8/14 promotion victory path.",
+    "opponent_analysis": {
+      "player_2": "46 VP leader. Economic archetype will likely target Market/Commerce courtiers. Watch for their gold engine rebuilding.",
+      "player_3": "39 VP, aggressive archetype. Will likely spread across multiple districts. May contest Barracks with Military agents."
+    },
+    "efficiency_metrics": {
+      "influence_efficiency": "4 cubes deployed: 1 for instant courtier control, 3 for 4 VP square. 100% pool utilization.",
+      "action_efficiency": "No abilities available T1, so basic actions optimize for positioning + gold accumulation.",
+      "vp_projection": "BAR_01 control = 4 VP potential. Thorne courtier = petition pathway value."
+    }
+  }
+}

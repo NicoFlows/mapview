@@ -1,0 +1,135 @@
+{
+  "player_id": 2,
+  "cycle": 5,
+  "turn": 3,
+  "recruitment": null,
+  "recruitment_note": "All 7 conspiracy positions already filled from previous cycles. No recruitment needed or possible.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability": "3 Place two influence in Market",
+      "min_turn": 3,
+      "target_district": "Market",
+      "target_square": "MKT_01",
+      "influence_amount": 2,
+      "effect": "FREE 2 influence on Grand Exchange (4 VP) - best ROI territory grab",
+      "cost": "none - ability is free when turn >= 3"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "effect": "+4 gold (9 -> 13)",
+      "cost": "none - ability is free when turn >= 3"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_049",
+      "agent_name": "Ratcatcher Tom",
+      "ability": "1 Gain 1 crown",
+      "min_turn": 1,
+      "effect": "+1 gold (13 -> 14)",
+      "cost": "none - ability is free"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "amount": 3,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "current_state": "P1=2, P2=2 (tied, no controller)",
+      "after_placement": "P1=2, P2=5 (I control!)",
+      "rationale": "Break tie to control Aldric - completes Trade Empire requirement!"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "amount": 2,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 4,
+      "rationale": "Stack with Harrow's 2 for total 4 cubes on highest-value Market square"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "square_name": "Banking House",
+      "amount": 2,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 3,
+      "rationale": "Claim 3 VP Banking House, adjacent to my MKT_04"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "square_name": "Spice Stalls",
+      "amount": 2,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 2,
+      "rationale": "Claim 2 VP Spice Stalls, extending Market control"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_010",
+      "petition_name": "Trade Empire",
+      "vp_gained": 8,
+      "bonus": "+5 gold, draw 2 cards",
+      "requirements_met": {
+        "COURT_001": "Guild Master Aldric - controlled after this turn's placement (5 vs 2)",
+        "COURT_002": "Trade Commissioner Vale - controlled (2/2 mine per coteries data)",
+        "COURT_011": "Harbormaster Blackwater - controlled (2/4 mine per coteries data)",
+        "COURT_012": "Admiral Stormwind - PROMOTED by me (First Mate Calico)"
+      },
+      "note": "This is the crown jewel - the petition I have pursued for FIVE CYCLES!"
+    }
+  ],
+  "resources_spent": {
+    "influence_pool_to_courtiers": 3,
+    "influence_pool_to_districts": 6,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_gained": {
+    "gold_from_abilities": 5,
+    "influence_from_harrow_ability": 2,
+    "vp_from_petition": 8,
+    "gold_from_petition_bonus": 5,
+    "cards_from_petition_bonus": 2
+  },
+  "resources_after_turn": {
+    "influence_pool": 0,
+    "gold": 19,
+    "vp": 118
+  },
+  "territory_after_turn": {
+    "MKT_01": {"influence": 4, "vp": 4, "source": "2 ability + 2 pool"},
+    "MKT_03": {"influence": 2, "vp": 3},
+    "MKT_04": {"influence": 3, "vp": 2, "existing": true},
+    "MKT_05": {"influence": 2, "vp": 2}
+  },
+  "courtier_control_after_turn": {
+    "COURT_001": "Guild Master Aldric - CONTROLLED (5 vs 2)",
+    "COURT_002": "Trade Commissioner Vale - CONTROLLED (2/2)",
+    "COURT_011": "Harbormaster Blackwater - CONTROLLED (2/4)",
+    "COURT_012": "Admiral Stormwind - PROMOTED (permanent)"
+  },
+  "reasoning": "TRADE EMPIRE AT LAST! After FIVE CYCLES of patient economic warfare, the compound interest machine delivers its ultimate dividend. Three abilities fire: Harrow plants 2 cubes on the Grand Exchange (4 VP jewel), Brynn transmutes 4 gold from intellectual capital, Tom contributes his sewer crown. Nine influence cubes deploy: 3 lock down Aldric (breaking the tie!), 6 flood the Market. The result? FOUR Commerce courtiers under my control. Trade Empire COMPLETES: 8 VP + 5 gold + 2 cards. Combined with 11 VP of new Market territory (MKT_01, MKT_03, MKT_05), this turn generates 19+ VP of value. Treasury swells from 9 to 19 gold. The Economic Powerhouse does not merely win - we COMPOUND our victories. P1 thought their promotions would secure dominance? Today the ledger balanced. Gold flows to those who understand PATIENCE - and Trade Empire proves that economic empires are built one courtier at a time."
+}

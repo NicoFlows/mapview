@@ -1,0 +1,92 @@
+{
+  "player_id": 3,
+  "cards": [
+    {
+      "id": "POWER_035",
+      "title": "Universal Connections",
+      "cost": 0,
+      "effect": "Use in place of controlling ANY one courtier for petition completion this turn",
+      "category": "low_impact",
+      "card_type": "power"
+    },
+    {
+      "id": "AGENT_034",
+      "name": "Knight Commander Steele",
+      "subtitle": "Paladin of Tempest",
+      "faction": "Military",
+      "level": 2,
+      "influence": 5,
+      "gold": 1,
+      "exposure": 3,
+      "abilities": [
+        "4 Place four influence in Barracks.",
+        "6 Remove three influence from any district."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_016",
+      "name": "Admiral Stormwind",
+      "subtitle": "Fleet Commander",
+      "faction": "Maritime",
+      "level": 2,
+      "influence": 5,
+      "gold": 3,
+      "exposure": 2,
+      "abilities": [
+        "3 Gain 4 crowns.",
+        "6 Move up to 3 influence between districts."
+      ],
+      "card_type": "agent",
+      "vp_upgrades": [
+        {
+          "stat": "influence",
+          "old_value": 4,
+          "new_value": 5,
+          "cost": 1
+        },
+        {
+          "stat": "gold",
+          "old_value": 2,
+          "new_value": 3,
+          "cost": 1
+        }
+      ]
+    },
+    {
+      "id": "AGENT_038",
+      "name": "Auctioneer Pryce",
+      "subtitle": "Voice of Commerce",
+      "faction": "Commercial",
+      "level": 1,
+      "influence": 3,
+      "gold": 2,
+      "exposure": 1,
+      "abilities": [
+        "2 Gain 2 crowns.",
+        "3 Place two influence in Market."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_001",
+      "name": "Michael Elmen",
+      "faction": "Commercial",
+      "level": 1,
+      "influence": 3,
+      "gold": 3,
+      "exposure": 2,
+      "abilities": [
+        "When revealed, Recruit.",
+        "2 Gain three crowns.",
+        "4 Place two influence in one Market square you control."
+      ],
+      "card_type": "agent"
+    }
+  ],
+  "max_size": 5,
+  "agents_count": 3,
+  "power_count": 1,
+  "minimum_agents": 1,
+  "current_hand_size": 5
+}

@@ -1,0 +1,166 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 1,
+  "personality": "Aggressive Warlord",
+  "recruitment": {
+    "agent_id": "AGENT_034",
+    "agent_name": "Knight Commander Steele",
+    "from_hand": true,
+    "position": 2,
+    "rationale": "Military heavy-hitter with ability to REMOVE 3 influence from any district (6 cost). Perfect for disrupting the leaders. At Level 2 with 5 influence, he generates 4 influence in Position 2. His faction (Military) allows free placement in Barracks and Palace - key strategic districts. I need aggressive tools to close the 26 VP gap."
+  },
+  "active_agent": {
+    "agent_id": "AGENT_010",
+    "agent_name": "Marcus Venditti",
+    "position": 1,
+    "level": 2,
+    "faction": "Commercial",
+    "influence_generated": 2,
+    "gold_generated": 4,
+    "abilities_available": [
+      "3 Gain 5 crowns",
+      "5 Place three influence in Market and gain 3 crowns"
+    ]
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "agent_ability",
+      "agent": "AGENT_010",
+      "ability_cost": 3,
+      "ability": "Gain 5 crowns",
+      "details": "Building war chest for aggressive expansion. Current gold is only 1, need crowns to fund future attacks and Inspire actions. After this: 1 + 4 (agent gold) + 5 (ability) = 10 gold total.",
+      "rationale": "Need resources to fuel aggression. The board is empty - first I build the war chest, then I strike hard."
+    },
+    {
+      "action_num": 2,
+      "type": "inspire",
+      "target_district": "Market",
+      "target_square": "MKT_01",
+      "influence_amount": 3,
+      "cost_per_influence": 4,
+      "total_cost": 12,
+      "details": "Claim the Grand Exchange (4 VP) - highest value square in Market. At 4 VP district cost, 3 influence costs 12 gold. After ability gain, I have 10 gold - wait, I need more. Adjusting...",
+      "rationale": "REVISED: Use 2 influence instead - costs 8 gold. Establish presence in valuable territory."
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "target": "COURT_003",
+      "courtier_name": "High Priest Matthias",
+      "influence_amount": 2,
+      "details": "I already have 2 influence on High Priest Matthias. Adding 2 more would give me 4 of 5 slots, putting me close to control. This sets up petition possibilities.",
+      "rationale": "Securing Religious courtier advances toward petition completion - I have Universal Connections card to substitute for missing courtiers."
+    }
+  ],
+  "revised_actions": [
+    {
+      "action_num": 1,
+      "type": "agent_ability",
+      "agent": "AGENT_010",
+      "ability_cost": 3,
+      "ability": "Gain 5 crowns",
+      "gold_after": 10,
+      "details": "Activating Marcus Venditti's money-making ability. Total gold: 1 (current) + 4 (agent gold generation) + 5 (ability) = 10 crowns."
+    },
+    {
+      "action_num": 2,
+      "type": "inspire",
+      "target_district": "Market",
+      "target_square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "square_vp": 4,
+      "influence_amount": 2,
+      "cost_per_influence": 4,
+      "total_cost": 8,
+      "gold_after": 2,
+      "details": "Pay 8 gold to place 2 influence in Grand Exchange. This claims the highest-value square (4 VP) in the Market district. Board is empty so no conflict."
+    },
+    {
+      "action_num": 3,
+      "type": "inspire",
+      "target_district": "Barracks",
+      "target_square": "BAR_01",
+      "square_name": "Commander's Tower",
+      "square_vp": 4,
+      "influence_amount": 0,
+      "details": "SKIP - insufficient gold. Save remaining 2 gold for next turn defensive options.",
+      "rationale": "Cannot afford another Inspire. Hold position."
+    }
+  ],
+  "influence_placements": [
+    {
+      "source": "auto_canvassing",
+      "target_type": "district",
+      "district": "Market",
+      "square": "MKT_02",
+      "square_name": "Merchant Guild",
+      "amount": 2,
+      "rationale": "Marcus Venditti (Commercial) auto-places 2 influence (Level 2 x Position 1) in Market. Targeting MKT_02 adjacent to MKT_01 to build Market presence."
+    },
+    {
+      "source": "inspire_action",
+      "target_type": "district",
+      "district": "Market",
+      "square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "amount": 2,
+      "cost": 8,
+      "rationale": "Inspire action to claim highest-value square in Market"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "auto_canvassing",
+      "agent": "Marcus Venditti",
+      "faction": "Commercial",
+      "influence": 2,
+      "target": "Market district - MKT_02"
+    }
+  ],
+  "resource_tracking": {
+    "gold_start": 1,
+    "gold_from_agent": 4,
+    "gold_from_ability": 5,
+    "gold_spent_inspire": 8,
+    "gold_end": 2,
+    "influence_pool_start": 5,
+    "influence_auto_placed": 2,
+    "influence_inspired": 2,
+    "influence_pool_end": 1
+  },
+  "end_of_turn_state": {
+    "gold": 2,
+    "influence_pool": 1,
+    "market_control": {
+      "MKT_01": 2,
+      "MKT_02": 2
+    },
+    "total_market_influence": 4
+  },
+  "reasoning": "AGGRESSIVE ANALYSIS - CYCLE 5 TURN 1:\n\nI am 26 VP BEHIND the leader. This is the FINAL CYCLE. I cannot play defensively.\n\nTHE SITUATION:\n- Board is RESET - everyone starts from zero on districts\n- Only Position 1 agents are active\n- My Marcus Venditti is active, generating gold and influence\n- I have Knight Commander Steele in hand - a Military DESTROYER\n\nSTRATEGY - STRIKE FAST, BUILD DOMINANCE:\n1. RECRUITMENT: Knight Commander Steele goes to Position 2. He becomes active Turn 2 with devastating abilities - can remove 3 enemy influence OR place influence in Barracks. Military faction gives free placement in Barracks/Palace.\n\n2. THIS TURN - BUILD WAR CHEST & CLAIM TERRITORY:\n- Use Venditti's gold ability (+5 crowns) = 10 total gold\n- Auto-canvas 2 influence to Market (free)\n- Inspire 2 more influence to Market's Grand Exchange\n- Result: 4 influence in Market, controlling 2 key squares\n\n3. NEXT TURN ASSAULT PLAN:\n- Knight Commander Steele activates with removal power\n- Watch where opponents place influence Turn 1\n- Turn 2: DESTROY their gains with Steele's 'Remove 3 influence' ability\n- Make them REACT to MY aggression\n\nWHY MARKET FOCUS:\n- Marcus Venditti is Commercial - synergy\n- Market is worth 16 total VP across squares\n- District controller gains 1 gold per turn - fuels more attacks\n- Sets up petition opportunities\n\nTHE WARLORD'S CREED:\nStrike hard. Strike fast. Make them fear where you will hit next. I did not come to this final cycle to play defense - I came to TAKE THE THRONE.",
+  "threat_assessment": {
+    "player_1": {
+      "vp": 102,
+      "gap": 20,
+      "position_1_agent": "Captain Varro (Military, Level 3)",
+      "threat": "HIGH - has promoted courtiers, Military removes influence",
+      "counter": "Pre-emptive strikes to deny territory"
+    },
+    "player_2": {
+      "vp": 108,
+      "gap": 26,
+      "position_1_agent": "Guildmaster Harrow (Commercial, Level 3)",
+      "threat": "HIGHEST - Leader, strong economy, promoted Maritime courtier",
+      "counter": "Contest Market district directly, deny Commerce dominance"
+    }
+  },
+  "petition_opportunity": {
+    "target": "PETITION_015 - Council of Lords",
+    "requirements": "COURT_007 (Duchess Seraphina), COURT_001 (Guild Master Aldric), COURT_003 (High Priest Matthias)",
+    "reward": "11 VP + 4 gold + reduce exposure by 3",
+    "status": "I have 2/5 on High Priest Matthias. Need to control all three.",
+    "power_card": "Universal Connections (POWER_035) can substitute for ONE missing courtier"
+  }
+}

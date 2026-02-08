@@ -1,0 +1,110 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 7,
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability": "4 Place three influence in Barracks",
+      "min_turn": 4,
+      "effect": "FREE - Place 3 influence cubes in BAR_01 (Commander's Tower)",
+      "target_square": "BAR_01",
+      "influence_amount": 3
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_018",
+      "agent_name": "Duke Valorian",
+      "ability": "6 Adjust any district VP by +/-1",
+      "min_turn": 6,
+      "effect": "FREE - Increase Barracks district total VP by +1 (I control the entire district)",
+      "target_district": "Barracks",
+      "vp_adjustment": 1
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability": "4 Gain 5 crowns but increase exposure by 1",
+      "min_turn": 4,
+      "effect": "+5 gold (2->7), exposure 0->1",
+      "gold_gained": 5,
+      "exposure_gained": 1
+    },
+    {
+      "action_num": 4,
+      "type": "use_ability",
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "ability": "5 Place four influence in Docks",
+      "min_turn": 5,
+      "effect": "FREE - Place 4 influence cubes in DOC_01 (Harbormaster Office, 4 VP)",
+      "target_square": "DOC_01",
+      "influence_amount": 4
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "amount": 10,
+      "faction": "Military",
+      "rationale": "Retake Commander's Tower (4 VP) after P3's Steele removed my influence. Combined with Varro's 3 ability cubes = 13 total, ensuring absolute control."
+    },
+    {
+      "type": "place_influence",
+      "district": "Palace",
+      "square": "PAL_01",
+      "amount": 8,
+      "faction": "Military",
+      "rationale": "Throne Room (4 VP) is uncontested. Military faction has Palace access. Secures additional high-value square for cycle-end scoring."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "use_district_power",
+      "district": "Barracks",
+      "power": "Controller may remove 1 influence from any square per turn",
+      "target": "MKT_04",
+      "target_player": 3,
+      "rationale": "Remove 1 P3 cube from Silk Bazaar (MKT_04) to degrade their Market position"
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 18,
+    "gold": 0,
+    "actions_used": 4
+  },
+  "resources_after_abilities": {
+    "gold_gained": 5,
+    "exposure_gained": 1,
+    "influence_from_abilities": 7
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 7
+  },
+  "strategic_summary": {
+    "primary_objective": "Retake BAR_01 (Commander's Tower, 4 VP) lost to P3's Steele attack",
+    "secondary_objective": "Maximize VP before cycle transition through district control and gold accumulation",
+    "abilities_activated": [
+      "Varro: 3 FREE Barracks cubes",
+      "Valorian: +1 VP to Barracks district",
+      "Rothwell: +5 gold for cycle-end conversion",
+      "Blackbeard: 4 FREE Docks cubes"
+    ],
+    "total_influence_deployed": 25,
+    "breakdown": {
+      "ability_cubes": 7,
+      "pool_cubes": 18
+    }
+  },
+  "reasoning": "CYCLE 2 FINALE - Maximum resource extraction. P3 attacked BAR_01 with Steele, removing my influence from the 4 VP Commander's Tower. I must retake it to maintain full Barracks district control (currently district_controller: 1). With 4 actions (Noble Charter bonus), I activate four abilities for 7 FREE influence cubes plus gold generation. Valorian's VP adjustment increases Barracks total value since I control the entire district. Full 18-cube pool deployed: 10 to BAR_01 (overwhelming force to guarantee control), 8 to PAL_01 (uncontested 4 VP Throne Room). Faction bug limits placement to Military-accessible districts (Barracks, Palace). Blackbeard's Docks cubes still deploy via ability. Final state: BAR_01 secured (13 cubes), PAL_01 claimed (8 cubes), DOC_01 established (4 cubes). Gold rises to 7 for cycle-end conversion. Exposure at 1 is acceptable. No petitions completable (Korrath and Lyra blocked). Barracks district power removes 1 P3 cube from Market. The mathematical optimization is complete - maximum VP extraction achieved for cycle transition."
+}

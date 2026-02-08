@@ -1,0 +1,81 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 2,
+  "recruitment": null,
+  "rationale_summary": "Maximize Market territory control and secure Commerce courtier pair for PETITION_010 (Trade Empire) pathway. No abilities active at Turn 2 - focus on territorial expansion and petition setup. Full influence pool deployment for 5 VP value gain.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "play_power_card",
+      "card_id": "POWER_014",
+      "card_name": "Political Maneuvering",
+      "effect": "Move up to 3 influence (any players') from one courtier to others in the same coterie",
+      "cost": 0,
+      "notes": "Setup move for future Commerce courtier control optimization. Currently positioning for dual-courtier influence distribution.",
+      "roi": "Strategic value for courtier consolidation in Commerce coterie"
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "square_name": "Spice Stalls",
+      "amount": 2,
+      "faction": "Commercial",
+      "vp_value": 2,
+      "notes": "Adjacency to MKT_01 (current control). Extends Market economic engine foundation.",
+      "roi": "2 VP for 2 influence (1:1 ratio), adjacent to existing control"
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "square_name": "Banking House",
+      "amount": 2,
+      "faction": "Commercial",
+      "vp_value": 3,
+      "notes": "Defensive positioning against P3's MKT_02. Isolates opponent's control. Banking House has high base VP.",
+      "roi": "3 VP for 2 influence (1.5:1 ratio), defensive value"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "coterie": "Commerce",
+      "amount": 1,
+      "notes": "Secure first Commerce courtier. Pairs with existing COURT_002 control (1 influence, already controller). Advances PETITION_010 (Trade Empire) requirement: need both Commerce courtiers + both Maritime courtiers (4 total for 8 VP + 5 gold + 2 cards).",
+      "strategic_goal": "Commerce courtier pair locks down commercial faction monopoly"
+    }
+  ],
+  "resources_deployed": {
+    "influence_pool_used": 5,
+    "influence_pool_total": 5,
+    "gold_spent": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 2,
+    "hand_size": 5
+  },
+  "economic_position": {
+    "vp_current": 50,
+    "vp_lead": "+14 vs P1(36), +8 vs P3(42)",
+    "territory_controlled": "MKT_01(2inf), MKT_05(2inf), MKT_03(2inf) + COURT_001(1inf), COURT_002(1inf as controller)",
+    "petition_progress": "PETITION_010 (Trade Empire): Need COURT_001(securing), COURT_002(controlling), COURT_011(open), COURT_012(open) = 2/4 achieved when this turn resolves"
+  },
+  "ability_status": {
+    "harrow_active_abilities": "Position 1 - Ability 3 (Place 2 in Market) locked until Turn 3",
+    "brynn_active_abilities": "Position 2 - Ability 3 (Gain 4 gold) locked until Turn 3",
+    "note": "Turn 2 has NO active gold-generating abilities. Focus on territory and courtier setup."
+  },
+  "next_turn_planning": {
+    "turn_3_unlocks": "Harrow ability activation (Place 2 in Market) + Brynn ability activation (Gain 4 gold)",
+    "maritime_faction_unlock": "Position 3 (Calico, Maritime) becomes active at Turn 3 - enables Docks district play",
+    "petition_target": "PETITION_010 Trade Empire - need 2 more Maritime courtiers (COURT_011, COURT_012) by cycle end for 8 VP + 5 gold + 2 cards"
+  }
+}

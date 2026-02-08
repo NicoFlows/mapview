@@ -1,0 +1,62 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 2,
+  "recruitment": {
+    "agent_id": "AGENT_033",
+    "position": 3,
+    "rationale": "Inquisitor Vane (Religious, L2) unlocks Religious faction access for Temple/Religious courtiers. Level 2 status makes him promotion-eligible for courtier advancement. His 3 influence adds immediate placement value for Barracks/Temple expansion. High exposure (3) is acceptable at turn 2 with early cycle timing for exposure reset planning."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability": "2 Gain 3 crowns",
+      "min_turn": 2,
+      "effect": "FREE +3 gold (3 gold → 6 gold)",
+      "rationale": "Immediate resource generation. Gold is convertible to VP at cycle end and enables future purchases (agent upgrades, courtier influence premium placements)."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability": "2 Remove one influence from any district",
+      "min_turn": 2,
+      "target_district": "Market",
+      "target_square": "MKT_02",
+      "effect": "Remove 1 of P3's 3 influence from Merchant Guild (3 VP square)",
+      "rationale": "Surgical disruption of P3's aggressive Market expansion (9 pool influence deployed). Varro's removal ability neutralizes their high-value square. P3's remaining 2 cubes on MKT_02 keeps it contested but weakens their position. Cost: 1 action for strategic advantage against high-threat opponent."
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_02",
+      "square_name": "Armory",
+      "amount": 4,
+      "faction": "Military",
+      "rationale": "Deploy full 4-cube pool to Barracks expansion. BAR_02 (3 VP) is adjacent to my controlled BAR_01 (3 VP), creating adjacency control. This increases Barracks presence toward district controller bonus (special ability: remove 1 influence per turn). Consolidating Barracks dominance is higher efficiency than contested Market expansion."
+    }
+  ],
+  "influence_placements_summary": {
+    "barracks_deployment": 4,
+    "courtier_deployment": 0,
+    "total_pool_spent": 4
+  },
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 4,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 6,
+    "gold_change": "+3 from Rothwell ability"
+  },
+  "strategic_reasoning": "Turn 2 optimization framework: Maximize resource generation (Rothwell +3 gold), execute strategic disruption (Varro removes P3's Market expansion), expand core district (Barracks consolidation). Recruitment of Inquisitor Vane (Religious L2) unlocks Religious faction for next turn, enabling Temple access and Religious courtier targets. Current position: 32 VP (trailing P2 by 18 VP, P3 by 10 VP). Strategic objective: Acceleration through faction diversification and ability spam. Cycle 2 goal remains Imperial Mandate petition (12 VP, requires both Military + both Noble courtiers) and promotion pathway (8 courtiers = instant win). All 3 actions deployed, full influence pool utilized, resource efficiency maximized.",
+  "turn_summary": "P1 Turn 2 executed with precision: triple-optimization sequence (Rothwell +3 gold, Varro disruption, Barracks expansion). Inquisitor Vane recruited to unlock Religious access. Projected next turn: Position 1-3 active (Military, Commercial, Religious). Religious courtier targets become viable (High Priest Matthias, Sister Evangeline). Gold reserves at 6 enable future agent upgrades or courtier premium placements. Barracks progression continues toward district control bonus (+1 influence removal per turn)."
+}

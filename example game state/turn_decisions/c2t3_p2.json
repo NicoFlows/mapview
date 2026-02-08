@@ -1,0 +1,118 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 3,
+  "decision_timestamp": "2026-01-29",
+  "strategic_summary": "GOLDEN OPPORTUNITY: Complete PETITION_010 (Trade Empire) this turn. Control all 4 Commerce+Maritime courtiers for 8 VP + 5 gold + 2 card draws. Generate +7 gold from Brynn & Calico abilities (9 gold total after bonuses = economic dominance secured). Maintain Market district stronghold while locking in permanent courtier control.",
+  "recruitment": {
+    "recruited": false,
+    "rationale": "Saving action economy and gold for petition completion and ability usage. Hand has diverse agents; no immediate recruitment needed. Pool influence must go toward maritime courtier control."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "is_available": true,
+      "effect": "FREE +4 gold (pure profit)",
+      "profit_calculation": "+4 gold to struggling reserves (2→6)",
+      "rationale": "Gold generation ability. Essential for rebuilding reserves after heavy investment. Brynn is at position 2 (active since Turn 2), so ability is available Turn 3+."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_023",
+      "agent_name": "First Mate Calico",
+      "ability": "2 Gain 3 crowns",
+      "min_turn": 2,
+      "is_available": true,
+      "effect": "FREE +3 gold (pure profit)",
+      "profit_calculation": "+3 gold (6→9 total)",
+      "rationale": "Calico is at position 3 (becomes active THIS TURN at Turn 3). This is the first turn the ability is available. Stacks with Brynn for +7 total gold generation."
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "amount": 3,
+      "reasoning": "Control maritime courtier pair for PETITION_010 completion. 3 influence on a 4-slot courtier with no current competition = controller status."
+    }
+  ],
+  "additional_placement": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_012",
+      "courtier_name": "Admiral Stormwind",
+      "coterie": "Maritime",
+      "amount": 2,
+      "reasoning": "Complete maritime pair. 2 slots filled = automatic control. Costs only 2 of remaining 4 pool after COURT_011 placement.",
+      "note": "This may be included as 2nd courtier placement if turn mechanics allow 2 courtier placements per turn. If only 1 courtier placement allowed per turn, prioritize COURT_011 (larger courtier = more valuable control). Adjust Action 3 accordingly."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_010",
+      "petition_title": "Trade Empire",
+      "requirements": ["COURT_001", "COURT_002", "COURT_011", "COURT_012"],
+      "requirements_met_explanation": "Control both Commerce courtiers (COURT_001 & COURT_002) from previous turns. Placing influence on COURT_011 & COURT_012 this turn creates control of all 4 required courtiers.",
+      "vp_gained": 8,
+      "bonus_effect": "+5 gold and draw 2 cards",
+      "total_profit_this_turn": "8 VP + 5 gold + 2 card draws",
+      "roi_explanation": "This is the highest-value petition achievable this turn. 8 VP alone extends my lead. The +5 gold bonus brings total gold this turn to 14 (from 2 starting). The 2 card draws provide recruitment opportunities for future cycles."
+    },
+    {
+      "type": "use_ability",
+      "ability_source": "Harrow - Market Placement",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability": "3 Place two influence in Market",
+      "min_turn": 3,
+      "is_available": true,
+      "placement": "MKT_07",
+      "amount": 2,
+      "rationale": "FREE influence placement (not an action). Completes Market district control by taking the only uncontrolled square (MKT_07, 1 VP). Activates Market district power access for future turns."
+    }
+  ],
+  "resource_allocation": {
+    "influence_pool_start": 7,
+    "influence_placement": {
+      "COURT_011": 3,
+      "COURT_012": 2,
+      "total_used": 5
+    },
+    "influence_pool_remaining": 2,
+    "note": "Remaining 2 influence can be placed on Market (via Harrow ability places 2 free) or held for next turn. No district squares targeted in paid placements this turn - all pool goes to petition completion."
+  },
+  "gold_calculation": {
+    "starting_gold": 2,
+    "brynn_ability": "+4",
+    "calico_ability": "+3",
+    "petition_010_bonus": "+5",
+    "total_gold_end_of_turn": 14,
+    "rationale": "Gold generation abilities stack with petition bonus to create 12x gold multiplier (2→14). This is critical economic dominance - enough gold to invest in upgrades, whitewashing, or further placements next cycle."
+  },
+  "vp_calculation": {
+    "starting_vp": 55,
+    "petition_010_reward": 8,
+    "total_vp_end_of_turn": 63,
+    "lead_over_opponents": "Extends lead by 8 VP. P1 at 45 (18 behind), P3 at 45 (18 behind). Economic dominance secured."
+  },
+  "courtier_control_summary": {
+    "controlled_before_turn": ["COURT_001", "COURT_002"],
+    "controlled_after_turn": ["COURT_001", "COURT_002", "COURT_011", "COURT_012"],
+    "total_courtiers_controlled": 4,
+    "economic_significance": "Controlling all Commerce + Maritime courtiers is the gold standard of economic power. Petition_010 triggers when all 4 are controlled. This creates a permanent economic monopoly."
+  },
+  "tactical_notes": {
+    "threat_assessment": "P3 has 13 influence (high pool) but mostly in Market (competitive). P1 at 7 influence (monitoring). Maritime courtiers uncontrolled = no competition for this turn's placement. Securing them NOW prevents opponents from building toward Trade Empire themselves.",
+    "market_district_status": "6 of 7 squares controlled (MKT_01, MKT_03, MKT_05 confirmed as mine). Harrow placement takes MKT_07. Complete district control = 1 gold/turn START bonus + access to district power (gain 3 gold or place 2 free influence in adjacent).",
+    "position_lock": "With 4 courtiers controlled + Market district controlled + 14 gold reserves + 55 VP lead, economic engine is LOCKED IN. Opponents cannot catch up if I maintain these assets."
+  },
+  "commitment_statement": "This turn executes the core Economic Powerhouse strategy: Maximize gold generation through ability stacking, Convert influence into permanent courtier control via petition completion, Expand economic engine footprint by securing maritime trade routes. Result: Economic dominance guaranteed."
+}

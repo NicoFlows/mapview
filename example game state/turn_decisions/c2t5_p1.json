@@ -1,0 +1,135 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 5,
+  "agent_type": "strategic",
+  "recruitment": null,
+  "rationale_recruitment": "All 7 conspiracy positions are filled. No replacement needed - current agents provide optimal faction coverage and Turn 5 abilities are extremely valuable.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "ability": "5 Place four influence in Docks",
+      "min_turn": 5,
+      "effect": "FREE placement of 4 influence cubes in Docks district",
+      "target": {
+        "district": "Docks",
+        "square": "DOC_01",
+        "amount": 4
+      },
+      "reasoning": "Blackbeard's Turn 5 ability unlocks today - 4 FREE cubes to Harbormaster Office (4 VP). Currently empty square, guarantees control. Establishes Docks presence for potential Maritime dominance."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_018",
+      "agent_name": "Duke Valorian",
+      "ability": "4 Place three influence in Palace",
+      "min_turn": 4,
+      "effect": "FREE placement of 3 influence cubes in Palace district",
+      "target": {
+        "district": "Palace",
+        "square": "PAL_01",
+        "amount": 3
+      },
+      "reasoning": "Valorian's ability places 3 FREE cubes in Palace. Target Throne Room (4 VP) - highest value Palace square. Currently empty, guarantees control."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_021",
+      "agent_name": "The Shadow",
+      "ability": "5 Flip one opponents agent face down",
+      "min_turn": 5,
+      "effect": "Target opponent's agent becomes face-down (cannot use abilities, reduced influence generation)",
+      "target": {
+        "player": 3,
+        "agent_id": "AGENT_010",
+        "agent_name": "Marcus Venditti",
+        "agent_position": 1
+      },
+      "reasoning": "Shadow's Turn 5 ability is devastating. Target P3's Marcus Venditti - their ONLY active Commercial agent. This eliminates their Market district access (they control Market!), crippling their faction coverage for the remainder of the cycle. P3 is leading by 10 VP - this disruption is critical."
+    }
+  ],
+  "influence_placement": {
+    "district_influence": [
+      {
+        "district": "Palace",
+        "square": "PAL_02",
+        "amount": 4,
+        "faction_used": "Military",
+        "reasoning": "Royal Chamber (3 VP) - Military faction allows Palace access. Empty square, guaranteed control."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_04",
+        "amount": 4,
+        "faction_used": "Military",
+        "reasoning": "Council Room (2 VP) - Adjacent to PAL_01 and PAL_05. Building Palace control chain."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_05",
+        "amount": 4,
+        "faction_used": "Military",
+        "reasoning": "Royal Garden (2 VP) - Central Palace square with 4 adjacencies. Strategic positioning."
+      }
+    ],
+    "courtier_influence": null,
+    "courtier_note": "Due to faction bug (only Military faction recognized), cannot place on Noble courtier COURT_007 this turn. Military courtiers: COURT_006 already controlled (1/1), COURT_005 has P3's 2 influence (would need 3 to flip, but pool is better used for Palace VP)."
+  },
+  "free_actions": [
+    {
+      "type": "whitewash",
+      "amount": 3,
+      "gold_cost": 12,
+      "exposure_before": 12,
+      "exposure_after": 9,
+      "reasoning": "CRITICAL - I am currently SCAPEGOAT with highest exposure (12). Cycle 2 whitewash cost = 4 gold per point. Spending 12 gold reduces exposure by 3 (12 to 9). This reduces scapegoat risk while preserving 6 gold for future needs. At exposure 9, I may still be scapegoat but gap is reduced."
+    },
+    {
+      "type": "district_power",
+      "district": "Barracks",
+      "effect": "Remove 1 influence from any square",
+      "target": {
+        "district": "Market",
+        "square": "MKT_02",
+        "player_affected": 3
+      },
+      "reasoning": "As Barracks district controller, I get free influence removal each turn. Target P3's Market dominance - remove 1 cube from MKT_02 (Merchant Guild). Reduces their district lead incrementally."
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 12,
+    "gold": 12,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 6,
+    "exposure": 9
+  },
+  "strategic_reasoning": {
+    "turn_5_opportunity": "Turn 5 unlocks Blackbeard's 4 FREE Docks cubes and Shadow's agent-flipping ability. Both are powerful abilities that require immediate exploitation.",
+    "exposure_management": "At exposure 12, I am guaranteed scapegoat (-3 VP at cycle end). Whitewashing 3 points costs 12 gold but is mathematically sound - 3 VP saved is worth 12 gold at cycle-end conversion rates.",
+    "vp_gap_analysis": "P3 leads by 10 VP (54 vs 44). This turn adds approximately 9 VP from Palace (4+3+2) plus 4 VP from Docks = 13 VP potential. Plus abilities saved 7 influence cubes (worth ~4 VP equivalent in efficiency).",
+    "disruption_value": "Flipping P3's Marcus Venditti eliminates their only active Commercial agent. They control Market district but lose ability to defend it or use its controller power effectively.",
+    "cycle_end_preparation": "After this turn: Palace partially controlled, Docks presence established, exposure reduced. Next 2 turns should focus on courtier completion for petition VP and further exposure reduction."
+  },
+  "petition_status": {
+    "noble_charter": {
+      "requirements": ["COURT_007", "COURT_008"],
+      "current_control": ["COURT_008"],
+      "missing": ["COURT_007"],
+      "blocked_by": "Faction bug prevents Noble courtier placement this turn. Must resolve in Turn 6."
+    },
+    "imperial_mandate": {
+      "requirements": ["COURT_005", "COURT_006", "COURT_007", "COURT_008"],
+      "current_control": ["COURT_006", "COURT_008"],
+      "progress": "2/4",
+      "notes": "High priority for 12 VP. Requires securing both COURT_005 and COURT_007."
+    }
+  }
+}

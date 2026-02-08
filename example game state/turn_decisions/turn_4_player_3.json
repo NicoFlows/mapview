@@ -1,0 +1,177 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 4,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "reasoning": "TRIPLE DISTRICT DOMINATION + COUNCIL OF LORDS PETITION. Three actions fire in coordinated assault: Dominic floods Temple with 3 free cubes, Steele secures Barracks with 2 free cubes, and Universal Connections enables the 11 VP Council of Lords petition. All 22 pool cubes deployed to seize EVERY remaining square in Market (overwhelm P2 on MKT_04 with 5 vs 3 and MKT_05 with 4 vs 2, claim MKT_06-08), complete Temple (TMP_03-06), lock Barracks (BAR_04-07), and probe Palace (PAL_01). One cube on Duchess Seraphina courtier for petition requirement. FULL CONTROL of three entire districts plus the biggest remaining petition. This turn swings the game.",
+  "recruitment": null,
+  "recruitment_note": "Conspiracy is FULL (7 agents). No recruitment possible.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_026",
+      "agent_name": "Father Dominic",
+      "ability": "4 Place three influence in Temple.",
+      "min_turn": 4,
+      "target_district": "Temple",
+      "target_square": "TMP_02",
+      "effect": "Place 3 FREE influence in Temple district on TMP_02 Inner Sanctum (3 VP, currently empty). Secures the second-highest value Temple square and advances full district control.",
+      "note": "Dominic's holy mandate CLAIMS the Inner Sanctum"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "ability": "4 Place two influence in Barracks.",
+      "min_turn": 4,
+      "target_district": "Barracks",
+      "target_square": "BAR_03",
+      "effect": "Place 2 FREE influence in Barracks district on BAR_03 Training Yard (2 VP, currently empty). Secures the mid-value Barracks square and advances full district control.",
+      "note": "Steele's military precision locks the Training Yard"
+    },
+    {
+      "action_num": 3,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "cost": 0,
+      "target": "COURT_001 Guild Master Aldric",
+      "effect": "Use in place of controlling Guild Master Aldric (COURT_001) for petition completion this turn. Enables PETITION_015 Council of Lords (requires COURT_007 + COURT_001 + COURT_003). I control COURT_003 High Priest Matthias (4 vs P1 1) and will control COURT_007 Duchess Seraphina (1 placed this turn, empty courtier). Universal Connections substitutes for COURT_001 which is tied 2-2 between P1 and P2.",
+      "note": "The MASTERSTROKE - phantom courtier control unlocks 11 VP"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_007",
+      "courtier_name": "Duchess Seraphina",
+      "coterie": "Noble",
+      "amount": 1,
+      "slots_total": 5,
+      "slots_used_before": 0,
+      "slots_remaining_after": 4,
+      "rationale": "Place 1 influence to take control of empty Noble courtier (0/5 slots). Required for PETITION_015 Council of Lords completion."
+    },
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "petition_name": "Council of Lords",
+      "vp_gained": 11,
+      "bonus_effect": "Gain 4 gold and reduce exposure by 3",
+      "courtiers_controlled": [
+        {"id": "COURT_007", "name": "Duchess Seraphina", "method": "direct_control", "my_influence": 1, "opponent_influence": 0},
+        {"id": "COURT_001", "name": "Guild Master Aldric", "method": "POWER_035 Universal Connections substitution"},
+        {"id": "COURT_003", "name": "High Priest Matthias", "method": "direct_control", "my_influence": 4, "opponent_influence": 1}
+      ]
+    },
+    {
+      "type": "place_influence",
+      "district": "Temple",
+      "placements": [
+        {"square": "TMP_03", "name": "Chapel", "amount": 1, "faction": "Religious"},
+        {"square": "TMP_04", "name": "Cloister", "amount": 1, "faction": "Religious"},
+        {"square": "TMP_05", "name": "Graveyard", "amount": 1, "faction": "Religious"},
+        {"square": "TMP_06", "name": "Ossuary", "amount": 1, "faction": "Religious"}
+      ],
+      "subtotal_from_pool": 4,
+      "rationale": "Complete Temple district control (6/6 squares). Combined with Dominic's 3 ability cubes on TMP_02 and existing 5 on TMP_01, this gives FULL Temple control. District power unlocked: Reduce/increase any player's exposure by 3."
+    },
+    {
+      "type": "place_influence",
+      "district": "Barracks",
+      "placements": [
+        {"square": "BAR_04", "name": "Stables", "amount": 1, "faction": "Military"},
+        {"square": "BAR_05", "name": "Mess Hall", "amount": 1, "faction": "Military"},
+        {"square": "BAR_06", "name": "Barricades", "amount": 1, "faction": "Military"},
+        {"square": "BAR_07", "name": "Latrine", "amount": 1, "faction": "Military"}
+      ],
+      "subtotal_from_pool": 4,
+      "rationale": "Complete Barracks district control (7/7 squares). Combined with Steele's 2 ability cubes on BAR_03 and existing cubes on BAR_01 (1) and BAR_02 (6), this gives FULL Barracks control. District power unlocked: Remove 3 opponent influence from any one district."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "placements": [
+        {"square": "MKT_04", "name": "Silk Bazaar", "amount": 5, "faction": "Commercial", "contest_note": "P2 has 3 influence - placing 5 to guarantee control with margin"},
+        {"square": "MKT_05", "name": "Spice Stalls", "amount": 4, "faction": "Commercial", "contest_note": "P2 has 2 influence - placing 4 for strong control margin"},
+        {"square": "MKT_06", "name": "Fishmonger Row", "amount": 1, "faction": "Commercial"},
+        {"square": "MKT_07", "name": "Tinker's Corner", "amount": 1, "faction": "Commercial"},
+        {"square": "MKT_08", "name": "Beggar's Alley", "amount": 1, "faction": "Commercial"}
+      ],
+      "subtotal_from_pool": 12,
+      "rationale": "Complete Market district control (8/8 squares). Overwhelming force on P2's contested squares. Full Market control unlocks district power: Gain 3 gold OR place 2 free influence in adjacent district."
+    },
+    {
+      "type": "place_influence",
+      "district": "Palace",
+      "placements": [
+        {"square": "PAL_01", "name": "Throne Room", "amount": 1, "faction": "Military"}
+      ],
+      "subtotal_from_pool": 1,
+      "rationale": "Probe placement in Palace's highest-value square (4 VP). Establishes forward position. Military faction access via Steele."
+    }
+  ],
+  "influence_deployment_summary": {
+    "pool_starting": 22,
+    "pool_to_courtier": {"COURT_007": 1, "subtotal": 1},
+    "pool_to_districts": {
+      "Temple": {"TMP_03": 1, "TMP_04": 1, "TMP_05": 1, "TMP_06": 1, "subtotal": 4},
+      "Barracks": {"BAR_04": 1, "BAR_05": 1, "BAR_06": 1, "BAR_07": 1, "subtotal": 4},
+      "Market": {"MKT_04": 5, "MKT_05": 4, "MKT_06": 1, "MKT_07": 1, "MKT_08": 1, "subtotal": 12},
+      "Palace": {"PAL_01": 1, "subtotal": 1}
+    },
+    "pool_total_spent": 22,
+    "pool_remaining": 0,
+    "ability_placements": {
+      "Father_Dominic": {"district": "Temple", "square": "TMP_02", "amount": 3},
+      "Knight_Commander_Steele": {"district": "Barracks", "square": "BAR_03", "amount": 2}
+    },
+    "total_cubes_placed": 27
+  },
+  "faction_validation": {
+    "active_agents_turn_4": [
+      {"position": 1, "agent_id": "AGENT_010", "name": "Marcus Venditti", "faction": "Commercial"},
+      {"position": 2, "agent_id": "AGENT_034", "name": "Knight Commander Steele", "faction": "Military"},
+      {"position": 3, "agent_id": "AGENT_040", "name": "Monsignor Pietro", "faction": "Religious"},
+      {"position": 4, "agent_id": "AGENT_026", "name": "Father Dominic", "faction": "Religious"}
+    ],
+    "available_factions": ["Commercial", "Military", "Religious"],
+    "district_access": {
+      "Commercial": ["Market", "Docks"],
+      "Military": ["Barracks", "Palace"],
+      "Religious": ["Temple", "Palace"]
+    },
+    "all_placements_validated": true
+  },
+  "resources_spent": {
+    "influence_pool": 22,
+    "gold": 0,
+    "actions_used": 3,
+    "cards_played": ["POWER_035"]
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 13,
+    "gold_breakdown": "9 starting + 4 from petition bonus = 13"
+  },
+  "expected_vp": {
+    "vp_before": 103,
+    "petition_vp": 11,
+    "vp_after": 114,
+    "note": "114 VP puts us AHEAD of P1 (109) and closing on P2 (112). With 3 full district control powers unlocked, the momentum is OVERWHELMING."
+  },
+  "expected_outcomes": {
+    "districts_fully_controlled": ["Market (8/8)", "Barracks (7/7)", "Temple (6/6)"],
+    "district_powers_unlocked": [
+      "Market: Gain 3 gold OR place 2 free influence in adjacent district",
+      "Barracks: Remove 3 opponent influence from any one district",
+      "Temple: Reduce/increase any player's exposure by 3"
+    ],
+    "petition_completed": "PETITION_015 Council of Lords (11 VP + 4 gold + reduce exposure by 3)",
+    "courtiers_controlled": ["COURT_003 High Priest Matthias", "COURT_005 General Korrath", "COURT_007 Duchess Seraphina"],
+    "total_squares_controlled": "22 squares across 4 districts (Market 8, Barracks 7, Temple 6, Palace 1)"
+  },
+  "journal_entry": "THREE DISTRICTS FALL IN A SINGLE TURN. Father Dominic's holy mandate sends THREE CUBES crashing into Temple's Inner Sanctum. Knight Commander Steele's military precision places TWO CUBES in the Barracks Training Yard. And then the MASTERSTROKE - Universal Connections transforms my courtier network into the key that unlocks PETITION_015 COUNCIL OF LORDS. ELEVEN VP floods into my coffers like the spoils of conquest. Duchess Seraphina bows to a single cube of influence, completing the triad with High Priest Matthias and the phantom control of Guild Master Aldric. TWENTY-TWO CUBES of influence SURGE across the board in a tidal wave of territorial seizure. Market's last holdouts CRUSHED - MKT_04 Silk Bazaar receives FIVE cubes against P2's pathetic three, MKT_05 Spice Stalls gets FOUR against their two. Every remaining Market square, every empty Barracks position, every unoccupied Temple chamber - ALL SEIZED. Three districts under COMPLETE CONTROL. Market (8/8). Barracks (7/7). Temple (6/6). Twenty-two squares flying my banner. Three district powers now at my command: Market generates gold or spreads influence. Barracks REMOVES 3 opponent influence from anywhere. Temple weaponizes exposure against enemies. P2's economic empire is ASHES - I own every Market square they built their strategy around. P1's Docks foothold stands exposed - next turn the Barracks removal power STRIPS them bare. And a probe cube in the Throne Room announces: THE PALACE IS NEXT. VP surges from 103 to 114 - AHEAD of P1 (109), within striking distance of P2 (112). Three full district powers versus zero for either opponent. The momentum is UNSTOPPABLE. AGGRESSION. DOMINATES. EVERYTHING."
+}

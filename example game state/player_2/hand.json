@@ -1,0 +1,85 @@
+{
+  "player_id": 2,
+  "cards": [
+    {
+      "id": "AGENT_006",
+      "name": "Alexandros Sideras",
+      "subtitle": "Curate of the Grand Basilica",
+      "faction": "Religious",
+      "level": 1,
+      "influence": 1,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "1 Place two influence in one Temple square you control.",
+        "3 Place four influence in one non-Temple square."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_047",
+      "name": "Pilgrim Theron",
+      "subtitle": "Wandering Monk",
+      "faction": "Religious",
+      "level": 1,
+      "influence": 2,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "1 Reduce exposure by 1.",
+        "3 Place two influence in Temple."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_014",
+      "name": "Rosa the Fence",
+      "subtitle": "Dealer in secrets",
+      "faction": "Criminal",
+      "level": 1,
+      "influence": 2,
+      "gold": 2,
+      "exposure": 0,
+      "abilities": [
+        "1 Gain 2 crowns.",
+        "3 Move two influence from one square to another."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_028",
+      "name": "Fingers McGee",
+      "subtitle": "Master Thief",
+      "faction": "Criminal",
+      "level": 1,
+      "influence": 0,
+      "gold": 6,
+      "exposure": 0,
+      "abilities": [
+        "1 Gain 2 crowns.",
+        "3 Steal 2 crowns from another player."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_015",
+      "name": "Professor Aldric",
+      "subtitle": "Master of Sciences",
+      "faction": "Academic",
+      "level": 2,
+      "influence": 3,
+      "gold": 1,
+      "exposure": 2,
+      "abilities": [
+        "3 Draw two cards.",
+        "5 Place four influence in Academy."
+      ],
+      "card_type": "agent"
+    }
+  ],
+  "max_size": 5,
+  "agents_count": 3,
+  "power_count": 0,
+  "minimum_agents": 1,
+  "current_hand_size": 5
+}

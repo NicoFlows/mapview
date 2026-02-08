@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "simulation_id": "sim_5cycle_v3",
+  "variant_id": null,
+  "configuration": {
+    "player_count": 3,
+    "agent_types": [
+      "strategic",
+      "economic",
+      "aggressive"
+    ],
+    "total_cycles": 5,
+    "turns_per_cycle": 7
+  }
+}

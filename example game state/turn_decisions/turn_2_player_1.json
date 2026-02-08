@@ -1,0 +1,47 @@
+{
+  "player_id": 1,
+  "cycle": 5,
+  "turn": 2,
+  "timestamp": "2026-02-04T12:00:00Z",
+  "reasoning": "Cycle 5 Turn 2: Trailing P2 by 2 VP (106 vs 108). Triple-action optimization: Rothwell +3 gold for resource flexibility, Varro surgical strike removes P3's MKT_01 presence to degrade their Market hold, and influence deployment to DOC_01 for Docks presence.",
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability_text": "2 Gain 3 crowns.",
+      "min_turn": 2,
+      "gold_cost": 0,
+      "effect": "Gain 3 gold (1 -> 4 gold)"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability_text": "2 Remove one influence from any district.",
+      "min_turn": 2,
+      "gold_cost": 0,
+      "target_district": "Market",
+      "target_square": "MKT_01",
+      "target_player": 3,
+      "effect": "Remove 1 P3 influence from MKT_01"
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_01",
+      "amount": 4,
+      "faction": "Commercial"
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 4,
+    "gold": 0,
+    "actions_used": 3
+  }
+}

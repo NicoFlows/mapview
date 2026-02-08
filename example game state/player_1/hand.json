@@ -1,0 +1,78 @@
+{
+  "player_id": 1,
+  "cards": [
+    {
+      "id": "POWER_007",
+      "title": "Religious Influence",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Religious courtier when completing a petition this turn",
+      "category": "low_impact",
+      "card_type": "power"
+    },
+    {
+      "id": "AGENT_042",
+      "name": "Whisper",
+      "subtitle": "Eyes Everywhere",
+      "faction": "Criminal",
+      "level": 1,
+      "influence": 0,
+      "gold": 1,
+      "exposure": 0,
+      "abilities": [
+        "1 Look at another player's hand.",
+        "2 Move one influence from any square."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_036",
+      "name": "Librarian Moss",
+      "subtitle": "Ancient Lore Keeper",
+      "faction": "Academic",
+      "level": 1,
+      "influence": 0,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "1 Look at top three cards of event deck.",
+        "2 Draw one card, then discard one card."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_029",
+      "name": "Scribe Tallum",
+      "subtitle": "Records Keeper",
+      "faction": "Academic",
+      "level": 1,
+      "influence": 2,
+      "gold": 1,
+      "exposure": 0,
+      "abilities": [
+        "1 Draw one card.",
+        "2 Place one influence in Academy."
+      ],
+      "card_type": "agent"
+    },
+    {
+      "id": "AGENT_027",
+      "name": "Sergeant Briggs",
+      "subtitle": "Drill Master",
+      "faction": "Military",
+      "level": 1,
+      "influence": 3,
+      "gold": 0,
+      "exposure": 2,
+      "abilities": [
+        "2 Place two influence in Barracks.",
+        "4 Remove one influence from any square."
+      ],
+      "card_type": "agent"
+    }
+  ],
+  "max_size": 5,
+  "agents_count": 1,
+  "power_count": 1,
+  "minimum_agents": 1,
+  "current_hand_size": 5
+}

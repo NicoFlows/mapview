@@ -1,0 +1,235 @@
+{
+  "player_id": 2,
+  "cycle": 5,
+  "turn": 4,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "reasoning": "THE ACADEMY HEIST. While P3 guards Market and P1 fortifies Docks, I discovered an unguarded vault: the ENTIRE Academy district. Neither P1 nor P3 has Academic faction access - P1 runs Military/Commercial/Religious/Maritime, P3 runs Commercial/Military/Religious. Academy's 11 VP sits COMPLETELY UNCONTESTED. Six cubes, six squares, TOTAL DISTRICT CONTROL. This is the kind of market gap that builds empires. Harrow plants 2 cubes on MKT_03 Banking House (P3's territory), and 1 pool cube breaks their hold (3 vs 2). Brynn transmutes 4 gold - treasury swells to 22 crowns. Sybil plants the Maritime flag on DOC_03 Shipwright for 3 VP. Remaining pool cubes flood undefended territories across three districts. Total new acquisition: 24 VP of territory in a single turn. Combined with existing MKT_04 and MKT_05, that is 28 VP of commercial, academic, and maritime real estate under my banner. The Economic Powerhouse does not fight over contested ground when unguarded VAULTS sit wide open. Gold flows to those who find the market gaps others IGNORE.",
+  "recruitment": null,
+  "recruitment_note": "All 7 conspiracy positions filled. No recruitment possible.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability": "3 Place two influence in Market",
+      "min_turn": 3,
+      "target_district": "Market",
+      "target_square": "MKT_03",
+      "target_square_name": "Banking House",
+      "influence_amount": 2,
+      "effect": "Place 2 FREE influence on MKT_03 Banking House (3 VP). Combined with 1 pool cube = 3 total vs P3's 2. I seize control of a 3 VP square from P3.",
+      "cost": "none - ability is free"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "effect": "+4 gold (18 -> 22). Pure profit from intellectual capital. Treasury grows for cycle-end conversion at 3:1 ratio.",
+      "cost": "none - ability is free"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_030",
+      "agent_name": "Harbor Wench Sybil",
+      "ability": "3 Place two influence in Docks",
+      "min_turn": 3,
+      "target_district": "Docks",
+      "target_square": "DOC_03",
+      "target_square_name": "Shipwright",
+      "influence_amount": 2,
+      "effect": "Place 2 FREE influence on DOC_03 Shipwright (3 VP). Uncontested coastal territory claimed at zero pool cost.",
+      "cost": "none - ability is free"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_01",
+      "square_name": "Grand Library",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 4,
+      "rationale": "4 VP crown jewel - NO opponent has Academic faction access. Completely uncontested. The highest-value uncontested square on the entire board."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_02",
+      "square_name": "Dean's Hall",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 3,
+      "rationale": "3 VP uncontested Academic territory. Part of full Academy sweep."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_03",
+      "square_name": "Alchemy Lab",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 2,
+      "rationale": "2 VP uncontested Academic territory. Part of full Academy sweep."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_04",
+      "square_name": "Lecture Hall",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 1,
+      "rationale": "1 VP - needed for complete Academy district control (6/6)."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_05",
+      "square_name": "Student Commons",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 1,
+      "rationale": "1 VP - needed for complete Academy district control (6/6)."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_06",
+      "square_name": "Basement Archives",
+      "amount": 1,
+      "faction_used": "Academic",
+      "agent_providing_faction": "AGENT_043",
+      "vp_value": 0,
+      "rationale": "0 VP but completes TOTAL Academy district control (6/6 squares). District power: Draw 3 agent cards, keep 1, discard 2. The 0 VP cost for district control is the best deal in Tempest."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "square_name": "Banking House",
+      "amount": 1,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 3,
+      "rationale": "Stacks with Harrow's 2 ability cubes for total 3 vs P3's 2. I seize control of this 3 VP square."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_06",
+      "square_name": "Fishmonger Row",
+      "amount": 1,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 1,
+      "rationale": "Empty 1 VP Market square. Free territory."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_07",
+      "square_name": "Tinker's Corner",
+      "amount": 1,
+      "faction_used": "Commercial",
+      "agent_providing_faction": "AGENT_024",
+      "vp_value": 1,
+      "rationale": "Empty 1 VP Market square. Extending Market footprint."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_04",
+      "square_name": "Warehouse Row",
+      "amount": 1,
+      "faction_used": "Maritime",
+      "agent_providing_faction": "AGENT_030",
+      "vp_value": 2,
+      "rationale": "2 VP empty Docks square adjacent to Sybil's DOC_03 claim."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_05",
+      "square_name": "Dry Dock",
+      "amount": 1,
+      "faction_used": "Maritime",
+      "agent_providing_faction": "AGENT_030",
+      "vp_value": 2,
+      "rationale": "2 VP empty Docks square. Building Docks presence."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_06",
+      "square_name": "Sailor's Tavern",
+      "amount": 1,
+      "faction_used": "Maritime",
+      "agent_providing_faction": "AGENT_030",
+      "vp_value": 1,
+      "rationale": "1 VP empty Docks square. Expanding maritime footprint across the coast."
+    }
+  ],
+  "free_actions": [],
+  "free_action_note": "No petitions completable - COURT_001 (Aldric) and COURT_011 (Blackwater) both tied 2-2 at capacity. No whitewash needed (exposure = 0). Conspiracy full.",
+  "resources_spent": {
+    "influence_pool_to_districts": 12,
+    "influence_pool_to_courtiers": 0,
+    "influence_from_abilities": 4,
+    "total_influence_deployed": 16,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_gained": {
+    "gold_from_brynn_ability": 4,
+    "influence_from_harrow_ability": 2,
+    "influence_from_sybil_ability": 2
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 22
+  },
+  "territory_summary": {
+    "new_squares_claimed": {
+      "ACA_01": {"vp": 4, "influence": 1, "source": "pool - UNCONTESTED (no opponent has Academic faction)"},
+      "ACA_02": {"vp": 3, "influence": 1, "source": "pool - UNCONTESTED"},
+      "ACA_03": {"vp": 2, "influence": 1, "source": "pool - UNCONTESTED"},
+      "ACA_04": {"vp": 1, "influence": 1, "source": "pool - UNCONTESTED"},
+      "ACA_05": {"vp": 1, "influence": 1, "source": "pool - UNCONTESTED"},
+      "ACA_06": {"vp": 0, "influence": 1, "source": "pool - completes Academy district control"},
+      "MKT_03": {"vp": 3, "influence": 3, "source": "2 Harrow ability + 1 pool vs P3's 2"},
+      "MKT_06": {"vp": 1, "influence": 1, "source": "pool"},
+      "MKT_07": {"vp": 1, "influence": 1, "source": "pool"},
+      "DOC_03": {"vp": 3, "influence": 2, "source": "Sybil ability"},
+      "DOC_04": {"vp": 2, "influence": 1, "source": "pool"},
+      "DOC_05": {"vp": 2, "influence": 1, "source": "pool"},
+      "DOC_06": {"vp": 1, "influence": 1, "source": "pool"}
+    },
+    "existing_squares_held": {
+      "MKT_04": {"vp": 2, "influence": 3},
+      "MKT_05": {"vp": 2, "influence": 2}
+    },
+    "total_new_territory_vp": 24,
+    "total_existing_territory_vp": 4,
+    "total_territory_vp": 28,
+    "districts_controlled": ["Academy"],
+    "district_control_note": "Academy 6/6 squares = TOTAL DISTRICT CONTROL. Neither P1 nor P3 has Academic faction. This territory is IMPREGNABLE."
+  },
+  "strategic_notes": {
+    "academy_insight": "Critical discovery: P1's active agents (Military/Commercial/Religious/Maritime) and P3's active agents (Commercial/Military/Religious) have ZERO Academic faction access. Academy is an unguarded vault. 11 VP for 6 cubes = 1.83 VP per cube - the best ratio available anywhere on the board.",
+    "gold_strategy": "22 gold at cycle-end converts at 3:1 = 7 VP. Combined with 28 VP territory, total projected value is enormous. The compound interest never stops.",
+    "remaining_turns": "3 turns remain (5, 6, 7). Turn 5 unlocks Harrow's jackpot (6 gold + 1 Market influence) and Brynn's Academy reinforcement (3 free cubes). Turn 5 also brings Position 5 Shipwright Tormund online with Maritime abilities.",
+    "market_status": "P3 controls district (MKT_01 at 5 cubes, MKT_02 at 2). I've retaken MKT_03 (3 VP) and hold MKT_04-07. P3's district control is contested but I cannot take all 8 squares.",
+    "vp_projection": "112 current VP + 28 territory + 7 gold conversion = 147 VP projected. P1 at 109 VP + their territory + their gold is lower. LEADING."
+  }
+}

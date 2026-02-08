@@ -1,0 +1,58 @@
+{
+  "player_id": 2,
+  "cycle_ending": 4,
+  "cycle_starting": 5,
+  "current_vp": 112,
+  "current_gold": 2,
+  "upgrades": [
+    {
+      "agent_id": "AGENT_032",
+      "agent_name": "Lord Pemberton",
+      "position": 7,
+      "stat": "gold",
+      "old_value": 2,
+      "new_value": 3,
+      "cost": 1,
+      "reasoning": "Cheap 1 VP upgrade. Increases gold generation. Combined with influence upgrade, brings him to Level 3."
+    },
+    {
+      "agent_id": "AGENT_032",
+      "agent_name": "Lord Pemberton",
+      "position": 7,
+      "stat": "influence",
+      "old_value": 4,
+      "new_value": 5,
+      "cost": 1,
+      "reasoning": "Cheap 1 VP upgrade. 5 influence is excellent. With gold upgrade, Pemberton reaches Level 3 - eligible for promotion if needed."
+    },
+    {
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "position": 2,
+      "stat": "influence",
+      "old_value": 2,
+      "new_value": 3,
+      "cost": 1,
+      "reasoning": "Cheap 1 VP upgrade. Brynn is active Turn 2+, so this influence boost helps early cycle pool. Brings her to Level 2."
+    },
+    {
+      "agent_id": "AGENT_049",
+      "agent_name": "Ratcatcher Tom",
+      "position": 3,
+      "stat": "gold",
+      "old_value": 1,
+      "new_value": 2,
+      "cost": 1,
+      "reasoning": "Cheap 1 VP upgrade. Tom has Turn 1 ability 'Gain 1 crown' - upgrading his gold stat improves his economic utility."
+    }
+  ],
+  "total_vp_spent": 4,
+  "vp_after_upgrades": 108,
+  "reasoning": "CONSERVATIVE INVESTMENT STRATEGY. With a 4 VP lead over P1 (112 vs 108), I cannot afford to spend recklessly. By investing exactly 4 VP in cheap upgrades, I end at 108 VP - TIED with P1. This is acceptable because: (1) The final cycle's territory control will determine the winner, not current VP totals. (2) I get 4 stat points (2 influence, 2 gold) for only 4 VP - maximum efficiency. (3) Lord Pemberton reaches Level 3, making him promotion-eligible if the opportunity arises. (4) Alchemist Brynn reaches Level 2 with better influence generation. (5) Ratcatcher Tom becomes a slightly better gold engine. I REJECT expensive 4 VP upgrades on Harrow, Sybil, and Tormund - the ROI is too low when I need to protect my lead. The gold engine is already strong. What I need is territorial dominance in Cycle 5, and these influence boosts help achieve that. Guildmaster Harrow remains my powerhouse at L3 with 4/4 stats - no need to dump 8 VP into marginal improvements when cheaper options exist.",
+  "strategic_notes": {
+    "promotion_eligible_after": ["AGENT_024 Guildmaster Harrow (L3)", "AGENT_032 Lord Pemberton (L3 after upgrades)", "AGENT_030 Harbor Wench Sybil (L2)", "AGENT_044 Shipwright Tormund (L2)"],
+    "influence_pool_boost": "+2 from Brynn and Pemberton upgrades",
+    "gold_engine_boost": "+2 from Pemberton and Tom upgrades",
+    "harrow_status": "Was flipped face-down last cycle - should be restored now for Cycle 5"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 3,
+  "recruitment": null,
+  "recruitment_note": "Conspiracy is FULL at 7 positions. No recruitment possible or needed.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "ability": "3 Gain 5 crowns.",
+      "min_turn": 3,
+      "effect": "Gain 5 gold",
+      "note": "WAR CHEST FILLS - 5 gold flows into my treasury for future Inspire actions and abilities"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_040",
+      "agent_name": "Monsignor Pietro",
+      "ability": "3 Place two influence on any Religious courtier.",
+      "min_turn": 3,
+      "target_courtier": "COURT_003",
+      "target_name": "High Priest Matthias",
+      "amount": 2,
+      "effect": "Place 2 influence on High Priest Matthias",
+      "note": "RELIGIOUS LOCKDOWN - My 2 + this 2 = 4 cubes vs P1's 1. I OWN the High Priest!"
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 5,
+      "faction": "Commercial",
+      "note": "SEIZING Grand Exchange (4 VP) - crown jewel of Market, currently EMPTY. 5 cubes establishes FORTRESS."
+    }
+  ],
+  "additional_influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 4,
+      "faction": "Commercial",
+      "note": "Banking House (3 VP) TAKEN - extending Market dominance"
+    },
+    {
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "amount": 4,
+      "faction": "Military",
+      "note": "CONTESTING Commander's Tower - P1 has 3 cubes. My 4 vs their 3 = conflict. Result: I have 1, they have 0. TOWER SEIZED!"
+    },
+    {
+      "type": "place_influence",
+      "district": "Temple",
+      "square": "TMP_01",
+      "amount": 5,
+      "faction": "Religious",
+      "note": "High Altar (4 VP) CLAIMED - Temple offensive BEGINS. Pietro leads the holy conquest."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "whitewash",
+      "amount": 0,
+      "note": "Exposure at 0 - no whitewash needed. Aggressive players live dangerously."
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 18,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_after_abilities": {
+    "gold": 7,
+    "note": "Started with 2 gold, Venditti ability adds 5 = 7 gold"
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 7
+  },
+  "influence_deployment_summary": {
+    "MKT_01": 5,
+    "MKT_03": 4,
+    "BAR_01": 4,
+    "TMP_01": 5,
+    "total": 18
+  },
+  "courtier_influence_this_turn": {
+    "courtier_id": "COURT_003",
+    "courtier_name": "High Priest Matthias",
+    "amount": 2,
+    "via": "Pietro ability (not pool)",
+    "limit_respected": true
+  },
+  "validation_checks": {
+    "action_count": 3,
+    "courtier_limit_respected": true,
+    "faction_district_mapping_valid": {
+      "Commercial_to_Market": true,
+      "Military_to_Barracks": true,
+      "Religious_to_Temple": true
+    },
+    "abilities_available_turn_3": {
+      "venditti_turn_3": true,
+      "pietro_turn_3": true
+    },
+    "gold_not_negative": true,
+    "recruitment_impossible": "Conspiracy full at 7 agents"
+  },
+  "reasoning": "TURN 3 BLITZ. Both available abilities DEPLOYED for maximum impact. Venditti fills the war chest with 5 gold. Pietro LOCKS DOWN High Priest Matthias (4 vs 1 - uncontestable!). All 18 influence cubes DEPLOYED across FOUR FRONTS: Market Grand Exchange and Banking House SEIZED (7 VP), Commander's Tower STOLEN from P1 (4 VP after conflict), High Altar CLAIMED (4 VP). Total new territory: 15 VP worth of squares in a single turn! The gap to P2 closes TODAY. P1's Barracks dominance is SHATTERED. My Religious courtier control is now PERMANENT. AGGRESSION WINS WARS.",
+  "escalation_check": {
+    "needed": false,
+    "reason": "Primary targets (P1 and P2) both engaged. Territorial expansion on track. No major board state shifts requiring strategy pivot. Continue aggressive expansion."
+  }
+}

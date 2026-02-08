@@ -1,0 +1,260 @@
+{
+  "player_id": 1,
+  "cycle": 5,
+  "turn": 5,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "reasoning": "FINAL CYCLE APEX - SHADOW NETWORK COMPLETES. The 10 VP petition (COURT_006+COURT_010+COURT_014, all three 1-slot courtiers) breaks the 124-124 tie with P2 decisively. Triple Turn-5 ability deployment: Blackbeard floods Docks with 4 FREE cubes (DOC_04 flip, DOC_05/06 claims), Varro secures Barracks with 3 FREE cubes (BAR_04 flip from P3), Vane surgically removes P2's 2 cubes from COURT_011 to flip Maritime courtier to my control. Full 14-cube influence pool deploys across Palace expansion (4 new squares), Market contestation (MKT_03 flip), Barracks defense (BAR_05 flip), Docks extension (DOC_07), and COURT_013 courtier grab (3/4 majority). Courtier count rises from 5 to 7. The 10 VP petition plus ~11 VP from new district squares creates an overwhelming 20+ VP swing. Mathematical precision yields decisive advantage entering the final 2 turns.",
+  "recruitment": null,
+  "recruitment_note": "Conspiracy positions 1-7 all occupied. Recruiting to position 8+ would not activate before cycle end (Turn 7 max). No recruitment value.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "position": 3,
+      "ability": "5 Place four influence in Docks.",
+      "min_turn": 5,
+      "effect": "Place 4 FREE influence cubes in Docks district",
+      "placement_details": {
+        "DOC_04": {
+          "amount": 2,
+          "current_state": "P2 controls with 1 cube",
+          "result": "My 2 vs P2's 1 = I control Warehouse Row (2 VP)"
+        },
+        "DOC_05": {
+          "amount": 1,
+          "current_state": "Empty",
+          "result": "Claim Dry Dock (2 VP). Extends Docks chain from DOC_01-03"
+        },
+        "DOC_06": {
+          "amount": 1,
+          "current_state": "Empty",
+          "result": "Claim Sailor's Tavern (1 VP). Adjacent to DOC_05"
+        }
+      },
+      "rationale": "Blackbeard's Turn 5 ability deploys 4 FREE cubes. Targeting DOC_04 flips P2's position (2 vs 1). DOC_05 and DOC_06 are empty 2VP and 1VP squares extending my Docks dominance toward full district control."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "position": 1,
+      "ability": "4 Place three influence in Barracks.",
+      "min_turn": 4,
+      "effect": "Place 3 FREE influence cubes in Barracks district",
+      "placement_details": {
+        "BAR_04": {
+          "amount": 3,
+          "current_state": "P3 controls with 1 cube",
+          "result": "My 3 vs P3's 1 = absolute control of Stables (2 VP)"
+        }
+      },
+      "rationale": "Concentrating 3 cubes on BAR_04 overwhelms P3's single cube for absolute dominance. Extends my Barracks presence from BAR_03 (adjacent). P3's Barracks monopoly begins to crack."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_033",
+      "agent_name": "Inquisitor Vane",
+      "position": 4,
+      "ability": "5 Remove two influence from any courtier.",
+      "min_turn": 5,
+      "effect": "Remove Player 2's 2 influence cubes from COURT_011 (Harbormaster Blackwater, Maritime courtier)",
+      "target": {
+        "courtier_id": "COURT_011",
+        "courtier_name": "Harbormaster Blackwater",
+        "target_player": 2,
+        "cubes_removed": 2,
+        "before_state": "P1=2, P2=2 (tied, 4/4 full)",
+        "after_state": "P1=2, P2=0 (2/4 slots used). Player 1 becomes controller"
+      },
+      "rationale": "Breaking the 2-2 tie on COURT_011 by removing P2's cubes gives me uncontested majority control. This is the highest-impact courtier play available - converting a contested position into controlled territory with a single action."
+    }
+  ],
+  "influence_placement": {
+    "districts": [
+      {
+        "district": "Market",
+        "square": "MKT_03",
+        "square_name": "Banking House",
+        "vp_value": 3,
+        "amount": 2,
+        "faction": "Commercial",
+        "agent_source": "AGENT_031 (Banker Rothwell)",
+        "current_state": "P2 controls with 1 cube",
+        "result": "My 2 vs P2's 1 = I control Banking House (3 VP)",
+        "rationale": "Highest VP-per-cube opportunity. Commercial faction via Rothwell enables Market placement. Flips P2's 3 VP square with just 2 cubes."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_04",
+        "square_name": "Council Room",
+        "vp_value": 2,
+        "amount": 2,
+        "faction": "Military",
+        "agent_source": "AGENT_013 (Captain Varro)",
+        "current_state": "Empty",
+        "result": "Claim Council Room (2 VP). Extends Palace from PAL_01-03",
+        "rationale": "Empty 2 VP square adjacent to PAL_01 (Throne Room) and PAL_05. Military faction enables Palace placement."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_05",
+        "square_name": "Royal Garden",
+        "vp_value": 2,
+        "amount": 2,
+        "faction": "Religious",
+        "agent_source": "AGENT_033 (Inquisitor Vane)",
+        "current_state": "Empty",
+        "result": "Claim Royal Garden (2 VP). Central Palace hub",
+        "rationale": "Central Palace square adjacent to PAL_02/04/06/08. Religious faction enables Palace placement. Strategic hub position."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_06",
+        "square_name": "Courtyard",
+        "vp_value": 1,
+        "amount": 1,
+        "faction": "Religious",
+        "agent_source": "AGENT_033 (Inquisitor Vane)",
+        "current_state": "Empty",
+        "result": "Claim Courtyard (1 VP). Extends toward PAL_09",
+        "rationale": "Empty 1 VP square. Religious faction enables Palace placement. Approaches full Palace district control."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_07",
+        "square_name": "Guard Post",
+        "vp_value": 1,
+        "amount": 1,
+        "faction": "Military",
+        "agent_source": "AGENT_013 (Captain Varro)",
+        "current_state": "Empty",
+        "result": "Claim Guard Post (1 VP). Adjacent to PAL_04 and PAL_08",
+        "rationale": "Empty 1 VP square. Military faction enables Palace placement. Fills toward full district control."
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_07",
+        "square_name": "Fish Market",
+        "vp_value": 1,
+        "amount": 1,
+        "faction": "Maritime",
+        "agent_source": "AGENT_037 (Captain Blackbeard)",
+        "current_state": "Empty",
+        "result": "Claim Fish Market (1 VP). Adjacent to DOC_06 and DOC_08",
+        "rationale": "Extends Docks control chain. Maritime faction enables Docks placement."
+      },
+      {
+        "district": "Barracks",
+        "square": "BAR_05",
+        "square_name": "Mess Hall",
+        "vp_value": 1,
+        "amount": 2,
+        "faction": "Criminal",
+        "agent_source": "AGENT_021 (The Shadow)",
+        "current_state": "P3 controls with 1 cube",
+        "result": "My 2 vs P3's 1 = I control Mess Hall (1 VP)",
+        "rationale": "Flip P3's Barracks square. Criminal faction enables Barracks placement. Adjacent to BAR_02/04/06."
+      }
+    ],
+    "courtiers": [
+      {
+        "courtier_id": "COURT_013",
+        "courtier_name": "Underworld Boss Vex",
+        "coterie": "Criminal",
+        "amount": 3,
+        "faction": "Criminal",
+        "agent_source": "AGENT_021 (The Shadow)",
+        "current_state": "Empty (0/4 slots used)",
+        "result": "3/4 majority. Player 1 becomes controller",
+        "rationale": "Empty 4-slot courtier. 3 cubes establishes majority control. Increases courtier portfolio to 7. Advances toward Underworld Dominion petition (need COURT_002 additionally). Criminal faction via The Shadow enables placement."
+      }
+    ],
+    "total_pool_spent": 14,
+    "pool_remaining": 0,
+    "breakdown": "3 courtier + 2 MKT_03 + 2 PAL_04 + 2 PAL_05 + 1 PAL_06 + 1 PAL_07 + 1 DOC_07 + 2 BAR_05 = 14 cubes"
+  },
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_013",
+      "petition_name": "Shadow Network",
+      "vp_gained": 10,
+      "bonus_effect": "Look at all opponents' secret petitions",
+      "requirements_met": {
+        "COURT_006": "Captain Thorne - CONTROLLED via promotion (Captain Varro promoted Cycle 1)",
+        "COURT_010": "Master Scholar Lyra - CONTROLLED via 1/1 influence majority",
+        "COURT_014": "The Fence - CONTROLLED via 1/1 influence majority"
+      },
+      "rationale": "All three 1-slot courtiers are controlled by Player 1. This 10 VP petition is the highest-value completable petition available. Breaks the 124-124 VP tie with P2 decisively. The bonus effect reveals opponents' secret petitions for strategic intelligence in remaining turns."
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 14,
+    "gold": 0,
+    "actions_used": 3,
+    "abilities_activated": [
+      "Captain Blackbeard: 5 Place four influence in Docks (4 FREE cubes)",
+      "Captain Varro: 4 Place three influence in Barracks (3 FREE cubes)",
+      "Inquisitor Vane: 5 Remove two influence from COURT_011 (courtier disruption)"
+    ]
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 20,
+    "exposure": 0
+  },
+  "expected_outcomes": {
+    "vp_from_petition": 10,
+    "new_squares_from_abilities": [
+      "DOC_04 Warehouse Row (2 VP, flipped from P2)",
+      "DOC_05 Dry Dock (2 VP, claimed)",
+      "DOC_06 Sailor's Tavern (1 VP, claimed)",
+      "BAR_04 Stables (2 VP, flipped from P3)"
+    ],
+    "new_squares_from_pool": [
+      "MKT_03 Banking House (3 VP, flipped from P2)",
+      "PAL_04 Council Room (2 VP, claimed)",
+      "PAL_05 Royal Garden (2 VP, claimed)",
+      "PAL_06 Courtyard (1 VP, claimed)",
+      "PAL_07 Guard Post (1 VP, claimed)",
+      "DOC_07 Fish Market (1 VP, claimed)",
+      "BAR_05 Mess Hall (1 VP, flipped from P3)"
+    ],
+    "new_courtiers_controlled": [
+      "COURT_011 Harbormaster Blackwater (via Vane ability removing P2 cubes)",
+      "COURT_013 Underworld Boss Vex (via 3/4 majority placement)"
+    ],
+    "total_new_square_vp": 18,
+    "total_vp_gained": 28,
+    "projected_vp": "124 + 10 (petition) + ~18 (new squares) = ~152 VP",
+    "courtier_count_after": 7
+  },
+  "strategic_assessment": {
+    "position_summary": "This turn transforms a 124-124 VP tie into a commanding ~28 VP lead. The Shadow Network petition (10 VP) plus territorial expansion across 11 new squares (~18 VP) creates a margin that P2 cannot close in 2 remaining turns.",
+    "courtier_portfolio_after": [
+      "COURT_004 (Sister Evangeline, Religious, 1/2 - controlled)",
+      "COURT_006 (Captain Thorne, Military, promoted - permanent)",
+      "COURT_008 (Duke Valorian, Noble, promoted - permanent)",
+      "COURT_010 (Master Scholar Lyra, Academic, 1/1 - controlled)",
+      "COURT_011 (Harbormaster Blackwater, Maritime, 2/4 - controlled after Vane removal)",
+      "COURT_013 (Underworld Boss Vex, Criminal, 3/4 - controlled after placement)",
+      "COURT_014 (The Fence, Criminal, 1/1 - controlled)"
+    ],
+    "districts_projected": {
+      "Palace": "7/9 squares (PAL_01-07). Only PAL_08 (0 VP) and PAL_09 (-1 VP) remain. Effectively complete.",
+      "Docks": "7/8 squares (DOC_01-07). Only DOC_08 (0 VP) remains. Effectively complete.",
+      "Barracks": "3/7 squares (BAR_03-05). P3 controls majority but cracking.",
+      "Market": "1/8 squares (MKT_03). Contested with P3."
+    },
+    "opponent_threats": {
+      "P2": "22 gold for cycle-end conversion (7 VP). 16 influence pool. Academic + Commercial factions. Will likely expand Market and Academy. Their COURT_012 promotion is permanent.",
+      "P3": "23 influence pool is massive. Military + Commercial + Religious factions. Will flood Barracks and Temple. District controller powers in Market, Temple, Barracks give them action advantages."
+    },
+    "turns_remaining": "2 turns (Turn 6, Turn 7) before Cycle 5 ends. Focus: defend positions, accumulate gold for conversion, expand Palace to full 9/9 for maximum district bonus.",
+    "cycle_end_planning": "20 gold = 6 VP conversion at 3:1. Agent upgrades and additional promotions require VP investment. With 7 courtiers controlled, aggressive promotion spending could push toward 8/14 victory threshold. Mathematical evaluation needed at cycle transition."
+  }
+}

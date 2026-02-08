@@ -1,0 +1,39 @@
+{
+  "player_id": 2,
+  "cycle": 1,
+  "phase": "cycle_transition",
+  "upgrades": [
+    {
+      "agent_id": "AGENT_023",
+      "agent_name": "First Mate Calico",
+      "stat": "gold",
+      "upgrade_number": 1,
+      "vp_cost": 1,
+      "rationale": "Minimal investment to begin Level 2 path. Gold stat increases future income potential. Maritime faction matches Admiral Stormwind courtier for future promotion."
+    }
+  ],
+  "promotions": [],
+  "repositions": [],
+  "total_vp_spent": 1,
+  "vp_remaining": 46,
+  "gold_remaining": 1,
+  "strategic_reasoning": "CONSERVATIVE WEALTH PRESERVATION STRATEGY: I am leading with 47 VP. Player 3 has 43 VP, Player 1 has 34 VP. My primary constraint is GOLD - I only have 1 gold, and promotions cost minimum 3 gold. Guildmaster Harrow is already Level 2 and eligible for promotion to Trade Commissioner Vale (which I control), but I cannot afford the 3 gold cost. Spending 5 VP to upgrade another agent would drop me to 42 VP, putting me BEHIND Player 3's 43 VP. This is unacceptable. Instead, I invest only 1 VP to begin upgrading First Mate Calico, maintaining my lead at 46 VP while positioning for future Maritime promotions. Cycle 2 priority: ACCUMULATE GOLD through abilities, then execute promotions at Cycle 2 transition when I have 3+ gold stockpiled. The economic engine must be fed gold before promotions can proceed. Patience is profit.",
+  "cycle_2_plan": {
+    "gold_target": 8,
+    "promotion_targets": [
+      {
+        "agent": "Guildmaster Harrow",
+        "courtier": "COURT_002 (Trade Commissioner Vale)",
+        "faction_match": true,
+        "cost": "5 VP + 3 gold"
+      },
+      {
+        "agent": "First Mate Calico (after 4 VP upgrade)",
+        "courtier": "COURT_012 (Admiral Stormwind)",
+        "faction_match": true,
+        "cost": "5 VP + 3 gold"
+      }
+    ],
+    "rationale": "Use gold-generating abilities every turn in Cycle 2. First Mate Calico gives 3 gold on Turn 2, Alchemist Brynn gives 4 gold on Turn 3. Target 8+ gold by Cycle 2 transition for dual promotions."
+  }
+}

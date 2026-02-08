@@ -1,0 +1,218 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 6,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "reasoning": "TOTAL ANNIHILATION TURN. VP standings: P2 130, P1 127, Me 126. Trailing by 4 and 1 respectively with 2 turns left. THREE DEVASTATING ACTIONS: (1) Steele Turn 6 ultimate removes 3 influence from P1's PAL_03 Grand Hall, wiping their 3-cube Palace position clean. (2) POWER_035 Universal Connections substitutes for COURT_001 Guild Master Aldric to complete PETITION_015 Council of Lords for 11 VP + 4 gold + reduce exposure by 3. This single petition puts me at 137 VP, SEVEN points ahead of P2. (3) Barracks District Control Power removes 3 of P2's influence from Academy, destroying their hold on ACA_01 Grand Library (4 VP), ACA_02 Dean's Hall (3 VP), and ACA_03 Alchemy Lab (2 VP). Then ALL 28 cubes FLOOD the board: seizing Palace from P1, Docks from P2, completing Market and Barracks control. FIVE DISTRICTS DOMINATED. The Aggressive Warlord takes the lead.",
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "ability": "6 Remove three influence from any district.",
+      "min_turn": 6,
+      "effect": "Remove 3 influence from Player 1's PAL_03 Grand Hall (currently 3 influence from P1). Square becomes empty (0 influence, no controller).",
+      "target_district": "Palace",
+      "target_square": "PAL_03",
+      "target_player": 1,
+      "influence_removed": 3
+    },
+    {
+      "action_num": 2,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "cost": 0,
+      "effect": "Substitute for controlling COURT_001 Guild Master Aldric to meet requirements for PETITION_015 Council of Lords. Combined with my control of COURT_003 High Priest Matthias (4/5 mine) and COURT_007 Duchess Seraphina (1/5 mine), all three courtier requirements are satisfied.",
+      "target": "COURT_001",
+      "enables_petition": "PETITION_015"
+    },
+    {
+      "action_num": 3,
+      "type": "use_district_power",
+      "district": "Barracks",
+      "district_id": "DIST_004",
+      "power_effect": "Remove 3 opponent influence from any one district",
+      "target_district": "Academy",
+      "details": "Remove 1 influence each from ACA_01 Grand Library (P2), ACA_02 Dean's Hall (P2), ACA_03 Alchemy Lab (P2). Total: 3 influence removed from Player 2. These three squares become empty, shattering P2's Academy control.",
+      "removals": [
+        {"square": "ACA_01", "player": 2, "amount": 1},
+        {"square": "ACA_02", "player": 2, "amount": 1},
+        {"square": "ACA_03", "player": 2, "amount": 1}
+      ]
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "title": "Council of Lords",
+      "courtiers_controlled": ["COURT_007", "COURT_003"],
+      "courtier_substituted": "COURT_001",
+      "substitution_card": "POWER_035",
+      "vp_gained": 11,
+      "bonus": "Gain 4 gold and reduce exposure by 3"
+    }
+  ],
+  "influence_placements": [
+    {
+      "district": "Market",
+      "square": "MKT_06",
+      "square_name": "Fishmonger Row",
+      "amount": 2,
+      "faction": "Commercial",
+      "rationale": "Seize from P2 (has 1 inf). Completes FULL Market control (8/8)."
+    },
+    {
+      "district": "Market",
+      "square": "MKT_07",
+      "square_name": "Tinker's Corner",
+      "amount": 1,
+      "faction": "Commercial",
+      "rationale": "Claim empty square. Reinforces Market domination."
+    },
+    {
+      "district": "Barracks",
+      "square": "BAR_04",
+      "square_name": "Stables",
+      "amount": 3,
+      "faction": "Military",
+      "rationale": "Seize from P1 (has 2 inf). Completes FULL Barracks control (7/7)."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_01",
+      "square_name": "Throne Room",
+      "amount": 3,
+      "faction": "Military",
+      "rationale": "Overwhelm P1 (has 2 inf). Seize the 4 VP crown jewel of Palace."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_02",
+      "square_name": "Royal Chamber",
+      "amount": 4,
+      "faction": "Military",
+      "rationale": "Overwhelm P1 (has 3 inf). Seize the 3 VP Royal Chamber."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_03",
+      "square_name": "Grand Hall",
+      "amount": 1,
+      "faction": "Religious",
+      "rationale": "Claim square emptied by Steele's removal. Free 3 VP territory."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_04",
+      "square_name": "Council Room",
+      "amount": 1,
+      "faction": "Religious",
+      "rationale": "Claim empty square for 2 VP."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_05",
+      "square_name": "Royal Garden",
+      "amount": 1,
+      "faction": "Military",
+      "rationale": "Claim empty square for 2 VP."
+    },
+    {
+      "district": "Palace",
+      "square": "PAL_06",
+      "square_name": "Courtyard",
+      "amount": 1,
+      "faction": "Religious",
+      "rationale": "Claim empty square for 1 VP."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_01",
+      "square_name": "Harbormaster Office",
+      "amount": 2,
+      "faction": "Commercial",
+      "rationale": "Overwhelm P2 (has 1 inf). Seize the 4 VP Docks crown jewel."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_02",
+      "square_name": "Customs House",
+      "amount": 2,
+      "faction": "Commercial",
+      "rationale": "Overwhelm P2 (has 1 inf). Seize Customs House for 3 VP."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_03",
+      "square_name": "Shipwright",
+      "amount": 3,
+      "faction": "Commercial",
+      "rationale": "Overwhelm P2 (has 2 inf). Seize Shipwright for 3 VP."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_04",
+      "square_name": "Warehouse Row",
+      "amount": 2,
+      "faction": "Commercial",
+      "rationale": "Overwhelm P1 (has 1 inf). Seize for 2 VP."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_05",
+      "square_name": "Dry Dock",
+      "amount": 1,
+      "faction": "Commercial",
+      "rationale": "Claim empty square for 2 VP."
+    },
+    {
+      "district": "Docks",
+      "square": "DOC_07",
+      "square_name": "Fish Market",
+      "amount": 1,
+      "faction": "Commercial",
+      "rationale": "Claim empty square for 1 VP."
+    }
+  ],
+  "influence_placement_summary": {
+    "Market": {"cubes": 3, "squares": ["MKT_06", "MKT_07"]},
+    "Barracks": {"cubes": 3, "squares": ["BAR_04"]},
+    "Palace": {"cubes": 11, "squares": ["PAL_01", "PAL_02", "PAL_03", "PAL_04", "PAL_05", "PAL_06"]},
+    "Docks": {"cubes": 11, "squares": ["DOC_01", "DOC_02", "DOC_03", "DOC_04", "DOC_05", "DOC_07"]},
+    "total_cubes_placed": 28
+  },
+  "resources_spent": {
+    "influence_pool": 28,
+    "gold": 0,
+    "actions_used": 3,
+    "cards_played": ["POWER_035"]
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 24
+  },
+  "projected_end_of_turn": {
+    "vp": 137,
+    "gold": 24,
+    "exposure": 0,
+    "influence_pool": 0,
+    "districts_controlled": {
+      "Market": "8/8 COMPLETE (16 VP)",
+      "Temple": "6/6 COMPLETE (10 VP)",
+      "Barracks": "7/7 COMPLETE (11 VP)",
+      "Palace": "6/9 contested (12 VP captured - PAL_01 thru PAL_06)",
+      "Docks": "6/8 captured (15 VP - DOC_01 thru DOC_05, DOC_07)"
+    },
+    "total_territory_vp": "64 VP from controlled squares across 5 districts",
+    "courtiers_controlled": ["COURT_003", "COURT_005", "COURT_007"],
+    "petition_completed": "PETITION_015 Council of Lords (11 VP + 4 gold - 3 exposure)",
+    "opponent_damage_summary": {
+      "player_1": "Lost PAL_03 (Steele removal), PAL_01, PAL_02 (overwhelmed), BAR_04 (overwhelmed), DOC_04 (overwhelmed). Approx 14 VP territory destroyed.",
+      "player_2": "Lost ACA_01, ACA_02, ACA_03 (Barracks power removal), DOC_01, DOC_02, DOC_03 (overwhelmed). Approx 19 VP territory destroyed."
+    }
+  }
+}

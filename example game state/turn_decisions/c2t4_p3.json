@@ -1,0 +1,117 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 4,
+  "recruitment": {
+    "agent_id": "AGENT_017",
+    "name": "Elena Rosetti",
+    "faction": "Commercial",
+    "position": 5,
+    "rationale": "Commercial faction agent with 7 gold income - builds war chest for sustained aggression"
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "position": 2,
+      "ability": "4 Place two influence in Barracks.",
+      "min_turn": 4,
+      "target_district": "Barracks",
+      "target_square": "BAR_04",
+      "influence_amount": 2,
+      "note": "FREE influence to start contesting P1's Barracks stronghold"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_026",
+      "agent_name": "Father Dominic",
+      "position": 4,
+      "ability": "4 Place three influence in Temple.",
+      "min_turn": 4,
+      "target_district": "Temple",
+      "target_square": "TMP_01",
+      "influence_amount": 3,
+      "note": "FREE influence to grab High Altar (4 VP) - establishing Temple presence"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "position": 1,
+      "ability": "3 Gain 5 crowns.",
+      "min_turn": 3,
+      "gold_gained": 5,
+      "note": "Building gold reserves for future aggressive plays"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 3,
+      "faction": "Commercial",
+      "target_player": 2,
+      "note": "TAKING Grand Exchange (4 VP) from P2 - beats their 2 influence"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 3,
+      "faction": "Commercial",
+      "target_player": 2,
+      "note": "TAKING Banking House (3 VP) from P2 - beats their 2 influence"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "amount": 3,
+      "faction": "Commercial",
+      "target_player": 2,
+      "note": "TAKING Spice Stalls (2 VP) from P2 - beats their 2 influence"
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "amount": 2,
+      "note": "TAKING courtier from P2 - beats their 1 influence, disrupts Commerce coterie"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "whitewash",
+      "amount": 0,
+      "note": "Skip - aggressive players accept exposure risk"
+    }
+  ],
+  "resources_spent": {
+    "influence_from_pool": 11,
+    "influence_from_abilities": 5,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_after": {
+    "influence_pool": 6,
+    "gold": 11
+  },
+  "attack_summary": {
+    "market_squares_taken": ["MKT_01", "MKT_03", "MKT_05"],
+    "vp_denied_to_p2": 9,
+    "new_market_control": "P3 will control 6 of 8 squares after this turn",
+    "barracks_contest": "BAR_04 now controlled by P3, breaking into P1 territory",
+    "temple_anchor": "TMP_01 (High Altar 4 VP) secured",
+    "courtier_taken": "COURT_001 taken from P2"
+  },
+  "reasoning": "FULL AGGRESSION deployed. Market offensive takes 3 squares from P2 (9 VP swing), breaking their district control. Steele plants flag in Barracks to threaten P1. Dominic secures Temple's high-value square. Venditti builds gold for sustained pressure. Courtier denial strips P2 of Commerce courtier. P2's lead is under direct assault.",
+  "escalation_check": {
+    "needed": false,
+    "reason": "Primary target P2 is being directly attacked. No need to shift strategy - pressing the advantage."
+  }
+}

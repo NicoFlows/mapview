@@ -1,0 +1,213 @@
+{
+  "activeDeck": [
+    {
+      "id": "POWER_030",
+      "title": "Shifting Allegiances",
+      "cost": 0,
+      "effect": "Move 1 influence from each courtier in a coterie to one courtier in that coterie",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_005",
+      "title": "Commercial Ties",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Commerce courtier when completing a petition this turn",
+      "category": "low_impact"
+    },
+    {
+      "id": "POWER_004",
+      "title": "Noble Privilege",
+      "cost": 0,
+      "effect": "Place 2 neutral influence markers on any courtier. Neutral markers block spaces but don't grant control",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_018",
+      "title": "Scandal",
+      "cost": 1,
+      "effect": "Choose a player. Remove influence from one courtier equal to that player's exposure level",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_015",
+      "title": "Royal Favor",
+      "cost": 1,
+      "effect": "Place 2 influence on each courtier in the Noble coterie where you have at least 1 influence",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_013",
+      "title": "Court Intrigue",
+      "cost": 1,
+      "effect": "Remove up to 3 opponent influence markers from any single courtier",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_034",
+      "title": "Information Network",
+      "cost": 0,
+      "effect": "Look at top 5 cards of power deck; draw 1, shuffle rest back",
+      "category": "utility"
+    },
+    {
+      "id": "POWER_025",
+      "title": "Bribery",
+      "cost": 0,
+      "effect": "Pay 2 gold: Remove 2 opponent influence from a courtier. Pay 4 gold: Remove 4 instead",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_023",
+      "title": "Defensive Pact",
+      "cost": 0,
+      "effect": "Until your next turn, opponents must pay 1 extra gold to target courtiers you control with power cards",
+      "category": "utility"
+    },
+    {
+      "id": "POWER_029",
+      "title": "Backroom Deal",
+      "cost": 0,
+      "effect": "Swap up to 3 of your influence with opponent's on one courtier",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_001",
+      "title": "Diplomatic Maneuver",
+      "cost": 0,
+      "effect": "Move up to 2 of your influence markers between courtiers in the same coterie",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_009",
+      "title": "Maritime Connections",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Maritime courtier when completing a petition this turn",
+      "category": "low_impact"
+    },
+    {
+      "id": "POWER_008",
+      "title": "Academic Insight",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Academic courtier when completing a petition this turn",
+      "category": "low_impact"
+    },
+    {
+      "id": "POWER_027",
+      "title": "Palace Purge",
+      "cost": 2,
+      "effect": "Remove 2 influence from EACH courtier in one coterie",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_022",
+      "title": "Coup",
+      "cost": 3,
+      "effect": "Take control of one courtier by replacing all opponent influence there with yours. Maximum 5 influence replaced",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_003",
+      "title": "Court Whispers",
+      "cost": 0,
+      "effect": "Look at another player's hand. They must discard two cards of your choice",
+      "category": "utility"
+    },
+    {
+      "id": "POWER_019",
+      "title": "Redistribution",
+      "cost": 0,
+      "effect": "Move up to 4 influence (any players') from one courtier, distributing them to other courtiers in the same coterie",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_020",
+      "title": "Counterclaim",
+      "cost": 0,
+      "effect": "Reaction: Play when an opponent places 3+ influence on a courtier. Immediately place 2 of your influence there",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_021",
+      "title": "Sabotage",
+      "cost": 2,
+      "effect": "Remove up to 2 influence from each of up to 3 different courtiers controlled by opponents",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_010",
+      "title": "Cultural Patronage",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Criminal courtier when completing a petition this turn",
+      "category": "low_impact"
+    },
+    {
+      "id": "POWER_002",
+      "title": "Strategic Repositioning",
+      "cost": 0,
+      "effect": "Move up to 2 influence markers (any players') to empty spaces on other courtiers",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_024",
+      "title": "Divide and Conquer",
+      "cost": 1,
+      "effect": "Split all influence on one courtier evenly among all courtiers in that coterie. Remainder stays",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_011",
+      "title": "Energetic Campaign",
+      "cost": 0,
+      "effect": "Place influence on two different courtiers this turn instead of one",
+      "category": "medium_impact"
+    },
+    {
+      "id": "POWER_026",
+      "title": "Sudden Betrayal",
+      "cost": 1,
+      "effect": "Remove all YOUR influence from one courtier; remove equal amount of opponent influence from same courtier",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_033",
+      "title": "Loyal Retainers",
+      "cost": 0,
+      "effect": "Choose a courtier you control; opponent removal cards cost +2 to target it until your next turn",
+      "category": "utility"
+    },
+    {
+      "id": "POWER_028",
+      "title": "Blackmail",
+      "cost": 1,
+      "effect": "Remove influence from one courtier equal to half target player's gold (round up)",
+      "category": "high_impact"
+    },
+    {
+      "id": "POWER_006",
+      "title": "Military Backing",
+      "cost": 0,
+      "effect": "Use this card in place of controlling one Military courtier when completing a petition this turn",
+      "category": "low_impact"
+    },
+    {
+      "id": "POWER_032",
+      "title": "Consolidate Power",
+      "cost": 0,
+      "effect": "Move all your influence from multiple courtiers to one courtier",
+      "category": "medium_impact"
+    }
+  ],
+  "discardPile": [
+    {
+      "id": "POWER_031",
+      "title": "Rapid Expansion",
+      "cost": 0,
+      "effect": "Place 1 influence on up to 3 different courtiers",
+      "category": "medium_impact",
+      "discarded_by": 2,
+      "discarded_turn": 1,
+      "discarded_cycle": 1
+    }
+  ],
+  "totalCards": 29
+}

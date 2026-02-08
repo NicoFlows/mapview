@@ -1,0 +1,38 @@
+{
+  "player_id": 2,
+  "cycle": 5,
+  "turn": 2,
+  "timestamp": "2026-02-04T12:00:00Z",
+  "reasoning": "Turn 2 resource deployment - neither active agent has abilities until Turn 3+. Full influence pool deployed to Market. Basic gold action builds treasury.",
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 4,
+      "faction": "Commercial"
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_04",
+      "amount": 3,
+      "faction": "Commercial"
+    },
+    {
+      "action_num": 3,
+      "type": "basic_action",
+      "action": "gain_gold",
+      "amount": 1
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 7,
+    "gold": 0,
+    "actions_used": 3
+  }
+}

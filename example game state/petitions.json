@@ -1,0 +1,157 @@
+{
+  "available": [
+    {
+      "id": "PETITION_008",
+      "title": "Cross-Faction Alliance",
+      "requirements": [
+        "COURT_001",
+        "COURT_005",
+        "COURT_007"
+      ],
+      "requirement_description": "Control Commerce, Military, and Noble courtiers",
+      "vp_reward": 6,
+      "bonus_effect": "Place 2 influence on any courtier"
+    },
+    {
+      "id": "PETITION_009",
+      "title": "Scholarly Pact",
+      "requirements": [
+        "COURT_003",
+        "COURT_009",
+        "COURT_013"
+      ],
+      "requirement_description": "Control Religious, Academic, and Cultural courtiers",
+      "vp_reward": 6,
+      "bonus_effect": "Look at top 5 cards of event deck, reorder them"
+    },
+    {
+      "id": "PETITION_010",
+      "title": "Trade Empire",
+      "requirements": [
+        "COURT_001",
+        "COURT_002",
+        "COURT_011",
+        "COURT_012"
+      ],
+      "requirement_description": "Control all Commerce and Maritime courtiers",
+      "vp_reward": 8,
+      "bonus_effect": "Gain 5 gold and draw 2 cards"
+    },
+    {
+      "id": "PETITION_012",
+      "title": "Grand Conclave",
+      "requirements": [
+        "COURT_001",
+        "COURT_003",
+        "COURT_005",
+        "COURT_009",
+        "COURT_013"
+      ],
+      "requirement_description": "Control one courtier from each of 5 coteries: Commerce, Religious, Military, Academic, Criminal",
+      "vp_reward": 15,
+      "bonus_effect": "Take 2 extra actions this turn"
+    },
+    {
+      "id": "PETITION_013",
+      "title": "Shadow Network",
+      "requirements": [
+        "COURT_006",
+        "COURT_010",
+        "COURT_014"
+      ],
+      "requirement_description": "Control all three 1-slot courtiers: Captain Thorne, Master Scholar Lyra, The Fence",
+      "vp_reward": 10,
+      "bonus_effect": "Look at all opponents' secret petitions"
+    },
+    {
+      "id": "PETITION_015",
+      "title": "Council of Lords",
+      "requirements": [
+        "COURT_007",
+        "COURT_001",
+        "COURT_003"
+      ],
+      "requirement_description": "Control Duchess Seraphina (Noble), Guild Master Aldric (Commerce), and High Priest Matthias (Religious)",
+      "vp_reward": 11,
+      "bonus_effect": "Gain 4 gold and reduce exposure by 3"
+    },
+    {
+      "id": "PETITION_016",
+      "title": "Underworld Dominion",
+      "requirements": [
+        "COURT_013",
+        "COURT_014",
+        "COURT_002"
+      ],
+      "requirement_description": "Control both Criminal courtiers AND Trade Commissioner Vale",
+      "vp_reward": 10,
+      "bonus_effect": "Steal 3 gold from each opponent"
+    }
+  ],
+  "completed": [
+    {
+      "petition_id": "PETITION_001",
+      "title": "Commercial License",
+      "completed_by": 2,
+      "vp_awarded": 4,
+      "bonus_effect": "Gain 3 gold"
+    },
+    {
+      "petition_id": "PETITION_003",
+      "title": "Military Commission",
+      "completed_by": 1,
+      "vp_awarded": 4,
+      "bonus_effect": "Remove 2 influence from any district"
+    },
+    {
+      "petition_id": "PETITION_006",
+      "title": "Maritime Rights",
+      "completed_by": 2,
+      "vp_awarded": 4,
+      "bonus_effect": "Move up to 3 influence between districts"
+    },
+    {
+      "petition_id": "PETITION_014",
+      "title": "War Council",
+      "completed_by": 1,
+      "vp_awarded": 9,
+      "bonus_effect": "Remove 3 influence from any district AND move 2 influence between districts"
+    },
+    {
+      "petition_id": "PETITION_002",
+      "title": "Religious Blessing",
+      "completed_by": 3,
+      "vp_awarded": 4,
+      "bonus_effect": "Reduce exposure by 2"
+    },
+    {
+      "petition_id": "PETITION_005",
+      "title": "Academic Grant",
+      "completed_by": 2,
+      "vp_awarded": 4,
+      "bonus_effect": "Draw 3 cards"
+    },
+    {
+      "petition_id": "PETITION_004",
+      "title": "Noble Charter",
+      "completed_by": 1,
+      "vp_awarded": 5,
+      "bonus_effect": "Gain 1 extra action next turn"
+    },
+    {
+      "petition_id": "PETITION_011",
+      "title": "Imperial Mandate",
+      "completed_by": 1,
+      "vp_awarded": 12,
+      "bonus_effect": "Remove 4 influence from any districts"
+    },
+    {
+      "petition_id": "PETITION_007",
+      "title": "Cultural Endowment",
+      "completed_by": 1,
+      "vp_awarded": 4,
+      "bonus_effect": "Gain 2 VP if you control Gardens"
+    }
+  ],
+  "secret_petitions": {}
+}

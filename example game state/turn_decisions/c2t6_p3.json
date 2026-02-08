@@ -1,0 +1,144 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 6,
+  "recruitment": {
+    "agent_id": null,
+    "position": null,
+    "rationale": "No recruitment this turn - conspiracy positions 1-7 filled. All influence going to ATTACK."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "target": "PETITION_015",
+      "effect": "Use card to substitute for COURT_007 (Noble) to complete Council of Lords petition. I control COURT_001 + COURT_003, card provides COURT_007.",
+      "petition_completed": {
+        "petition_id": "PETITION_015",
+        "title": "Council of Lords",
+        "vp_gained": 11,
+        "bonus": "Gain 4 gold and reduce exposure by 3"
+      },
+      "note": "MASSIVE VP SWING - goes from 47 VP to 58 VP, ties with P2!"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "ability": "6 Remove three influence from any district",
+      "min_turn": 6,
+      "target_district": "Barracks",
+      "target_square": "BAR_01",
+      "target_player": 1,
+      "effect": "Remove 3 of P1's influence from Commander's Tower (BAR_01). P1 has exactly 3 there - this ELIMINATES their control of the 4 VP square and BREAKS their district control!",
+      "note": "DEVASTATING - P1 loses Barracks district controller status and the special removal ability!"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "ability": "2 Remove one influence from target square",
+      "min_turn": 2,
+      "target_district": "Barracks",
+      "target_square": "BAR_02",
+      "target_player": 1,
+      "effect": "Remove 1 influence from Armory (BAR_02). Reduces P1 from 3 to 2 influence.",
+      "note": "Stacking damage on P1's Barracks - softening for future attacks"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_02",
+      "amount": 2,
+      "faction_required": "Commercial",
+      "faction_source": "AGENT_010 Marcus Venditti",
+      "target_player": 2,
+      "current_enemy_inf": 1,
+      "note": "TAKING Merchant Guild from P2 - 2 inf beats their 1"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 2,
+      "faction_required": "Commercial",
+      "faction_source": "AGENT_010 Marcus Venditti",
+      "target_player": 2,
+      "current_enemy_inf": 1,
+      "note": "TAKING Banking House from P2 - 2 inf beats their 1"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "amount": 2,
+      "faction_required": "Commercial",
+      "faction_source": "AGENT_010 Marcus Venditti",
+      "target_player": 2,
+      "current_enemy_inf": 1,
+      "note": "TAKING Spice Stalls from P2 - 2 inf beats their 1"
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_005",
+      "courtier_name": "General Korrath",
+      "amount": 2,
+      "current_my_inf": 2,
+      "slots_available": 2,
+      "note": "LOCKING DOWN Military courtier control - 4/4 slots filled"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "vp_gained": 11,
+      "bonus": "Gain 4 gold and reduce exposure by 3",
+      "note": "Completed via POWER_035 card substituting for COURT_007"
+    }
+  ],
+  "resources_spent": {
+    "influence_pool_district": 6,
+    "influence_pool_courtier": 2,
+    "influence_pool_total": 8,
+    "gold": 0,
+    "actions_used": 3,
+    "power_cards_played": 1
+  },
+  "resources_remaining": {
+    "influence_pool": 17,
+    "gold": 17
+  },
+  "expected_state_after": {
+    "vp": 58,
+    "gold": 17,
+    "influence_pool": 17,
+    "market_squares_controlled": 8,
+    "market_district_controller": true,
+    "courtiers_controlled": ["COURT_001", "COURT_003", "COURT_005"]
+  },
+  "damage_dealt": {
+    "to_p1": {
+      "influence_removed": 4,
+      "squares_lost": ["BAR_01"],
+      "district_control_lost": "Barracks",
+      "note": "P1 loses district controller status and 4 VP square"
+    },
+    "to_p2": {
+      "squares_contested": ["MKT_02", "MKT_03", "MKT_05"],
+      "influence_denied": "3 VP worth of Market squares",
+      "note": "P2 pushed out of Market entirely"
+    }
+  },
+  "reasoning": "TOTAL WAR. Played Universal Connections to complete Council of Lords for 11 VP - ties me with P2 at 58 VP. Steele's removal ability DEVASTATES P1's Barracks control - removing 3 influence from their 4 VP square breaks their district control. Kragg adds another removal to stack damage. Then placed 6 influence to TAKE all three of P2's weakly-held Market squares. Reinforced COURT_005 to lock Military courtier. P1 loses Barracks control, P2 loses Market presence, I gain 11 VP and full Market control. MAXIMUM AGGRESSION DEPLOYED.",
+  "escalation_check": {
+    "needed": false,
+    "reason": "No escalation needed - executing successful multi-front attack. P1's Barracks dominance broken, P2's Market presence eliminated, VP tied. Continue aggressive pressure next turn."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "transition_type": "cycle_end",
+  "current_vp": 47,
+  "current_gold": 14,
+
+  "gold_conversion": {
+    "amount": 12,
+    "vp_gained": 4,
+    "gold_remaining": 2,
+    "rationale": "Convert maximum gold to VP. At 14 VP cost for promotion path, I need every VP I can get. Keep 2 gold for emergencies."
+  },
+
+  "agent_upgrades": [],
+
+  "promotions": [],
+
+  "vp_calculation": {
+    "starting_vp": 47,
+    "gold_conversion": "+4 VP",
+    "final_vp": 51
+  },
+
+  "gold_calculation": {
+    "starting_gold": 14,
+    "gold_converted": "-12",
+    "final_gold": 2
+  },
+
+  "reasoning": "TACTICAL RETREAT TO PREPARE FOR WAR. I analyzed the promotion path and the math is brutal: 8 VP for second-tier upgrades (4 VP each) + 6 VP promotion = 14 VP total. That would drop me from 47 to 33 VP - putting me hopelessly behind P1 (53) and P2 (51). Even with gold conversion to 51 VP, spending 14 VP leaves me at 37 VP. The promotion ISN'T worth it at this cost - Kragg's upgrades are already at first tier, so every additional upgrade costs 4 VP instead of 1 VP. INSTEAD: Convert all gold to VP (47 + 4 = 51 VP), matching P2 and closing gap with P1. Then in Cycle 3, I DOMINATE the board with my superior agent influence generation and complete the Council of Lords petition (11 VP!) by taking Duchess Seraphina. This keeps me competitive while I build FIRST-TIER upgrades on other agents for cheaper Level 3 paths. Knight Commander Steele at 0 upgrades = 4 VP for Level 3 (4x 1 VP first upgrades) vs Kragg's 8 VP. THAT is the efficient promotion path.",
+
+  "cycle_3_battle_plan": {
+    "priority_1": "Contest Duchess Seraphina (COURT_007) to complete Council of Lords petition for 11 VP - I already have COURT_001 and COURT_003!",
+    "priority_2": "Build Knight Commander Steele to Level 3 efficiently (4 first-tier upgrades at 1 VP each = 4 VP total)",
+    "priority_3": "Maintain Market district control - I OWN all 8 squares!",
+    "priority_4": "Pressure P1's Barracks using Military influence from Steele and my other Military agents"
+  },
+
+  "long_term_promotion_strategy": {
+    "target_agent": "Knight Commander Steele (AGENT_034)",
+    "current_upgrades": 0,
+    "upgrades_needed": 4,
+    "upgrade_cost": "4 VP (4x 1 VP first-tier)",
+    "promotion_target": "Captain Thorne (COURT_006) - 1 slot courtier = 5 VP + 3 gold base",
+    "faction_discount": "-1 VP (Military matches Military)",
+    "total_path_cost": "4 VP upgrades + 4 VP promotion + 3 gold = 8 VP + 3 gold",
+    "comparison": "Much cheaper than Kragg path (14 VP + 5 gold)",
+    "timing": "Complete across Cycles 3-4"
+  }
+}

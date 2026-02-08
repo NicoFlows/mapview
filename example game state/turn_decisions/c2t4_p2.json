@@ -1,0 +1,112 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 4,
+  "recruitment": {
+    "agent_id": "AGENT_032",
+    "name": "Lord Pemberton",
+    "position": 5,
+    "rationale": "Noble faction access + 2 gold generation + Turn 5 extra action ability = significant late-cycle ROI"
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "position": 2,
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "effect": "FREE +4 gold (9 -> 13)"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_023",
+      "agent_name": "First Mate Calico",
+      "position": 3,
+      "ability": "4 Place two influence in Docks and gain 2 crowns",
+      "min_turn": 4,
+      "effect": "FREE +2 gold (13 -> 15) + 2 influence placed in DOC_01 (Harbormaster Office, 4 VP)"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_030",
+      "agent_name": "Harbor Wench Sybil",
+      "position": 4,
+      "ability": "3 Place two influence in Docks",
+      "min_turn": 3,
+      "effect": "FREE 2 influence placed in DOC_02 (Customs House, 3 VP)"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "district",
+      "district": "Docks",
+      "square": "DOC_01",
+      "amount": 3,
+      "faction": "Maritime",
+      "vp_value": 4,
+      "rationale": "Fortress the Harbormaster Office - 4 VP prime real estate"
+    },
+    {
+      "type": "district",
+      "district": "Docks",
+      "square": "DOC_03",
+      "amount": 2,
+      "faction": "Maritime",
+      "vp_value": 3,
+      "rationale": "Shipwright - 3 VP, continue Docks expansion"
+    },
+    {
+      "type": "district",
+      "district": "Docks",
+      "square": "DOC_05",
+      "amount": 2,
+      "faction": "Maritime",
+      "vp_value": 2,
+      "rationale": "Dry Dock - 2 VP, builds toward district control"
+    },
+    {
+      "type": "courtier",
+      "courtier_id": "COURT_009",
+      "courtier_name": "Dean Aristotle",
+      "coterie": "Academic",
+      "amount": 2,
+      "slots_available": 3,
+      "rationale": "Start Academic Grant petition path (4 VP + 3 cards). Need COURT_009 + COURT_010. Brynn provides Academic faction."
+    }
+  ],
+  "free_actions": [],
+  "petition_notes": {
+    "trade_empire_blocked": "P1 controls COURT_012 (Admiral Stormwind) at 2/2 - cannot complete Trade Empire this cycle",
+    "new_target": "Academic Grant (PETITION_005): Requires COURT_009 + COURT_010 for 4 VP + 3 cards",
+    "progress": "Placed 2 influence on COURT_009 this turn. Next turn: secure COURT_010 (1 slot) for instant control"
+  },
+  "resources_spent": {
+    "influence_pool_on_districts": 7,
+    "influence_pool_on_courtiers": 2,
+    "total_influence_pool_spent": 9,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_gained": {
+    "gold_from_abilities": 6,
+    "influence_from_abilities": 4
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 15
+  },
+  "end_of_turn_state": {
+    "expected_gold": 15,
+    "expected_influence_pool": 0,
+    "docks_squares_controlled": ["DOC_01", "DOC_02", "DOC_03", "DOC_05"],
+    "docks_influence_total": 9,
+    "market_squares_controlled": ["MKT_01", "MKT_03", "MKT_05", "MKT_07"],
+    "courtiers_controlled": ["COURT_001", "COURT_002", "COURT_011"],
+    "courtiers_progressing": ["COURT_009"]
+  },
+  "reasoning": "Trade Empire is BLOCKED (P1 holds COURT_012 at 2/2). Pivoting to massive Docks expansion leveraging 3 Maritime agents. All 3 abilities generate FREE value: +6 gold + 4 influence in Docks. Deployed full 9-cube pool across Docks (7) and Academic courtier (2). This turn establishes Docks territorial dominance - 4 squares with 9 influence total. Academic Grant becomes the new petition target (4 VP + 3 cards). Economic engine continues: 15 gold end-of-turn, Market district control maintained. Gold flows to those who pivot quickly when markets shift."
+}

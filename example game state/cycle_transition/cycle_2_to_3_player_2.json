@@ -1,0 +1,95 @@
+{
+  "player_id": 2,
+  "player_type": "economic",
+  "transition": "cycle_2_to_3",
+  "timestamp": "2026-02-01T22:30:00Z",
+
+  "initial_state": {
+    "vp": 51,
+    "gold": 45,
+    "exposure": 0,
+    "courtiers_controlled": [
+      "COURT_002 (Trade Commissioner Vale)",
+      "COURT_009 (Dean Aristotle)",
+      "COURT_010 (Master Scholar Lyra)",
+      "COURT_011 (Harbormaster Blackwater)"
+    ],
+    "coteries_controlled": ["Academic"],
+    "promotion_eligible_agents": ["Guildmaster Harrow (Level 2)"]
+  },
+
+  "decisions": {
+    "gold_conversion": {
+      "gold_spent": 45,
+      "vp_gained": 15,
+      "reasoning": "Convert ALL gold to VP. Gold resets to 3 after transition anyway - only a fool leaves money on the table! This is PURE PROFIT. 45 gold = 15 VP."
+    },
+
+    "agent_upgrades": [
+      {
+        "agent_id": "AGENT_023",
+        "agent_name": "First Mate Calico",
+        "stat": "influence",
+        "cost_vp": 1,
+        "current_upgrades": 1,
+        "new_total_upgrades": 2,
+        "new_level": 2,
+        "reasoning": "Calico already has 1 upgrade. Adding 1 more = Level 2 = PROMOTION ELIGIBLE next cycle! Investment in future returns."
+      },
+      {
+        "agent_id": "AGENT_030",
+        "agent_name": "Harbor Wench Sybil",
+        "stat": "gold",
+        "cost_vp": 1,
+        "current_upgrades": 0,
+        "new_total_upgrades": 1,
+        "reasoning": "Begin investment path. Maritime agents are valuable for Docks control and Maritime courtier positions."
+      }
+    ],
+
+    "promotions": [
+      {
+        "agent_id": "AGENT_024",
+        "agent_name": "Guildmaster Harrow",
+        "agent_level": 2,
+        "agent_faction": "Commercial",
+        "courtier_id": "COURT_002",
+        "courtier_name": "Trade Commissioner Vale",
+        "courtier_slots": 2,
+        "base_vp_cost": 5,
+        "faction_match_discount": -1,
+        "final_vp_cost": 4,
+        "gold_cost": 3,
+        "high_impact_power": "Market Manipulation: Set any district VP to 5-15",
+        "benefits": [
+          "PERMANENT courtier control (survives influence resets!)",
+          "Doubled agent stats: influence 3->6, gold 3->6",
+          "High-impact power for Market district manipulation",
+          "Progress toward 8/14 promotion victory (now at 1/8)",
+          "Maintains Commerce courtier for petition eligibility"
+        ],
+        "reasoning": "This is the BEST ROI move available. I already control Trade Commissioner Vale via influence. Harrow is Level 2 = eligible. Commercial faction matches Commerce coterie = -1 VP discount. 2-slot courtier = cheapest promotion cost (5 VP + 3 gold - 1 = 4 VP + 3 gold). The promotion LOCKS IN permanent control and DOUBLES Harrow's stats. This is compound interest on my economic engine!"
+      }
+    ],
+
+    "repositioning": []
+  },
+
+  "final_calculation": {
+    "starting_vp": 51,
+    "gold_conversion_vp": 15,
+    "post_conversion_vp": 66,
+    "upgrade_costs": -2,
+    "promotion_vp_cost": -4,
+    "promotion_gold_cost": -3,
+    "final_vp": 60,
+    "final_gold_before_reset": 42,
+    "gold_after_reset": 3,
+    "promoted_courtiers": 1,
+    "promotion_eligible_agents_remaining": ["First Mate Calico (after upgrade)"]
+  },
+
+  "narrative_journal": {
+    "entry": "The ledgers don't lie - and today they sing a profitable tune. Forty-five gold coins sit in my coffers, the fruit of careful commerce and shrewd dealing throughout this cycle. Only a fool would let gold sit idle when the transition wipes the slate clean. I convert it ALL - fifteen Victory Points flow into my account like water finding its level. But the crown jewel of today's business? Guildmaster Harrow's PROMOTION. I've had my influence on Trade Commissioner Vale all cycle, but influence is fleeting - it resets, it can be contested. Permanent positions in the government, though? Those are ASSETS. I invest 4 VP and 3 gold to install Harrow in that position permanently. His commercial acumen doubles - where he generated 3 gold before, now he'll produce 6. Where he placed 3 influence, now he'll place 6. That's a 100% return on investment, compounding every turn! I also upgrade Calico and Sybil - investments in future promotions. The Maritime trade routes will be mine. Let the others fight over scraps of influence that vanish each cycle. I'm building an EMPIRE of permanent economic control. One courtier down, seven to go. The path to 8/14 begins with a single profitable transaction."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 5,
+  "recruitment": {
+    "agent_id": "AGENT_017",
+    "position": 6,
+    "rationale": "Elena Rosetti brings 7 gold - fuel for future aggression. Commercial faction maintains Market dominance."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "ability": "5 Place three influence in Market and gain 3 crowns.",
+      "min_turn": 5,
+      "effect": "FREE 3 influence in Market + 3 gold income",
+      "target_squares": ["MKT_01", "MKT_02", "MKT_03"],
+      "note": "Reinforcing Market control while gaining economy"
+    },
+    {
+      "action_num": 2,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "target": "PETITION_008",
+      "effect": "Use as wild courtier (COURT_007) to complete Cross-Faction Alliance",
+      "petition_completed": {
+        "petition_id": "PETITION_008",
+        "title": "Cross-Faction Alliance",
+        "requirements_met": ["COURT_001 (controlled)", "COURT_005 (controlled)", "COURT_007 (wild card)"],
+        "vp_reward": 6,
+        "bonus_effect": "Place 2 influence on any courtier"
+      },
+      "bonus_influence_target": "COURT_005",
+      "note": "Completing petition for 6 VP while LOCKING my Military courtier control"
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_07",
+      "amount": 3,
+      "faction": "Commercial",
+      "target_player": 2,
+      "note": "CONTESTING P2's last Market foothold - taking Tinker's Corner with 3 influence to beat their 2"
+    }
+  ],
+  "free_influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_04",
+      "amount": 6,
+      "faction": "Commercial",
+      "note": "Fortifying Silk Bazaar to 10 total influence - UNASSAILABLE"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 5,
+      "faction": "Commercial",
+      "note": "Reinforcing Grand Exchange to 6 total - P2 cannot contest"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_08",
+      "amount": 4,
+      "faction": "Commercial",
+      "note": "Claiming empty Beggar's Alley for FULL DISTRICT CONTROL"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_008",
+      "title": "Cross-Faction Alliance",
+      "vp_gained": 6,
+      "bonus": "Place 2 influence on any courtier",
+      "note": "Completed via Universal Connections wild card"
+    }
+  ],
+  "resources_spent": {
+    "influence_from_pool": 18,
+    "influence_from_ability": 3,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 3,
+    "gold": 14,
+    "notes": "Venditti ability adds 3 gold, bringing total to 14"
+  },
+  "tactical_summary": {
+    "primary_attack": "Complete PETITION_008 for 6 VP using Universal Connections wild card",
+    "secondary_attack": "Take MKT_07 from P2, denying their last Market foothold",
+    "territory_gain": "Full Market lockdown with 8/8 squares controlled",
+    "vp_gained_this_turn": 6,
+    "pressure_on_opponents": "P2 loses all Market presence, P1 contained in Barracks"
+  },
+  "reasoning": "DOMINANT POSITION. 54 VP lead, now pushing to 60+ VP. Universal Connections enables 6 VP petition completion. Venditti ability provides FREE influence + gold. Full Market control denies P2 income and territory. P1's Barracks stronghold is contained - they cannot threaten Market. This turn extends VP lead while fortifying territorial control. AGGRESSIVE POSTURE MAINTAINED."
+}

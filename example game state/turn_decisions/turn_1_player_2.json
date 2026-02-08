@@ -1,0 +1,89 @@
+{
+  "player_id": 2,
+  "cycle": 5,
+  "turn": 1,
+  "recruitment": {
+    "agent_id": "AGENT_028",
+    "name": "Fingers McGee",
+    "from_hand": true,
+    "position": 2,
+    "rationale": "As the Economic Mastermind, gold is the foundation of sustainable advantage. Fingers McGee provides 6 gold income which compounds into influence, actions, and flexibility. Criminal faction can place influence in Docks (supporting my Maritime dominance) and Barracks. At Position 2, generates 2 influence - acceptable given the gold engine value."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "agent_ability",
+      "agent": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability_used": "5 Gain 6 crowns and place one influence in Market.",
+      "cost": 5,
+      "details": "Using the more valuable ability to generate 6 gold while also establishing Market presence. This funds future courtier influence battles and Inspire actions. Net gain: 6 gold - 5 cost = +1 gold, plus 1 influence in Market. Starting gold 2 + 4 (from agent) + 6 (ability) - 5 (cost) = 7 gold remaining."
+    },
+    {
+      "action_num": 2,
+      "type": "courtier_influence",
+      "target_type": "courtier",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "coterie": "Commerce",
+      "amount": 2,
+      "details": "Securing control of Guild Master Aldric. Currently tied 2-2 with Player 1. Adding 2 influence gives me 4 vs their 2 - taking control. This is critical for Trade Empire petition and blocks Player 1 from Commerce courtier majority."
+    },
+    {
+      "action_num": 3,
+      "type": "courtier_influence",
+      "target_type": "courtier",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "amount": 2,
+      "details": "Capturing empty Harbormaster Blackwater with 2 influence. Combined with my promoted Admiral Stormwind, this gives me both Maritime courtiers. Essential for Trade Empire petition (requires all Commerce + Maritime courtiers). Low-cost investment with high strategic yield."
+    }
+  ],
+  "influence_placements": [
+    {
+      "target_type": "district",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 1,
+      "source": "Guildmaster Harrow ability",
+      "rationale": "Grand Exchange is the highest VP square (4 VP) in Market. Establishing early presence in my Commercial stronghold."
+    },
+    {
+      "target_type": "courtier",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "amount": 2,
+      "source": "Action 2",
+      "rationale": "Breaking tie with Player 1, taking control of key Commerce courtier."
+    },
+    {
+      "target_type": "courtier",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "amount": 2,
+      "source": "Action 3",
+      "rationale": "Capturing empty Maritime courtier for Trade Empire petition setup."
+    }
+  ],
+  "free_actions": [],
+  "resource_tracking": {
+    "starting_gold": 2,
+    "agent_gold_income": 4,
+    "ability_gold_gain": 6,
+    "ability_gold_cost": 5,
+    "ending_gold_estimate": 7,
+    "starting_influence_pool": 4,
+    "influence_spent_on_courtiers": 4,
+    "ending_influence_pool_estimate": 0
+  },
+  "strategic_position": {
+    "current_vp": 108,
+    "lead_over_p1": 6,
+    "lead_over_p3": 26,
+    "courtiers_controlled": ["COURT_002", "COURT_012"],
+    "courtiers_targeted": ["COURT_001", "COURT_011"],
+    "petitions_in_progress": "PETITION_010 (Trade Empire)"
+  },
+  "reasoning": "FINAL CYCLE ECONOMIC OPTIMIZATION: With a 6 VP lead, the priority is protecting position while building toward a high-value petition. Trade Empire (8 VP + 5 gold + 2 cards) is the natural endgame for my Commercial/Maritime portfolio. I already control Trade Commissioner Vale and have Admiral Stormwind promoted. This turn secures Guild Master Aldric (breaking the tie with P1) and captures the empty Harbormaster Blackwater. Combined with Guildmaster Harrow's gold generation, I maintain economic engine superiority (7 gold end-of-turn) while positioning for petition completion. The 6 gold swing from Harrow's ability funds 2-3 more turns of courtier influence battles. Fingers McGee recruitment adds 6 gold/turn going forward - compound interest on my economic advantage. Defensive posture: by focusing on MY strengths rather than attacking opponents, I force them to overextend to catch me."
+}

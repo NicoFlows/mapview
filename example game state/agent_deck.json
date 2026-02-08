@@ -1,0 +1,230 @@
+{
+  "deck_info": {
+    "type": "agent",
+    "version": "1.4"
+  },
+  "draw_pile": [
+    {
+      "id": "AGENT_050",
+      "name": "Astronomer Celeste",
+      "subtitle": "Star Mapper",
+      "faction": "Academic",
+      "level": 1,
+      "influence": 2,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "1 Look at top card of event deck.",
+        "3 Draw two cards."
+      ]
+    },
+    {
+      "id": "AGENT_002",
+      "name": "Pilare Elmen",
+      "subtitle": "Chancellor",
+      "faction": "Noble",
+      "level": 1,
+      "influence": 4,
+      "gold": 2,
+      "exposure": 6,
+      "abilities": [
+        "When revealed, Recruit.",
+        "4 Gain 15 crowns. Adjust your exposure +2."
+      ]
+    },
+    {
+      "id": "AGENT_045",
+      "name": "Caravan Master Zara",
+      "subtitle": "Desert Trader",
+      "faction": "Commercial",
+      "level": 1,
+      "influence": 2,
+      "gold": 4,
+      "exposure": 1,
+      "abilities": [
+        "2 Gain 3 crowns.",
+        "4 Place two influence in Market or Docks."
+      ]
+    },
+    {
+      "id": "AGENT_048",
+      "name": "Scout Hawkeye",
+      "subtitle": "Eyes of the Army",
+      "faction": "Military",
+      "level": 1,
+      "influence": 2,
+      "gold": 0,
+      "exposure": 1,
+      "abilities": [
+        "1 Look at top three event cards.",
+        "3 Place two influence in Barracks."
+      ]
+    },
+    {
+      "id": "AGENT_004",
+      "name": "Baldassare",
+      "subtitle": "Trained, but never tamed",
+      "faction": "Criminal",
+      "level": 1,
+      "influence": 0,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "1 Remove one influence from any one square.",
+        "2 Remove up to two influence from any one square."
+      ]
+    },
+    {
+      "id": "AGENT_005",
+      "name": "King Arnaud IV",
+      "subtitle": "Dei Gratia Rex Tempestas",
+      "faction": "Noble",
+      "level": 3,
+      "influence": 2,
+      "gold": 5,
+      "exposure": 9,
+      "abilities": [
+        "6 Choose two non-Palace districts. Place two influence in each.",
+        "7 Take four actions."
+      ]
+    },
+    {
+      "id": "AGENT_039",
+      "name": "Princess Celestine",
+      "subtitle": "Heir Apparent",
+      "faction": "Noble",
+      "level": 2,
+      "influence": 4,
+      "gold": 2,
+      "exposure": 5,
+      "abilities": [
+        "4 Place three influence in Palace.",
+        "6 Gain 2 VP."
+      ]
+    },
+    {
+      "id": "AGENT_020",
+      "name": "General Korrath",
+      "subtitle": "Iron Hand",
+      "faction": "Military",
+      "level": 2,
+      "influence": 4,
+      "gold": 2,
+      "exposure": 4,
+      "abilities": [
+        "4 Remove two influence from any district.",
+        "6 Place five influence in Barracks."
+      ]
+    },
+    {
+      "id": "AGENT_008",
+      "name": "Thadius Broghan",
+      "subtitle": "Dockmaster",
+      "faction": "Maritime",
+      "level": 1,
+      "influence": 3,
+      "gold": 1,
+      "exposure": 2,
+      "abilities": [
+        "3 Place two influence each in up to three vacant Docks squares.",
+        "5 Place six influence each in two Docks squares."
+      ]
+    },
+    {
+      "id": "AGENT_035",
+      "name": "Poison Ivy",
+      "subtitle": "Alchemist of Death",
+      "faction": "Criminal",
+      "level": 2,
+      "influence": 2,
+      "gold": 1,
+      "exposure": 0,
+      "abilities": [
+        "3 Remove two influence from any courtier.",
+        "5 Flip target agent face down."
+      ]
+    },
+    {
+      "id": "AGENT_019",
+      "name": "Sister Evangeline",
+      "subtitle": "Voice of the Poor",
+      "faction": "Religious",
+      "level": 2,
+      "influence": 4,
+      "gold": 0,
+      "exposure": 0,
+      "abilities": [
+        "3 Place three influence in Temple.",
+        "5 All players reduce exposure by 1."
+      ]
+    },
+    {
+      "id": "AGENT_025",
+      "name": "Countess Mira",
+      "subtitle": "Social Butterfly",
+      "faction": "Noble",
+      "level": 1,
+      "influence": 3,
+      "gold": 2,
+      "exposure": 3,
+      "abilities": [
+        "2 Place one influence on any courtier.",
+        "4 Place two influence in Palace."
+      ]
+    }
+  ],
+  "in_hand": {
+    "1": [
+      "AGENT_013",
+      "AGENT_031",
+      "AGENT_021",
+      "AGENT_037",
+      "AGENT_018",
+      "AGENT_012",
+      "AGENT_042",
+      "AGENT_033",
+      "AGENT_036",
+      "AGENT_011",
+      "AGENT_029",
+      "AGENT_003",
+      "AGENT_027"
+    ],
+    "2": [
+      "AGENT_049",
+      "AGENT_022",
+      "AGENT_032",
+      "AGENT_043",
+      "AGENT_023",
+      "AGENT_030",
+      "AGENT_044",
+      "AGENT_007",
+      "AGENT_006",
+      "AGENT_047",
+      "AGENT_014",
+      "AGENT_028",
+      "AGENT_015"
+    ],
+    "3": [
+      "AGENT_026",
+      "AGENT_009",
+      "AGENT_010",
+      "AGENT_040",
+      "AGENT_034",
+      "AGENT_017",
+      "AGENT_041",
+      "AGENT_016",
+      "AGENT_046",
+      "AGENT_038",
+      "AGENT_001"
+    ]
+  },
+  "in_conspiracy": {
+    "1": [],
+    "2": [
+      "AGENT_024"
+    ],
+    "3": []
+  },
+  "discard_pile": [],
+  "removed_from_game": []
+}

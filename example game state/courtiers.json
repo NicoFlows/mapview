@@ -1,0 +1,493 @@
+{
+  "simulation_id": "sim_5cycle_v3",
+  "coteries": {
+    "Commerce": {
+      "description": "Commerce interests",
+      "linked_district": "Market",
+      "courtiers": [
+        {
+          "id": "COURT_001",
+          "name": "Guild Master Aldric",
+          "coterie": "Commerce",
+          "influence_slots": 4,
+          "current_influence": {
+            "1": 2,
+            "2": 2
+          },
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_002",
+          "name": "Trade Commissioner Vale",
+          "coterie": "Commerce",
+          "influence_slots": 2,
+          "current_influence": {
+            "2": 2
+          },
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Religious": {
+      "description": "Religious interests",
+      "linked_district": "Temple",
+      "courtiers": [
+        {
+          "id": "COURT_003",
+          "name": "High Priest Matthias",
+          "coterie": "Religious",
+          "influence_slots": 5,
+          "current_influence": {
+            "3": 4,
+            "1": 1
+          },
+          "controller": 3,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_004",
+          "name": "Sister Evangeline",
+          "coterie": "Religious",
+          "influence_slots": 2,
+          "current_influence": {
+            "1": 1
+          },
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Military": {
+      "description": "Military interests",
+      "linked_district": "Barracks",
+      "courtiers": [
+        {
+          "id": "COURT_005",
+          "name": "General Korrath",
+          "coterie": "Military",
+          "influence_slots": 4,
+          "current_influence": {
+            "3": 4
+          },
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_006",
+          "name": "Captain Thorne",
+          "coterie": "Military",
+          "influence_slots": 1,
+          "current_influence": {},
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Noble": {
+      "description": "Noble interests",
+      "linked_district": "Palace",
+      "courtiers": [
+        {
+          "id": "COURT_007",
+          "name": "Duchess Seraphina",
+          "coterie": "Noble",
+          "influence_slots": 5,
+          "current_influence": {
+            "3": 1
+          },
+          "controller": 3,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_008",
+          "name": "Duke Valorian",
+          "coterie": "Noble",
+          "influence_slots": 3,
+          "current_influence": {},
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Academic": {
+      "description": "Academic interests",
+      "linked_district": "Academy",
+      "courtiers": [
+        {
+          "id": "COURT_009",
+          "name": "Dean Aristotle",
+          "coterie": "Academic",
+          "influence_slots": 3,
+          "current_influence": {
+            "2": 3
+          },
+          "controller": 2,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_010",
+          "name": "Master Scholar Lyra",
+          "coterie": "Academic",
+          "influence_slots": 1,
+          "current_influence": {
+            "1": 1
+          },
+          "controller": 1,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Maritime": {
+      "description": "Maritime interests",
+      "linked_district": "Docks",
+      "courtiers": [
+        {
+          "id": "COURT_011",
+          "name": "Harbormaster Blackwater",
+          "coterie": "Maritime",
+          "influence_slots": 4,
+          "current_influence": {
+            "1": 4
+          },
+          "controller": 1,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_012",
+          "name": "Admiral Stormwind",
+          "coterie": "Maritime",
+          "influence_slots": 2,
+          "current_influence": {},
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    },
+    "Criminal": {
+      "description": "Criminal interests",
+      "linked_district": "Gardens",
+      "courtiers": [
+        {
+          "id": "COURT_013",
+          "name": "Underworld Boss Vex",
+          "coterie": "Criminal",
+          "influence_slots": 4,
+          "current_influence": {
+            "1": 3
+          },
+          "controller": 1,
+          "special_ability": null,
+          "influence": {}
+        },
+        {
+          "id": "COURT_014",
+          "name": "The Fence",
+          "coterie": "Criminal",
+          "influence_slots": 1,
+          "current_influence": {
+            "1": 1
+          },
+          "controller": null,
+          "special_ability": null,
+          "influence": {}
+        }
+      ]
+    }
+  },
+  "courtiers": [
+    {
+      "id": "COURT_001",
+      "name": "Guild Master Aldric",
+      "coterie": "Commerce",
+      "influence_slots": 4,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_002",
+      "name": "Trade Commissioner Vale",
+      "coterie": "Commerce",
+      "influence_slots": 2,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_003",
+      "name": "High Priest Matthias",
+      "coterie": "Religious",
+      "influence_slots": 5,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_004",
+      "name": "Sister Evangeline",
+      "coterie": "Religious",
+      "influence_slots": 2,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_005",
+      "name": "General Korrath",
+      "coterie": "Military",
+      "influence_slots": 4,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_006",
+      "name": "Captain Thorne",
+      "coterie": "Military",
+      "influence_slots": 1,
+      "current_influence": {},
+      "controller": 1,
+      "special_ability": null,
+      "influence": {},
+      "promoted_agent": {
+        "id": "AGENT_013",
+        "name": "Captain Varro",
+        "subtitle": "City Watch Commander",
+        "faction": "Military",
+        "level": 3,
+        "influence": 5,
+        "gold": 3,
+        "exposure": 2,
+        "abilities": [
+          "2 Remove one influence from any district.",
+          "4 Place three influence in Barracks."
+        ],
+        "position": 1,
+        "active": true,
+        "vp_upgrades": [
+          {
+            "stat": "influence",
+            "old_value": 3,
+            "new_value": 4,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 1
+          },
+          {
+            "stat": "gold",
+            "old_value": 1,
+            "new_value": 2,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 2
+          },
+          {
+            "stat": "influence",
+            "old_value": 4,
+            "new_value": 5,
+            "cost": 4,
+            "stat_upgrade_number": 2,
+            "total_upgrade_number": 3
+          },
+          {
+            "stat": "gold",
+            "old_value": 2,
+            "new_value": 3,
+            "cost": 4,
+            "stat_upgrade_number": 2,
+            "total_upgrade_number": 4
+          }
+        ]
+      },
+      "promoted_by": 1,
+      "promoted_cycle": 1
+    },
+    {
+      "id": "COURT_007",
+      "name": "Duchess Seraphina",
+      "coterie": "Noble",
+      "influence_slots": 5,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_008",
+      "name": "Duke Valorian",
+      "coterie": "Noble",
+      "influence_slots": 3,
+      "current_influence": {},
+      "controller": 1,
+      "special_ability": null,
+      "influence": {},
+      "promoted_agent": {
+        "id": "AGENT_018",
+        "name": "Duke Valorian",
+        "subtitle": "The Old Guard",
+        "faction": "Noble",
+        "level": 3,
+        "influence": 6,
+        "gold": 4,
+        "exposure": 5,
+        "abilities": [
+          "4 Place three influence in Palace.",
+          "6 Adjust any district VP by \u00b11."
+        ],
+        "position": 4,
+        "active": true,
+        "vp_upgrades": [
+          {
+            "stat": "influence",
+            "old_value": 5,
+            "new_value": 6,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 1
+          },
+          {
+            "stat": "gold",
+            "old_value": 3,
+            "new_value": 4,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 2
+          }
+        ]
+      },
+      "promoted_by": 1,
+      "promoted_cycle": 1
+    },
+    {
+      "id": "COURT_009",
+      "name": "Dean Aristotle",
+      "coterie": "Academic",
+      "influence_slots": 3,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_010",
+      "name": "Master Scholar Lyra",
+      "coterie": "Academic",
+      "influence_slots": 1,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_011",
+      "name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "influence_slots": 4,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_012",
+      "name": "Admiral Stormwind",
+      "coterie": "Maritime",
+      "influence_slots": 2,
+      "current_influence": {},
+      "controller": 2,
+      "special_ability": null,
+      "influence": {},
+      "promoted_agent": {
+        "id": "AGENT_023",
+        "name": "First Mate Calico",
+        "subtitle": "Smuggler Captain",
+        "faction": "Maritime",
+        "level": 3,
+        "influence": 4,
+        "gold": 5,
+        "exposure": 1,
+        "abilities": [
+          "2 Gain 3 crowns.",
+          "4 Place two influence in Docks and gain 2 crowns."
+        ],
+        "position": 3,
+        "active": true,
+        "vp_upgrades": [
+          {
+            "stat": "gold",
+            "old_value": 3,
+            "new_value": 4,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 1
+          },
+          {
+            "stat": "influence",
+            "old_value": 2,
+            "new_value": 3,
+            "cost": 1,
+            "stat_upgrade_number": 1,
+            "total_upgrade_number": 2
+          },
+          {
+            "stat": "gold",
+            "old_value": 4,
+            "new_value": 5,
+            "cost": 4,
+            "stat_upgrade_number": 2,
+            "total_upgrade_number": 3
+          },
+          {
+            "stat": "influence",
+            "old_value": 3,
+            "new_value": 4,
+            "cost": 4,
+            "stat_upgrade_number": 2,
+            "total_upgrade_number": 4
+          }
+        ]
+      },
+      "promoted_by": 2,
+      "promoted_cycle": 1
+    },
+    {
+      "id": "COURT_013",
+      "name": "Underworld Boss Vex",
+      "coterie": "Criminal",
+      "influence_slots": 4,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    },
+    {
+      "id": "COURT_014",
+      "name": "The Fence",
+      "coterie": "Criminal",
+      "influence_slots": 1,
+      "current_influence": {},
+      "controller": null,
+      "special_ability": null,
+      "influence": {}
+    }
+  ]
+}

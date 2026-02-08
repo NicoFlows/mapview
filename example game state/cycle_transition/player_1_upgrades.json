@@ -1,0 +1,145 @@
+{
+  "player_id": 1,
+  "cycle_ending": 4,
+  "cycle_starting": 5,
+  "current_vp": 108,
+  "current_gold": 1,
+  "upgrades": [
+    {
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "position": 2,
+      "stat": "influence",
+      "current_value": 0,
+      "new_value": 1,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Position 2 active Turn 2+. +1 influence pool for 6 turns = 6 extra cubes this cycle. Best ROI for cheap upgrade."
+    },
+    {
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "position": 3,
+      "stat": "gold",
+      "current_value": 4,
+      "new_value": 5,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Reaches Level 3 (2 total upgrades with existing L2). Promotion eligible. Maritime faction valuable for Docks control."
+    },
+    {
+      "agent_id": "AGENT_033",
+      "agent_name": "Inquisitor Vane",
+      "position": 4,
+      "stat": "influence",
+      "current_value": 3,
+      "new_value": 4,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Position 4 active Turn 4+. +1 influence pool for 4 turns. Religious faction enables Temple district access."
+    },
+    {
+      "agent_id": "AGENT_033",
+      "agent_name": "Inquisitor Vane",
+      "position": 4,
+      "stat": "gold",
+      "current_value": 0,
+      "new_value": 1,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Reaches Level 3 (2 total upgrades). Promotion eligible. Vane can be promoted into Religious courtier next transition."
+    },
+    {
+      "agent_id": "AGENT_021",
+      "agent_name": "The Shadow",
+      "position": 5,
+      "stat": "influence",
+      "current_value": 0,
+      "new_value": 1,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Position 5 active Turn 5+. +1 influence pool for 3 turns. Criminal faction maintains courtier access."
+    },
+    {
+      "agent_id": "AGENT_012",
+      "agent_name": "Brother Marcus",
+      "position": 6,
+      "stat": "influence",
+      "current_value": 3,
+      "new_value": 4,
+      "cost": 1,
+      "upgrade_number": 1,
+      "rationale": "Position 6 active Turn 6+. +1 influence for final turns. Religious faction redundancy with Vane."
+    }
+  ],
+  "total_vp_spent": 6,
+  "vp_after_upgrades": 102,
+  "gold_conversion": {
+    "gold_available": 1,
+    "vp_gained": 0,
+    "gold_remaining": 1,
+    "note": "Only 1 gold - insufficient for conversion (requires 3:1 ratio)"
+  },
+  "agents_reaching_level_3": [
+    {
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "new_level": 3,
+      "total_upgrades": 2,
+      "promotion_eligible": true
+    },
+    {
+      "agent_id": "AGENT_033",
+      "agent_name": "Inquisitor Vane",
+      "new_level": 3,
+      "total_upgrades": 2,
+      "promotion_eligible": true
+    }
+  ],
+  "influence_pool_analysis": {
+    "turn_1": {
+      "active_positions": [1],
+      "base_influence": 5,
+      "upgraded_influence": 5,
+      "net_gain": 0
+    },
+    "turn_2": {
+      "active_positions": [1, 2],
+      "base_influence": 5,
+      "upgraded_influence": 6,
+      "net_gain": 1
+    },
+    "turn_3": {
+      "active_positions": [1, 2, 3],
+      "base_influence": 8,
+      "upgraded_influence": 9,
+      "net_gain": 1
+    },
+    "turn_4": {
+      "active_positions": [1, 2, 3, 4],
+      "base_influence": 11,
+      "upgraded_influence": 13,
+      "net_gain": 2
+    },
+    "turn_5": {
+      "active_positions": [1, 2, 3, 4, 5],
+      "base_influence": 11,
+      "upgraded_influence": 14,
+      "net_gain": 3
+    },
+    "turn_6": {
+      "active_positions": [1, 2, 3, 4, 5, 6],
+      "base_influence": 14,
+      "upgraded_influence": 18,
+      "net_gain": 4
+    },
+    "turn_7": {
+      "active_positions": [1, 2, 3, 4, 5, 6, 7],
+      "base_influence": 17,
+      "upgraded_influence": 21,
+      "net_gain": 4
+    },
+    "total_extra_cubes_from_upgrades": 15
+  },
+  "reasoning": "FINAL CYCLE OPTIMIZATION: Trailing P2 by 4 VP (108 vs 112), every decision must maximize competitive advantage. Strategy: spend 6 VP on cheap 1-VP upgrades to maximize influence pool across the 7-turn final cycle. This yields +15 extra influence cubes total - far exceeding the 6 VP cost in territorial control potential. Two agents (Blackbeard, Vane) reach Level 3 for promotion eligibility, advancing the 8/14 courtier victory path. Avoided expensive 4-VP upgrades as the VP cost outweighs marginal benefit in final cycle. Captain Varro already maxed at L3 with 4 upgrades. Post-upgrade VP: 102 (10 behind P2's 112). The 15 extra cubes must translate to 10+ VP through superior district control to overcome the deficit. Mathematical trajectory: influence superiority enables territorial dominance which generates the VP needed to close the gap."
+}

@@ -51,7 +51,7 @@ Each game square will have:
 
 ## Files to Create/Modify
 
-**Create: `/Volumes/Extreme Pro/projects/ClaudeMCPDocs/Code/mapview/viewer2.html`**
+**Create: `viewer2.html`**
 - Copy of viewer.html with all game squares functionality added
 - Original viewer.html preserved unchanged
 

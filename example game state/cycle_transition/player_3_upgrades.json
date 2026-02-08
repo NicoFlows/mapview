@@ -1,0 +1,81 @@
+{
+  "phase": "cycle_transition_upgrades",
+  "player_id": 3,
+  "cycle_ending": 4,
+  "cycle_starting": 5,
+  "vp_before": 87,
+  "gold_before": 1,
+  "upgrades": [
+    {
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "position": 1,
+      "stat": "influence",
+      "old_value": 4,
+      "new_value": 5,
+      "cost": 1,
+      "rationale": "Position 1 agent active EVERY turn. +1 influence = +7 cubes over cycle. MAXIMUM territorial impact."
+    },
+    {
+      "agent_id": "AGENT_017",
+      "agent_name": "Elena Rosetti",
+      "position": 5,
+      "stat": "influence",
+      "old_value": 0,
+      "new_value": 1,
+      "cost": 1,
+      "rationale": "Zero influence is UNACCEPTABLE. Even 1 cube per turn adds pressure. Activating dead weight."
+    },
+    {
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "position": 6,
+      "stat": "influence",
+      "old_value": 4,
+      "new_value": 5,
+      "cost": 1,
+      "rationale": "Military REMOVAL agent. More cubes for Barracks conquest. His ability DESTROYS enemy positions."
+    },
+    {
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "position": 6,
+      "stat": "gold",
+      "old_value": 2,
+      "new_value": 3,
+      "cost": 1,
+      "rationale": "Reaches Level 2. Stronger military economy for late-game offensive."
+    },
+    {
+      "agent_id": "AGENT_046",
+      "agent_name": "Baron von Stahl",
+      "position": 7,
+      "stat": "gold",
+      "old_value": 3,
+      "new_value": 4,
+      "cost": 1,
+      "rationale": "Reaches Level 2. Palace access with Noble faction. Threatens high-VP throne squares."
+    }
+  ],
+  "total_vp_spent": 5,
+  "vp_after": 82,
+  "influence_gained": "+3 total (Venditti +1, Rosetti +1, Kragg +1)",
+  "levels_gained": "Kragg L1->L2, Baron L1->L2",
+  "new_influence_pool_projection": {
+    "turn_1": 5,
+    "turn_2": 12,
+    "turn_3": 18,
+    "turn_4": 22,
+    "turn_5": 23,
+    "turn_6": 28,
+    "turn_7": 32,
+    "note": "Cumulative influence available across all active agents per turn"
+  },
+  "reasoning": "FINAL CYCLE. 25 VP behind P2 - need MAXIMUM territorial aggression. Invested 5 VP into cheap upgrades that maximize influence pool. Position 1 upgrade affects EVERY turn. Siege Master Kragg is my REMOVAL specialist - his ability destroys enemy positions. Baron gives Palace access for high-VP squares. Every cube I deploy is a cube DENYING opponents VP. This is WAR.",
+  "strategic_notes": {
+    "primary_targets": ["P2's Docks holdings", "P1's Military positions", "Palace high-VP squares"],
+    "removal_focus": "Siege Master Kragg ability for surgical strikes on enemy concentrations",
+    "district_priorities": ["Barracks - Military home turf", "Temple - Religious agents dominate", "Palace - High VP payoff"],
+    "winning_formula": "Control more VP squares than opponents. Destroy their positions. Take what's theirs."
+  }
+}

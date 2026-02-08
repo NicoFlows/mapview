@@ -1,0 +1,67 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 3,
+  "recruitment": {
+    "agent_id": "AGENT_033",
+    "name": "Inquisitor Vane",
+    "faction": "Religious",
+    "position": 4,
+    "level": 2,
+    "rationale": "Religious faction unlocks Temple district and Religious courtiers (High Priest Matthias, Sister Evangeline) for future petition paths. Level 2 status makes Inquisitor Vane a promotion candidate for cycle transition. Positions conspiracy toward Council of Lords (11 VP, requires Seraphina + Aldric + High Priest) and Imperial Mandate pathway."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability": "2 Gain 3 crowns",
+      "min_turn": 2,
+      "cost": 0,
+      "effect": "FREE +3 gold (no gold cost - only action cost)"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "cost": 0,
+      "effect": "FREE +4 gold (available Turn 3, no gold cost - only action cost)"
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_012",
+      "courtier_name": "Admiral Stormwind",
+      "coterie": "Maritime",
+      "slots": 2,
+      "amount": 2,
+      "rationale": "Secure majority control (2/2 slots) of Maritime courtier. This achieves instant control of a 2-slot courtier, the most efficient courtier acquisition available. Advances Maritime Rights petition (requires COURT_011 + COURT_012 = 4 VP + move 3 influence). Sets up petition completion within 2 turns."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "slots": 4,
+      "amount": 5,
+      "rationale": "Deploy remaining influence pool (5 cubes) to second Maritime courtier. Achieves majority control of 4-slot courtier with 5 influence (secure against opposition). Next turn can complete Maritime Rights petition by confirming COURT_012 control (already secured this turn)."
+    }
+  ],
+  "resources_spent": {
+    "gold": 0,
+    "influence_pool": 7,
+    "actions_used": 3
+  },
+  "resources_after_actions": {
+    "gold": 13,
+    "influence_pool": 0,
+    "exposure": 0
+  },
+  "strategic_rationale": "Turn 3 optimization focuses on dual-axis advancement: (1) Gold generation for cycle-end VP conversion (13 gold = 4 VP potential), (2) Courtier control for petition completion pathway. Maritime Rights petition (4 VP) completes Turn 4 with both Maritime courtiers controlled. Two-turn petition completion represents high-efficiency VP accumulation (2 VP per turn investment). Inquisitor Vane recruitment unlocks Religious faction, opening Council of Lords pathway (11 VP) and Imperial Mandate pathway (12 VP, requires both Military + both Noble courtiers). Current VP deficit (32 vs P2:55, P3:45) requires rapid petition completion rate. Maritime Rights (4 VP) + Council of Lords (11 VP, if executed) + Imperial Mandate (12 VP, if promoted agents secure positions) = 27 VP swing achievable within 3 remaining C2 turns. Gold accumulation (13) positions for cycle transition VP conversion and agent upgrade investments. Exposure remains 0 (no scapegoat risk), allowing continued strategic flexibility. Multi-faction positioning (Military, Commercial, Maritime, Noble, Criminal, Religious via Inquisitor recruitment) enables maximum petition pathway optionality."
+}

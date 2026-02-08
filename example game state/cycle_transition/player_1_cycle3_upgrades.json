@@ -1,0 +1,72 @@
+{
+  "player_id": 1,
+  "cycle": 3,
+  "starting_vp": 55,
+  "starting_gold": 6,
+  "square_upgrades": [
+    {"square": "BAR_01", "district": "Barracks", "current_vp": 4, "new_vp": 5, "cost": 2},
+    {"square": "PAL_01", "district": "Palace", "current_vp": 4, "new_vp": 5, "cost": 2},
+    {"square": "DOC_01", "district": "Docks", "current_vp": 4, "new_vp": 5, "cost": 2}
+  ],
+  "agent_upgrades": [
+    {
+      "agent": "Captain Varro",
+      "agent_id": "AGENT_013",
+      "position": 1,
+      "stat": "influence",
+      "upgrade_number": 2,
+      "current_value": 4,
+      "new_value": 5,
+      "cost": 4,
+      "rationale": "Second influence upgrade brings Varro to 3 total upgrades"
+    },
+    {
+      "agent": "Captain Varro",
+      "agent_id": "AGENT_013",
+      "position": 1,
+      "stat": "gold",
+      "upgrade_number": 2,
+      "current_value": 2,
+      "new_value": 3,
+      "cost": 4,
+      "rationale": "Second gold upgrade brings Varro to Level 3 (4 upgrades) - PROMOTION ELIGIBLE"
+    },
+    {
+      "agent": "Duke Valorian",
+      "agent_id": "AGENT_018",
+      "position": 4,
+      "stat": "influence",
+      "upgrade_number": 1,
+      "current_value": 5,
+      "new_value": 6,
+      "cost": 1,
+      "rationale": "First influence upgrade - cheap investment toward future L3"
+    },
+    {
+      "agent": "Duke Valorian",
+      "agent_id": "AGENT_018",
+      "position": 4,
+      "stat": "gold",
+      "upgrade_number": 1,
+      "current_value": 3,
+      "new_value": 4,
+      "cost": 1,
+      "rationale": "First gold upgrade - Valorian now at Level 3 (2 upgrades counting base L2)"
+    }
+  ],
+  "total_vp_spent": {
+    "square_upgrades": 6,
+    "agent_upgrades": 10,
+    "total": 16
+  },
+  "remaining_vp": 39,
+  "remaining_gold": 6,
+  "strategic_reasoning": "The mathematics dictate investment in promotion infrastructure. Captain Varro at Level 3 (4 upgrades) becomes promotion-eligible - he can be installed into a Military courtier position during cycle transition, advancing toward the 8/14 courtier victory condition. Duke Valorian receives cheap first upgrades (1+1=2 VP) to advance toward his own L3 status. Square upgrades on BAR_01, PAL_01, and DOC_01 create permanent +3 VP value across districts I consistently dominate - these are the highest-value squares in their respective districts where I have established control patterns. Total investment of 16 VP leaves 39 VP remaining - still competitive with P2's 64 VP while positioning for the alternative promotion victory path. The efficiency calculation: 16 VP now for potential instant-win via courtier control is superior to hoarding VP for standard victory calculation.",
+  "promotion_path_status": {
+    "varro_level": 3,
+    "varro_upgrades": 4,
+    "promotion_eligible": true,
+    "target_courtier": "COURT_005 (General Korrath) or COURT_006 (Captain Thorne)",
+    "promotion_cost_estimate": "5-6 VP + 3-4 gold depending on courtier slots"
+  }
+}

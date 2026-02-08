@@ -1,0 +1,84 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 5,
+  "situation_analysis": {
+    "vp_crash": "Lost 9 VP from 56 to 47 due to P3's Market takeover",
+    "market_status": "P3 controls 6/8 squares, I control only MKT_07 (1 VP)",
+    "faction_constraint": "Only Commercial faction active - can only place in Market/Docks",
+    "recovery_priority": "Retake Market squares from P3 using superior influence"
+  },
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability": "5 Gain 6 crowns and place one influence in Market",
+      "min_turn": 5,
+      "ability_target": {
+        "gold_gained": 6,
+        "influence_target": "MKT_01",
+        "influence_amount": 1
+      },
+      "effect": "+6 gold (15->21), +1 free influence on MKT_01 (Grand Exchange)",
+      "rationale": "PURE PROFIT ability - generates gold AND territorial pressure on highest-value square"
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Market",
+      "placements": [
+        {"square": "MKT_01", "amount": 1, "current_enemy": 1, "total_after": 2, "outcome": "TAKEOVER from P3"},
+        {"square": "MKT_02", "amount": 3, "current_enemy": 2, "total_after": 3, "outcome": "TAKEOVER from P3"},
+        {"square": "MKT_03", "amount": 2, "current_enemy": 1, "total_after": 2, "outcome": "TAKEOVER from P3"},
+        {"square": "MKT_05", "amount": 2, "current_enemy": 1, "total_after": 2, "outcome": "TAKEOVER from P3"}
+      ],
+      "total_influence_spent": 8,
+      "faction": "Commercial",
+      "vp_gained": "12 VP worth of squares reclaimed (4+3+3+2)",
+      "rationale": "HOSTILE TAKEOVER - retake Market from P3 by outbidding their weak garrisons"
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_010",
+      "courtier_name": "Master Scholar Lyra",
+      "coterie": "Academic",
+      "amount": 1,
+      "slots_total": 1,
+      "slots_after": 1,
+      "outcome": "CONTROL - enables Academic Grant petition",
+      "rationale": "1 influence for 4 VP petition + 3 cards = BEST ROI available"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_005",
+      "petition_title": "Academic Grant",
+      "requirements_met": "COURT_009 (Dean Aristotle) + COURT_010 (Master Scholar Lyra)",
+      "vp_gained": 4,
+      "bonus": "Draw 3 cards",
+      "rationale": "Control both Academic courtiers - FREE VP + cards"
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 9,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_after": {
+    "influence_pool": 3,
+    "gold": 21,
+    "vp_projected": 51
+  },
+  "economic_summary": {
+    "gold_delta": "+6 (from Harrow ability)",
+    "vp_delta": "+4 (petition) + reclaimed ~12 VP in squares",
+    "influence_spent": 9,
+    "roi_analysis": "9 influence invested yields: 4 VP direct + 12 VP territorial + 3 cards + 6 gold"
+  },
+  "reasoning": "DISASTER RECOVERY TURN. P3's aggressive Market takeover crashed my VP from 56 to 47 and gave them district control. This turn executes a counteroffensive: (1) Harrow's ability generates 6 gold and plants a flag on MKT_01, (2) 8 influence from pool retakes 4 Market squares from P3's weak 1-cube garrisons, (3) 1 influence on COURT_010 completes Academic Grant for 4 VP + 3 cards. Net result: recover significant Market territory, gain 6 gold, claim 4 VP petition. The economic engine restarts."
+}

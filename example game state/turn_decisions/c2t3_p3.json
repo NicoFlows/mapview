@@ -1,0 +1,145 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 3,
+  "recruitment": {
+    "agent_id": "AGENT_017",
+    "name": "Elena Rosetti",
+    "faction": "Commercial",
+    "rationale": "Commercial faction expands Market control capability. Wealthy widow provides 7 gold resource pool for future power card plays. Aggressive gold-driven player archetype alignment."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "ability_text": "3 Gain 5 crowns",
+      "min_turn": 3,
+      "effect": "Gain 5 gold",
+      "gold_change": 5,
+      "rationale": "Available THIS TURN (turn 3). Increases gold from 1 to 6, enabling gold-cost power card plays and whitewash mitigation. Resource pressure."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_040",
+      "agent_name": "Monsignor Pietro",
+      "ability_text": "3 Place two influence on any Religious courtier",
+      "min_turn": 3,
+      "target_courtier": "COURT_003",
+      "target_courtier_name": "High Priest Matthias",
+      "effect": "Place 2 influence on Religious courtier",
+      "influence_placed": 2,
+      "rationale": "Available THIS TURN (turn 3). Places 2 FREE influence on COURT_003 (High Priest Matthias, 5 slots). Religious courtier is uncontested. Secures 2 of 5 slots immediately."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_041",
+      "agent_name": "Siege Master Kragg",
+      "ability_text": "2 Remove one influence from target square",
+      "min_turn": 2,
+      "target_district": "Barracks",
+      "target_square": "BAR_02",
+      "target_square_name": "Armory",
+      "effect": "Remove 1 P1 influence from Barracks",
+      "disruption_target": 1,
+      "rationale": "Available NOW (turn 3, requires turn 2+). Removes 1 influence from P1's BAR_02 (currently 4 P1 influence). Weakens P1 Barracks dominance. Tactical disruption of primary military threat."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "place_courtier_influence",
+      "target_courtier": "COURT_003",
+      "target_courtier_name": "High Priest Matthias",
+      "amount": 2,
+      "faction": "Religious",
+      "rationale": "Place 2 from influence pool on COURT_003. Combined with Pietro ability (2), = 4/5 slots filled. I control COURT_003 (High Priest Matthias)."
+    },
+    {
+      "type": "place_district_influence",
+      "district": "Barracks",
+      "squares": [
+        {
+          "square_id": "BAR_03",
+          "square_name": "Training Yard",
+          "amount": 3,
+          "note": "Uncontested, open square"
+        },
+        {
+          "square_id": "BAR_04",
+          "square_name": "Stables",
+          "amount": 2,
+          "note": "Uncontested, open square"
+        },
+        {
+          "square_id": "BAR_05",
+          "square_name": "Mess Hall",
+          "amount": 2,
+          "note": "Uncontested, open square"
+        },
+        {
+          "square_id": "BAR_06",
+          "square_name": "Barricades",
+          "amount": 2,
+          "note": "Uncontested, open square"
+        }
+      ],
+      "total_placed": 9,
+      "faction": "Military",
+      "rationale": "Deploy 9 influence into Barracks to contest P1 military dominance. Steele (Military) is active, providing Military faction access. Barracks currently P1-controlled (7 influence). 9 new influence forces contested squares and weakens P1's control percentage."
+    }
+  ],
+  "resources_tracking": {
+    "influence_pool_before": 13,
+    "influence_pool_after": 0,
+    "gold_before": 1,
+    "gold_after": 6,
+    "courtier_placements_used": 1,
+    "courtier_placements_limit": 1,
+    "actions_used": 3,
+    "actions_limit": 3
+  },
+  "courtier_control_summary": {
+    "COURT_003_before": {
+      "name": "High Priest Matthias",
+      "controller": null,
+      "influence_by_player": {},
+      "slots_filled": 0,
+      "slots_total": 5
+    },
+    "COURT_003_after": {
+      "name": "High Priest Matthias",
+      "controller": 3,
+      "influence_by_player": {
+        "3": 4
+      },
+      "slots_filled": 4,
+      "slots_total": 5,
+      "note": "Controlled by P3 with 4 influence (2 from Pietro ability + 2 from pool)"
+    },
+    "COURT_005_retained": {
+      "name": "General Korrath",
+      "controller": 3,
+      "current_influence": 2,
+      "note": "Maintained control with existing 2/4"
+    }
+  },
+  "district_pressure_summary": {
+    "Barracks_before": {
+      "controller": 1,
+      "p1_total": 7,
+      "p3_total": 0,
+      "uncontested_squares": 5
+    },
+    "Barracks_after": {
+      "controller": 1,
+      "p1_total": 6,
+      "p3_total": 9,
+      "note": "Major contest launched. P1 holds 6 via Kragg removal, P3 now has 9 spread across BAR_03, BAR_04, BAR_05, BAR_06. Barracks is now CONTESTED, preventing P1 from claiming full district control."
+    }
+  },
+  "tactical_thesis": "AGGRESSIVE TAKEOVER CYCLE. Deployed all 3 actions for MAXIMUM DISRUPTION: (1) +5 gold enables future power card plays, (2) locked down COURT_003 with Pietro ability, (3) weakened P1 Barracks via Kragg removal. FREE actions: placed 2 more on COURT_003 = COMPLETE CONTROL, deployed 9 influence into Barracks = CONTEST P1 territory. Result: courtier denial (COURT_003 locked), district pressure (Barracks contested), resource expansion (6 gold). Positioning for PETITION_008 or late-cycle petitions requiring Military courtier control.",
+  "escalation_check": "No escalation needed. P1 still VP leader (39) but weakening through Barracks pressure. P2 economic (55 VP) but confined to Market. P3 aggressive positioning holds. Continue territorial expansion next turn."
+}

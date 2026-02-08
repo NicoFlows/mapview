@@ -1,0 +1,186 @@
+{
+  "draw_pile": [
+    {
+      "id": "EVENT_027",
+      "title": "Academic Conference",
+      "effect": "The player controlling the Academy draws 2 extra cards and may look at any player's hand.",
+      "scapegoat_effect": "Scapegoat must discard 1 card"
+    },
+    {
+      "id": "EVENT_007",
+      "title": "Shadow Deal",
+      "effect": "The player controlling a Criminal courtier may steal 1 gold from any opponent.",
+      "scapegoat_effect": "Scapegoat loses 1 gold to the bank"
+    },
+    {
+      "id": "EVENT_004",
+      "title": "Military Drill",
+      "effect": "The player controlling Commander's Tower (BAR_01) may place 1 free influence in any Barracks square.",
+      "scapegoat_effect": "Scapegoat must remove 1 influence from Barracks if present"
+    },
+    {
+      "id": "EVENT_028",
+      "title": "Garden Party",
+      "effect": "The player controlling the Gardens gains 2 VP and reduces exposure by 1.",
+      "scapegoat_effect": "Scapegoat's exposure increases by 1"
+    },
+    {
+      "id": "EVENT_023",
+      "title": "Market Boom",
+      "effect": "All players gain gold equal to the number of Market squares they control.",
+      "scapegoat_effect": "Scapegoat pays 3 gold to the bank"
+    },
+    {
+      "id": "EVENT_035",
+      "title": "Political Realignment",
+      "effect": "Each player may move up to 2 of their influence markers between courtiers in the same coterie.",
+      "scapegoat_effect": "Scapegoat must move 1 influence to an opponent's courtier"
+    },
+    {
+      "id": "EVENT_026",
+      "title": "Trade Winds",
+      "effect": "The player controlling the Docks gains 4 gold and may move 2 influence between adjacent districts.",
+      "scapegoat_effect": "Scapegoat loses 2 gold"
+    },
+    {
+      "id": "EVENT_001",
+      "title": "Whispers in the Court",
+      "effect": "All players with 5+ exposure gain 1 additional exposure.",
+      "scapegoat_effect": "Scapegoat gains 2 additional exposure instead of 1"
+    },
+    {
+      "id": "EVENT_013",
+      "title": "Street Festival",
+      "effect": "All players gain 1 gold.",
+      "scapegoat_effect": "Scapegoat gains no gold from this event"
+    },
+    {
+      "id": "EVENT_010",
+      "title": "Tax Collector",
+      "effect": "Each player gains 1 gold per district they control.",
+      "scapegoat_effect": "Scapegoat pays 1 gold per district they control instead"
+    },
+    {
+      "id": "EVENT_030",
+      "title": "Coronation Anniversary",
+      "effect": "The player with the most Noble courtiers controlled gains 3 VP.",
+      "scapegoat_effect": "Scapegoat loses 1 VP"
+    },
+    {
+      "id": "EVENT_025",
+      "title": "Military Parade",
+      "effect": "The player controlling the Barracks may remove 2 influence from any one district.",
+      "scapegoat_effect": "Scapegoat's exposure increases by 2"
+    },
+    {
+      "id": "EVENT_021",
+      "title": "Double Draw",
+      "effect": "Draw another event card immediately.",
+      "scapegoat_effect": "Scapegoat suffers scapegoat effect of next card too"
+    },
+    {
+      "id": "EVENT_011",
+      "title": "Rising Tensions",
+      "effect": "The two players with the most contested districts gain 1 exposure each.",
+      "scapegoat_effect": "Scapegoat gains 2 exposure instead of 1"
+    },
+    {
+      "id": "EVENT_006",
+      "title": "Scholarly Debate",
+      "effect": "The player controlling an Academic courtier draws 1 extra card.",
+      "scapegoat_effect": "Scapegoat must discard 1 card"
+    },
+    {
+      "id": "EVENT_005",
+      "title": "Dockside Rumors",
+      "effect": "All players may look at the top card of the petition deck.",
+      "scapegoat_effect": "Scapegoat's exposure is revealed to all players"
+    },
+    {
+      "id": "EVENT_024",
+      "title": "Religious Festival",
+      "effect": "The player controlling the Temple may place 2 influence on any Religious courtier.",
+      "scapegoat_effect": "Scapegoat must remove 1 influence from a Religious courtier they control"
+    },
+    {
+      "id": "EVENT_018",
+      "title": "Rival Factions",
+      "effect": "Any courtier with influence from 2+ players has all influence removed.",
+      "scapegoat_effect": "Scapegoat loses all influence on contested courtiers first"
+    },
+    {
+      "id": "EVENT_029",
+      "title": "Plague Outbreak",
+      "effect": "Each player removes 1 influence from each district where they have the most influence.",
+      "scapegoat_effect": "Scapegoat removes an additional 2 influence from any districts"
+    },
+    {
+      "id": "EVENT_015",
+      "title": "Favorable Winds",
+      "effect": "The player controlling a Maritime courtier may move 1 influence to any adjacent district.",
+      "scapegoat_effect": "Scapegoat must discard 1 gold or gain 1 exposure"
+    },
+    {
+      "id": "EVENT_020",
+      "title": "Power Vacuum",
+      "effect": "Any uncontrolled 4 VP district square becomes worth 5 VP until controlled.",
+      "scapegoat_effect": "Scapegoat cannot claim Power Vacuum squares this turn"
+    },
+    {
+      "id": "EVENT_031",
+      "title": "Foreign Delegation",
+      "effect": "Each player may pay 3 gold to place 2 influence on any courtier.",
+      "scapegoat_effect": "Scapegoat must pay 2 gold or lose 1 VP"
+    },
+    {
+      "id": "EVENT_008",
+      "title": "Noble Favor",
+      "effect": "The player with lowest exposure gains 1 VP.",
+      "scapegoat_effect": "Scapegoat loses 1 VP"
+    },
+    {
+      "id": "EVENT_017",
+      "title": "Petition Frenzy",
+      "effect": "If any player completes a petition this turn, they gain 1 bonus VP.",
+      "scapegoat_effect": "Scapegoat cannot complete petitions this turn"
+    },
+    {
+      "id": "EVENT_009",
+      "title": "Courtier Intrigue",
+      "effect": "Each player may move 1 influence from one courtier to another courtier in the same coterie.",
+      "scapegoat_effect": "Scapegoat must move 1 influence to an opponent's courtier if able"
+    },
+    {
+      "id": "EVENT_022",
+      "title": "Royal Decree",
+      "effect": "The player controlling the Palace gains 3 VP. All other players gain 1 VP.",
+      "scapegoat_effect": "Scapegoat loses 2 VP"
+    },
+    {
+      "id": "EVENT_003",
+      "title": "Temple Offering",
+      "effect": "Each player may pay 1 gold to reduce exposure by 1.",
+      "scapegoat_effect": "Scapegoat must pay 2 gold to reduce exposure by 1"
+    },
+    {
+      "id": "EVENT_033",
+      "title": "Scandal at Court",
+      "effect": "The player with highest exposure loses 2 VP. All other players may reduce exposure by 1.",
+      "scapegoat_effect": "Scapegoat's exposure increases by 3"
+    },
+    {
+      "id": "EVENT_014",
+      "title": "Assassination Attempt",
+      "effect": "The player with highest exposure must remove 1 influence from any courtier they control.",
+      "scapegoat_effect": "Scapegoat must remove 2 influence total from courtiers they control"
+    },
+    {
+      "id": "EVENT_019",
+      "title": "Generous Patron",
+      "effect": "The player with most gold must give 2 gold to the player with least gold.",
+      "scapegoat_effect": "Scapegoat gives 1 additional gold if they have the most"
+    }
+  ],
+  "discard_pile": [],
+  "current_event": null
+}

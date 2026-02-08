@@ -1,0 +1,89 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 1,
+  "recruitment": {
+    "agent_id": "AGENT_034",
+    "name": "Knight Commander Steele",
+    "position": 1,
+    "replace_existing": true,
+    "replaced_agent": "AGENT_010",
+    "rationale": "REPLACING Marcus Venditti with Military powerhouse. Steele is L2 Military with removal ability at Turn 6. Military faction unlocks Barracks placement AND Military courtier path for promotions. Marcus was Commercial which P2 dominates. Military is MY lane."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "square_name": "Commander's Tower",
+      "amount": 3,
+      "faction_used": "Military",
+      "vp_value": 4,
+      "note": "CLAIMING highest VP square in Barracks. Military faction from Steele. Empty board = first mover advantage."
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_02",
+      "square_name": "Armory",
+      "amount": 1,
+      "faction_used": "Military",
+      "vp_value": 3,
+      "note": "Spreading to adjacent square for district control. 3 VP and blocks opponent consolidation."
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_005",
+      "courtier_name": "General Korrath",
+      "coterie": "Military",
+      "amount": 1,
+      "influence_slots": 4,
+      "current_influence": 0,
+      "note": "Taking Military courtier. Sets up petition completion path and future promotions. Military coterie = my promotion target."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "eligible": false,
+      "note": "No petitions available - need courtier control first"
+    },
+    {
+      "type": "whitewash",
+      "amount": 0,
+      "note": "SKIP - 0 exposure, aggressive players accept risk"
+    }
+  ],
+  "influence_breakdown": {
+    "starting_pool": 4,
+    "from_recruitment": 5,
+    "total_available": 9,
+    "placed_districts": 4,
+    "placed_courtiers": 1,
+    "total_placed": 5,
+    "remaining": 4
+  },
+  "resource_changes": {
+    "gold_start": 1,
+    "gold_from_recruitment": 1,
+    "gold_spent": 0,
+    "gold_end": 2
+  },
+  "strategic_reasoning": {
+    "primary_goal": "BARRACKS DOMINATION - Military faction is my path to victory. L2 Military agents (Steele, Kragg) enable promotions. Barracks control enables removal power. Military courtiers enable petition completion.",
+    "why_replace_marcus": "Marcus is Commercial L2. P2 has Guildmaster Harrow (Commercial L2) dominating that lane. Fighting P2 on their turf is suicide. Steele gives Military superiority - P1 only has L1 Military (Captain Varro).",
+    "vp_gap_strategy": "7 VP behind P2. Cannot win by passive play. Barracks district control power = remove 1 influence/turn. Military courtiers = petition VP. Promotions = permanent control.",
+    "turn_2_setup": "With Steele active, positions 1-2 give Military + Military (Steele + future). Turn 2 ability: none yet (Steele abilities start Turn 4). But influence placement continues."
+  },
+  "disruption_impact": {
+    "vs_p2": "Blocking P2 from Military courtiers they might want for Cross-Faction Alliance (PETITION_008). P2 is Maritime/Commercial focused - Military is NOT their lane.",
+    "vs_p1": "P1 completed Military Commission last cycle. They have L1 Military (Varro). I have L2 Military (Steele). Higher level = promotion advantage. Contesting Barracks where they might try to rebuild."
+  },
+  "escalation_check": {
+    "needed": false,
+    "reason": "Standard Cycle 2 opening. Empty board land grab. No major shifts detected. Continue aggressive territorial expansion."
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "player_id": 1,
+  "cycle": 5,
+  "turn": 1,
+  "recruitment": {
+    "agent_id": "AGENT_027",
+    "agent_name": "Sergeant Briggs",
+    "from_hand": true,
+    "target_position": 8,
+    "rationale": "Sergeant Briggs (Military, Level 1) synergizes perfectly with my existing Military infrastructure - Captain Varro at Position 1 and Captain Thorne as promoted courtier. His 3 influence and Barracks-placement abilities will accelerate district control. In this final cycle, military dominance provides both defensive and offensive capabilities."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "agent_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability_choice": 2,
+      "ability_description": "Place three influence in Barracks",
+      "ability_cost": 4,
+      "details": "Using Captain Varro's second ability (cost 4) to place 3 influence in Barracks. With gold from Varro's own 3 gold generation plus my 1 gold pool = 4 gold, I can afford this. Targeting BAR_01 (Commander's Tower, 4 VP) to establish early control of the highest-value square.",
+      "target_district": "Barracks",
+      "target_square": "BAR_01",
+      "influence_amount": 3
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "target_type": "courtier",
+      "courtier_id": "COURT_010",
+      "courtier_name": "Master Scholar Lyra",
+      "amount": 1,
+      "details": "Placing 1 influence on Master Scholar Lyra (Academic, 1 slot). This is a single-slot courtier currently uncontrolled. Gaining control positions me for the Shadow Network petition (PETITION_013) which requires COURT_006 (already mine via promotion), COURT_010, and COURT_014.",
+      "source": "influence_pool"
+    },
+    {
+      "action_num": 3,
+      "type": "place_influence",
+      "target_type": "courtier",
+      "courtier_id": "COURT_014",
+      "courtier_name": "The Fence",
+      "amount": 1,
+      "details": "Placing 1 influence on The Fence (Criminal, 1 slot). This single-slot courtier completes my requirements for the Shadow Network petition along with COURT_006 (promoted) and COURT_010 (action 2).",
+      "source": "influence_pool"
+    }
+  ],
+  "influence_placements": [
+    {
+      "target_type": "district",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "amount": 3,
+      "source": "agent_ability",
+      "notes": "From Captain Varro ability - Commander's Tower (4 VP) for maximum value"
+    },
+    {
+      "target_type": "courtier",
+      "courtier_id": "COURT_010",
+      "courtier_name": "Master Scholar Lyra",
+      "amount": 1,
+      "source": "influence_pool"
+    },
+    {
+      "target_type": "courtier",
+      "courtier_id": "COURT_014",
+      "courtier_name": "The Fence",
+      "amount": 1,
+      "source": "influence_pool"
+    }
+  ],
+  "free_actions": [],
+  "resource_tracking": {
+    "starting_gold": 1,
+    "gold_from_varro": 3,
+    "total_gold_available": 4,
+    "ability_cost": 4,
+    "ending_gold": 0,
+    "starting_influence_pool": 5,
+    "influence_spent_on_courtiers": 2,
+    "ending_influence_pool": 3,
+    "agent_influence_generated": {
+      "AGENT_013": {
+        "name": "Captain Varro",
+        "level": 3,
+        "position": 1,
+        "base_influence": 5,
+        "notes": "Used via automatic canvassing for Barracks/Palace (Military faction districts)"
+      }
+    }
+  },
+  "petition_strategy": {
+    "target_petition": "PETITION_013",
+    "petition_name": "Shadow Network",
+    "requirements": ["COURT_006", "COURT_010", "COURT_014"],
+    "requirement_names": ["Captain Thorne (Military)", "Master Scholar Lyra (Academic)", "The Fence (Criminal)"],
+    "current_status": {
+      "COURT_006": "Controlled via promotion (Captain Varro promoted here Cycle 1)",
+      "COURT_010": "Targeting this turn - 1 slot, placing 1 influence",
+      "COURT_014": "Targeting this turn - 1 slot, placing 1 influence"
+    },
+    "vp_reward": 10,
+    "bonus_effect": "Look at all opponents' secret petitions",
+    "completion_timeline": "Can complete petition as free action once all three courtiers are controlled"
+  },
+  "reasoning": "FINAL CYCLE STRATEGIC ANALYSIS (Cycle 5, Turn 1):\n\n1. VP DEFICIT CLOSURE: I trail Player 2 by 6 VP (102 vs 108). The Shadow Network petition (10 VP) would put me at 112 VP, overtaking Player 2 immediately. This is the optimal path to victory.\n\n2. SHADOW NETWORK PETITION EXECUTION: This petition requires control of three 1-slot courtiers:\n   - COURT_006 (Captain Thorne): Already mine via promotion from Cycle 1\n   - COURT_010 (Master Scholar Lyra): 1 slot, currently empty - placing 1 influence secures control\n   - COURT_014 (The Fence): 1 slot, currently empty - placing 1 influence secures control\n   Single-slot courtiers are the most defensible since they cannot be contested once controlled.\n\n3. BARRACKS DISTRICT CONTROL: Captain Varro's ability (3 influence in Barracks) targets BAR_01 (Commander's Tower, 4 VP). This is the highest-value square in Barracks. Early establishment creates a fortress position that requires significant opponent investment to contest.\n\n4. MILITARY FACTION SYNERGY: My promoted courtier (Captain Thorne), active agent (Captain Varro), and recruited agent (Sergeant Briggs) all share Military faction. This creates compounding advantages:\n   - Multiple Barracks influence sources\n   - Removal abilities to disrupt opponents\n   - Defensive positioning in a moderate-value district\n\n5. RESOURCE EFFICIENCY: This turn deploys every available resource:\n   - Gold: 4 gold spent on Varro's ability (3 from Varro + 1 from pool)\n   - Influence Pool: 2 influence spent on courtiers (3 remaining)\n   - Actions: All 3 actions used productively\n\n6. WIN CONDITION: Completing Shadow Network petition this turn (or next, once courtier control is confirmed) gives me 10 VP, putting me at 112 VP versus Player 2's 108 VP. Combined with district scoring from Barracks control and potential additional petitions, this positions me for victory.\n\n7. DEFENSIVE POSITIONING: The three 1-slot courtiers cannot be contested once I control them. This locks in petition completion and prevents opponent interference with my victory path."
+}

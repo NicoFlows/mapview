@@ -1,0 +1,59 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 1,
+  "recruitment": {
+    "action": "skip",
+    "rationale": "Conspiracy full at 7 agents. Guildmaster Harrow in Position 1 is ideal - Commercial L2 with gold generation abilities. No replacement needed."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 2,
+      "faction_used": "Commercial",
+      "vp_value": 4,
+      "rationale": "Grand Exchange is highest-value Market square. First mover advantage on empty board. Commercial faction from Harrow."
+    },
+    {
+      "action_num": 2,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_002",
+      "courtier_name": "Trade Commissioner Vale",
+      "amount": 1,
+      "slots_total": 2,
+      "faction_used": "Commercial",
+      "rationale": "Vale is key to Trade Empire (8 VP) and Underworld Dominion (10 VP) petitions. Only 2 slots = cheap to control. Establishes presence for Turn 2 completion."
+    },
+    {
+      "action_num": 3,
+      "type": "basic_action",
+      "action": "gain_gold",
+      "amount": 1,
+      "rationale": "Treasury at 1 gold is dangerously low. Need buffer for spreading influence and future abilities. Gold will compound over time."
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 3,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 2
+  },
+  "strategic_reasoning": {
+    "immediate_goals": [
+      "Establish Market dominance early (Commercial home turf)",
+      "Begin courtier control for Trade Empire petition path",
+      "Rebuild gold reserves for ability activation Turn 3+"
+    ],
+    "turn_3_plan": "Harrow ability unlocks: Place 2 FREE influence in Market. First Mate Calico (Maritime) activates: +3 gold ability.",
+    "petition_path": "Trade Empire requires COURT_001, COURT_002, COURT_011, COURT_012. Started with Vale (COURT_002). Maritime courtiers accessible Turn 3 when Calico activates.",
+    "defensive_notes": "P3 (aggressive) at 39 VP may contest Market. P1 (strategic) at 32 VP likely focuses Palace/Barracks. Watch for early courtier grabs."
+  },
+  "personality_note": "The markets open fresh and empty - a clean ledger waiting to be filled with MY profits. While others scramble for scraps, I plant my flag in the Grand Exchange where every transaction will pay tribute. Trade Commissioner Vale remembers who kept her employed last cycle. The Economic Powerhouse rebuilds its empire one calculated investment at a time."
+}

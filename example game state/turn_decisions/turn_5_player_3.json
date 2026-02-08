@@ -1,0 +1,397 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 5,
+  "timestamp": "2026-02-05T12:00:00Z",
+  "reasoning": "THE GRAND OFFENSIVE. Council of Lords petition COMPLETED via Universal Connections for 11 VP - gap closes from 12 to just 1! Venditti Turn 5 ability deploys 3 free Market cubes + 3 gold. Steele Turn 4 ability places 2 in Barracks to complete the district. ALL 23 pool cubes FLOOD across Palace (12 cubes invading P1's fortress), Docks (9 cubes seizing P1's harbor), and Market (2 cubes completing the district). After this turn: THREE complete districts (Market 8/8, Temple 6/6, Barracks 7/7), Palace 7/9, Docks 6/8. THIRTY-FOUR squares controlled. TOTAL TERRITORIAL DOMINATION. VP at 123 vs opponents at 124. The throne is ONE POINT AWAY.",
+  "recruitment": null,
+  "recruitment_note": "Conspiracy is FULL at 7 positions. No recruitment possible or needed.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "play_power_card",
+      "card_id": "POWER_035",
+      "card_name": "Universal Connections",
+      "cost": 0,
+      "effect": "Use in place of controlling COURT_001 (Guild Master Aldric) for PETITION_015 completion",
+      "target": "PETITION_015",
+      "note": "COUNCIL OF LORDS COMPLETED. I control COURT_003 (High Priest Matthias, P3=4 vs P1=1) and COURT_007 (Duchess Seraphina, P3=1, sole occupant). Universal Connections substitutes for COURT_001 (tied P1=2/P2=2, no controller). 11 VP + 4 gold + reduce exposure by 3. THE DECISIVE BLOW that closes a 12 VP gap to just 1!"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "ability": "5 Place three influence in Market and gain 3 crowns.",
+      "min_turn": 5,
+      "effect": "Place 3 influence in MKT_03 (Banking House) AND gain 3 gold",
+      "target_district": "Market",
+      "target_square": "MKT_03",
+      "placement_amount": 3,
+      "gold_gained": 3,
+      "note": "Venditti Turn 5 ability DEPLOYED. 3 cubes SEIZE Banking House from P2 (3 vs their 1 = TAKEN). Plus 3 gold fills the war chest."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_034",
+      "agent_name": "Knight Commander Steele",
+      "ability": "4 Place two influence in Barracks.",
+      "min_turn": 4,
+      "effect": "Place 2 influence in BAR_03 (Training Yard)",
+      "target_district": "Barracks",
+      "target_square": "BAR_03",
+      "placement_amount": 2,
+      "note": "Steele storms Training Yard. 2 cubes vs P1's 1 = TAKEN. Barracks COMPLETE at 7/7 squares. FULL MILITARY DOMINATION."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "complete_petition",
+      "petition_id": "PETITION_015",
+      "petition_title": "Council of Lords",
+      "vp_gained": 11,
+      "bonus_effect": "Gain 4 gold and reduce exposure by 3",
+      "courtiers_controlled": {
+        "COURT_003": "High Priest Matthias - P3=4 vs P1=1, P3 CONTROLS",
+        "COURT_007": "Duchess Seraphina - P3=1, sole occupant, P3 CONTROLS"
+      },
+      "courtier_substituted": {
+        "COURT_001": "Guild Master Aldric - P1=2/P2=2 tied, no controller",
+        "substitution_card": "POWER_035 Universal Connections"
+      },
+      "note": "11 VP catapults me from 112 to 123 VP. Gap to leaders shrinks from 12 to 1!"
+    }
+  ],
+  "influence_placements": {
+    "from_abilities": [
+      {
+        "district": "Market",
+        "square": "MKT_03",
+        "square_name": "Banking House",
+        "amount": 3,
+        "source": "Venditti Turn 5 ability",
+        "faction": "Commercial",
+        "current_state": "P2 has 1 inf",
+        "result": "P3=3 vs P2=1. P3 CONTROLS."
+      },
+      {
+        "district": "Barracks",
+        "square": "BAR_03",
+        "square_name": "Training Yard",
+        "amount": 2,
+        "source": "Steele Turn 4 ability",
+        "faction": "Military",
+        "current_state": "P1 has 1 inf",
+        "result": "P3=2 vs P1=1. P3 CONTROLS. Barracks COMPLETE 7/7."
+      }
+    ],
+    "from_pool": [
+      {
+        "district": "Market",
+        "square": "MKT_06",
+        "square_name": "Fishmonger Row",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS. Market 7/8."
+      },
+      {
+        "district": "Market",
+        "square": "MKT_07",
+        "square_name": "Tinker's Corner",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS. Market COMPLETE 8/8!"
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_01",
+        "square_name": "Throne Room",
+        "amount": 3,
+        "faction": "Military",
+        "current_state": "P1 has 2 inf",
+        "result": "P3=3 vs P1=2. Conflict: mutual cancel 2 each, P3 has 1 remaining. P3 CONTROLS Throne Room (4 VP)!"
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_02",
+        "square_name": "Royal Chamber",
+        "amount": 4,
+        "faction": "Military",
+        "current_state": "P1 has 3 inf",
+        "result": "P3=4 vs P1=3. Conflict: mutual cancel 3 each, P3 has 1 remaining. P3 CONTROLS Royal Chamber (3 VP)!"
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_04",
+        "square_name": "Council Room",
+        "amount": 1,
+        "faction": "Military",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_05",
+        "square_name": "Royal Garden",
+        "amount": 1,
+        "faction": "Religious",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_06",
+        "square_name": "Courtyard",
+        "amount": 1,
+        "faction": "Religious",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_07",
+        "square_name": "Guard Post",
+        "amount": 1,
+        "faction": "Military",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Palace",
+        "square": "PAL_08",
+        "square_name": "Servant Quarters",
+        "amount": 1,
+        "faction": "Military",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_02",
+        "square_name": "Customs House",
+        "amount": 3,
+        "faction": "Commercial",
+        "current_state": "P1 has 2 inf",
+        "result": "P3=3 vs P1=2. Conflict: mutual cancel 2 each, P3 has 1 remaining. P3 CONTROLS (3 VP)!"
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_03",
+        "square_name": "Shipwright",
+        "amount": 2,
+        "faction": "Commercial",
+        "current_state": "P1 has 1 inf",
+        "result": "P3=2 vs P1=1. Conflict: mutual cancel 1 each, P3 has 1 remaining. P3 CONTROLS (3 VP)!"
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_05",
+        "square_name": "Dry Dock",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_06",
+        "square_name": "Sailor's Tavern",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_07",
+        "square_name": "Fish Market",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      },
+      {
+        "district": "Docks",
+        "square": "DOC_08",
+        "square_name": "Smuggler's Cove",
+        "amount": 1,
+        "faction": "Commercial",
+        "current_state": "Empty",
+        "result": "P3=1, CONTROLS."
+      }
+    ],
+    "pool_deployment_total": 23,
+    "ability_placement_total": 5,
+    "grand_total_cubes_deployed": 28,
+    "pool_verification": {
+      "Market_pool": 2,
+      "Palace_pool": 12,
+      "Docks_pool": 9,
+      "total": 23,
+      "pool_available": 23,
+      "check": "PASS - all 23 pool cubes deployed"
+    }
+  },
+  "resources_spent": {
+    "influence_pool": 23,
+    "gold": 0,
+    "actions_used": 3,
+    "power_cards_played": ["POWER_035"]
+  },
+  "resources_gained": {
+    "vp_from_petition": 11,
+    "gold_from_petition_bonus": 4,
+    "gold_from_venditti_ability": 3,
+    "total_gold_gained": 7,
+    "exposure_reduced_from_petition": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 20,
+    "vp": 123,
+    "exposure": 0
+  },
+  "territory_after_turn": {
+    "Market": {
+      "squares_controlled": 8,
+      "total_squares": 8,
+      "complete": true,
+      "district_vp": 16,
+      "district_power": "Gain 3 gold OR place 2 free influence in adjacent district"
+    },
+    "Temple": {
+      "squares_controlled": 6,
+      "total_squares": 6,
+      "complete": true,
+      "district_vp": 10,
+      "district_power": "Reduce/increase any player's exposure by 3"
+    },
+    "Barracks": {
+      "squares_controlled": 7,
+      "total_squares": 7,
+      "complete": true,
+      "district_vp": 11,
+      "district_power": "Remove 3 opponent influence from any one district"
+    },
+    "Palace": {
+      "squares_controlled": 7,
+      "total_squares": 9,
+      "complete": false,
+      "controlled": ["PAL_01", "PAL_02", "PAL_04", "PAL_05", "PAL_06", "PAL_07", "PAL_08"],
+      "enemy_held": ["PAL_03 (P1, 3 inf)"],
+      "skipped": ["PAL_09 (-1 VP)"],
+      "district_vp_controlled": 14
+    },
+    "Docks": {
+      "squares_controlled": 6,
+      "total_squares": 8,
+      "complete": false,
+      "controlled": ["DOC_02", "DOC_03", "DOC_05", "DOC_06", "DOC_07", "DOC_08"],
+      "enemy_held": ["DOC_01 (P1, 4 inf)", "DOC_04 (P2, 1 inf)"],
+      "district_vp_controlled": 10
+    },
+    "total_squares_controlled": 34,
+    "total_territorial_vp": 61,
+    "complete_districts": 3
+  },
+  "promotion_preparation": {
+    "target_1": {
+      "agent": "Knight Commander Steele (AGENT_034)",
+      "level": 3,
+      "upgrades": 3,
+      "needs": "1 more upgrade (4 VP) to reach Level 3 promotion threshold OR already Level 3 with 3 upgrades",
+      "target_courtier": "COURT_005 General Korrath (Military, 4 slots)",
+      "promotion_cost": "7 VP + 5 Gold",
+      "courtier_control": "P3=4/4 slots, LOCKED"
+    },
+    "target_2": {
+      "agent": "Monsignor Pietro (AGENT_040)",
+      "level": 4,
+      "upgrades": 4,
+      "target_courtier": "COURT_003 High Priest Matthias (Religious, 5 slots)",
+      "promotion_cost": "7 VP + 5 Gold",
+      "courtier_control": "P3=4 vs P1=1, P3 CONTROLS"
+    },
+    "total_promotion_cost": "14 VP + 10 Gold",
+    "can_afford": "123 VP and 20 Gold = YES, easily",
+    "result": "2 PERMANENT courtier promotions at cycle end, matching P1's count!"
+  },
+  "validation_checks": {
+    "action_count": {
+      "value": 3,
+      "check": "PASS"
+    },
+    "courtier_limit": {
+      "courtiers_placed_on": 0,
+      "max_allowed": 1,
+      "check": "PASS - no courtier placement this turn, all placements go to districts"
+    },
+    "faction_district_mapping": {
+      "Commercial_to_Market": "VALID (Venditti, Rosetti)",
+      "Commercial_to_Docks": "VALID (Venditti, Rosetti)",
+      "Military_to_Barracks": "VALID (Steele)",
+      "Military_to_Palace": "VALID (Steele)",
+      "Religious_to_Palace": "VALID (Pietro, Dominic)"
+    },
+    "active_agents_turn_5": {
+      "pos_1": "Marcus Venditti (Commercial) - ACTIVE",
+      "pos_2": "Knight Commander Steele (Military) - ACTIVE",
+      "pos_3": "Monsignor Pietro (Religious) - ACTIVE",
+      "pos_4": "Father Dominic (Religious) - ACTIVE",
+      "pos_5": "Elena Rosetti (Commercial) - ACTIVE"
+    },
+    "abilities_available_check": {
+      "venditti_turn_5": "5 Place three in Market and gain 3 crowns - AVAILABLE (Turn 5 >= 5) - USED",
+      "venditti_turn_3": "3 Gain 5 crowns - AVAILABLE (Turn 5 >= 3) - not used",
+      "steele_turn_4": "4 Place two in Barracks - AVAILABLE (Turn 5 >= 4) - USED",
+      "steele_turn_6": "6 Remove three from any district - NOT AVAILABLE (Turn 5 < 6)",
+      "pietro_turn_3": "3 Place two on Religious courtier - AVAILABLE - not used",
+      "pietro_turn_5": "5 Place four in Temple - AVAILABLE - not used (Temple already complete)",
+      "dominic_turn_2": "2 Reduce exposure by 1 - AVAILABLE - not used (exposure 0)",
+      "dominic_turn_4": "4 Place three in Temple - AVAILABLE - not used (Temple already complete)",
+      "rosetti_turn_2": "2 Gain 4 crowns - AVAILABLE - not used (only 3 actions)",
+      "rosetti_turn_4": "4 Place two in Market or Docks - AVAILABLE - not used (only 3 actions)"
+    },
+    "gold_balance": {
+      "starting": 13,
+      "gained_petition": 4,
+      "gained_venditti": 3,
+      "spent": 0,
+      "ending": 20,
+      "check": "PASS - gold never goes negative"
+    },
+    "influence_pool": {
+      "starting": 23,
+      "deployed": 23,
+      "remaining": 0,
+      "check": "PASS - all cubes deployed"
+    },
+    "petition_eligibility": {
+      "petition": "PETITION_015 Council of Lords",
+      "requires": ["COURT_007", "COURT_001", "COURT_003"],
+      "COURT_003_status": "P3=4 vs P1=1 -> P3 CONTROLS",
+      "COURT_007_status": "P3=1 sole occupant -> P3 CONTROLS",
+      "COURT_001_status": "P1=2, P2=2 -> TIED, no controller -> POWER_035 substitutes",
+      "check": "PASS - petition completable with Universal Connections"
+    },
+    "recruitment": "IMPOSSIBLE - conspiracy full at 7 agents",
+    "power_cards_evaluated": {
+      "POWER_035": "Universal Connections - PLAYED for petition completion",
+      "AGENT_034_hand": "Steele duplicate in hand - cannot recruit (already in conspiracy)",
+      "AGENT_016_hand": "Admiral Stormwind - no Maritime agent active yet, low priority",
+      "AGENT_038_hand": "Auctioneer Pryce - Commercial, could recruit but conspiracy full",
+      "AGENT_001_hand": "Michael Elmen - Commercial, could recruit but conspiracy full"
+    }
+  },
+  "strategic_assessment": {
+    "vp_gap_before": "P1=124, P2=124, P3=112 (gap: -12)",
+    "vp_after_petition": "P3=123 (gap: -1!)",
+    "territorial_dominance": "34 squares across 5 districts. THREE complete districts. P1 reduced to PAL_03 and DOC_01. P2 holds only Academy (6 squares).",
+    "promotion_path": "Cycle end: Promote Steele to COURT_005 AND Pietro to COURT_003. Total: 14 VP + 10 Gold. Result: 2 PERMANENT courtier promotions!",
+    "turns_remaining": 2,
+    "next_turn_plan": "Turn 6 unlocks Steele's ULTIMATE ability (6 Remove three from any district). Use it to destroy P1's PAL_03 (3 inf) or DOC_01 (4 inf). Use district control powers from Market and Barracks for more pressure. Continue Docks and Palace conquest with Turn 6 pool cubes."
+  }
+}

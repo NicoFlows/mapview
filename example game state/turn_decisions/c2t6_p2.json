@@ -1,0 +1,120 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 6,
+  "recruitment": {
+    "agent_id": null,
+    "position": null,
+    "rationale": "Position 7 would be filled, but no compelling recruitment target in hand that beats holding cards. All current hand agents are non-Commercial faction which won't help immediate Market defense."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "ability": "5 Gain 6 crowns and place one influence in Market.",
+      "min_turn": 5,
+      "effect": "+6 gold, +1 FREE influence in MKT_02",
+      "target_square": "MKT_02",
+      "gold_gained": 6,
+      "roi": "Best gold ability available plus free defensive placement"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "ability": "3 Gain 4 crowns.",
+      "min_turn": 3,
+      "effect": "+4 gold (pure profit)",
+      "gold_gained": 4,
+      "roi": "Pure gold generation, no cost"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_023",
+      "agent_name": "First Mate Calico",
+      "ability": "4 Place two influence in Docks and gain 2 crowns.",
+      "min_turn": 4,
+      "effect": "+2 gold, +2 FREE influence in Docks",
+      "target_squares": ["DOC_01", "DOC_02"],
+      "gold_gained": 2,
+      "roi": "Expands Docks presence (currently empty) while generating gold"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_02",
+      "amount": 5,
+      "faction": "Commercial",
+      "current_influence": 1,
+      "new_total": 7,
+      "rationale": "FORTRESS - 6 pool + 1 from Harrow ability = 7 total. P3 cannot break this with 25 pool if split across multiple targets."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 5,
+      "faction": "Commercial",
+      "current_influence": 1,
+      "new_total": 6,
+      "rationale": "FORTRESS - Banking House protected. 3 VP secured."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_05",
+      "amount": 3,
+      "faction": "Commercial",
+      "current_influence": 1,
+      "new_total": 4,
+      "rationale": "Solid defense for Spice Stalls. P3 would need 5+ to take it."
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "amount": 1,
+      "current_influence": 3,
+      "new_total": 4,
+      "slots_total": 4,
+      "rationale": "LOCK courtier at 4/4 - no one can contest Maritime control"
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 14,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_after_turn": {
+    "influence_pool": 0,
+    "gold": 33,
+    "gold_calculation": "21 + 6 (Harrow) + 4 (Brynn) + 2 (Calico) = 33"
+  },
+  "expected_board_state": {
+    "market_control": {
+      "MKT_02": {"controller": 2, "influence": 7, "vp": 3},
+      "MKT_03": {"controller": 2, "influence": 6, "vp": 3},
+      "MKT_05": {"controller": 2, "influence": 4, "vp": 2}
+    },
+    "docks_expansion": {
+      "DOC_01": {"controller": 2, "influence": 2, "vp": 4},
+      "DOC_02": {"controller": 2, "influence": 2, "vp": 3}
+    },
+    "courtiers_controlled": ["COURT_002", "COURT_009", "COURT_010", "COURT_011"],
+    "total_controlled_vp": "Market(8) + Docks(7) = 15 VP in territory"
+  },
+  "defensive_analysis": {
+    "threat": "P3 has 25 influence pool and will attack Market",
+    "mitigation": "Fortified all 3 Market squares to 4+ influence each. P3 would need to concentrate ALL 25 cubes on a single square to guarantee victory, sacrificing other opportunities.",
+    "worst_case": "P3 takes MKT_05 (4 inf) with 5+ cubes, but cannot take MKT_02 (7 inf) or MKT_03 (6 inf) without massive overcommitment",
+    "expected_outcome": "Retain at least 6 VP of Market territory (MKT_02 + MKT_03)"
+  },
+  "reasoning": "DEFENSIVE FORTRESS STRATEGY: P3's 25-cube assault is imminent. Rather than spreading thin, I've built three fortresses in my highest-value Market squares. The gold engine fires for +12 crowns, bringing reserves to 33 - maintaining economic dominance. Calico's ability expands into empty Docks for future VP. Harbormaster Blackwater locked at 4/4 ensures Maritime courtier remains mine permanently. At 58 VP and 33 gold, even if P3 takes MKT_05, I maintain the lead and can counterattack next turn with my superior treasury."
+}

@@ -1,0 +1,125 @@
+{
+  "player_id": 3,
+  "cycle_from": 3,
+  "cycle_to": 4,
+  "starting_state": {
+    "vp": 60,
+    "gold": 21,
+    "exposure": 15,
+    "scapegoat": true,
+    "controlled_districts": ["Temple"],
+    "controlled_courtiers": ["COURT_003", "COURT_004"]
+  },
+  "phase_1_scapegoat_penalty": {
+    "applied": true,
+    "penalty": -3,
+    "note": "HIGHEST EXPOSURE - took the hit. Pain is temporary, DOMINATION is forever."
+  },
+  "phase_2_district_bonuses": {
+    "Temple_complete_control": "+1 VP",
+    "note": "Temple is MINE. All 6 squares flying my banner. The faithful kneel to ME."
+  },
+  "phase_3_gold_conversion": {
+    "gold_converted": 21,
+    "vp_gained": 7,
+    "gold_remaining": 0,
+    "rationale": "Converting ALL gold to VP. I need the war chest to fund agent upgrades. Every gold becomes ammunition for the coming storm."
+  },
+  "phase_4_vp_upgrades": {
+    "agent_upgrades": [
+      {
+        "agent_id": "AGENT_040",
+        "agent_name": "Monsignor Pietro",
+        "stat": "influence",
+        "old_value": 5,
+        "new_value": 6,
+        "cost": 4,
+        "upgrade_number": 3,
+        "rationale": "Third upgrade - pushing Pietro toward Level 3. He will SEIZE the High Priest position."
+      },
+      {
+        "agent_id": "AGENT_040",
+        "agent_name": "Monsignor Pietro",
+        "stat": "gold",
+        "old_value": 2,
+        "new_value": 3,
+        "cost": 4,
+        "upgrade_number": 4,
+        "rationale": "Fourth upgrade - Pietro reaches Level 3! NOW he qualifies for promotion. The Religious coterie WILL be mine."
+      },
+      {
+        "agent_id": "AGENT_034",
+        "agent_name": "Knight Commander Steele",
+        "stat": "influence",
+        "old_value": 6,
+        "new_value": 7,
+        "cost": 4,
+        "upgrade_number": 3,
+        "rationale": "Building Steele toward Level 3. When I crack P1's Military courtier grip, Steele will be READY to take the throne."
+      }
+    ],
+    "square_upgrades": [
+      {
+        "district": "Temple",
+        "square": "TMP_01",
+        "square_name": "High Altar",
+        "old_vp": 4,
+        "new_vp": 5,
+        "cost": 2,
+        "upgrade_count": 1,
+        "rationale": "FORTIFYING my stronghold. High Altar becomes more valuable. Every cycle, this pays dividends."
+      },
+      {
+        "district": "Temple",
+        "square": "TMP_02",
+        "square_name": "Inner Sanctum",
+        "old_vp": 3,
+        "new_vp": 4,
+        "cost": 2,
+        "upgrade_count": 1,
+        "rationale": "Doubling down on Temple. Inner Sanctum upgraded. This is MY territory - I WILL extract maximum value."
+      }
+    ],
+    "repositioning": [],
+    "total_vp_spent": 16,
+    "vp_after_upgrades": 51
+  },
+  "phase_5_promotions": {
+    "promotions_attempted": [],
+    "rationale": "NO PROMOTION THIS CYCLE - strategic restraint. Pietro now qualifies (Level 3 with 4 upgrades), BUT I converted all gold to VP. Promotion costs 7 gold minimum. NEXT CYCLE: Pietro takes High Priest Matthias position. The delay is tactical - I needed the VP more than the premature promotion. Building war chest now, STRIKE in Cycle 4."
+  },
+  "phase_6_depositions": {
+    "depositions_attempted": [],
+    "rationale": "No targets - P1 and P2 have no promoted courtiers yet. GOOD. I'm keeping pace with the promotion race."
+  },
+  "final_state": {
+    "vp": 51,
+    "gold": 0,
+    "exposure": 0,
+    "influence_pool": 0,
+    "agents_promoted": 0,
+    "level_3_agents": ["Monsignor Pietro"],
+    "agents_close_to_level_3": ["Knight Commander Steele (3 upgrades, needs 1 more)"]
+  },
+  "vp_transaction_log": [
+    {"transaction": "Starting VP", "amount": 60},
+    {"transaction": "Scapegoat penalty", "amount": -3, "note": "Already applied before this transition"},
+    {"transaction": "Temple control bonus", "amount": 1},
+    {"transaction": "Gold conversion (21 gold)", "amount": 7},
+    {"transaction": "Pietro influence upgrade", "amount": -4},
+    {"transaction": "Pietro gold upgrade", "amount": -4},
+    {"transaction": "Steele influence upgrade", "amount": -4},
+    {"transaction": "TMP_01 square upgrade", "amount": -2},
+    {"transaction": "TMP_02 square upgrade", "amount": -2},
+    {"transaction": "Final VP", "amount": 51}
+  ],
+  "strategic_reasoning": "THE SETUP FOR DOMINATION. I took the scapegoat hit - 15 exposure means I was the target. So be it. Pain builds character. NOW I invest in the future: Pietro reaches Level 3 and qualifies for promotion to High Priest Matthias. Steele climbs toward Level 3 for future Military courtier assault. Temple squares upgraded - that's +2 VP per cycle from my stronghold. I'm behind P1 (87 VP) and P2 (75 VP) on raw points, but I'm BUILDING the promotion engine. P2 will convert his 59 gold to ~19 VP - fine, let him. VP victories are for players who can't lock down 8 courtiers. My path is PROMOTION DOMINATION. Cycle 4: Pietro seizes Religious courtier. Cycle 5: Steele breaks Military or I pivot to Commerce. The faithful in Temple know who their true master is. This is just the beginning.",
+  "next_cycle_priorities": [
+    "PRIORITY 1: Accumulate 7+ gold for Pietro's promotion into High Priest Matthias",
+    "PRIORITY 2: Continue upgrading Steele to Level 3 (needs 1 more upgrade)",
+    "PRIORITY 3: Contest P1's Military courtiers - weaken their grip for Steele's eventual promotion",
+    "PRIORITY 4: Hold Temple control at ALL costs - it's my fortress and promotion base",
+    "PRIORITY 5: If opportunity arises, seize Commerce courtier for Venditti promotion path"
+  ],
+  "aggression_assessment": "COILED SPRING. This cycle I absorbed the scapegoat penalty, converted resources, and invested in the promotion pipeline. Not flashy - FOUNDATIONAL. The aggressive moves come Cycle 4 when Pietro claims his throne and I start the countdown to 8 courtiers. P1 thinks they're winning with 87 VP. They haven't seen what a Level 3 Religious fanatic with 6 influence and 3 gold generation can do when he controls the Temple AND the High Priest position. DOMINATION INCOMING."
+}

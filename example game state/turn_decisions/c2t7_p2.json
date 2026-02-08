@@ -1,0 +1,211 @@
+{
+  "player_id": 2,
+  "cycle": 2,
+  "turn": 7,
+  "phase": "FINAL TURN - SECURE VICTORY",
+  "recruitment": {
+    "agent_id": null,
+    "position": null,
+    "rationale": "Turn 7 - All 7 positions filled. No recruitment needed."
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "position": 1,
+      "ability": "5 Gain 6 crowns and place one influence in Market",
+      "min_turn": 5,
+      "effect": "+6 gold (33->39) + 1 FREE influence in MKT_02",
+      "gold_gained": 6,
+      "influence_target": {
+        "district": "Market",
+        "square": "MKT_02",
+        "amount": 1
+      },
+      "rationale": "Signature economic ability - 6 gold pure profit + fortress reinforcement"
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "position": 2,
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "effect": "+4 gold (39->43)",
+      "gold_gained": 4,
+      "rationale": "Pure gold transmutation - 4 crowns for cycle-end VP conversion"
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_023",
+      "agent_name": "First Mate Calico",
+      "position": 3,
+      "ability": "4 Place two influence in Docks and gain 2 crowns",
+      "min_turn": 4,
+      "effect": "+2 gold (43->45) + 2 influence in DOC_01 (claim Harbormaster Office!)",
+      "gold_gained": 2,
+      "influence_target": {
+        "district": "Docks",
+        "square": "DOC_01",
+        "amount": 2
+      },
+      "rationale": "Gold + territorial expansion in Docks - 4 VP square claimed"
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 4,
+      "current_enemy": 2,
+      "expected_result": "4 vs 2 = I take with 2 remaining (4 VP square!)",
+      "vp_value": 4,
+      "faction_source": "Commercial (Guildmaster Harrow)"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_06",
+      "amount": 5,
+      "current_enemy": 3,
+      "expected_result": "5 vs 3 = I take with 2 remaining (1 VP)",
+      "vp_value": 1,
+      "faction_source": "Commercial (Guildmaster Harrow)"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_07",
+      "amount": 3,
+      "current_enemy": 1,
+      "expected_result": "3 vs 1 = I take with 2 remaining (1 VP)",
+      "vp_value": 1,
+      "faction_source": "Commercial (Guildmaster Harrow)"
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 2,
+      "current_enemy": 0,
+      "expected_result": "Reinforce fortress to 6 total",
+      "vp_value": 3,
+      "faction_source": "Commercial (Guildmaster Harrow)"
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_001",
+      "courtier_name": "Guild Master Aldric",
+      "amount": 2,
+      "current_slots_used": 3,
+      "max_slots": 4,
+      "available_slots": 1,
+      "note": "Can only place 1 due to slot limit. Contesting P3's 2 influence. Creates 2-2 tie, removing their control!",
+      "adjusted_amount": 1,
+      "faction_source": "Commercial (Guildmaster Harrow)"
+    }
+  ],
+  "influence_pool_allocation": {
+    "starting_pool": 16,
+    "ability_placements": 3,
+    "MKT_01": 4,
+    "MKT_06": 5,
+    "MKT_07": 3,
+    "MKT_03": 2,
+    "COURT_001": 1,
+    "total_placed": 18,
+    "remaining_pool": 0,
+    "note": "16 pool + 3 from abilities (Harrow 1, Calico 2) = 19 available. Using 18."
+  },
+  "free_actions": [
+    {
+      "type": "gold_conversion_at_cycle_end",
+      "current_gold": 33,
+      "abilities_add": 12,
+      "final_gold": 45,
+      "vp_from_conversion": 15,
+      "note": "45 gold / 3 = 15 VP at cycle transition"
+    }
+  ],
+  "resources_at_turn_end": {
+    "gold": 45,
+    "influence_pool": 0,
+    "exposure": 0,
+    "vp": 58
+  },
+  "expected_cycle_end_score": {
+    "current_vp": 58,
+    "gold_conversion": 15,
+    "district_scoring": {
+      "MKT_01": 4,
+      "MKT_02": 3,
+      "MKT_03": 3,
+      "MKT_05": 2,
+      "MKT_06": 1,
+      "MKT_07": 1,
+      "DOC_01": 4,
+      "total_district_vp": 18
+    },
+    "scapegoat_penalty": 0,
+    "projected_final_vp": "58 + 15 (gold) + district bonuses = 73+ VP"
+  },
+  "market_control_summary": {
+    "squares_after_turn": {
+      "MKT_01": "TAKE from P3 (4 vs 2)",
+      "MKT_02": "HOLD (5+1=6 influence)",
+      "MKT_03": "HOLD (4+2=6 influence)",
+      "MKT_04": "P3 fortress (10 influence - do not contest)",
+      "MKT_05": "HOLD (2 influence)",
+      "MKT_06": "TAKE from P3 (5 vs 3)",
+      "MKT_07": "TAKE from P3 (3 vs 1)",
+      "MKT_08": "P3 holds (4 influence)"
+    },
+    "my_squares": 6,
+    "p3_squares": 2,
+    "market_vp_controlled": 14
+  },
+  "courtier_status": {
+    "COURT_002": {
+      "name": "Trade Commissioner Vale",
+      "my_influence": 1,
+      "controller": 2,
+      "status": "SECURE"
+    },
+    "COURT_009": {
+      "name": "Dean Aristotle",
+      "my_influence": 2,
+      "controller": 2,
+      "status": "SECURE"
+    },
+    "COURT_010": {
+      "name": "Master Scholar Lyra",
+      "my_influence": 1,
+      "controller": 2,
+      "status": "LOCKED (1/1)"
+    },
+    "COURT_011": {
+      "name": "Harbormaster Blackwater",
+      "my_influence": 3,
+      "controller": 2,
+      "status": "SECURE"
+    },
+    "COURT_001": {
+      "name": "Guild Master Aldric",
+      "contest_result": "2 (P3) + 1 (P2) = 2-2 tie, removing P3 control!"
+    }
+  },
+  "reasoning": "FINAL TURN DOMINANCE PLAY. Three gold-generating abilities fire for +12 gold (33->45). This converts to 15 VP at cycle end. With 16 pool + 3 ability-generated influence = 19 cubes to deploy. AGGRESSIVE MARKET TAKEOVER: claim MKT_01 (Grand Exchange, 4 VP!), MKT_06, MKT_07 from P3 using conflict mechanics. Reinforce MKT_03 fortress. Contest Guild Master Aldric to deny P3 Commerce control. Final position: 58 VP + 15 gold conversion + district bonuses = projected 73+ VP victory. P1 (44 VP) and P3 (45 VP) cannot catch this lead. The Economic Powerhouse has WON.",
+  "economic_philosophy": "Gold flows to those who understand its power. At 45 gold and 6 Market squares, no one in Tempest understands it better than me.",
+  "validation_notes": {
+    "actions_count": 3,
+    "courtier_placement_limit": "1 courtier (COURT_001)",
+    "faction_check": "Commercial agents provide Market access",
+    "gold_check": "No gold spent - all abilities are turn-gated, not gold-cost",
+    "influence_math": "16 pool + 3 from abilities = 19 available, using 18"
+  }
+}

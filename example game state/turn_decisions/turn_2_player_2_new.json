@@ -1,0 +1,192 @@
+{
+  "player_id": 2,
+  "player_type": "economic",
+  "cycle": 1,
+  "turn": 2,
+  "recruitment": {
+    "agent_id": "AGENT_043",
+    "agent_name": "Alchemist Brynn",
+    "subtitle": "Seeker of Gold",
+    "position": 2,
+    "faction": "Academic",
+    "stats": {
+      "influence": 2,
+      "gold": 3,
+      "exposure": 1
+    },
+    "abilities": [
+      "3 Gain 4 crowns.",
+      "5 Place three influence in Academy."
+    ],
+    "rationale": "BEST ECONOMIC CHOICE. 3 gold bonus = immediate 27% return on turn. Turn 3 ability '3 Gain 4 crowns' creates sustainable gold engine (+4 gold/action). Level 2 = promotion-eligible with 2 upgrades. Academic faction adds Temple/Academy access for portfolio diversification. Alternative: Ratcatcher Tom has Turn 1 ability but only +1 gold bonus and Criminal faction has limited synergy."
+  },
+  "influence_generated": {
+    "from_position_1": {
+      "agent": "Guildmaster Harrow",
+      "stats": "Level 2, Influence 3",
+      "amount": 3
+    },
+    "from_position_2": {
+      "agent": "Alchemist Brynn (newly recruited)",
+      "stats": "Level 1, Influence 2",
+      "amount": 2,
+      "note": "Position 2 becomes active Turn 2, newly recruited agent generates influence immediately"
+    },
+    "total_pool": 5
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "basic_action",
+      "action": "gain_gold",
+      "amount": 1,
+      "rationale": "Harrow abilities require Turn 3+. Brynn abilities require Turn 3+. NO agent abilities available Turn 2. Maximum capital accumulation is optimal play. Every gold counts in the long game."
+    },
+    {
+      "action_num": 2,
+      "type": "basic_action",
+      "action": "gain_gold",
+      "amount": 1,
+      "rationale": "Continued gold engine construction. With 13 gold, I have significant market leverage. Building war chest for Turn 3 opportunities."
+    },
+    {
+      "action_num": 3,
+      "type": "basic_action",
+      "action": "gain_gold",
+      "amount": 1,
+      "rationale": "Final gold accumulation. Political Maneuvering saved for higher-impact turn. At 14 gold (before recruitment bonus applied), position is dominant. Turn 3 will deploy Harrow's Market ability AND Brynn's gold generation - maximum efficiency requires capital reserves now."
+    }
+  ],
+  "influence_placement": [
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_02",
+      "square_name": "Merchant Guild",
+      "amount": 3,
+      "vp_value": 3,
+      "faction_access": "Commercial (Guildmaster Harrow)",
+      "rationale": "Adjacent to MKT_01 (P3 controls with 1 inf). 3 VP square is solid value. 3 influence = strong control, would take 4+ to contest. Maintains Market presence without expensive direct confrontation. Sets up spreading opportunity next turn with Harrow's ability."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_01",
+      "square_name": "Harbormaster Office",
+      "amount": 2,
+      "vp_value": 4,
+      "faction_access": "Commercial (Guildmaster Harrow) - Commercial places in Market OR Docks",
+      "rationale": "HIGHEST VP square in Docks (4 VP). Completely uncontested. Portfolio diversification - spreading risk across multiple districts. Commercial faction enables this valuable placement. 2 influence secures control. Links thematically to Maritime courtier strategy."
+    }
+  ],
+  "courtier_placement": [],
+  "cards_held": [
+    {
+      "card_id": "POWER_014",
+      "card_name": "Political Maneuvering",
+      "effect": "Move up to 3 influence (any players') from one courtier to others in the same coterie",
+      "status": "HELD - saving for higher-impact play when courtier battles intensify"
+    }
+  ],
+  "free_actions": [],
+  "resources_summary": {
+    "starting": {
+      "gold": 11,
+      "influence_pool": 3,
+      "vp": 8,
+      "exposure": 2
+    },
+    "from_recruitment": {
+      "influence_generated": 2,
+      "gold_bonus": 3,
+      "exposure_added": 1,
+      "new_total_pool": 5
+    },
+    "from_actions": {
+      "gold_gained": 3
+    },
+    "spent": {
+      "influence_on_mkt_02": 3,
+      "influence_on_doc_01": 2,
+      "total_influence_spent": 5,
+      "gold_spent": 0,
+      "actions_used": 3,
+      "power_cards_played": 0
+    },
+    "ending": {
+      "gold": 17,
+      "influence_pool": 0,
+      "vp": 8,
+      "exposure": 3
+    }
+  },
+  "district_control_status": {
+    "market": {
+      "mkt_01": {"controller": 3, "influence": 1, "vp": 4},
+      "mkt_02": {"controller": 2, "influence": 3, "vp": 3, "status": "NEW"},
+      "total_controlled": "MKT_02 only (3 VP)"
+    },
+    "docks": {
+      "doc_01": {"controller": 2, "influence": 2, "vp": 4, "status": "NEW"},
+      "total_controlled": "DOC_01 only (4 VP)"
+    },
+    "territorial_vp": "MKT_02 (3) + DOC_01 (4) = 7 VP in district squares"
+  },
+  "courtier_control": {
+    "current": [
+      "COURT_001 Guild Master Aldric (1/4 slots) - I control",
+      "COURT_012 Admiral Stormwind (1/2 slots) - I control"
+    ],
+    "lost": [
+      "COURT_002 Trade Commissioner Vale - was PURGED (influence removed), now empty 0/2"
+    ],
+    "petition_impact": {
+      "commercial_license": "Already completed Turn 1 - LOCKED IN",
+      "trade_empire": "Need COURT_002 (lost) + COURT_011 (empty) - 2 of 4 missing",
+      "maritime_rights": "Have COURT_012, need COURT_011"
+    },
+    "next_priority": "Reclaim COURT_002 Trade Commissioner Vale (only 2 slots, cheap to control)"
+  },
+  "strategic_notes": {
+    "damage_assessment": "P3's aggression cost me MKT_01 (4 VP) and Trade Commissioner Vale control. But Commercial License VP (4) was already banked. Net position still strong.",
+    "recovery_strategy": "Diversify territorial holdings across Market AND Docks. Don't put all eggs in one basket. Build gold reserves for flexible response.",
+    "turn_3_opportunity": "MASSIVE EFFICIENCY TURN INCOMING: Harrow's '3 Place 2 influence in Market' + Brynn's '3 Gain 4 crowns'. Two powerful abilities become available simultaneously.",
+    "gold_strategy": "17 gold provides optionality. Can Inspire into any district if needed. Can absorb setbacks. Can fund VP upgrades at cycle end.",
+    "promotion_path": "Both Harrow (Level 2) and Brynn (Level 2) are 2 upgrades away from promotion eligibility. Consider upgrading Harrow's gold stat (3 -> 4) for doubled generation when promoted = 8 gold/turn from one courtier position."
+  },
+  "economic_analysis": {
+    "turn_profit": {
+      "gold_start": 11,
+      "gold_end": 17,
+      "gold_gained": 6,
+      "sources": "Brynn recruitment (+3), three gain_gold actions (+3)"
+    },
+    "territorial_value": {
+      "new_squares": "MKT_02 (3 VP) + DOC_01 (4 VP) = 7 VP",
+      "note": "Not counted in VP total until cycle end scoring"
+    },
+    "vp_trajectory": {
+      "current": 8,
+      "potential_cycle_end": "8 + 7 (districts) + courtier bonuses"
+    },
+    "economic_position": "DOMINANT. 17 gold likely highest in game. 8 VP tied or leading. Two Level 2 agents ready for Turn 3 abilities. Diversified territorial portfolio reduces opponent disruption risk."
+  },
+  "validation": {
+    "actions_used": 3,
+    "actions_max": 3,
+    "action_types_valid": "3x basic gain_gold - VALID",
+    "recruitment_completed": true,
+    "recruitment_position": 2,
+    "recruitment_legal": "Position 2 is empty, must fill by Turn 2 - VALID",
+    "influence_generated": 5,
+    "influence_placed": 5,
+    "influence_balance": "5 generated - 5 placed = 0 remaining - VALID",
+    "faction_district_access": {
+      "mkt_02": "Commercial (Harrow) -> Market - VALID",
+      "doc_01": "Commercial (Harrow) -> Docks - VALID"
+    },
+    "courtier_limit": "No courtier placements this turn - VALID (limit is 1/turn)",
+    "ability_timing": "No abilities used - Harrow requires Turn 3+, Brynn requires Turn 3+ - VALID"
+  },
+  "reasoning": "The Economic Powerhouse plays the long game. Turn 2 is about positioning, not flashy moves. Alchemist Brynn recruitment delivers immediate 3 gold profit plus a Turn 3 gold engine. With no agent abilities available this turn, I maximized gold accumulation (+3 from actions). Territory was diversified across Market (MKT_02) and Docks (DOC_01) - a combined 7 VP in squares. Political Maneuvering card held in reserve for when courtier battles intensify. The 17 gold war chest provides unprecedented flexibility. P3 may have taken MKT_01, but they spent resources doing it. My position is sustainable; theirs requires continued aggression. Turn 3 will see Harrow place 2 free influence in Market AND Brynn generate 4 gold - that's the compound interest the Economic Powerhouse lives for. Gold flows to those who understand its power."
+}

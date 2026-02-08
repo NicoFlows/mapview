@@ -1,0 +1,121 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 1,
+  "personality": "Aggressive Warlord",
+  "recruitment": {
+    "agent_id": "AGENT_034",
+    "agent_name": "Knight Commander Steele",
+    "from_hand": true,
+    "position": 2,
+    "rationale": "Military heavy-hitter with ability to REMOVE 3 influence from any district (6 cost). Perfect for disrupting the leaders. At Level 2 with 5 influence, he generates 4 influence in Position 2. His faction (Military) allows free placement in Barracks and Palace - key strategic districts. I need aggressive tools to close the 26 VP gap."
+  },
+  "active_agent": {
+    "agent_id": "AGENT_010",
+    "agent_name": "Marcus Venditti",
+    "position": 1,
+    "level": 2,
+    "faction": "Commercial",
+    "influence_generated": 2,
+    "gold_generated": 4,
+    "abilities_available": [
+      "3 Gain 5 crowns",
+      "5 Place three influence in Market and gain 3 crowns"
+    ]
+  },
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "agent_ability",
+      "agent": "AGENT_010",
+      "agent_name": "Marcus Venditti",
+      "ability_cost": 3,
+      "ability_text": "Gain 5 crowns",
+      "gold_gained": 5,
+      "rationale": "Building war chest for aggressive expansion. Current gold is only 1, agent provides 4, ability provides 5 = 10 total. Need resources to fund Inspire attacks."
+    },
+    {
+      "action_num": 2,
+      "type": "inspire",
+      "target_district": "Market",
+      "target_square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "square_vp": 4,
+      "influence_amount": 2,
+      "cost_per_influence": 4,
+      "total_cost": 8,
+      "gold_remaining": 2,
+      "rationale": "Claim the highest-value square (4 VP) in Market. Board is empty so no conflict - pure land grab for the best territory."
+    },
+    {
+      "action_num": 3,
+      "type": "pass",
+      "details": "Insufficient gold for additional Inspire. Only 2 gold remaining. Holding for defensive options.",
+      "rationale": "Resource conservation. Knight Commander Steele activates next turn - save actions for supporting his assault."
+    }
+  ],
+  "influence_placements": [
+    {
+      "source": "auto_canvassing",
+      "target_type": "district",
+      "district": "Market",
+      "square": "MKT_02",
+      "square_name": "Merchant Guild",
+      "amount": 2,
+      "cost": 0,
+      "rationale": "Marcus Venditti (Commercial faction) auto-places 2 influence (Level 2 x Position 1) in his faction district Market. Targeting MKT_02 (3 VP square) adjacent to my Inspire target to build connected presence."
+    },
+    {
+      "source": "inspire_action",
+      "target_type": "district",
+      "district": "Market",
+      "square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "amount": 2,
+      "cost": 8,
+      "rationale": "Inspire action claiming the 4 VP Grand Exchange square"
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "auto_canvassing",
+      "description": "Automatic influence placement from active agents",
+      "agent": "Marcus Venditti (AGENT_010)",
+      "faction": "Commercial",
+      "influence_amount": 2,
+      "valid_districts": ["Market", "Docks"],
+      "chosen_district": "Market",
+      "chosen_square": "MKT_02"
+    }
+  ],
+  "resource_tracking": {
+    "gold": {
+      "start": 1,
+      "agent_generation": 4,
+      "ability_gain": 5,
+      "inspire_cost": -8,
+      "end": 2
+    },
+    "influence_pool": {
+      "start": 5,
+      "auto_canvassing": -2,
+      "inspire": -2,
+      "end": 1
+    }
+  },
+  "board_state_after_turn": {
+    "Market": {
+      "MKT_01": {"controller": 3, "influence": 2},
+      "MKT_02": {"controller": 3, "influence": 2}
+    },
+    "total_market_influence": 4,
+    "district_position": "Leading in Market with 4 influence across 2 squares"
+  },
+  "reasoning": "WARLORD'S BATTLE PLAN - CYCLE 5 TURN 1\n\n=== SITUATION ASSESSMENT ===\nI am 26 VP BEHIND Player 2 (108 VP) and 20 VP behind Player 1 (102 VP).\nThis is the FINAL CYCLE. There is no tomorrow. I must ATTACK.\n\nThe board has been reset - all districts empty. This is both opportunity and danger.\nOnly Position 1 agents are active. My Marcus Venditti faces:\n- Player 1's Captain Varro (Military, Level 3) - can REMOVE influence\n- Player 2's Guildmaster Harrow (Commercial, Level 3) - competing for Market\n\n=== RECRUITMENT: KNIGHT COMMANDER STEELE ===\nI bring the hammer. Steele is a Level 2 Military agent with:\n- 5 base influence (upgraded from previous cycles)\n- Ability: '6 cost - Remove three influence from any district'\n\nThis is EXACTLY what an aggressive warlord needs. Next turn, when Steele activates\nin Position 2, I can DESTROY enemy positions. Make them bleed. Make them rebuild.\nWhile they scramble, I advance.\n\n=== THIS TURN'S OBJECTIVES ===\n1. BUILD WAR CHEST: Venditti's 'Gain 5 crowns' ability gives me 10 total gold.\n   Can't fight without resources.\n\n2. CLAIM VALUABLE TERRITORY: Inspire 2 influence into Grand Exchange (MKT_01).\n   This is the 4 VP crown jewel of Market. I plant my flag first.\n\n3. ESTABLISH PRESENCE: Auto-canvassing puts 2 more in Merchant Guild (MKT_02).\n   Adjacent to Grand Exchange - I'm building a fortress.\n\n=== WHY MARKET? ===\n- Commercial faction synergy with Venditti\n- 16 total VP across the district\n- District controller gains 1 gold/turn - fuels future attacks\n- Player 2 (Guildmaster Harrow) wants this - I deny him OR make him pay to contest\n\n=== TURN 2 ASSAULT PLAN ===\nKnight Commander Steele activates. I will:\n- Scout where opponents placed Turn 1\n- Use Steele's removal ability to DESTROY their best positions\n- They react. I dictate the battlefield.\n\n=== THE WARLORD'S CREED ===\nI am 26 points behind. Playing safe means I LOSE.\n\nAttack. Remove. Dominate.\n\nThey built their empires on defense. I will tear them down with aggression.\nStrike hard. Strike fast. Make them fear where I will hit next.\n\nThis is the final cycle. I did not come here to take second place.",
+  "next_turn_priorities": [
+    "Activate Knight Commander Steele for influence removal",
+    "Target whichever opponent has strongest board position",
+    "Continue Market dominance OR pivot to Barracks with Steele's Military faction",
+    "Watch for petition opportunities with Universal Connections card"
+  ]
+}

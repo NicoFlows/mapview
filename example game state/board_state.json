@@ -1,7 +1,7 @@
 {
   "simulation_id": "sim_5cycle_v3",
   "current_cycle": 5,
-  "current_turn": 3,
+  "current_turn": 7,
   "current_player": 1,
   "phase": "action",
   "districts": {
@@ -12,8 +12,8 @@
         "PAL_01": {
           "name": "Throne Room",
           "vp": 4,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "PAL_02",
             "PAL_04"
@@ -22,8 +22,8 @@
         "PAL_02": {
           "name": "Royal Chamber",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "PAL_01",
             "PAL_03",
@@ -33,8 +33,8 @@
         "PAL_03": {
           "name": "Grand Hall",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "PAL_02",
             "PAL_06"
@@ -43,8 +43,8 @@
         "PAL_04": {
           "name": "Council Room",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "PAL_01",
             "PAL_05",
@@ -54,8 +54,8 @@
         "PAL_05": {
           "name": "Royal Garden",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "PAL_02",
             "PAL_04",
@@ -77,8 +77,8 @@
         "PAL_07": {
           "name": "Guard Post",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "PAL_04",
             "PAL_08"
@@ -87,8 +87,8 @@
         "PAL_08": {
           "name": "Servant Quarters",
           "vp": 0,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "PAL_05",
             "PAL_07",
@@ -98,15 +98,15 @@
         "PAL_09": {
           "name": "Dungeon Access",
           "vp": -1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "PAL_06",
             "PAL_08"
           ]
         }
       },
-      "district_controller": null,
+      "district_controller": 3,
       "linked_faction": "Noble",
       "linked_coterie": "Noble",
       "special_ability": "Controller may adjust any player's exposure by \u00b11"
@@ -118,8 +118,8 @@
         "MKT_01": {
           "name": "Grand Exchange",
           "vp": 4,
-          "influence": 0,
-          "controller": null,
+          "influence": 5,
+          "controller": 3,
           "adjacent": [
             "MKT_02",
             "MKT_05"
@@ -139,8 +139,8 @@
         "MKT_03": {
           "name": "Banking House",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 2,
+          "controller": 3,
           "adjacent": [
             "MKT_02",
             "MKT_04",
@@ -150,8 +150,8 @@
         "MKT_04": {
           "name": "Silk Bazaar",
           "vp": 2,
-          "influence": 3,
-          "controller": 2,
+          "influence": 2,
+          "controller": 3,
           "adjacent": [
             "MKT_03",
             "MKT_08"
@@ -160,8 +160,8 @@
         "MKT_05": {
           "name": "Spice Stalls",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 2,
+          "controller": 3,
           "adjacent": [
             "MKT_01",
             "MKT_06"
@@ -170,8 +170,8 @@
         "MKT_06": {
           "name": "Fishmonger Row",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "MKT_02",
             "MKT_05",
@@ -192,15 +192,15 @@
         "MKT_08": {
           "name": "Beggar's Alley",
           "vp": 0,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "MKT_04",
             "MKT_07"
           ]
         }
       },
-      "district_controller": null,
+      "district_controller": 3,
       "linked_faction": "Commercial",
       "linked_coterie": "Commerce",
       "special_ability": "Controller gains 1 gold at start of turn"
@@ -212,8 +212,8 @@
         "TMP_01": {
           "name": "High Altar",
           "vp": 4,
-          "influence": 0,
-          "controller": null,
+          "influence": 5,
+          "controller": 3,
           "adjacent": [
             "TMP_02",
             "TMP_04"
@@ -222,8 +222,8 @@
         "TMP_02": {
           "name": "Inner Sanctum",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 3,
+          "controller": 3,
           "adjacent": [
             "TMP_01",
             "TMP_03",
@@ -233,8 +233,8 @@
         "TMP_03": {
           "name": "Chapel",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "TMP_02",
             "TMP_06"
@@ -243,8 +243,8 @@
         "TMP_04": {
           "name": "Cloister",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "TMP_01",
             "TMP_05"
@@ -253,8 +253,8 @@
         "TMP_05": {
           "name": "Graveyard",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "TMP_02",
             "TMP_04",
@@ -264,15 +264,15 @@
         "TMP_06": {
           "name": "Ossuary",
           "vp": -1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "TMP_03",
             "TMP_05"
           ]
         }
       },
-      "district_controller": null,
+      "district_controller": 3,
       "linked_faction": "Religious",
       "linked_coterie": "Religious",
       "special_ability": "Controller gains 1 VP at end of each cycle"
@@ -284,8 +284,8 @@
         "BAR_01": {
           "name": "Commander's Tower",
           "vp": 4,
-          "influence": 3,
-          "controller": 1,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "BAR_02",
             "BAR_04"
@@ -294,7 +294,7 @@
         "BAR_02": {
           "name": "Armory",
           "vp": 3,
-          "influence": 5,
+          "influence": 6,
           "controller": 3,
           "adjacent": [
             "BAR_01",
@@ -314,8 +314,8 @@
         "BAR_04": {
           "name": "Stables",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "BAR_01",
             "BAR_05"
@@ -324,8 +324,8 @@
         "BAR_05": {
           "name": "Mess Hall",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "BAR_02",
             "BAR_04",
@@ -335,8 +335,8 @@
         "BAR_06": {
           "name": "Barricades",
           "vp": 0,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "BAR_05",
             "BAR_07"
@@ -345,8 +345,8 @@
         "BAR_07": {
           "name": "Latrine",
           "vp": -1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "BAR_06"
           ]
@@ -364,8 +364,8 @@
         "DOC_01": {
           "name": "Harbormaster Office",
           "vp": 4,
-          "influence": 4,
-          "controller": 1,
+          "influence": 2,
+          "controller": 3,
           "adjacent": [
             "DOC_02",
             "DOC_05"
@@ -374,8 +374,8 @@
         "DOC_02": {
           "name": "Customs House",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "DOC_01",
             "DOC_03"
@@ -384,8 +384,8 @@
         "DOC_03": {
           "name": "Shipwright",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 3,
+          "controller": 3,
           "adjacent": [
             "DOC_02",
             "DOC_04"
@@ -404,8 +404,8 @@
         "DOC_05": {
           "name": "Dry Dock",
           "vp": 2,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "DOC_01",
             "DOC_06"
@@ -414,8 +414,8 @@
         "DOC_06": {
           "name": "Sailor's Tavern",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "DOC_05",
             "DOC_07"
@@ -424,8 +424,8 @@
         "DOC_07": {
           "name": "Fish Market",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "DOC_06",
             "DOC_08"
@@ -442,7 +442,7 @@
           ]
         }
       },
-      "district_controller": null,
+      "district_controller": 3,
       "linked_faction": "Maritime",
       "linked_coterie": "Maritime",
       "special_ability": "Controller may move 1 influence between adjacent districts"
@@ -454,8 +454,8 @@
         "ACA_01": {
           "name": "Grand Library",
           "vp": 4,
-          "influence": 0,
-          "controller": null,
+          "influence": 2,
+          "controller": 2,
           "adjacent": [
             "ACA_02",
             "ACA_04"
@@ -464,8 +464,8 @@
         "ACA_02": {
           "name": "Dean's Hall",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "ACA_01",
             "ACA_03",
@@ -485,8 +485,8 @@
         "ACA_04": {
           "name": "Lecture Hall",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "ACA_01",
             "ACA_05"
@@ -495,8 +495,8 @@
         "ACA_05": {
           "name": "Student Commons",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "ACA_02",
             "ACA_04",
@@ -506,15 +506,15 @@
         "ACA_06": {
           "name": "Basement Archives",
           "vp": 0,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "ACA_03",
             "ACA_05"
           ]
         }
       },
-      "district_controller": null,
+      "district_controller": 2,
       "linked_faction": "Academic",
       "linked_coterie": "Academic",
       "special_ability": "Controller draws 1 extra card when recruiting"
@@ -535,8 +535,8 @@
         "GAR_02": {
           "name": "Gambling Den",
           "vp": 3,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 2,
           "adjacent": [
             "GAR_01",
             "GAR_03",
@@ -567,8 +567,8 @@
         "GAR_05": {
           "name": "Fountain Plaza",
           "vp": 1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 3,
           "adjacent": [
             "GAR_03",
             "GAR_04",
@@ -588,8 +588,8 @@
         "GAR_07": {
           "name": "Sewer Entrance",
           "vp": -1,
-          "influence": 0,
-          "controller": null,
+          "influence": 1,
+          "controller": 1,
           "adjacent": [
             "GAR_05",
             "GAR_06"
@@ -606,10 +606,10 @@
     "1": {
       "player_id": 1,
       "agent_type": "strategic",
-      "gold": 4,
-      "influence_pool": 9,
+      "gold": 26,
+      "influence_pool": 14,
       "exposure": 0,
-      "vp": 110,
+      "vp": 126,
       "conspiracy": [
         {
           "id": "AGENT_013",
@@ -802,10 +802,10 @@
     "2": {
       "player_id": 2,
       "agent_type": "economic",
-      "gold": 9,
-      "influence_pool": 9,
+      "gold": 54,
+      "influence_pool": 11,
       "exposure": 0,
-      "vp": 110,
+      "vp": 124,
       "conspiracy": [
         {
           "id": "AGENT_024",
@@ -1007,10 +1007,10 @@
     "3": {
       "player_id": 3,
       "agent_type": "aggressive",
-      "gold": 2,
-      "influence_pool": 18,
+      "gold": 31,
+      "influence_pool": 24,
       "exposure": 0,
-      "vp": 88,
+      "vp": 169,
       "conspiracy": [
         {
           "id": "AGENT_010",

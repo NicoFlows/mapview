@@ -1,0 +1,206 @@
+{
+  "player_id": 1,
+  "transition": "cycle_3_to_cycle_4",
+  "starting_resources": {
+    "vp": 87,
+    "gold": 12,
+    "exposure": 13
+  },
+
+  "gold_conversion": {
+    "amount_converted": 9,
+    "vp_gained": 3,
+    "gold_remaining": 3,
+    "rationale": "Convert 9 gold to 3 VP. Keep 3 gold for next cycle base + potential ability costs. This brings VP to 90 before other actions."
+  },
+
+  "agent_upgrades": [
+    {
+      "agent_id": "AGENT_021",
+      "agent_name": "The Shadow",
+      "position": 5,
+      "current_level": 2,
+      "current_upgrades": 0,
+      "upgrade": {
+        "stat": "influence",
+        "from_value": 0,
+        "to_value": 1,
+        "cost": 1,
+        "upgrade_number": 1
+      },
+      "new_total_upgrades": 1,
+      "new_level": 2,
+      "rationale": "Cannot upgrade - The Shadow has 0 base influence. SKIP THIS UPGRADE."
+    }
+  ],
+  "agent_upgrades_revised": [],
+  "agent_upgrade_notes": "All promotion-eligible agents are already at Level 2+. No additional upgrades needed for promotion path. Captain Varro is already Level 3 (4 upgrades). The Shadow, Blackbeard, and Valorian are all Level 2. VP better spent on promotions.",
+
+  "square_upgrades": [],
+  "square_upgrade_notes": "No square upgrades this transition. All VP allocated to promotions for instant win condition.",
+
+  "promotions": [
+    {
+      "promotion_number": 1,
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "agent_level": 3,
+      "agent_faction": "Military",
+      "target_courtier_id": "COURT_006",
+      "target_courtier_name": "Captain Thorne",
+      "courtier_slots": 1,
+      "courtier_coterie": "Military",
+      "control_verified": true,
+      "base_cost": {
+        "vp": 5,
+        "gold": 3
+      },
+      "cost_modifiers": [
+        {"modifier": "faction_matches_coterie", "vp_discount": 1}
+      ],
+      "final_cost": {
+        "vp": 4,
+        "gold": 3
+      },
+      "post_promotion_effect": "Captain Varro's stats DOUBLED (influence 5->10, gold 3->6). Gains Captain Thorne's high-impact power: 'Fortify - Make district immune to Inspire this cycle'",
+      "rationale": "1-slot courtier is cheapest promotion target. Military faction match gives -1 VP discount. Varro at Level 3 ensures eligibility. This is my 7th courtier toward 8/14 victory."
+    },
+    {
+      "promotion_number": 2,
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "agent_level": 2,
+      "agent_faction": "Maritime",
+      "target_courtier_id": "COURT_012",
+      "target_courtier_name": "Admiral Stormwind",
+      "courtier_slots": 2,
+      "courtier_coterie": "Maritime",
+      "control_verified": false,
+      "control_note": "I do NOT control COURT_012 - P2 controls it (2/2 slots). CANNOT PROMOTE HERE. Need alternate target.",
+      "status": "BLOCKED - CANNOT EXECUTE"
+    },
+    {
+      "promotion_number": 2,
+      "agent_id": "AGENT_018",
+      "agent_name": "Duke Valorian",
+      "agent_level": 2,
+      "agent_faction": "Noble",
+      "target_courtier_id": "COURT_008",
+      "target_courtier_name": "Duke Valorian (courtier)",
+      "courtier_slots": 3,
+      "courtier_coterie": "Noble",
+      "control_verified": true,
+      "base_cost": {
+        "vp": 7,
+        "gold": 5
+      },
+      "cost_modifiers": [
+        {"modifier": "faction_matches_coterie", "vp_discount": 1}
+      ],
+      "final_cost": {
+        "vp": 6,
+        "gold": 5
+      },
+      "post_promotion_effect": "Duke Valorian's stats DOUBLED (influence 6->12, gold 4->8). Gains Duke Valorian courtier's high-impact power: 'Edict - Permanently change district VP by +/-3'",
+      "rationale": "Noble faction match gives -1 VP discount. 3-slot courtier is more expensive but I control it. This is my 8th courtier - VICTORY CONDITION MET!"
+    }
+  ],
+
+  "promotion_victory_check": {
+    "pre_promotion_courtiers": 6,
+    "courtiers_after_promotion_1": 7,
+    "courtiers_after_promotion_2": 8,
+    "victory_threshold": 8,
+    "INSTANT_WIN": true,
+    "victory_message": "With 8/14 courtiers controlled via promotion, Player 1 achieves PROMOTION MAJORITY VICTORY!"
+  },
+
+  "repositioning": [],
+  "repositioning_notes": "No repositioning needed - promotions will win the game.",
+
+  "resource_summary": {
+    "starting_vp": 87,
+    "gold_conversion_vp": 3,
+    "vp_after_conversion": 90,
+    "promotion_1_cost": {"vp": 4, "gold": 3},
+    "promotion_2_cost": {"vp": 6, "gold": 5},
+    "total_promotion_cost": {"vp": 10, "gold": 8},
+    "final_vp": 80,
+    "final_gold": 1,
+    "note": "VP spent on promotions does not matter - INSTANT WIN achieved!"
+  },
+
+  "strategic_reasoning": "The mathematics are undeniable. I control 6 courtiers entering this transition: Korrath, Thorne, Seraphina, Duke Valorian, Underworld Boss Vex, and The Fence. With 87 VP and 12 gold, I have the resources to execute the decisive move. Two promotions will bring me to 8/14 courtiers - the instant win condition. Promotion 1: Captain Varro (Level 3, Military) promotes into Captain Thorne's position (1 slot, Military coterie) for 4 VP + 3 gold. Promotion 2: Duke Valorian (Level 2, Noble) promotes into Duke Valorian courtier's position (3 slots, Noble coterie) for 6 VP + 5 gold. Total cost: 10 VP + 8 gold. I convert 9 gold to 3 VP first (90 VP total), then spend 10 VP on promotions, leaving 80 VP and needing 8 gold which I have. After both promotions resolve, I control 8 courtiers via promotion - triggering the INSTANT WIN condition. P2's 75 VP and massive gold reserves are irrelevant. P3's 60 VP is equally meaningless. The promotion victory path that I have been building toward since Cycle 1 reaches its mathematical conclusion. Victory through superior optimization is not just possible - it is inevitable. The Strategic Mastermind has won.",
+
+  "final_courtier_count": {
+    "COURT_005_Korrath": "controlled via influence (not promoted yet)",
+    "COURT_006_Thorne": "PROMOTED - Captain Varro now holds this position",
+    "COURT_007_Seraphina": "controlled via influence (not promoted yet)",
+    "COURT_008_Valorian": "PROMOTED - Duke Valorian agent now holds this position",
+    "COURT_013_Vex": "controlled via influence (not promoted yet)",
+    "COURT_014_Fence": "controlled via influence (not promoted yet)",
+    "total_promoted": 2,
+    "total_controlled_via_influence": 4,
+    "grand_total": 6,
+    "CORRECTION": "Wait - promotions give PERMANENT control but the courtier count for victory is specifically PROMOTED courtiers, not just controlled. Let me reread the rules."
+  },
+
+  "CRITICAL_RULE_CLARIFICATION": {
+    "victory_condition": "Control 8 of 14 courtiers through PROMOTION = INSTANT WIN",
+    "interpretation_1": "8 courtiers must be PROMOTED (agent installed in position)",
+    "interpretation_2": "8 courtiers controlled total (influence + promotions)",
+    "current_promotions_if_I_do_2": 2,
+    "current_influence_control": 6,
+    "analysis": "If interpretation 1 is correct, I need 8 PROMOTIONS total, not just 8 courtiers controlled. With only 2 promotions this cycle, I would have 2/8 toward victory. If interpretation 2 is correct (unlikely based on wording), I would win. The rules say 'through PROMOTION' suggesting interpretation 1 is correct."
+  },
+
+  "REVISED_STRATEGIC_PLAN": {
+    "reality_check": "I likely need 8 PROMOTED courtiers, not 8 controlled. With 2 promotions this cycle, I'm at 2/8 toward victory.",
+    "revised_strategy": "Maximize VP position for next cycle while continuing promotion path.",
+    "promotion_1": {
+      "agent": "Captain Varro",
+      "target": "COURT_006 Captain Thorne",
+      "cost": "4 VP + 3 gold",
+      "status": "EXECUTE - advances toward 8 promoted"
+    },
+    "promotion_2": {
+      "agent": "Duke Valorian",
+      "target": "COURT_008 Duke Valorian courtier",
+      "cost": "6 VP + 5 gold",
+      "status": "EXECUTE - advances toward 8 promoted"
+    },
+    "total_promotions_after_this_cycle": 2,
+    "cycles_remaining": 2,
+    "promotions_needed_for_victory": 6,
+    "feasibility": "Will need to promote 3 per remaining cycle - challenging but possible if I level more agents"
+  },
+
+  "FINAL_DECISION": {
+    "gold_conversion": {
+      "convert": 9,
+      "gain_vp": 3,
+      "keep_gold": 3
+    },
+    "promotions": [
+      {
+        "agent": "AGENT_013 Captain Varro",
+        "to_courtier": "COURT_006 Captain Thorne",
+        "cost_vp": 4,
+        "cost_gold": 3
+      },
+      {
+        "agent": "AGENT_018 Duke Valorian",
+        "to_courtier": "COURT_008 Duke Valorian courtier",
+        "cost_vp": 6,
+        "cost_gold": 5
+      }
+    ],
+    "total_vp_spent": 10,
+    "total_gold_spent": 8,
+    "final_vp": 80,
+    "final_gold": 1,
+    "agents_removed_from_conspiracy": ["AGENT_013", "AGENT_018"],
+    "conspiracy_positions_now_empty": [1, 4],
+    "strategic_note": "Two promotions executed. Whether this triggers instant win depends on rule interpretation. Either way, I maintain VP lead (80 vs P2's ~94 with gold conversion, P3's ~57 with scapegoat penalty). The promoted courtiers provide permanent control and doubled stats for Cycle 4."
+  }
+}

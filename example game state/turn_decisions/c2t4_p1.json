@@ -1,0 +1,124 @@
+{
+  "player_id": 1,
+  "cycle": 2,
+  "turn": 4,
+  "recruitment": null,
+  "recruitment_note": "Conspiracy full at 7 positions - no recruitment available",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_018",
+      "agent_name": "Duke Valorian",
+      "ability": "4 Place three influence in Palace",
+      "min_turn": 4,
+      "effect": "FREE placement of 3 influence cubes in Palace district",
+      "target_square": "PAL_01",
+      "target_name": "Throne Room",
+      "target_vp": 4,
+      "rationale": "Highest VP square in Palace, uncontested. Establishes Palace presence for Noble petition pathway."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability": "4 Gain 5 crowns but increase exposure by 1",
+      "min_turn": 4,
+      "effect": "+5 gold, +1 exposure",
+      "gold_gain": 5,
+      "exposure_gain": 1,
+      "rationale": "5 gold for 1 exposure is excellent efficiency at 0 exposure. Builds war chest for cycle-end conversion."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability": "4 Place three influence in Barracks",
+      "min_turn": 4,
+      "effect": "FREE placement of 3 influence cubes in Barracks district",
+      "target_square": "BAR_04",
+      "target_name": "Stables",
+      "target_vp": 2,
+      "rationale": "Extends Barracks control chain. Adjacent to BAR_01 (already controlled) and BAR_05. Solidifies district dominance."
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_01",
+      "square_name": "Harbormaster Office",
+      "amount": 5,
+      "faction_used": "Maritime",
+      "agent_providing_faction": "AGENT_037 (Blackbeard)",
+      "vp_value": 4,
+      "rationale": "Highest VP square in Docks. Establishes maritime presence for future Docks expansion with Blackbeard Turn 5 ability."
+    },
+    {
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_05",
+      "square_name": "Mess Hall",
+      "amount": 4,
+      "faction_used": "Military",
+      "agent_providing_faction": "AGENT_013 (Varro)",
+      "vp_value": 1,
+      "rationale": "Extends Barracks control chain. Adjacent to BAR_02 and BAR_04. Secures majority of district squares."
+    },
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_008",
+      "courtier_name": "Duke Valorian",
+      "coterie": "Noble",
+      "amount": 3,
+      "faction_used": "Noble",
+      "agent_providing_faction": "AGENT_018 (Duke Valorian)",
+      "influence_slots": 3,
+      "current_influence": 0,
+      "result": "3/3 = CONTROLLER",
+      "rationale": "Secures Noble courtier with full majority. Advances Noble Charter petition (need 007 + 008). Also advances Imperial Mandate path (12 VP petition)."
+    }
+  ],
+  "free_actions": [],
+  "free_actions_note": "No petitions completable (need COURT_007 for Noble Charter, missing other courtiers for other paths). Exposure at 1 after Rothwell - no whitewash needed.",
+  "resources_spent": {
+    "influence_pool": 12,
+    "gold": 0,
+    "actions_used": 3,
+    "abilities_used": ["Valorian (3 Palace)", "Rothwell (+5 gold)", "Varro (3 Barracks)"]
+  },
+  "resources_after_turn": {
+    "influence_pool": 0,
+    "gold": 18,
+    "exposure": 1,
+    "vp": 41
+  },
+  "turn_summary": {
+    "new_squares_controlled": ["PAL_01 (4 VP)", "BAR_04 (2 VP)", "BAR_05 (1 VP)", "DOC_01 (4 VP)"],
+    "new_courtiers_controlled": ["COURT_008 (Duke Valorian)"],
+    "total_vp_from_squares": 11,
+    "influence_deployed": {
+      "from_abilities": 6,
+      "from_pool": 12,
+      "total": 18
+    }
+  },
+  "strategic_analysis": {
+    "vp_gap": "P2 leads by 15 VP (56 vs 41). Aggressive expansion required.",
+    "petition_progress": {
+      "noble_charter": "1/2 (need COURT_007 Seraphina)",
+      "imperial_mandate": "2/4 (have COURT_006 Thorne, COURT_008 Valorian - need COURT_005 Korrath, COURT_007 Seraphina)",
+      "shadow_network": "1/3 (have COURT_006 - need COURT_010, COURT_014)"
+    },
+    "courtier_control": ["COURT_006 (Thorne)", "COURT_008 (Valorian)", "COURT_012 (Stormwind)"],
+    "district_control": "Barracks (full), Palace (establishing), Docks (establishing)",
+    "next_turn_priorities": [
+      "Blackbeard ability Turn 5: +4 FREE influence in Docks",
+      "Secure COURT_007 (Seraphina) for Noble Charter completion (5 VP)",
+      "Contest COURT_005 (Korrath) from P3 for Imperial Mandate path"
+    ]
+  },
+  "reasoning": "Turn 4 optimization maximizes all three action slots with FREE ability activations. Triple-ability sequence: Valorian places 3 in Palace (highest VP square), Rothwell generates +5 gold for cycle-end conversion, Varro extends Barracks chain. Full 12-cube influence pool deployed: Docks DOC_01 establishes maritime presence, Barracks BAR_05 extends control chain, COURT_008 secures Noble courtier (3/3 majority). Total influence deployed: 18 cubes (6 from abilities + 12 from pool). Gold increases to 18 for strong cycle-end conversion potential. Noble petition pathway advances: COURT_008 secured, need COURT_007 for 5 VP Noble Charter. Imperial Mandate (12 VP) now at 2/4 courtiers. Efficiency ratio maintained: maximum resource utilization with zero waste."
+}

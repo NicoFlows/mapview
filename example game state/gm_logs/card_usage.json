@@ -1,0 +1,1242 @@
+{
+  "schema_version": "1.0",
+  "simulation_id": "sim_5cycle_v3",
+  "agents": {
+    "AGENT_024": {
+      "name": "Guildmaster Harrow",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 4,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:26:43.560290",
+          "turn": 1,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 1,
+            "faction": "Commercial"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:03:22.738563",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Place two influence in Market",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:34:31.216783",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "5 Gain 6 crowns and place one influence in Market",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:33:30.402089",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Place two influence in Market",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:00:22.726803",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Place two influence in Market",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_037": {
+      "name": "Captain Blackbeard",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 4,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:35:50.616832",
+          "turn": 1,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        },
+        {
+          "timestamp": "2026-01-27T00:37:57.231119",
+          "turn": 3,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 3,
+            "faction": "Maritime"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:34:01.911550",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Place four influence in Docks",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:49:23.106929",
+          "turn": 6,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Place four influence in Docks.",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:33:05.001589",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:09:40.735938",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Place four influence in Docks",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_032": {
+      "name": "Lord Pemberton",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:35:51.086458",
+          "turn": 1,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_043": {
+      "name": "Alchemist Brynn",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 5,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:35:51.099188",
+          "turn": 1,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        },
+        {
+          "timestamp": "2026-01-28T23:03:21.188767",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:34:37.542243",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:33:33.157623",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:00:27.946880",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:10:12.702704",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "3 Gain 4 crowns",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_040": {
+      "name": "Monsignor Pietro",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 2,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:35:51.613605",
+          "turn": 1,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        },
+        {
+          "timestamp": "2026-01-27T00:39:13.491863",
+          "turn": 3,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 3,
+          "details": {
+            "position": 3,
+            "faction": "Religious"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:03:55.418302",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "3 Place two influence on any Religious courtier",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:34:05.249781",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "3 Place two influence on any Religious courtier",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_034": {
+      "name": "Knight Commander Steele",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 2,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:35:51.624881",
+          "turn": 1,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        },
+        {
+          "timestamp": "2026-01-28T23:03:53.323778",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "4 Place two influence in Barracks",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:01:14.221724",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "4 Place two influence in Barracks",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_018": {
+      "name": "Duke Valorian",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 1,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:54:01.355657",
+          "turn": 2,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        },
+        {
+          "timestamp": "2026-01-28T22:59:48.600583",
+          "turn": 4,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 4,
+            "faction": "Noble"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:00:04.031720",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "4 Place three influence in Palace",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_023": {
+      "name": "First Mate Calico",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 2,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-26T23:54:01.715116",
+          "turn": 2,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        },
+        {
+          "timestamp": "2026-01-27T00:38:51.466220",
+          "turn": 3,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 3,
+            "faction": "Maritime"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:03:18.018145",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "4 Place two influence in Docks and gain 2 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:34:35.005599",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "4 Place two influence in Docks and gain 2 crowns",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_012": {
+      "name": "Brother Marcus",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-27T00:40:04.532403",
+          "turn": 3,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        },
+        {
+          "timestamp": "2026-01-28T23:41:20.736033",
+          "turn": 6,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 6,
+            "faction": "Religious"
+          }
+        }
+      ]
+    },
+    "AGENT_030": {
+      "name": "Harbor Wench Sybil",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-27T00:40:04.907682",
+          "turn": 3,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        },
+        {
+          "timestamp": "2026-01-28T23:03:11.566983",
+          "turn": 4,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 4,
+            "faction": "Maritime"
+          }
+        }
+      ]
+    },
+    "AGENT_017": {
+      "name": "Elena Rosetti",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-27T00:40:05.280338",
+          "turn": 3,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        }
+      ]
+    },
+    "AGENT_031": {
+      "name": "Banker Rothwell",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 8,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-27T00:50:57.040096",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:34:04.358742",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:44:51.320299",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:22:24.819517",
+          "turn": 2,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:33:06.728945",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:59:44.288809",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:09:43.413449",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-04T00:56:20.676178",
+          "turn": 2,
+          "cycle": 5,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Gain 3 crowns",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_013": {
+      "name": "Captain Varro",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 5,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T22:59:54.836332",
+          "turn": 4,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "4 Place three influence in Barracks",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:49:25.403805",
+          "turn": 6,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "4 Place three influence in Barracks.",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:33:10.898486",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Remove one influence from any district",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:59:37.735493",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "4 Place three influence in Barracks",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-04T00:56:25.514187",
+          "turn": 2,
+          "cycle": 5,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "2 Remove one influence from any district",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_026": {
+      "name": "Father Dominic",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 2,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:03:48.346434",
+          "turn": 4,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 3,
+          "details": {
+            "position": 4,
+            "faction": "Religious"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:35:24.096316",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "4 Place three influence in Temple",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:01:16.109039",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "4 Place three influence in Temple",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_042": {
+      "name": "Whisper",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:04:39.828997",
+          "turn": 4,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        }
+      ]
+    },
+    "AGENT_044": {
+      "name": "Shipwright Tormund",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 1,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:04:40.444627",
+          "turn": 4,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        },
+        {
+          "timestamp": "2026-01-28T23:34:24.811161",
+          "turn": 5,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 5,
+            "faction": "Maritime"
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:10:13.509514",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 2,
+          "details": {
+            "ability_text": "4 Place three influence in Docks",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_041": {
+      "name": "Siege Master Kragg",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 1,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:04:41.075417",
+          "turn": 4,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        },
+        {
+          "timestamp": "2026-01-28T23:35:14.371293",
+          "turn": 5,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 3,
+          "details": {
+            "position": 5,
+            "faction": "Military"
+          }
+        },
+        {
+          "timestamp": "2026-01-28T23:35:18.559039",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "2 Remove one influence from target square",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_021": {
+      "name": "The Shadow",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 1,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:33:08.025954",
+          "turn": 5,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 5,
+            "faction": "Criminal"
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:09:44.321872",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Flip one opponents agent face down",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_010": {
+      "name": "Marcus Venditti",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 3,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:35:20.821041",
+          "turn": 5,
+          "cycle": 1,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "5 Place three influence in Market and gain 3 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:34:03.503012",
+          "turn": 3,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "3 Gain 5 crowns",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T16:01:18.098764",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 3,
+          "details": {
+            "ability_text": "3 Gain 5 crowns",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_033": {
+      "name": "Inquisitor Vane",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 3,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:36:32.764693",
+          "turn": 5,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        },
+        {
+          "timestamp": "2026-02-02T15:38:49.403031",
+          "turn": 4,
+          "cycle": 4,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 4,
+            "faction": "Religious"
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:43:54.527821",
+          "turn": 5,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Remove two influence from any courtier",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:49:04.185901",
+          "turn": 6,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "5 Remove two influence from any courtier.",
+            "gold_cost": 0
+          }
+        },
+        {
+          "timestamp": "2026-02-03T15:59:35.892155",
+          "turn": 4,
+          "cycle": 4,
+          "action": "ability_used",
+          "player_id": 1,
+          "details": {
+            "ability_text": "3 Increase target player's exposure by 2",
+            "gold_cost": 0
+          }
+        }
+      ]
+    },
+    "AGENT_036": {
+      "name": "Librarian Moss",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:36:32.792315",
+          "turn": 5,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        }
+      ]
+    },
+    "AGENT_007": {
+      "name": "The Kestrel",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:36:32.998186",
+          "turn": 5,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_016": {
+      "name": "Admiral Stormwind",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:36:33.204581",
+          "turn": 5,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        },
+        {
+          "timestamp": "2026-01-28T23:41:55.400978",
+          "turn": 6,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 3,
+          "details": {
+            "position": 6,
+            "faction": "Maritime"
+          }
+        }
+      ]
+    },
+    "AGENT_022": {
+      "name": "Dean Aristotle",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:41:35.704692",
+          "turn": 6,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 6,
+            "faction": "Academic"
+          }
+        }
+      ]
+    },
+    "AGENT_011": {
+      "name": "Lady Fiora",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:42:24.321523",
+          "turn": 6,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        },
+        {
+          "timestamp": "2026-01-28T23:47:29.805488",
+          "turn": 7,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 1,
+          "details": {
+            "position": 7,
+            "faction": "Noble"
+          }
+        }
+      ]
+    },
+    "AGENT_006": {
+      "name": "Alexandros Sideras",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:42:24.516252",
+          "turn": 6,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_046": {
+      "name": "Baron von Stahl",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 1,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:42:24.705845",
+          "turn": 6,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        },
+        {
+          "timestamp": "2026-01-28T23:48:04.887414",
+          "turn": 7,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 3,
+          "details": {
+            "position": 7,
+            "faction": "Noble"
+          }
+        }
+      ]
+    },
+    "AGENT_049": {
+      "name": "Ratcatcher Tom",
+      "times_drawn": 0,
+      "times_played": 0,
+      "times_recruited": 2,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:47:48.138594",
+          "turn": 7,
+          "cycle": 1,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 7,
+            "faction": "Criminal"
+          }
+        },
+        {
+          "timestamp": "2026-02-02T15:28:58.967627",
+          "turn": 1,
+          "cycle": 4,
+          "action": "recruited",
+          "player_id": 2,
+          "details": {
+            "position": 3,
+            "faction": "Criminal"
+          }
+        }
+      ]
+    },
+    "AGENT_029": {
+      "name": "Scribe Tallum",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:48:55.023537",
+          "turn": 7,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 1
+        }
+      ]
+    },
+    "AGENT_047": {
+      "name": "Pilgrim Theron",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:48:55.214046",
+          "turn": 7,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_038": {
+      "name": "Auctioneer Pryce",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-01-28T23:48:55.409028",
+          "turn": 7,
+          "cycle": 1,
+          "action": "drawn",
+          "player_id": 3
+        }
+      ]
+    },
+    "AGENT_014": {
+      "name": "Rosa the Fence",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-02T15:30:43.362316",
+          "turn": 1,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_028": {
+      "name": "Fingers McGee",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-02T15:33:43.255872",
+          "turn": 2,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    },
+    "AGENT_001": {
+      "name": "Michael Elmen",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-02T15:33:49.184706",
+          "turn": 2,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 3
+        }
+      ]
+    },
+    "AGENT_003": {
+      "name": "Clario da Silva",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-02T15:40:42.754370",
+          "turn": 4,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 1
+        }
+      ]
+    },
+    "AGENT_027": {
+      "name": "Sergeant Briggs",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-02T15:46:36.107095",
+          "turn": 5,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 1
+        }
+      ]
+    },
+    "AGENT_015": {
+      "name": "Professor Aldric",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-03T16:02:28.479886",
+          "turn": 4,
+          "cycle": 4,
+          "action": "drawn",
+          "player_id": 2
+        }
+      ]
+    }
+  },
+  "power_cards": {
+    "POWER_012": {
+      "name": "Tactical Advantage",
+      "times_drawn": 1,
+      "times_played": 0,
+      "times_recruited": 0,
+      "abilities_used": 0,
+      "usage_log": [
+        {
+          "timestamp": "2026-02-01T23:12:01.050839",
+          "turn": 1,
+          "cycle": 3,
+          "action": "drawn",
+          "player_id": 3
+        }
+      ]
+    }
+  }
+}

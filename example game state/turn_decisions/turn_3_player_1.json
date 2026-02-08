@@ -1,0 +1,111 @@
+{
+  "player_id": 1,
+  "cycle": 5,
+  "turn": 3,
+  "recruitment": null,
+  "recruitment_note": "All 7 conspiracy positions filled. No recruitment action needed.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_031",
+      "agent_name": "Banker Rothwell",
+      "ability": "2 Gain 3 crowns",
+      "min_turn": 2,
+      "effect": "FREE +3 gold (4 -> 7 gold)",
+      "rationale": "Economic acceleration for cycle-end conversion. 7 gold = 2 VP at 3:1 ratio."
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_037",
+      "agent_name": "Captain Blackbeard",
+      "ability": "3 Gain 4 crowns",
+      "min_turn": 3,
+      "effect": "FREE +4 gold (7 -> 11 gold)",
+      "rationale": "Blackbeard's Turn 3 ability finally unlocks. 11 gold = 3 VP cycle-end conversion. Combined +7 gold this turn."
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "ability": "2 Remove one influence from any district",
+      "min_turn": 2,
+      "effect": "Remove 1 P3 cube from BAR_02 (Armory)",
+      "target_district": "Barracks",
+      "target_square": "BAR_02",
+      "target_player": 3,
+      "rationale": "Surgical strike reduces P3's Barracks stronghold from 5 to 4 cubes. Degrading their Military district control while preserving my BAR_01 fortress."
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "faction_used": "Maritime",
+      "agent_providing_access": "AGENT_037 (Captain Blackbeard)",
+      "amount": 3,
+      "current_state": "P2 has 2/4 slots",
+      "result": "3/4 majority - I gain control",
+      "rationale": "Flipping Harbormaster advances Maritime coterie and Trade Empire petition pathway. Critical courtier for future petitions."
+    },
+    {
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "square_name": "Grand Exchange",
+      "vp_value": 4,
+      "faction_used": "Commercial",
+      "agent_providing_access": "AGENT_031 (Banker Rothwell)",
+      "amount": 4,
+      "current_state": "Empty square",
+      "rationale": "Highest-VP empty Market square. Commercial faction via Rothwell enables placement. Creates 4 VP position."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_02",
+      "square_name": "Customs House",
+      "vp_value": 3,
+      "faction_used": "Maritime",
+      "agent_providing_access": "AGENT_037 (Captain Blackbeard)",
+      "amount": 2,
+      "current_state": "Empty square",
+      "rationale": "Adjacent to my DOC_01 fortress. Extending Docks control chain. 3 VP square claimed with minimal investment."
+    }
+  ],
+  "free_actions": [],
+  "petition_check": {
+    "shadow_network": {
+      "petition_id": "PETITION_013",
+      "requirements": ["COURT_006", "COURT_010", "COURT_014"],
+      "status": {
+        "COURT_006": "CONTROLLED (promoted with Varro)",
+        "COURT_010": "NEED VERIFICATION - check if Master Scholar Lyra still has my 1/1 influence from earlier",
+        "COURT_014": "NEED VERIFICATION - check if The Fence still has my 1/1 influence from earlier"
+      },
+      "action": "If all three courtiers confirmed under my control, complete petition for 10 VP. Orchestrator should verify courtier control and complete if eligible."
+    }
+  },
+  "resources_spent": {
+    "influence_pool": 9,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_after_actions": {
+    "gold": 11,
+    "influence_pool": 0,
+    "actions_remaining": 0
+  },
+  "resources_after_abilities": {
+    "gold_from_rothwell": 3,
+    "gold_from_blackbeard": 4,
+    "total_gold_gained": 7,
+    "final_gold": 11
+  },
+  "strategic_reasoning": "Turn 3 optimization executes the triple-ability deployment: Rothwell (+3 gold) and Blackbeard (+4 gold) generate +7 gold total for 11 gold reserve = 3 VP cycle-end conversion potential. Varro surgically degrades P3's BAR_02 position from 5 to 4 cubes. Full 9-cube influence pool deployed: 3 to COURT_011 (flipping Harbormaster control from P2's 2 to my 3/4 majority), 4 to MKT_01 (highest-VP empty Market square at 4 VP), 2 to DOC_02 (extending Docks chain adjacent to my DOC_01 fortress). Shadow Network petition (10 VP) may be completable if COURT_010 and COURT_014 remain under my control from earlier turns - orchestrator should verify. VP trajectory: 110 base + 3 (gold conversion) + potential 10 (Shadow Network) = 123 VP. The Strategic Mastermind's efficiency calculus continues.",
+  "turn_summary": "Triple-ability gold generation (+7 gold), surgical removal on P3 Barracks, full influence deployment across Harbormaster courtier and high-VP district squares. Potential Shadow Network petition completion pending courtier verification."
+}

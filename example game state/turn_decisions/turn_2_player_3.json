@@ -1,0 +1,39 @@
+{
+  "player_id": 3,
+  "cycle": 5,
+  "turn": 2,
+  "timestamp": "2026-02-04T12:00:00Z",
+  "reasoning": "Turn 2 - Steele (Military) joins Venditti (Commercial) as active. NO abilities available yet (min Turn 3+). Conspiracy FULL at 7 agents - no recruitment. Deploy ALL 12 influence aggressively.",
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_03",
+      "amount": 4,
+      "faction": "Commercial"
+    },
+    {
+      "action_num": 2,
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_02",
+      "amount": 5,
+      "faction": "Military"
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_001",
+      "amount": 3,
+      "faction": "Commercial"
+    }
+  ],
+  "free_actions": [],
+  "resources_spent": {
+    "influence_pool": 12,
+    "gold": 0,
+    "actions_used": 3
+  }
+}

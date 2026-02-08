@@ -1,0 +1,59 @@
+{
+  "player_id": 3,
+  "cycle": 2,
+  "turn": 2,
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Barracks",
+      "squares": ["BAR_01", "BAR_02", "BAR_04"],
+      "total_amount": 6,
+      "faction": "Military",
+      "agent_providing_access": "AGENT_034 (Knight Commander Steele)",
+      "rationale": "AGGRESSIVE CONTEST of P1's weak Military position (BAR_01 has only 3 inf). Steele now active provides Military faction access. Deploy maximum force to contest and potentially seize control.",
+      "target_player_pressure": 1
+    },
+    {
+      "action_num": 2,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_006",
+      "amount": 2,
+      "faction": "Military",
+      "agent_providing_access": "AGENT_034 (Knight Commander Steele)",
+      "rationale": "BLOCKING P1's petition completion. COURT_006 is required for PETITION_011 (Imperial Mandate = 12 VP). Contesting control prevents P1 from completing their highest-value petition. Cap is 1 slot but P1 already controls with 1 inf - this creates a contested state.",
+      "target_player_pressure": 1,
+      "petition_blocked": "PETITION_011"
+    },
+    {
+      "action_num": 3,
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_005",
+      "amount": 1,
+      "faction": "Commercial",
+      "agent_providing_access": "AGENT_010 (Marcus Venditti)",
+      "rationale": "REINFORCEMENT of existing control. Already have 1 inf on COURT_005 (General Korrath) - this adds second influence to secure commanding position (2/4 slots). Prepares for PETITION_008 (Cross-Faction Alliance) completion if I can secure COURT_001 or COURT_007.",
+      "courtier_lock": true
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "note",
+      "content": "No immediate petitions completable. No agent abilities available yet (Venditti Turn 3, Steele Turns 4/6). Whitewash skipped - aggressive posture accepts exposure."
+    }
+  ],
+  "resources_deployed": {
+    "influence_total": 9,
+    "gold_spent": 0,
+    "actions_used": 3,
+    "courtier_actions_used": 2
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 1
+  },
+  "aggressive_doctrine": "Full deployment. Contested Barracks (attack P1 Military), blocked Military petition (deny P1 12 VP), reinforced courtier control (prep for future petitions). Zero resource hoarding. Maximum pressure applied to primary target (P1).",
+  "escalation_check": false,
+  "reasoning": "P1 remains strategic threat with 36 VP and controlled COURT_006. Contesting Barracks leverages new Military access from Steele activation. Blocking COURT_006 prevents Imperial Mandate (12 VP + removal effect) - most dangerous P1 petition. Reinforcing COURT_005 secures future petition paths. All 9 influence deployed for maximum territorial pressure."
+}

@@ -1,0 +1,277 @@
+{
+  "player_id": 2,
+  "cycle": 5,
+  "turn": 6,
+  "timestamp": "2026-02-05T15:00:00Z",
+  "reasoning": "THE PENULTIMATE TURN - MAXIMUM EXTRACTION. Leading at 130 VP with 32 gold, two turns remain. Strategy: (1) Fire BOTH gold-generating abilities for +10 gold (treasury rises to 42, converting to 14 VP at cycle end), (2) Use Tormund's placement ability to SEIZE DOC_04 from P1 (3 cubes vs their 1 = 4VP swing), (3) Flood the Docks with pool cubes to achieve TOTAL district control while taking BAR_01 from P3 for a 4VP swing, (4) Tie Harbormaster Blackwater at 2-2 to deny P1 their courtier control. ROI math: 10 gold = 3+ VP conversion. Taking DOC_04 (2VP from P1) + DOC_06 (1VP from P1) + BAR_01 (4VP from P3) = 7VP stolen from opponents via hostile takeovers. Defending Docks (16VP) and Academy (11VP) = 27VP territorial holdings SECURED. Harrow's free cube claims MKT_07 for an additional 1VP. Total projected territorial control: 33 VP across four districts. With 42 gold converting to 14 VP, the projected cycle-end position is insurmountable. The compound interest machine fires on all cylinders for the final stretch. Gold flows to those who understand its power.",
+  "recruitment": null,
+  "recruitment_note": "Conspiracy FULL at 7 agents (positions 1-7). No recruitment possible.",
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "use_ability",
+      "agent_id": "AGENT_024",
+      "agent_name": "Guildmaster Harrow",
+      "position": 1,
+      "ability": "5 Gain 6 crowns and place one influence in Market.",
+      "min_turn": 5,
+      "effect": "+6 gold to treasury (32 -> 38). Place 1 free influence cube on MKT_07 Tinker's Corner (1 VP, currently empty). The jackpot ability delivers pure profit plus territorial expansion into unclaimed Market territory.",
+      "gold_gained": 6,
+      "free_influence": {
+        "district": "Market",
+        "square": "MKT_07",
+        "square_name": "Tinker's Corner",
+        "vp_value": 1,
+        "amount": 1,
+        "faction": "Commercial"
+      }
+    },
+    {
+      "action_num": 2,
+      "type": "use_ability",
+      "agent_id": "AGENT_043",
+      "agent_name": "Alchemist Brynn",
+      "position": 2,
+      "ability": "3 Gain 4 crowns.",
+      "min_turn": 3,
+      "effect": "+4 gold to treasury (38 -> 42). Alchemical transmutation of intellectual capital into hard currency. The compound interest machine never stops generating returns.",
+      "gold_gained": 4
+    },
+    {
+      "action_num": 3,
+      "type": "use_ability",
+      "agent_id": "AGENT_044",
+      "agent_name": "Shipwright Tormund",
+      "position": 5,
+      "ability": "4 Place three influence in Docks.",
+      "min_turn": 4,
+      "effect": "Place 3 free influence cubes on DOC_04 Warehouse Row (2 VP, P1 has 1 cube). Hostile takeover: 3 cubes vs P1's 1 = overwhelm and seize the square. Strips 2 VP from P1's ledger and adds it to mine - a 4 VP swing from a single ability activation.",
+      "free_influence": {
+        "district": "Docks",
+        "square": "DOC_04",
+        "square_name": "Warehouse Row",
+        "vp_value": 2,
+        "amount": 3,
+        "faction": "Maritime"
+      }
+    }
+  ],
+  "influence_placements": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_011",
+      "courtier_name": "Harbormaster Blackwater",
+      "coterie": "Maritime",
+      "amount": 2,
+      "influence_slots": 4,
+      "current_influence_p1": 2,
+      "available_slots": 2,
+      "faction_used": "Maritime",
+      "rationale": "Fill the remaining 2 open slots to TIE Blackwater at 2-2 (P1 vs P2). Denies P1 sole control of this Maritime courtier and blocks any Maritime petition progress for them."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_01",
+      "square_name": "Harbormaster Office",
+      "amount": 3,
+      "vp_value": 4,
+      "current_controller": 2,
+      "current_influence": 1,
+      "faction_used": "Maritime",
+      "rationale": "Reinforce from 1 to 4 cubes. The 4 VP crown jewel of the Docks MUST be impregnable. Any opponent would need 5+ cubes to contest. Fortress economics protects the highest-value asset."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_02",
+      "square_name": "Customs House",
+      "amount": 2,
+      "vp_value": 3,
+      "current_controller": 2,
+      "current_influence": 1,
+      "faction_used": "Maritime",
+      "rationale": "Reinforce from 1 to 3 cubes. 3 VP square needs adequate defense for the final turn."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_03",
+      "square_name": "Shipwright",
+      "amount": 1,
+      "vp_value": 3,
+      "current_controller": 2,
+      "current_influence": 2,
+      "faction_used": "Maritime",
+      "rationale": "Reinforce from 2 to 3 cubes. Matching DOC_02 defense level for consistent fortification across high-value Docks squares."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_05",
+      "square_name": "Dry Dock",
+      "amount": 1,
+      "vp_value": 2,
+      "current_controller": null,
+      "current_influence": 0,
+      "faction_used": "Maritime",
+      "rationale": "Claim empty 2 VP square. Advances toward total Docks district control."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_06",
+      "square_name": "Sailor's Tavern",
+      "amount": 2,
+      "vp_value": 1,
+      "current_controller": 1,
+      "current_influence": 1,
+      "faction_used": "Maritime",
+      "rationale": "Hostile takeover from P1 who has 1 cube. 2 vs 1 = I seize this 1 VP square. Strips P1 of another Docks holding."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_07",
+      "square_name": "Fish Market",
+      "amount": 1,
+      "vp_value": 1,
+      "current_controller": null,
+      "current_influence": 0,
+      "faction_used": "Maritime",
+      "rationale": "Claim empty 1 VP square. Another piece in the total Docks domination puzzle."
+    },
+    {
+      "type": "place_influence",
+      "district": "Docks",
+      "square": "DOC_08",
+      "square_name": "Smuggler's Cove",
+      "amount": 1,
+      "vp_value": 0,
+      "current_controller": null,
+      "current_influence": 0,
+      "faction_used": "Criminal",
+      "rationale": "Claim the final empty Docks square. 0 VP but completes TOTAL DISTRICT CONTROL of all 8 Docks squares."
+    },
+    {
+      "type": "place_influence",
+      "district": "Barracks",
+      "square": "BAR_01",
+      "square_name": "Commander's Tower",
+      "amount": 2,
+      "vp_value": 4,
+      "current_controller": 3,
+      "current_influence": 1,
+      "faction_used": "Criminal",
+      "rationale": "HOSTILE TAKEOVER of P3's 4 VP crown jewel. They have just 1 cube defending a 4 VP position. My 2 cubes vs their 1 = I seize the Commander's Tower. A 4 VP swing. Best ROI per cube in the entire deployment."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_01",
+      "square_name": "Grand Library",
+      "amount": 2,
+      "vp_value": 4,
+      "current_controller": 2,
+      "current_influence": 1,
+      "faction_used": "Academic",
+      "rationale": "Reinforce the 4 VP Academy crown jewel from 1 to 3 cubes. Fortress economics demands adequate defense of high-value assets even when opponents lack Academic faction access."
+    },
+    {
+      "type": "place_influence",
+      "district": "Academy",
+      "square": "ACA_02",
+      "square_name": "Dean's Hall",
+      "amount": 1,
+      "vp_value": 3,
+      "current_controller": 2,
+      "current_influence": 1,
+      "faction_used": "Academic",
+      "rationale": "Reinforce from 1 to 2 cubes. The 3 VP Dean's Hall warrants additional protection."
+    }
+  ],
+  "free_actions": [],
+  "petition_check": {
+    "completable": "NONE",
+    "analysis": "COURT_001 Aldric tied 2-2 (P1 vs P2, 4/4 full). COURT_011 Blackwater will be tied 2-2 (P1 vs P2, 4/4 full) after my placement. Cannot complete Trade Empire (need control of all 4 Commerce+Maritime courtiers). No other petition requirements met. PETITION_009 Scholarly Pact needs COURT_003 (P3 controls) and COURT_013 (P1 controls). No path to completion this turn."
+  },
+  "resources_spent": {
+    "influence_pool": 18,
+    "gold": 0,
+    "actions_used": 3
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 42
+  },
+  "influence_deployment_summary": {
+    "pool_cubes_deployed": 18,
+    "ability_cubes_deployed": 4,
+    "total_cubes_deployed": 22,
+    "pool_breakdown": {
+      "COURT_011": 2,
+      "DOC_01": 3,
+      "DOC_02": 2,
+      "DOC_03": 1,
+      "DOC_05": 1,
+      "DOC_06": 2,
+      "DOC_07": 1,
+      "DOC_08": 1,
+      "BAR_01": 2,
+      "ACA_01": 2,
+      "ACA_02": 1
+    },
+    "ability_breakdown": {
+      "MKT_07": "1 (Harrow jackpot ability - free Market influence)",
+      "DOC_04": "3 (Tormund ability - Docks placement)"
+    },
+    "verification": "Pool: 2+3+2+1+1+2+1+1+2+2+1 = 18 cubes. Abilities: 1+3 = 4 cubes. Total: 22 cubes deployed."
+  },
+  "projected_end_of_turn": {
+    "vp": 130,
+    "gold": 42,
+    "exposure": 0,
+    "territory_controlled": {
+      "Docks": {
+        "squares_controlled": 8,
+        "total_squares": 8,
+        "vp": 16,
+        "district_controller": true,
+        "details": "DOC_01 (4VP, 4 cubes), DOC_02 (3VP, 3 cubes), DOC_03 (3VP, 3 cubes), DOC_04 (2VP, 3 Tormund cubes vs P1 1), DOC_05 (2VP, 1 cube), DOC_06 (1VP, 2 cubes vs P1 1), DOC_07 (1VP, 1 cube), DOC_08 (0VP, 1 cube). TOTAL DISTRICT CONTROL."
+      },
+      "Academy": {
+        "squares_controlled": 6,
+        "total_squares": 6,
+        "vp": 11,
+        "district_controller": true,
+        "details": "ACA_01 (4VP, 3 cubes), ACA_02 (3VP, 2 cubes), ACA_03 (2VP, 1 cube), ACA_04 (1VP, 1 cube), ACA_05 (1VP, 1 cube), ACA_06 (0VP, 1 cube). TOTAL DISTRICT CONTROL."
+      },
+      "Market": {
+        "squares_controlled": 2,
+        "total_squares": 8,
+        "vp": 2,
+        "details": "MKT_06 (1VP, 1 existing cube), MKT_07 (1VP, 1 Harrow ability cube). Minimal Market presence."
+      },
+      "Barracks": {
+        "squares_controlled": 1,
+        "total_squares": 7,
+        "vp": 4,
+        "details": "BAR_01 (4VP, 2 cubes vs P3 1). Hostile takeover of Commander's Tower."
+      }
+    },
+    "total_territory_vp": 33,
+    "courtiers_controlled": [
+      "COURT_002 Trade Commissioner Vale (2/2 locked)",
+      "COURT_009 Dean Aristotle (3/3 locked)",
+      "COURT_012 Admiral Stormwind (promoted - permanent control)"
+    ],
+    "courtiers_tied": [
+      "COURT_001 Guild Master Aldric (2-2 with P1, 4/4 full)",
+      "COURT_011 Harbormaster Blackwater (2-2 with P1, 4/4 full after placement)"
+    ],
+    "promotions": 1,
+    "gold_to_vp_conversion_potential": "42 gold / 3 = 14 VP at cycle end (keeping 0 gold for maximum conversion since this is the FINAL cycle)",
+    "projected_final_score_estimate": "130 base + 33 territory + 14 gold conversion - 0 exposure = 177+ VP projected"
+  },
+  "personality_note": "The penultimate turn demands DECISIVE capital deployment on two fronts: gold extraction AND territorial fortification. Harrow and Brynn mint 10 gold that converts to 3+ VP at cycle end - GUARANTEED returns with zero risk. Meanwhile, Tormund's 3 free cubes seize DOC_04 from P1's pathetic 1-cube garrison. The pool deployment is a masterclass in fortress economics: DOC_01 at 4 cubes is IMPREGNABLE. BAR_01 at 2 cubes vs P3's 1 is the highest-ROI hostile takeover on the entire board - 4 VP of prime military real estate seized for just 2 cubes. That is 2 VP per cube, a return that would make any merchant blush. The Blackwater courtier play denies P1 their Maritime control - every courtier denied to an opponent is a petition they cannot complete. With 42 gold in my vaults, TOTAL control of two districts, and a 4-point VP lead, the Economic Powerhouse has demonstrated that the final reckoning belongs to those with the deepest pockets and the sharpest ledgers. One turn remains. Gold flows to those who understand its power."
+}

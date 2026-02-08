@@ -1,0 +1,36 @@
+{
+  "player_id": 1,
+  "cycle": 1,
+  "phase": "cycle_transition",
+  "upgrades": [
+    {
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "stat": "influence",
+      "upgrade_number": 1,
+      "vp_cost": 1,
+      "rationale": "First upgrade to Captain Varro. Influence stat increases his utility for district control. This is step 1 of preparing him for promotion into COURT_006 (Captain Thorne)."
+    },
+    {
+      "agent_id": "AGENT_013",
+      "agent_name": "Captain Varro",
+      "stat": "gold",
+      "upgrade_number": 2,
+      "vp_cost": 4,
+      "rationale": "Second upgrade to Captain Varro, reaching Level 2. Gold stat improves economy generation. Now eligible for promotion into Military courtiers. COURT_006 (Captain Thorne, 1-slot) requires only 5 VP + 3 gold - the cheapest promotion available."
+    }
+  ],
+  "promotions": [],
+  "repositions": [],
+  "total_vp_spent": 5,
+  "vp_remaining": 29,
+  "gold_remaining": 2,
+  "strategic_reasoning": "Mathematical analysis: With only 2 gold, no promotions are affordable this cycle (minimum 3 gold required). The optimal investment is upgrading Captain Varro (Military) to Level 2 for 5 VP total. This enables a Cycle 2 promotion into COURT_006 (Captain Thorne, 1-slot) for only 5 VP + 3 gold - the most efficient path to the 8-courtier victory condition. I already control 4 courtiers; reaching 8 requires 4 more promotions. Captain Thorne is the cheapest target. Next cycle I must generate 3+ gold and execute this promotion. Current courtier control: 4/14. Promotion victory path remains viable.",
+  "cycle_2_preparation": {
+    "target_promotion": "COURT_006 (Captain Thorne)",
+    "promotion_agent": "AGENT_013 (Captain Varro, now Level 2)",
+    "estimated_cost": "5 VP + 3 gold",
+    "gold_needed": 1,
+    "priority": "Generate gold Turn 1-2 of Cycle 2, then execute promotion"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "player_id": 3,
+  "cycle": 4,
+  "turn": 1,
+  "recruitment": null,
+  "actions": [
+    {
+      "action_num": 1,
+      "type": "place_influence",
+      "district": "Market",
+      "square": "MKT_01",
+      "amount": 4,
+      "faction": "Commercial",
+      "note": "SEIZE Grand Exchange (5 VP) - biggest prize in Market. First mover advantage on reset board."
+    },
+    {
+      "action_num": 2,
+      "type": "pass",
+      "note": "Venditti abilities require Turn 3+. No valid offensive abilities available Turn 1."
+    },
+    {
+      "action_num": 3,
+      "type": "pass",
+      "note": "Holding power cards for petition completion. Universal Connections too valuable to waste."
+    }
+  ],
+  "free_actions": [
+    {
+      "type": "place_courtier_influence",
+      "courtier_id": "COURT_013",
+      "courtier_name": "Underworld Boss Vex",
+      "amount": 0,
+      "note": "Only 1 slot available on any contestable courtier. With 0 influence left after district placement, cannot contest. COURT_001 is FULL (4/4)."
+    }
+  ],
+  "resources_spent": {
+    "influence_pool": 4,
+    "gold": 0,
+    "actions_used": 1
+  },
+  "resources_remaining": {
+    "influence_pool": 0,
+    "gold": 0
+  },
+  "tactical_assessment": {
+    "vp_gap": "36 VP behind P2 (87), 26 VP behind P1 (77)",
+    "promotion_status": "0 promotions vs P1 (2) and P2 (1) - CRITICAL DEFICIT",
+    "petition_blockers": "COURT_001 is FULL at 4/4 (tied 2-2 with P2). Cannot complete PETITION_015 without courtier control.",
+    "next_turn_opportunity": "Turn 2 activates Steele (Military). Turn 3 unlocks Venditti gold ability AND Pietro courtier placement.",
+    "monsignor_pietro": "Level 4, promotion-ready. Need to maintain Religious courtier control (COURT_003, COURT_004) for cycle-end promotion."
+  },
+  "reasoning": "Fresh cycle, board reset. Only Commercial faction available Turn 1. Seized MKT_01 Grand Exchange (5 VP) with all 4 influence for immediate territory claim. No abilities unlock until Turn 3 (Venditti: gain 5 crowns). Holding Universal Connections for PETITION_015 when I can secure COURT_001 control. Pietro (Level 4) ready for promotion at cycle end - must maintain Religious courtier dominance. Actions 2-3 forced pass due to no available abilities at Turn 1."
+}
